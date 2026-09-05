@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <script src="https://analytics.ahrefs.com/analytics.js" data-key="OvkMGMTTpoU/1pLa2QkBCQ" async></script>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>PrettyCrochet</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --creme:   #FAF6F1;
+      --salbei:  #A7B39A;
+      --beige:   #D6C5B5;
+      --braun:   #8B6F5B;
+      --espresso:#4A3B32;
+      --white:   #FFFFFF;
+      --muted:   #9A8880;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--creme);
+      color: var(--espresso);
+      font-family: 'Jost', sans-serif;
+      font-weight: 300;
+      line-height: 1.75;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 200;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.1rem 6vw;
+      background: rgba(250,246,241,0.92);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--beige);
+    }
+
+    .logo-wrap { display: flex; align-items: center; gap: 0.75rem; text-decoration: none; }
+    .logo-text {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.45rem;
+      font-weight: 600;
+      color: var(--espresso);
+      letter-spacing: 0.02em;
+    }
+    .logo-text span { color: var(--salbei); }
+
+    .nav-links { display: flex; gap: 2.2rem; list-style: none; }
+    .nav-links a {
+      font-size: 0.82rem;
+      font-weight: 400;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: var(--espresso);
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--salbei); }
+
+    .nav-cta {
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: var(--white);
+      background: var(--espresso);
+      padding: 0.6rem 1.4rem;
+      border-radius: 2px;
+      transition: background 0.2s;
+    }
+    .nav-cta:hover { background: var(--braun); }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 70vh;
+      display: grid;
+      grid-template-columns: 1fr;
+      padding-top: 72px;
+    }
+
+    .hero-left {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 6rem 10vw;
+      max-width: 900px;
+    }
+
+    .hero-eyebrow {
+      font-size: 0.72rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--salbei);
+      margin-bottom: 1.8rem;
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+    }
+    .hero-eyebrow::before {
+      content: '';
+      display: inline-block;
+      width: 32px; height: 1px;
+      background: var(--salbei);
+    }
+
+    .hero-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(3rem, 5.5vw, 5rem);
+      font-weight: 300;
+      line-height: 1.08;
+      color: var(--espresso);
+      margin-bottom: 1.8rem;
+    }
+    .hero-title em {
+      font-style: italic;
+      color: var(--braun);
+    }
+
+    .hero-sub {
+      font-size: 1rem;
+      color: var(--muted);
+      max-width: 36ch;
+      margin-bottom: 2.8rem;
+      line-height: 1.8;
+    }
+
+    .hero-actions { display: flex; gap: 1rem; align-items: center; }
+
+    .btn-primary {
+      display: inline-block;
+      background: var(--espresso);
+      color: var(--white);
+      padding: 0.9rem 2rem;
+      font-size: 0.82rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border-radius: 2px;
+      transition: background 0.2s;
+    }
+    .btn-primary:hover { background: var(--braun); }
+
+    .btn-text {
+      font-size: 0.82rem;
+      font-weight: 400;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: var(--braun);
+      border-bottom: 1px solid var(--beige);
+      padding-bottom: 2px;
+      transition: border-color 0.2s;
+    }
+    .btn-text:hover { border-color: var(--braun); }
+
+    /* ── MARQUEE ── */
+    .marquee-wrap {
+      background: var(--espresso);
+      overflow: hidden;
+      padding: 0.9rem 0;
+    }
+    .marquee-track {
+      display: flex;
+      gap: 3rem;
+      animation: marquee 22s linear infinite;
+      white-space: nowrap;
+      width: max-content;
+    }
+    .marquee-track span {
+      font-size: 0.72rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--beige);
+    }
+    .marquee-track span.dot { color: var(--salbei); font-size: 0.5rem; }
+    @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+    /* ── SECTIONS ── */
+    section { padding: 6rem 10vw; }
+
+    .label {
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--salbei);
+      margin-bottom: 0.6rem;
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+    }
+    .label::before { content:''; display:inline-block; width:24px; height:1px; background:var(--salbei); }
+
+    h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2rem, 3.5vw, 3rem);
+      font-weight: 300;
+      line-height: 1.15;
+      color: var(--espresso);
+      margin-bottom: 3rem;
+    }
+    h2 em { font-style: italic; color: var(--braun); }
+
+    /* ── CATEGORIES ── */
+    .cat-section { background: var(--white); }
+
+    .cat-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--beige);
+      border: 1px solid var(--beige);
+    }
+
+    .cat-item {
+      background: var(--white);
+      padding: 2.5rem 2rem;
+      text-decoration: none;
+      color: var(--espresso);
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+      transition: background 0.25s;
+      position: relative;
+      overflow: hidden;
+    }
+    .cat-item::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0;
+      width: 0; height: 2px;
+      background: var(--salbei);
+      transition: width 0.3s;
+    }
+    .cat-item:hover { background: var(--creme); }
+    .cat-item:hover::after { width: 100%; }
+
+    .cat-icon {
+      font-size: 1.8rem;
+      margin-bottom: 0.4rem;
+    }
+    .cat-item h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.25rem;
+      font-weight: 400;
+    }
+    .cat-item p { font-size: 0.83rem; color: var(--muted); }
+    .cat-arrow {
+      font-size: 0.8rem;
+      color: var(--salbei);
+      margin-top: auto;
+      padding-top: 1rem;
+      letter-spacing: 0.08em;
+    }
+
+    /* ── POSTS ── */
+    .posts-section { background: var(--creme); }
+
+    .posts-grid {
+      display: grid;
+      grid-template-columns: 1.6fr 1fr;
+      grid-template-rows: auto auto;
+      gap: 1.5rem;
+    }
+
+    .post-card {
+      background: var(--white);
+      text-decoration: none;
+      color: var(--espresso);
+      display: flex;
+      flex-direction: column;
+      transition: box-shadow 0.25s;
+      border: 1px solid transparent;
+    }
+    .post-card:hover { box-shadow: 0 8px 32px rgba(74,59,50,0.1); border-color: var(--beige); }
+
+    .post-card.featured { grid-row: 1 / 3; }
+
+    .post-thumb {
+      background: var(--beige);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 5rem;
+    }
+    .post-card.featured .post-thumb { height: 280px; }
+    .post-card:not(.featured) .post-thumb { height: 160px; font-size: 3rem; }
+
+    .post-card:nth-child(2) .post-thumb { background: #E8EDE5; }
+    .post-card:nth-child(3) .post-thumb { background: #EDE8E2; }
+
+    .post-body { padding: 1.6rem; flex: 1; display: flex; flex-direction: column; }
+    .post-tag {
+      font-size: 0.68rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--salbei);
+      margin-bottom: 0.5rem;
+    }
+    .post-body h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem;
+      font-weight: 400;
+      line-height: 1.3;
+      margin-bottom: 0.6rem;
+    }
+    .post-card.featured .post-body h3 { font-size: 1.7rem; }
+    .post-body p { font-size: 0.84rem; color: var(--muted); flex: 1; }
+    .post-meta {
+      font-size: 0.72rem;
+      margin-top: 1.2rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      border-top: 1px solid var(--creme);
+      padding-top: 0.8rem;
+      color: var(--muted);
+    }
+
+    /* ── AFFILIATE PICKS ── */
+    .picks-section { background: var(--espresso); }
+    .picks-section .label { color: var(--salbei); }
+    .picks-section .label::before { background: var(--salbei); }
+    .picks-section h2 { color: var(--creme); }
+    .picks-section h2 em { color: var(--salbei); }
+
+    .picks-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.08);
+      margin-bottom: 2rem;
+    }
+
+    .pick-item {
+      background: var(--espresso);
+      padding: 2rem 1.6rem;
+      transition: background 0.2s;
+    }
+    .pick-item:hover { background: #3a2e26; }
+    .pick-icon { font-size: 2rem; margin-bottom: 1rem; display: block; }
+    .pick-item h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem;
+      font-weight: 400;
+      color: var(--creme);
+      margin-bottom: 0.5rem;
+    }
+    .pick-item p { font-size: 0.82rem; color: var(--beige); margin-bottom: 1.2rem; }
+    .pick-link {
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--salbei);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(167,179,154,0.3);
+      padding-bottom: 2px;
+      transition: border-color 0.2s;
+    }
+    .pick-link:hover { border-color: var(--salbei); }
+
+    .affiliate-note {
+      font-size: 0.75rem;
+      color: rgba(214,197,181,0.6);
+      border-left: 2px solid var(--salbei);
+      padding-left: 1rem;
+    }
+
+    /* ── NEWSLETTER ── */
+    .newsletter-section {
+      background: var(--beige);
+      text-align: center;
+      padding: 6rem 10vw;
+    }
+    .newsletter-section .label { justify-content: center; }
+    .newsletter-section .label::before { display: none; }
+    .newsletter-section h2 { margin-bottom: 1rem; }
+    .newsletter-section p { color: var(--braun); max-width: 44ch; margin: 0 auto 2.5rem; font-size: 0.95rem; }
+
+    .email-row {
+      display: flex;
+      gap: 0;
+      max-width: 400px;
+      margin: 0 auto;
+      border: 1px solid var(--braun);
+    }
+    .email-row input {
+      flex: 1;
+      padding: 0.9rem 1.2rem;
+      border: none;
+      background: var(--white);
+      font-family: 'Jost', sans-serif;
+      font-size: 0.9rem;
+      color: var(--espresso);
+      outline: none;
+    }
+    .email-row button {
+      background: var(--espresso);
+      color: var(--white);
+      border: none;
+      padding: 0.9rem 1.6rem;
+      font-family: 'Jost', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .email-row button:hover { background: var(--braun); }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--espresso);
+      color: var(--beige);
+      padding: 4rem 10vw 2rem;
+    }
+    .footer-top {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 4rem;
+      padding-bottom: 3rem;
+      border-bottom: 1px solid rgba(214,197,181,0.15);
+      margin-bottom: 2rem;
+    }
+    .footer-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem;
+      font-weight: 400;
+      color: var(--creme);
+      display: block;
+      margin-bottom: 1rem;
+    }
+    .footer-logo span { color: var(--salbei); }
+    footer p { font-size: 0.83rem; color: rgba(214,197,181,0.6); line-height: 1.8; max-width: 32ch; }
+    footer h4 {
+      font-size: 0.7rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--salbei);
+      margin-bottom: 1.2rem;
+    }
+    footer ul { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
+    footer ul a { font-size: 0.84rem; color: rgba(214,197,181,0.7); text-decoration: none; transition: color 0.2s; }
+    footer ul a:hover { color: var(--creme); }
+    .footer-bottom {
+      text-align: center;
+      font-size: 0.72rem;
+      color: rgba(214,197,181,0.35);
+      letter-spacing: 0.06em;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 800px) {
+      .hero { grid-template-columns: 1fr; }
+      .hero-left { padding: 4rem 6vw; }
+      .cat-grid { grid-template-columns: 1fr 1fr; }
+      .posts-grid { grid-template-columns: 1fr; }
+      .post-card.featured { grid-row: auto; }
+      .picks-grid { grid-template-columns: 1fr 1fr; }
+      .footer-top { grid-template-columns: 1fr; gap: 2rem; }
+      .nav-links { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+<a href="index.html" class="logo-wrap">
+  <img src="assets/logo.png" alt="PrettyCrochet Logo" style="height:34px; width:auto;"/>
+  <span class="logo-text">Pretty<span>Crochet</span></span>
+</a>
+  <ul class="nav-links">
+    <li><a href="mein-anleitungsbuch.html">Anleitungen</a></li>
+    <li><a href="#">Materialien</a></li>
+    <li><a href="#">Empfehlungen</a></li>
+    <li><a href="#">Über mich</a></li>
+  </ul>
+  <a href="#newsletter" class="nav-cta">Newsletter</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero" style="padding:0">
+  <div class="hero-left">
+    <p class="hero-eyebrow">Häkeln · Kreieren · Inspirieren</p>
+    <h1 class="hero-title">Handmade<br>with <em>love</em><br>&amp; Wolle</h1>
+    <p class="hero-sub">Anleitungen, ehrliche Produkt-Empfehlungen und alles, was du für wunderschöne Häkelprojekte brauchst.</p>
+    <div class="hero-actions">
+      <a href="mein-anleitungsbuch.html" class="btn-primary">Anleitungen entdecken</a>
+      <a href="#" class="btn-text">Meine Picks →</a>
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee-wrap">
+  <div class="marquee-track">
+    <span>Amigurumi</span><span class="dot">♥</span>
+    <span>Wohndeko</span><span class="dot">♥</span>
+    <span>Taschen</span><span class="dot">♥</span>
+    <span>Baby &amp; Kinder</span><span class="dot">♥</span>
+    <span>Mode</span><span class="dot">♥</span>
+    <span>Anfänger-Guides</span><span class="dot">♥</span>
+    <span>Schals &amp; Mützen</span><span class="dot">♥</span>
+    <span>Granny Squares</span><span class="dot">♥</span>
+    <!-- repeat for seamless loop -->
+    <span>Amigurumi</span><span class="dot">♥</span>
+    <span>Wohndeko</span><span class="dot">♥</span>
+    <span>Taschen</span><span class="dot">♥</span>
+    <span>Baby &amp; Kinder</span><span class="dot">♥</span>
+    <span>Mode</span><span class="dot">♥</span>
+    <span>Anfänger-Guides</span><span class="dot">♥</span>
+    <span>Schals &amp; Mützen</span><span class="dot">♥</span>
+    <span>Granny Squares</span><span class="dot">♥</span>
+  </div>
+</div>
+
+<!-- KATEGORIEN -->
+<section class="cat-section">
+  <div class="label">Themen</div>
+  <h2>Was möchtest du heute <em>häkeln?</em></h2>
+  <div class="cat-grid">
+    <a href="amigurumi.html" class="cat-item">
+      <span class="cat-icon">🐻</span>
+      <h3>Amigurumi</h3>
+      <p>Süße Figuren &amp; Tiere häkeln</p>
+      <span class="cat-arrow">Entdecken →</span>
+    </a>
+    <a href="#" class="cat-item">
+      <span class="cat-icon">🛋️</span>
+      <h3>Wohndeko</h3>
+      <p>Gemütliches für dein Zuhause</p>
+      <span class="cat-arrow">Entdecken →</span>
+    </a>
+    <a href="#" class="cat-item">
+      <span class="cat-icon">👜</span>
+      <h3>Taschen</h3>
+      <p>Strandtaschen, Beutel &amp; mehr</p>
+      <span class="cat-arrow">Entdecken →</span>
+    </a>
+    <a href="#" class="cat-item">
+      <span class="cat-icon">👶</span>
+      <h3>Baby &amp; Kinder</h3>
+      <p>Zarte Projekte für die Kleinen</p>
+      <span class="cat-arrow">Entdecken →</span>
+    </a>
+    <a href="#" class="cat-item">
+      <span class="cat-icon">🧣</span>
+      <h3>Mode &amp; Accessoires</h3>
+      <p>Pullis, Tops &amp; Schals</p>
+      <span class="cat-arrow">Entdecken →</span>
+    </a>
+    <a href="haekeln-basics.html" class="cat-item">
+      <span class="cat-icon">⭐</span>
+      <h3>Für Anfänger</h3>
+      <p>Schritt-für-Schritt starten</p>
+      <span class="cat-arrow">Entdecken →</span>
+    </a>
+  </div>
+</section>
+
+<!-- BEITRÄGE -->
+<section class="posts-section">
+  <div class="label">Aktuell</div>
+  <h2>Neue Anleitungen <em>&amp; Tipps</em></h2>
+  <div class="posts-grid">
+    <a href="haekel-baer.html" class="post-card featured">
+      <div class="post-thumb" style="height:280px">🧸</div>
+      <div class="post-body">
+        <span class="post-tag">Amigurumi</span>
+        <h3>Kleiner Häkel-Bär: Die komplette Anleitung für Anfänger</h3>
+        <p>In dieser ausführlichen Schritt-für-Schritt-Anleitung zeige ich dir, wie du in einem Wochenende deinen ersten Amigurumi-Bären häkelst – ganz ohne Vorkenntnisse.</p>
+        <span class="post-meta">15. Juli 2026 · 12 Min. Lesezeit</span>
+      </div>
+    </a>
+    <a href="#" class="post-card">
+      <div class="post-thumb">🌸</div>
+      <div class="post-body">
+        <span class="post-tag">Wohndeko</span>
+        <h3>Blumenkranz für die Wand</h3>
+        <p>Frühlingsgefühle das ganze Jahr über.</p>
+        <span class="post-meta">8. Juli 2026</span>
+      </div>
+    </a>
+    <a href="#" class="post-card">
+      <div class="post-thumb">👜</div>
+      <div class="post-body">
+        <span class="post-tag">Taschen</span>
+        <h3>Sommer-Strandtasche aus Baumwollgarn</h3>
+        <p>Die perfekte Begleiterin für heiße Tage.</p>
+        <span class="post-meta">1. Juli 2026</span>
+      </div>
+    </a>
+  </div>
+</section>
+
+<!-- AFFILIATE PICKS -->
+<section class="picks-section">
+  <div class="label">Empfehlungen</div>
+  <h2>Produkte, die ich <em>wirklich</em> nutze</h2>
+  <div class="picks-grid">
+    <div class="pick-item">
+      <span class="pick-icon">🪡</span>
+      <h3>Bio-Baumwollgarn</h3>
+      <p>OEKO-TEX-zertifiziert, weich &amp; ideal für Amigurumi und Baby-Projekte.</p>
+      <a href="#" class="pick-link">Zum Produkt →</a>
+    </div>
+    <div class="pick-item">
+      <span class="pick-icon">🪝</span>
+      <h3>Ergonomische Nadeln</h3>
+      <p>Rutschfeste Griffe für stundenlanges entspanntes Häkeln.</p>
+      <a href="#" class="pick-link">Zum Produkt →</a>
+    </div>
+    <div class="pick-item">
+      <span class="pick-icon">✂️</span>
+      <h3>Nähset &amp; Zubehör</h3>
+      <p>Alles was du brauchst: Schere, Nadeln, Markierer als praktisches Set.</p>
+      <a href="#" class="pick-link">Zum Produkt →</a>
+    </div>
+    <div class="pick-item">
+      <span class="pick-icon">📖</span>
+      <h3>Meine Top-Bücher</h3>
+      <p>Die besten Häkel-Anleitungsbücher – für jeden Level.</p>
+      <a href="#" class="pick-link">Zur Liste →</a>
+    </div>
+  </div>
+  <p class="affiliate-note">* Einige Links sind Affiliate-Links. Ich erhalte eine kleine Provision – für dich ohne Mehrkosten. Ich empfehle nur Produkte, die ich selbst liebe.</p>
+</section>
+
+<!-- NEWSLETTER -->
+<section class="newsletter-section" id="newsletter">
+  <div class="label">Bleib dabei</div>
+  <h2>Neue Anleitungen direkt<br>ins <em>Postfach</em></h2>
+  <p>Keine Werbung – nur neue Anleitungen, ehrliche Empfehlungen und Häkel-Inspiration wenn ich wirklich etwas Tolles zu teilen habe.</p>
+  <div class="email-row">
+    <input type="email" placeholder="deine@email.de"/>
+    <button>Anmelden</button>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div>
+      <span class="footer-logo">Pretty<span>Crochet</span></span>
+      <p>Ein Blog über die Liebe zum Häkeln – mit ehrlichen Empfehlungen, kostenlosen Anleitungen und einer Community für alle, die mit Wolle und Nadel Dinge erschaffen.</p>
+    </div>
+    <div>
+      <h4>Navigation</h4>
+      <ul>
+        <li><a href="#">Anleitungen</a></li>
+        <li><a href="#">Materialien</a></li>
+        <li><a href="#">Empfehlungen</a></li>
+        <li><a href="#">Über mich</a></li>
+        <li><a href="#">Kontakt</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Rechtliches</h4>
+      <ul>
+        <li><a href="#">Impressum</a></li>
+        <li><a href="#">Datenschutz</a></li>
+        <li><a href="#">Affiliate-Hinweis</a></li>
+        <li><a href="#">Cookie-Einstellungen</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">© 2026 PrettyCrochet · Natürlich. Zeitlos. Handgemacht.</div>
+</footer>
+
+</body>
+</html>
