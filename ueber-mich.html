@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <script src="https://analytics.ahrefs.com/analytics.js" data-key="OvkMGMTTpoU/1pLa2QkBCQ" async></script>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Über mich | PrettyCrochet</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --creme:   #FAF6F1;
+      --salbei:  #A7B39A;
+      --beige:   #D6C5B5;
+      --braun:   #8B6F5B;
+      --espresso:#4A3B32;
+      --white:   #FFFFFF;
+      --muted:   #9A8880;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--creme);
+      color: var(--espresso);
+      font-family: 'Jost', sans-serif;
+      font-weight: 300;
+      line-height: 1.75;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 200;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.1rem 6vw;
+      background: rgba(250,246,241,0.92);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--beige);
+    }
+    .logo-wrap { display: flex; align-items: center; gap: 0.75rem; text-decoration: none; }
+    .logo-text {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.45rem;
+      font-weight: 600;
+      color: var(--espresso);
+      letter-spacing: 0.02em;
+    }
+    .logo-text span { color: var(--salbei); }
+    .nav-links { display: flex; gap: 2.2rem; list-style: none; }
+    .nav-links a {
+      font-size: 0.82rem;
+      font-weight: 400;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: var(--espresso);
+      transition: color 0.2s;
+    }
+    .nav-links a:hover, .nav-links a.active { color: var(--salbei); }
+    .nav-cta {
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: var(--white);
+      background: var(--espresso);
+      padding: 0.6rem 1.4rem;
+      border-radius: 2px;
+      transition: background 0.2s;
+    }
+    .nav-cta:hover { background: var(--braun); }
+
+    /* ── HERO (zweispaltig: Text + Porträt) ── */
+    .about-hero {
+      padding: 11rem 10vw 5rem;
+      background: var(--beige);
+      text-align: center;
+    }
+    .about-hero .lead { margin-left: auto; margin-right: auto; }
+    .breadcrumb {
+      font-size: 0.75rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--braun);
+      margin-bottom: 1.4rem;
+    }
+    .breadcrumb a { color: var(--braun); text-decoration: none; border-bottom: 1px solid rgba(139,111,91,0.35); }
+    .breadcrumb a:hover { border-color: var(--braun); }
+
+    .about-hero h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.3rem, 4.8vw, 3.8rem);
+      font-weight: 300;
+      line-height: 1.12;
+      color: var(--espresso);
+      margin-bottom: 1.3rem;
+    }
+    .about-hero h1 em { font-style: italic; color: var(--braun); }
+    .about-hero p.lead {
+      font-size: 1.02rem;
+      color: var(--braun);
+      max-width: 46ch;
+      line-height: 1.85;
+    }
+    .signature {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 1.5rem;
+      color: var(--espresso);
+      margin-top: 2rem;
+    }
+
+    .label {
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--salbei);
+      margin-bottom: 0.6rem;
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+    }
+    .label::before { content:''; display:inline-block; width:24px; height:1px; background:var(--salbei); }
+
+    h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.8rem, 3vw, 2.6rem);
+      font-weight: 300;
+      line-height: 1.2;
+      color: var(--espresso);
+      margin-bottom: 1.6rem;
+    }
+    h2 em { font-style: italic; color: var(--braun); }
+
+    section { padding: 5rem 10vw; }
+
+    /* ── STORY ── */
+    .story-section { background: var(--white); }
+    .story-text { max-width: 68ch; font-size: 1rem; }
+    .story-text p { margin-bottom: 1.3rem; }
+    .pull-quote {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 1.5rem;
+      line-height: 1.5;
+      color: var(--braun);
+      border-left: 3px solid var(--salbei);
+      padding: 0.4rem 0 0.4rem 1.6rem;
+      margin: 2.4rem 0;
+      max-width: 46ch;
+    }
+
+    /* ── WERTE ── */
+    .values-section { background: var(--creme); }
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--beige);
+      border: 1px solid var(--beige);
+    }
+    .value-item {
+      background: var(--white);
+      padding: 2.2rem 1.9rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+    .value-icon { font-size: 1.7rem; }
+    .value-item h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.18rem;
+      font-weight: 400;
+    }
+    .value-item p { font-size: 0.86rem; color: var(--muted); }
+
+    /* ── ZEITSTRAHL ── */
+    .journey-section { background: var(--white); }
+    .journey-list { display: flex; flex-direction: column; max-width: 72ch; }
+    .journey-row {
+      display: grid;
+      grid-template-columns: 90px 1fr;
+      gap: 1.6rem;
+      padding: 1.6rem 0;
+      border-bottom: 1px solid var(--beige);
+    }
+    .journey-row:first-child { padding-top: 0; }
+    .journey-row:last-child { border-bottom: none; }
+    .journey-year {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem;
+      font-weight: 300;
+      color: var(--salbei);
+    }
+    .journey-content h4 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.15rem;
+      font-weight: 400;
+      margin-bottom: 0.3rem;
+    }
+    .journey-content p { font-size: 0.9rem; color: var(--muted); }
+
+    /* ── SCHNELLE FAKTEN ── */
+    .facts-section { background: var(--espresso); }
+    .facts-section .label { color: var(--salbei); }
+    .facts-section .label::before { background: var(--salbei); }
+    .facts-section h2 { color: var(--creme); }
+    .facts-section h2 em { color: var(--salbei); }
+    .facts-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1px;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+    .fact-item {
+      background: var(--espresso);
+      padding: 1.6rem 1.8rem;
+      display: flex;
+      gap: 1rem;
+      align-items: baseline;
+    }
+    .fact-label {
+      font-size: 0.68rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--salbei);
+      min-width: 140px;
+      flex-shrink: 0;
+    }
+    .fact-value { font-size: 0.92rem; color: var(--beige); }
+
+    /* ── KONTAKT / CTA ── */
+    .contact-section {
+      background: var(--beige);
+      text-align: center;
+      padding: 5.5rem 10vw;
+    }
+    .contact-section .label { justify-content: center; }
+    .contact-section .label::before { display: none; }
+    .contact-section p {
+      color: var(--braun);
+      max-width: 46ch;
+      margin: 0 auto 2.2rem;
+      font-size: 0.96rem;
+    }
+    .contact-actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+    .btn-primary {
+      display: inline-block;
+      background: var(--espresso);
+      color: var(--white);
+      padding: 0.9rem 2rem;
+      font-size: 0.82rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border-radius: 2px;
+      transition: background 0.2s;
+    }
+    .btn-primary:hover { background: var(--braun); }
+    .btn-text {
+      display: inline-block;
+      font-size: 0.82rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: var(--braun);
+      border-bottom: 1px solid rgba(139,111,91,0.4);
+      padding-bottom: 3px;
+      align-self: center;
+      transition: border-color 0.2s;
+    }
+    .btn-text:hover { border-color: var(--braun); }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--espresso);
+      color: var(--beige);
+      padding: 4rem 10vw 2rem;
+    }
+    .footer-top {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 4rem;
+      padding-bottom: 3rem;
+      border-bottom: 1px solid rgba(214,197,181,0.15);
+      margin-bottom: 2rem;
+    }
+    .footer-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem;
+      font-weight: 400;
+      color: var(--creme);
+      display: block;
+      margin-bottom: 1rem;
+    }
+    .footer-logo span { color: var(--salbei); }
+    footer p { font-size: 0.83rem; color: rgba(214,197,181,0.6); line-height: 1.8; max-width: 32ch; }
+    footer h4 {
+      font-size: 0.7rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--salbei);
+      margin-bottom: 1.2rem;
+    }
+    footer ul { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
+    footer ul a { font-size: 0.84rem; color: rgba(214,197,181,0.7); text-decoration: none; transition: color 0.2s; }
+    footer ul a:hover { color: var(--creme); }
+    .footer-bottom {
+      text-align: center;
+      font-size: 0.72rem;
+      color: rgba(214,197,181,0.35);
+      letter-spacing: 0.06em;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 850px) {
+      .nav-links { display: none; }
+      .about-hero { padding: 9rem 6vw 3.5rem; }
+      .values-grid { grid-template-columns: 1fr; }
+      .facts-grid { grid-template-columns: 1fr; }
+      .footer-top { grid-template-columns: 1fr; gap: 2rem; }
+      .journey-row { grid-template-columns: 70px 1fr; gap: 1rem; }
+      .fact-item { flex-direction: column; gap: 0.3rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="logo-wrap">
+    <img src="assets/logo.png" alt="PrettyCrochet Logo" style="height:34px; width:auto;"/>
+    <span class="logo-text">Pretty<span>Crochet</span></span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="mein-anleitungsbuch.html">Anleitungen</a></li>
+    <li><a href="amigurumi.html">Amigurumi</a></li>
+    <li><a href="haekeln-basics.html">Für Anfänger</a></li>
+    <li><a href="#" class="active">Über mich</a></li>
+  </ul>
+  <a href="index.html#newsletter" class="nav-cta">Newsletter</a>
+</nav>
+
+<!-- HERO -->
+<section class="about-hero">
+  <div>
+    <p class="breadcrumb"><a href="index.html">Start</a> · Über mich</p>
+    <h1>Schön, dass du<br><em>hier bist</em></h1>
+    <p class="lead">Hinter PrettyCrochet steckt genau das, was du hier siehst: die Liebe zu Wolle, zu ruhigen Handgriffen und zu Dingen, die man selbst erschaffen hat.</p>
+    <p class="signature">PrettyCrochet</p>
+  </div>
+</section>
+
+<!-- MEINE GESCHICHTE -->
+<section class="story-section">
+  <div class="label">Meine Geschichte</div>
+  <h2>Wie alles <em>angefangen hat</em></h2>
+  <div class="story-text">
+    <p>Angefangen hat es mit einer einzigen Häkelnadel und deutlich mehr Geduld, als ich damals hatte. Die ersten Reihen wurden schief, die Maschenzahl stimmte nie, und aufgetrennt habe ich mindestens so viel, wie ich gehäkelt habe. Aber irgendwann war da dieser Moment, in dem aus lauter einzelnen Schlaufen plötzlich etwas Ganzes wurde – und seitdem hat mich das Häkeln nicht mehr losgelassen.</p>
+    <p>Was mich bis heute daran fasziniert: Häkeln ist eine der wenigen Beschäftigungen, bei denen man nichts weiter braucht als Garn, eine Nadel und ein bisschen Zeit. Kein Strom, kein Bildschirm, keine Hektik. Nur ein Faden, der langsam Form annimmt.</p>
+    <blockquote class="pull-quote">Aus einem Faden wird eine Masche, aus Maschen wird eine Reihe – und irgendwann hältst du etwas in den Händen, das es vorher nicht gab.</blockquote>
+    <p>PrettyCrochet ist aus dem Wunsch entstanden, dieses Gefühl weiterzugeben. Hier findest du kostenlose Anleitungen, ehrliche Empfehlungen zu Material und Werkzeug und interaktive Werkzeuge, die dir das Planen eigener Projekte leichter machen. Alles so aufbereitet, wie ich es mir selbst am Anfang gewünscht hätte: verständlich, ohne Fachchinesisch und zum direkt Mitmachen.</p>
+  </div>
+</section>
+
+<!-- WOFÜR ICH STEHE -->
+<section class="values-section">
+  <div class="label">Wofür ich stehe</div>
+  <h2>Was mir <em>wichtig ist</em></h2>
+  <div class="values-grid">
+    <div class="value-item">
+      <span class="value-icon">📖</span>
+      <h3>Anleitungen zum Verstehen</h3>
+      <p>Jede Anleitung wird so geschrieben, dass sie auch dann funktioniert, wenn du gerade erst anfängst – mit klaren Maschenzahlen und ohne Abkürzungen, die niemand erklärt.</p>
+    </div>
+    <div class="value-item">
+      <span class="value-icon">🤍</span>
+      <h3>Ehrliche Empfehlungen</h3>
+      <p>Ich empfehle nur Garne, Nadeln und Zubehör, die ich selbst benutze. Wenn mir etwas nicht gefällt, sage ich das – auch wenn es sich schlechter verkauft.</p>
+    </div>
+    <div class="value-item">
+      <span class="value-icon">🌿</span>
+      <h3>Ruhe statt Perfektion</h3>
+      <p>Häkeln soll entspannen, nicht stressen. Schiefe Reihen gehören dazu, und das erste Projekt muss nicht aussehen wie aus dem Laden.</p>
+    </div>
+  </div>
+</section>
+
+<!-- MEIN WEG -->
+<section class="journey-section">
+  <div class="label">Mein Weg</div>
+  <h2>Ein paar <em>Stationen</em></h2>
+  <div class="journey-list">
+    <div class="journey-row">
+      <span class="journey-year">2019</span>
+      <div class="journey-content">
+        <h4>Die erste Häkelnadel</h4>
+        <p>Ein Anfängerset, ein Video und ein sehr wellenförmiger erster Schal. Der Anfang von allem.</p>
+      </div>
+    </div>
+    <div class="journey-row">
+      <span class="journey-year">2021</span>
+      <div class="journey-content">
+        <h4>Amigurumi entdeckt</h4>
+        <p>Der erste Magic Ring, das erste kleine Tier – und die Erkenntnis, dass aus Runden dreidimensionale Formen entstehen.</p>
+      </div>
+    </div>
+    <div class="journey-row">
+      <span class="journey-year">2024</span>
+      <div class="journey-content">
+        <h4>Eigene Muster entworfen</h4>
+        <p>Vom Nachhäkeln zum Selbstentwerfen: erste eigene Anleitungen, notiert auf unzähligen Zetteln.</p>
+      </div>
+    </div>
+    <div class="journey-row">
+      <span class="journey-year">2026</span>
+      <div class="journey-content">
+        <h4>PrettyCrochet geht online</h4>
+        <p>Alles gebündelt an einem Ort – mit Anleitungen, Lernpfad und interaktiven Werkzeugen zum Mustererstellen.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SCHNELLE FAKTEN -->
+<section class="facts-section">
+  <div class="label">Kurz gefragt</div>
+  <h2>Ein paar <em>schnelle Antworten</em></h2>
+  <div class="facts-grid">
+    <div class="fact-item">
+      <span class="fact-label">Lieblingsmasche</span>
+      <span class="fact-value">Die feste Masche – schlicht, stabil, universell einsetzbar.</span>
+    </div>
+    <div class="fact-item">
+      <span class="fact-label">Lieblingsgarn</span>
+      <span class="fact-value">Glatte Baumwolle in gedeckten Naturtönen.</span>
+    </div>
+    <div class="fact-item">
+      <span class="fact-label">Lieblingsprojekt</span>
+      <span class="fact-value">Kleine Amigurumi-Figuren – schnell fertig, große Freude.</span>
+    </div>
+    <div class="fact-item">
+      <span class="fact-label">Gehäkelt wird</span>
+      <span class="fact-value">Am liebsten abends auf dem Sofa, mit einem Podcast im Ohr.</span>
+    </div>
+    <div class="fact-item">
+      <span class="fact-label">Größte Schwäche</span>
+      <span class="fact-value">Garn kaufen, obwohl der Vorrat längst reicht.</span>
+    </div>
+    <div class="fact-item">
+      <span class="fact-label">Bester Rat</span>
+      <span class="fact-value">Zähl deine Maschen. Wirklich. Jede Reihe.</span>
+    </div>
+  </div>
+</section>
+
+<!-- KONTAKT -->
+<section class="contact-section">
+  <div class="label">Schreib mir</div>
+  <h2>Lust auf einen <em>Austausch?</em></h2>
+  <p>Ob Frage zu einer Anleitung, ein Projekt, das du mir zeigen möchtest, oder einfach ein Hallo – ich freue mich über jede Nachricht.</p>
+  <div class="contact-actions">
+    <a href="mailto:deine@email.de" class="btn-primary">Nachricht schreiben</a>
+    <a href="index.html#newsletter" class="btn-text">Newsletter abonnieren →</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div>
+      <span class="footer-logo">Pretty<span>Crochet</span></span>
+      <p>Ein Blog über die Liebe zum Häkeln – mit ehrlichen Empfehlungen, kostenlosen Anleitungen und einer Community für alle, die mit Wolle und Nadel Dinge erschaffen.</p>
+    </div>
+    <div>
+      <h4>Navigation</h4>
+      <ul>
+        <li><a href="mein-anleitungsbuch.html">Anleitungen</a></li>
+        <li><a href="amigurumi.html">Amigurumi</a></li>
+        <li><a href="haekeln-basics.html">Für Anfänger</a></li>
+        <li><a href="#">Über mich</a></li>
+        <li><a href="mailto:deine@email.de">Kontakt</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Rechtliches</h4>
+      <ul>
+        <li><a href="#">Impressum</a></li>
+        <li><a href="#">Datenschutz</a></li>
+        <li><a href="#">Affiliate-Hinweis</a></li>
+        <li><a href="#">Cookie-Einstellungen</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">© 2026 PrettyCrochet · Natürlich. Zeitlos. Handgemacht.</div>
+</footer>
+
+</body>
+</html>
