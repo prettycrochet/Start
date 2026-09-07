@@ -1,0 +1,884 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Muster-Generator: Anleitung, Diagramm & 3D-Vorschau | PrettyCrochet</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet"/>
+<style>
+  :root{--creme:#FAF6F1;--salbei:#A7B39A;--beige:#D6C5B5;--braun:#8B6F5B;--espresso:#4A3B32;--white:#FFFFFF;--muted:#9A8880;}
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--creme);color:var(--espresso);font-family:'Jost',sans-serif;font-weight:300;line-height:1.7;}
+
+  nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:1.1rem 6vw;background:rgba(250,246,241,0.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--beige);}
+  .logo-wrap{display:flex;align-items:center;gap:0.75rem;text-decoration:none;}
+  .logo-text{font-family:'Cormorant Garamond',serif;font-size:1.45rem;font-weight:600;color:var(--espresso);letter-spacing:0.02em;}
+  .logo-text span{color:var(--salbei);}
+  .nav-links{display:flex;gap:2.2rem;list-style:none;}
+  .nav-links a{font-size:0.82rem;letter-spacing:0.1em;text-transform:uppercase;text-decoration:none;color:var(--espresso);transition:color 0.2s;}
+  .nav-links a:hover,.nav-links a.active{color:var(--salbei);}
+  .nav-cta{font-size:0.8rem;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;color:var(--white);background:var(--espresso);padding:0.6rem 1.4rem;border-radius:2px;}
+  .nav-cta:hover{background:var(--braun);}
+
+  .page-hero{padding:11rem 10vw 3rem;background:var(--beige);text-align:center;}
+  .breadcrumb{font-size:0.75rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--braun);margin-bottom:1.5rem;}
+  .breadcrumb a{color:var(--braun);text-decoration:none;border-bottom:1px solid rgba(139,111,91,0.35);}
+  .page-hero .label{justify-content:center;}
+  .page-hero .label::before{display:none;}
+  .page-hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(2.1rem,4.4vw,3.4rem);font-weight:300;line-height:1.15;margin-bottom:1rem;}
+  .page-hero h1 em{font-style:italic;color:var(--braun);}
+  .page-hero p.sub{max-width:58ch;margin:0 auto;color:var(--braun);font-size:0.98rem;}
+
+  .label{font-size:0.7rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--salbei);margin-bottom:0.6rem;display:flex;align-items:center;gap:0.7rem;}
+  .label::before{content:'';display:inline-block;width:24px;height:1px;background:var(--salbei);}
+
+  .app-section{padding:3rem 5vw 6rem;background:var(--white);}
+  .app-grid{display:grid;grid-template-columns:330px 1fr;gap:1.8rem;max-width:1400px;margin:0 auto;align-items:start;}
+
+  .panel{background:var(--creme);border:1px solid var(--beige);padding:1.4rem 1.5rem;margin-bottom:1.4rem;}
+  .panel h3{font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:400;color:var(--braun);margin-bottom:1rem;}
+
+  .field-label{font-size:0.68rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);display:block;margin:0.8rem 0 0.4rem;}
+  .field-label:first-child{margin-top:0;}
+  input[type="text"],input[type="number"],input[type="search"],select{width:100%;font-family:'Jost',sans-serif;font-size:0.9rem;color:var(--espresso);background:var(--white);border:1px solid var(--beige);padding:0.6rem 0.8rem;border-radius:2px;outline:none;}
+  input:focus,select:focus{border-color:var(--salbei);}
+  input[type="color"]{width:44px;height:38px;padding:2px;border:1px solid var(--beige);border-radius:2px;background:var(--white);cursor:pointer;}
+
+  .btn{font-family:'Jost',sans-serif;font-size:0.76rem;font-weight:500;letter-spacing:0.06em;text-transform:uppercase;border:1px solid var(--espresso);background:var(--white);color:var(--espresso);padding:0.65rem 1rem;border-radius:2px;cursor:pointer;transition:background 0.2s,color 0.2s;width:100%;}
+  .btn:hover{background:var(--espresso);color:var(--white);}
+  .btn.primary{background:var(--espresso);color:var(--white);}
+  .btn.primary:hover{background:var(--braun);border-color:var(--braun);}
+  .btn.sage{background:var(--salbei);color:var(--white);border-color:var(--salbei);}
+  .btn.sage:hover{background:var(--braun);border-color:var(--braun);}
+  .btn.ghost{background:transparent;}
+  .btn.danger{border-color:#B3554A;color:#B3554A;}
+  .btn.danger:hover{background:#B3554A;color:var(--white);}
+  .btn-row{display:grid;grid-template-columns:1fr 1fr;gap:0.6rem;margin-top:0.8rem;}
+  .btn-row.stack{grid-template-columns:1fr;}
+
+  .part-list{display:flex;flex-direction:column;gap:0.5rem;margin-bottom:0.9rem;}
+  .part-item{display:flex;align-items:center;gap:0.6rem;background:var(--white);border:1px solid var(--beige);border-radius:2px;padding:0.6rem 0.7rem;cursor:pointer;transition:border-color 0.2s;}
+  .part-item:hover{border-color:var(--salbei);}
+  .part-item.active{background:rgba(167,179,154,0.18);border-color:var(--salbei);}
+  .part-item .p-name{font-family:'Cormorant Garamond',serif;font-size:1rem;font-weight:600;flex:1;}
+  .part-item .p-meta{font-size:0.68rem;color:var(--muted);}
+
+  .stitch-lib{max-height:340px;overflow-y:auto;display:grid;grid-template-columns:1fr 1fr;gap:0.5rem;margin-top:0.8rem;}
+  .stitch-btn{text-align:left;background:var(--white);border:1px solid var(--beige);border-radius:2px;padding:0.55rem 0.65rem;cursor:pointer;transition:border-color 0.2s,background 0.2s;}
+  .stitch-btn:hover{border-color:var(--salbei);}
+  .stitch-btn.active{background:rgba(167,179,154,0.18);border-color:var(--salbei);}
+  .stitch-btn .s-code{font-family:'Cormorant Garamond',serif;font-size:1.05rem;font-weight:600;}
+  .stitch-btn .s-name{font-size:0.68rem;color:var(--muted);}
+
+  .quick-grid{display:grid;grid-template-columns:1fr 1fr;gap:0.6rem;margin-top:0.9rem;}
+  .quick-btn{font-size:0.74rem;padding:0.65rem 0.4rem;}
+
+  .out-card{background:var(--creme);border:1px solid var(--beige);padding:1.6rem 1.8rem;margin-bottom:1.4rem;}
+  .out-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem;gap:1rem;flex-wrap:wrap;}
+  .out-head h2{font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:400;}
+  .out-head .btn{width:auto;}
+  .empty-note{color:var(--muted);font-size:0.88rem;padding:1rem 0;}
+
+  .chart-scroll{overflow:auto;background:var(--white);border:1px solid var(--beige);padding:1rem;max-height:520px;}
+  .chart-scroll svg{display:block;}
+  .chart-part-title{font-family:'Cormorant Garamond',serif;font-size:1.05rem;color:var(--braun);margin:1rem 0 0.5rem;}
+  .chart-part-title:first-child{margin-top:0;}
+
+  .stat-row{display:flex;gap:1.6rem;flex-wrap:wrap;margin-bottom:1rem;}
+  .stat{display:flex;flex-direction:column;}
+  .stat b{font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:400;}
+  .stat span{font-size:0.68rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);}
+
+  .row-block{border:1px solid var(--beige);background:var(--white);border-radius:2px;padding:1rem 1.2rem;margin-bottom:0.8rem;}
+  .row-block-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:0.6rem;}
+  .row-block-head h4{font-family:'Cormorant Garamond',serif;font-size:1.05rem;font-weight:600;color:var(--braun);}
+  .row-block-head span{font-size:0.72rem;color:var(--muted);}
+  .chips{display:flex;flex-wrap:wrap;gap:0.5rem;}
+  .chip{background:var(--creme);border:1px solid var(--beige);border-radius:999px;padding:0.4rem 0.8rem;font-size:0.78rem;}
+
+  .key-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:0.8rem;}
+  .key-item{display:flex;align-items:center;gap:0.7rem;}
+  .key-symbol{width:42px;height:34px;border:1px solid var(--beige);border-radius:2px;display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:1rem;background:var(--white);flex-shrink:0;}
+  .key-item div b{font-size:0.82rem;}
+  .key-item div span{display:block;font-size:0.7rem;color:var(--muted);}
+
+  .data-preview{font-family:monospace;font-size:0.7rem;background:var(--espresso);color:var(--beige);padding:1rem;border-radius:2px;overflow:auto;white-space:pre;max-height:240px;}
+  .notice{background:var(--white);border-left:3px solid var(--salbei);padding:0.9rem 1.1rem;font-size:0.82rem;color:var(--muted);margin-top:1rem;}
+
+  @media(max-width:900px){.nav-links{display:none;}.app-grid{grid-template-columns:1fr;}}
+
+  footer{background:var(--espresso);color:var(--beige);padding:4rem 10vw 2rem;}
+  .footer-top{display:grid;grid-template-columns:2fr 1fr 1fr;gap:4rem;padding-bottom:3rem;border-bottom:1px solid rgba(214,197,181,0.15);margin-bottom:2rem;}
+  .footer-logo{font-family:'Cormorant Garamond',serif;font-size:1.5rem;color:var(--creme);display:block;margin-bottom:1rem;}
+  .footer-logo span{color:var(--salbei);}
+  footer p{font-size:0.83rem;color:rgba(214,197,181,0.6);line-height:1.8;max-width:32ch;}
+  footer h4{font-size:0.7rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--salbei);margin-bottom:1.2rem;}
+  footer ul{list-style:none;display:flex;flex-direction:column;gap:0.6rem;}
+  footer ul a{font-size:0.84rem;color:rgba(214,197,181,0.7);text-decoration:none;}
+  footer ul a:hover{color:var(--creme);}
+  .footer-bottom{text-align:center;font-size:0.72rem;color:rgba(214,197,181,0.35);}
+  @media(max-width:800px){.footer-top{grid-template-columns:1fr;gap:2rem;}}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="logo-wrap">
+    <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="17" cy="17" r="11" stroke="#A7B39A" stroke-width="1.5" fill="none"/>
+      <path d="M10 14 Q17 10 24 14" stroke="#A7B39A" stroke-width="1" fill="none" stroke-linecap="round"/>
+      <path d="M9 18 Q17 22 25 18" stroke="#A7B39A" stroke-width="1" fill="none" stroke-linecap="round"/>
+      <line x1="24" y1="6" x2="10" y2="28" stroke="#4A3B32" stroke-width="1.8" stroke-linecap="round"/>
+      <ellipse cx="22.5" cy="8.5" rx="1.8" ry="1" transform="rotate(-52 22.5 8.5)" stroke="#4A3B32" stroke-width="1.2" fill="none"/>
+      <path d="M10 28 Q7 32 11 33" stroke="#8B6F5B" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+    </svg>
+    <span class="logo-text">Pretty<span>Crochet</span></span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html">Anleitungen</a></li>
+    <li><a href="amigurumi.html">Amigurumi</a></li>
+    <li><a href="mein-anleitungsbuch.html">Mein Buch</a></li>
+    <li><a href="#" class="active">Muster-Generator</a></li>
+  </ul>
+  <a href="index.html#newsletter" class="nav-cta">Newsletter</a>
+</nav>
+
+<section class="page-hero">
+  <p class="breadcrumb"><a href="index.html">Start</a> · Muster-Generator</p>
+  <div class="label">Interaktiv</div>
+  <h1>Muster-<em>Generator</em></h1>
+  <p class="sub">Maschen per Klick setzen – daraus entstehen automatisch Textanleitung, Symbol-Diagramm mit Laufrichtung und eine 3D-Schemavorschau. Dein Projekt lässt sich in Bauteile aufteilen, etwa Boden in Runden und Körper in Reihen.</p>
+</section>
+
+<section class="app-section">
+  <div class="app-grid">
+
+    <aside>
+      <div class="panel">
+        <h3>Bauteile</h3>
+        <div id="part-list" class="part-list"></div>
+        <label class="field-label">Name des Bauteils</label>
+        <input type="text" id="newPartName" placeholder="z. B. Boden, Körper, Henkel"/>
+        <label class="field-label">Arbeitsweise</label>
+        <select id="newPartMode">
+          <option value="rounds">In Runden (spiralig)</option>
+          <option value="rows">In Reihen (mit Wenden)</option>
+        </select>
+        <label class="field-label">Form für 3D-Vorschau</label>
+        <select id="newPartShape">
+          <option value="scheibe">Flacher Boden / Scheibe</option>
+          <option value="roehre">Röhre / Wand</option>
+          <option value="kugel">Kugel / Amigurumi</option>
+          <option value="flach">Flache Fläche / Panel</option>
+        </select>
+        <button class="btn sage" id="addPart" style="margin-top:0.9rem;">+ Bauteil anlegen</button>
+        <button class="btn danger" id="delPart" style="margin-top:0.6rem;">Aktives Bauteil löschen</button>
+      </div>
+
+      <div class="panel">
+        <h3>Maschenbibliothek</h3>
+        <input type="search" id="search" placeholder="Masche suchen …"/>
+        <select id="category" style="margin-top:0.6rem;">
+          <option value="">Alle Kategorien</option>
+          <option value="basis">Grundmaschen</option>
+          <option value="zunahme">Zunahmen</option>
+          <option value="abnahme">Abnahmen</option>
+          <option value="relief">Relief / Post-Stitches</option>
+          <option value="spezial">Spezialmaschen</option>
+          <option value="foundation">Foundation</option>
+        </select>
+        <div id="library" class="stitch-lib"></div>
+      </div>
+
+      <div class="panel">
+        <h3>Masche setzen</h3>
+        <label class="field-label">Anzahl</label>
+        <input type="number" id="count" min="1" value="1"/>
+        <label class="field-label">Platzierung</label>
+        <select id="placement">
+          <option value="normal">Normale Masche</option>
+          <option value="BLO">Hinteres Maschenglied (BLO)</option>
+          <option value="FLO">Vorderes Maschenglied (FLO)</option>
+          <option value="space">In Zwischenraum / Luftmaschenbogen</option>
+          <option value="front-post">Um vorderen Reliefpfosten</option>
+          <option value="back-post">Um hinteren Reliefpfosten</option>
+        </select>
+        <button class="btn primary" id="add" style="margin-top:1rem;">Masche setzen</button>
+        <p style="font-size:0.74rem;color:var(--muted);margin-top:0.6rem;">Neue Maschen hängen sich automatisch an die zuletzt gesetzte an. Über „Springen“ arbeitest du gezielt in einer anderen Reihe weiter.</p>
+
+        <div class="quick-grid">
+          <button class="btn quick-btn" id="qSkip">↷ Überspringen</button>
+          <button class="btn quick-btn" id="qTurn">↺ Wenden</button>
+          <button class="btn quick-btn" id="qTurning">Wendemaschen</button>
+          <button class="btn sage quick-btn" id="qNextRow">+ Nächste Reihe</button>
+        </div>
+
+        <label class="field-label">Startpunkt setzen (Reihe/Runde)</label>
+        <div style="display:grid;grid-template-columns:1fr auto;gap:0.5rem;">
+          <input type="number" id="jumpRow" min="1" value="1"/>
+          <button class="btn ghost" id="setStart" style="width:auto;padding:0.6rem 0.8rem;">Springen</button>
+        </div>
+      </div>
+
+      <div class="panel">
+        <h3>Spezialaktion</h3>
+        <select id="special">
+          <option value="increase">Zunahme</option>
+          <option value="decrease">Abnahme</option>
+          <option value="repeat">Wiederholung</option>
+          <option value="join">Runde schließen</option>
+          <option value="fasten">Abmaschen / Faden abschneiden</option>
+          <option value="marker">Maschenmarkierer setzen</option>
+          <option value="custom">Eigene Notiz</option>
+        </select>
+        <input type="text" id="note" placeholder="Optional: eigene Beschreibung" style="margin-top:0.6rem;"/>
+        <button class="btn" id="addSpecial" style="margin-top:0.8rem;">Spezialaktion hinzufügen</button>
+      </div>
+
+      <div class="panel">
+        <h3>Garn</h3>
+        <label class="field-label">Garnname</label>
+        <input type="text" id="yarn" value="Sage 01"/>
+        <label class="field-label">Farbe</label>
+        <input type="color" id="color" value="#A7B39A"/>
+        <div class="btn-row stack">
+          <button class="btn" id="yarnBtn">Neues Garn ansetzen</button>
+          <button class="btn" id="fastenYarn">✂️ Garn abschneiden / vernähen</button>
+        </div>
+      </div>
+
+      <div class="panel">
+        <div class="btn-row">
+          <button class="btn ghost" id="undo">↶ Rückgängig</button>
+          <button class="btn danger" id="clear">Bauteil leeren</button>
+        </div>
+      </div>
+    </aside>
+
+    <main>
+      <div class="out-card">
+        <div class="out-head">
+          <div><div class="label" style="margin-bottom:0.2rem;">Symbol-Diagramm</div><h2>Maschenbild mit Laufrichtung</h2></div>
+          <span id="chartInfo" style="font-size:0.78rem;color:var(--muted);"></span>
+        </div>
+        <div id="stats" class="stat-row"></div>
+        <div id="chart" class="chart-scroll"><p class="empty-note">Noch keine Maschen gesetzt.</p></div>
+        <p class="notice">Die Pfeile zeigen die Arbeitsrichtung jeder Reihe. Nach „Wenden“ läuft die nächste Reihe automatisch in die Gegenrichtung. Rechts neben jeder Reihe steht die Maschenzahl, damit du direkt prüfen kannst, wie viele Maschen du brauchst.</p>
+      </div>
+
+      <div class="out-card">
+        <div class="out-head">
+          <div><div class="label" style="margin-bottom:0.2rem;">3D-Vorschau</div><h2>Schematische Raumansicht</h2></div>
+          <div style="display:flex;gap:0.5rem;align-items:center;">
+            <label style="font-size:0.72rem;color:var(--muted);">Drehung</label>
+            <input type="range" id="rot" min="0" max="360" value="30" style="width:130px;"/>
+          </div>
+        </div>
+        <div id="view3d" class="chart-scroll"><p class="empty-note">Noch keine Daten für die 3D-Vorschau.</p></div>
+        <p class="notice">Die Vorschau ist ein maßstäbliches Schema aus deinen Maschenzahlen, kein fotorealistisches Rendering: Jede Reihe wird nach ihrer Maschenzahl als Umfang dargestellt, die Bauteile stapeln sich in ihrer Reihenfolge übereinander.</p>
+      </div>
+
+      <div class="out-card">
+        <div class="out-head">
+          <div><div class="label" style="margin-bottom:0.2rem;">Textanleitung</div><h2>Automatisch erzeugte Anleitung</h2></div>
+          <button class="btn" id="copy">Anleitung kopieren</button>
+        </div>
+        <div id="instructions"><p class="empty-note">Noch keine Maschen.</p></div>
+      </div>
+
+      <div class="out-card">
+        <div class="out-head">
+          <div><div class="label" style="margin-bottom:0.2rem;">Pattern Key</div><h2>Verwendete Symbole</h2></div>
+          <span id="keyCount" style="font-size:0.78rem;color:var(--muted);"></span>
+        </div>
+        <div id="key" class="key-grid"><p class="empty-note">Wird automatisch erstellt.</p></div>
+      </div>
+
+      <div class="out-card">
+        <div class="out-head">
+          <div><div class="label" style="margin-bottom:0.2rem;">Musterdaten</div><h2>Struktur für Export</h2></div>
+          <button class="btn" id="exportJson">Als JSON exportieren</button>
+        </div>
+        <div id="dataPreview" class="data-preview">Noch keine Daten.</div>
+      </div>
+    </main>
+
+  </div>
+</section>
+
+<footer>
+  <div class="footer-top">
+    <div>
+      <span class="footer-logo">Pretty<span>Crochet</span></span>
+      <p>Ein Blog über die Liebe zum Häkeln – mit ehrlichen Empfehlungen, kostenlosen Anleitungen und einer Community für alle, die mit Wolle und Nadel Dinge erschaffen.</p>
+    </div>
+    <div>
+      <h4>Navigation</h4>
+      <ul>
+        <li><a href="index.html">Anleitungen</a></li>
+        <li><a href="amigurumi.html">Amigurumi</a></li>
+        <li><a href="mein-anleitungsbuch.html">Mein Buch</a></li>
+        <li><a href="#">Muster-Generator</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Rechtliches</h4>
+      <ul>
+        <li><a href="#">Impressum</a></li>
+        <li><a href="#">Datenschutz</a></li>
+        <li><a href="#">Affiliate-Hinweis</a></li>
+        <li><a href="#">Cookie-Einstellungen</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">© 2026 PrettyCrochet · Natürlich. Zeitlos. Handgemacht.</div>
+</footer>
+
+<script>
+(function(){
+  "use strict";
+
+  var STORAGE_KEY = "prettycrochet_musterbuilder_v2";
+
+  var STITCHES = [
+    ["LM","Luftmasche","\u25CB","basis",0.6],
+    ["KM","Kettmasche","\u2322","basis",0.3],
+    ["fM","Feste Masche","\u00D7","basis",1],
+    ["hStb","Halbes St\u00e4bchen","T","basis",1.5],
+    ["Stb","St\u00e4bchen","\u2020","basis",2],
+    ["DStb","Doppelst\u00e4bchen","\u2021","basis",3],
+    ["3fStb","Dreifachst\u00e4bchen","\u2021\u0304","basis",4],
+    ["4fStb","Vierfachst\u00e4bchen","\u2021\u0305","basis",5],
+    ["2fM-Zun","2 fM in 1 M","\u00D7\u00B2","zunahme",1],
+    ["3fM-Zun","3 fM in 1 M","\u00D7\u00B3","zunahme",1],
+    ["2Stb-Zun","2 Stb in 1 M","V","zunahme",2],
+    ["3Stb-Zun","3 Stb in 1 M","W","zunahme",2],
+    ["2fM-Abn","2 fM zusammen","\u2227","abnahme",1],
+    ["2Stb-Abn","2 Stb zusammen","\u039B","abnahme",2],
+    ["3Stb-Abn","3 Stb zusammen","\u039B\u039B","abnahme",2],
+    ["vRStb","Vorderes Reliefst\u00e4bchen","\u0192","relief",2],
+    ["hRStb","Hinteres Reliefst\u00e4bchen","\u0283","relief",2],
+    ["Puff","Puffmasche","P","spezial",1.5],
+    ["Noppe","Noppenmasche","N","spezial",1.5],
+    ["Popcorn","Popcornmasche","\u25CF","spezial",2],
+    ["Cluster","Cluster","CL","spezial",2],
+    ["Muschel","Muschel / F\u00e4cher","\u2312","spezial",2],
+    ["V-M","V-Masche","V","spezial",2],
+    ["Picot","Picot","\u2303","spezial",1],
+    ["Bommel","Bommel (Bobble)","B","spezial",2],
+    ["FfM","Foundation feste Masche","FfM","foundation",1],
+    ["FStb","Foundation St\u00e4bchen","FStb","foundation",2],
+    ["MR","Magic Ring","MR","foundation",0.5]
+  ];
+
+  var $ = function(id){ return document.getElementById(id); };
+  var selected = STITCHES[2];
+  var yarn = { name:"Sage 01", color:"#A7B39A" };
+  var project = null;
+  var rotation = 30;
+
+  function uid(){ return Date.now().toString(36) + Math.random().toString(36).slice(2,7); }
+
+  function defaultProject(){
+    var p1 = { id: uid(), name: "Boden", mode: "rounds", shape: "scheibe", actions: [], cursorRow: 1 };
+    var p2 = { id: uid(), name: "K\u00f6rper", mode: "rows", shape: "roehre", actions: [], cursorRow: 1 };
+    return { parts: [p1, p2], activeId: p1.id };
+  }
+
+  function load(){
+    try {
+      var raw = localStorage.getItem(STORAGE_KEY);
+      project = raw ? JSON.parse(raw) : defaultProject();
+    } catch(e){ project = defaultProject(); }
+    if (!project || !project.parts || !project.parts.length) project = defaultProject();
+    if (!project.activeId) project.activeId = project.parts[0].id;
+  }
+  function save(){
+    try { localStorage.setItem(STORAGE_KEY, JSON.stringify(project)); } catch(e){}
+  }
+  function activePart(){
+    for (var i=0;i<project.parts.length;i++){
+      if (project.parts[i].id === project.activeId) return project.parts[i];
+    }
+    return project.parts[0];
+  }
+
+  function drawLibrary(){
+    var q = $("search").value.toLowerCase();
+    var cat = $("category").value;
+    var lib = $("library");
+    lib.innerHTML = "";
+    STITCHES.filter(function(s){
+      return (s[0]+" "+s[1]).toLowerCase().indexOf(q) >= 0 && (!cat || s[3] === cat);
+    }).forEach(function(s){
+      var b = document.createElement("button");
+      b.className = "stitch-btn" + (selected[0] === s[0] ? " active" : "");
+      b.innerHTML = '<div class="s-code">'+s[0]+'</div><div class="s-name">'+s[1]+'</div>';
+      b.addEventListener("click", function(){ selected = s; drawLibrary(); });
+      lib.appendChild(b);
+    });
+  }
+
+  function placementText(p){
+    if (p === "BLO") return " ins hintere Maschenglied (BLO)";
+    if (p === "FLO") return " ins vordere Maschenglied (FLO)";
+    if (p === "space") return " in den Zwischenraum/Luftmaschenbogen";
+    if (p === "front-post") return " um den vorderen Reliefpfosten";
+    if (p === "back-post") return " um den hinteren Reliefpfosten";
+    return "";
+  }
+
+  function addAction(a){
+    var part = activePart();
+    a.id = uid();
+    if (a.row === undefined) a.row = part.cursorRow;
+    part.actions.push(a);
+    save();
+    renderAll();
+  }
+
+  $("add").addEventListener("click", function(){
+    var count = Math.max(1, parseInt($("count").value,10) || 1);
+    addAction({ stitch:selected[0], name:selected[1], symbol:selected[2], height:selected[4],
+      count:count, placement:$("placement").value, special:"", note:"",
+      label: count+"\u00D7 "+selected[0], yarn:{name:yarn.name,color:yarn.color} });
+  });
+
+  $("qSkip").addEventListener("click", function(){
+    var c = Math.max(1, parseInt($("count").value,10)||1);
+    addAction({ stitch:null, special:"skip", count:c, label:c+" Masche(n) \u00fcberspringen" });
+  });
+  $("qTurn").addEventListener("click", function(){
+    var part = activePart();
+    part.cursorRow += 1;
+    $("jumpRow").value = part.cursorRow;
+    addAction({ stitch:null, special:"turn", count:0, label:"Arbeit wenden", row: part.cursorRow });
+  });
+  $("qTurning").addEventListener("click", function(){
+    var c = Math.max(1, parseInt($("count").value,10)||1);
+    addAction({ stitch:null, special:"turning", count:c, label:c+" Wendemasche(n)" });
+  });
+  $("qNextRow").addEventListener("click", function(){
+    var part = activePart();
+    part.cursorRow += 1;
+    $("jumpRow").value = part.cursorRow;
+    addAction({ stitch:null, special:"rowStart", count:0,
+      label:(part.mode==="rounds"?"Neue Runde ":"Neue Reihe ")+part.cursorRow+" beginnen", row: part.cursorRow });
+  });
+  $("setStart").addEventListener("click", function(){
+    var part = activePart();
+    var r = Math.max(1, parseInt($("jumpRow").value,10)||1);
+    part.cursorRow = r;
+    addAction({ stitch:null, special:"jump", count:0, label:"Weiterarbeiten ab Reihe/Runde "+r, row:r });
+  });
+
+  $("addSpecial").addEventListener("click", function(){
+    var c = Math.max(1, parseInt($("count").value,10)||1);
+    var sp = $("special").value;
+    var note = $("note").value;
+    var label;
+    if (sp === "increase") label = c+"\u00D7 "+selected[0]+" als Zunahme";
+    else if (sp === "decrease") label = c+"\u00D7 "+selected[0]+" zusammen abmaschen";
+    else if (sp === "repeat") label = c+"\u00D7 Wiederholung";
+    else if (sp === "join") label = "Runde schlie\u00dfen (Km in erste Masche)";
+    else if (sp === "fasten") label = "Abmaschen und Faden abschneiden";
+    else if (sp === "marker") label = "Maschenmarkierer setzen" + (note ? ": "+note : "");
+    else label = note || "Eigene Anweisung";
+    var isStitch = (sp === "increase" || sp === "decrease");
+    addAction({ stitch: isStitch ? selected[0] : null, name:selected[1], symbol:selected[2], height:selected[4],
+      count:c, placement:$("placement").value, special:sp, note:note, label:label,
+      yarn:{name:yarn.name,color:yarn.color} });
+    $("note").value = "";
+  });
+
+  $("yarnBtn").addEventListener("click", function(){
+    yarn = { name: $("yarn").value || "Neues Garn", color: $("color").value };
+    addAction({ stitch:null, special:"yarn", count:0, label:"Neues Garn ansetzen: "+yarn.name, yarn:{name:yarn.name,color:yarn.color} });
+  });
+  $("fastenYarn").addEventListener("click", function(){
+    addAction({ stitch:null, special:"fasten", count:0, label:"Garn abschneiden / vern\u00e4hen" });
+  });
+
+  $("undo").addEventListener("click", function(){
+    activePart().actions.pop();
+    save(); renderAll();
+  });
+  $("clear").addEventListener("click", function(){
+    var part = activePart();
+    if (!part.actions.length) return;
+    if (!confirm("Alle Aktionen im Bauteil \"" + part.name + "\" l\u00f6schen?")) return;
+    part.actions = []; part.cursorRow = 1;
+    save(); renderAll();
+  });
+
+  $("addPart").addEventListener("click", function(){
+    var name = $("newPartName").value.trim() || "Neues Bauteil";
+    var p = { id: uid(), name:name, mode:$("newPartMode").value, shape:$("newPartShape").value, actions:[], cursorRow:1 };
+    project.parts.push(p);
+    project.activeId = p.id;
+    $("newPartName").value = "";
+    save(); renderAll();
+  });
+  $("delPart").addEventListener("click", function(){
+    if (project.parts.length <= 1){ alert("Es muss mindestens ein Bauteil vorhanden bleiben."); return; }
+    var part = activePart();
+    if (!confirm("Bauteil \"" + part.name + "\" mit allen Maschen l\u00f6schen?")) return;
+    project.parts = project.parts.filter(function(p){ return p.id !== part.id; });
+    project.activeId = project.parts[0].id;
+    save(); renderAll();
+  });
+
+  function renderPartList(){
+    var el = $("part-list");
+    el.innerHTML = "";
+    project.parts.forEach(function(p){
+      var d = document.createElement("div");
+      d.className = "part-item" + (p.id === project.activeId ? " active" : "");
+      d.innerHTML = '<span class="p-name">'+p.name+'</span><span class="p-meta">'+(p.mode==="rounds"?"Runden":"Reihen")+' \u00b7 '+countStitches(p)+' M</span>';
+      d.addEventListener("click", function(){
+        project.activeId = p.id;
+        $("jumpRow").value = p.cursorRow;
+        save(); renderAll();
+      });
+      el.appendChild(d);
+    });
+  }
+
+  /* Layout: Maschen in Reihen mit Laufrichtung */
+  function buildLayout(part){
+    var rowsMap = {};
+    var order = [];
+    var dir = 1;
+    var cursor = 1;
+
+    part.actions.forEach(function(a){
+      var r = a.row || cursor;
+      if (a.special === "turn"){ dir = -dir; cursor = r; return; }
+      if (a.special === "rowStart" || a.special === "jump"){ cursor = r; return; }
+      if (!a.stitch && a.special !== "skip") return;
+
+      if (!rowsMap[r]){ rowsMap[r] = { row:r, dir:dir, cells:[] }; order.push(r); }
+      var n = Math.max(1, a.count || 1);
+      for (var i=0;i<n;i++){
+        if (a.special === "skip"){
+          rowsMap[r].cells.push({ skip:true, symbol:"\u00B7", code:"\u2014" });
+        } else {
+          rowsMap[r].cells.push({ code:a.stitch, symbol:a.symbol || "?", height:a.height || 1,
+            color:(a.yarn && a.yarn.color) || "#4A3B32" });
+        }
+      }
+      cursor = r;
+    });
+
+    order.sort(function(x,y){ return x - y; });
+    return order.map(function(r){ return rowsMap[r]; });
+  }
+
+  function countStitches(part){
+    return buildLayout(part).reduce(function(sum,row){
+      return sum + row.cells.filter(function(c){ return !c.skip; }).length;
+    }, 0);
+  }
+
+  function escapeXml(s){
+    return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
+  }
+
+  function renderChart(){
+    var el = $("chart");
+    var anyStitch = project.parts.some(function(p){ return countStitches(p) > 0; });
+    if (!anyStitch){
+      el.innerHTML = '<p class="empty-note">Noch keine Maschen gesetzt.</p>';
+      $("chartInfo").textContent = "";
+      $("stats").innerHTML = "";
+      return;
+    }
+
+    var html = "";
+    var totalAll = 0, totalRows = 0;
+
+    project.parts.forEach(function(part){
+      var layout = buildLayout(part);
+      if (!layout.length) return;
+      var maxCells = layout.reduce(function(m,r){ return Math.max(m, r.cells.length); }, 0);
+      var cell = 26, padL = 100, padR = 20, padT = 16, padB = 16;
+      var w = padL + maxCells*cell + padR;
+      var h = padT + layout.length*cell + padB;
+      totalRows += layout.length;
+
+      var svg = '<svg viewBox="0 0 '+w+' '+h+'" width="'+w+'" height="'+h+'" xmlns="http://www.w3.org/2000/svg" font-family="Cormorant Garamond, serif">';
+
+      layout.slice().reverse().forEach(function(row, visIdx){
+        var y = padT + visIdx*cell + cell/2;
+        var stitchCount = row.cells.filter(function(c){ return !c.skip; }).length;
+        totalAll += stitchCount;
+        var prefix = part.mode === "rounds" ? "Rd " : "R ";
+        svg += '<text x="8" y="'+(y+4)+'" font-size="11" fill="#8B6F5B">'+prefix+row.row+' ('+stitchCount+' M)</text>';
+        var arrow = row.dir === 1 ? "\u2192" : "\u2190";
+        svg += '<text x="80" y="'+(y+5)+'" font-size="13" fill="#A7B39A">'+arrow+'</text>';
+
+        var cells = row.dir === 1 ? row.cells : row.cells.slice().reverse();
+        cells.forEach(function(c, i){
+          var x = padL + i*cell + cell/2;
+          if (c.skip){
+            svg += '<circle cx="'+x+'" cy="'+y+'" r="2" fill="#D6C5B5"/>';
+          } else {
+            svg += '<text x="'+x+'" y="'+(y+6)+'" font-size="16" text-anchor="middle" fill="'+c.color+'">'+escapeXml(c.symbol)+'</text>';
+          }
+        });
+      });
+
+      svg += '</svg>';
+      html += '<div class="chart-part-title">'+part.name+' \u00b7 '+(part.mode==="rounds"?"in Runden":"in Reihen")+'</div>' + svg;
+    });
+
+    el.innerHTML = html;
+    $("chartInfo").textContent = totalAll + " Maschen \u00b7 " + totalRows + " Reihen/Runden";
+
+    var partStats = project.parts.map(function(p){
+      return '<div class="stat"><b>'+countStitches(p)+'</b><span>'+p.name+'</span></div>';
+    }).join("");
+    $("stats").innerHTML = partStats + '<div class="stat"><b>'+totalAll+'</b><span>Gesamt</span></div>';
+  }
+
+  function render3D(){
+    var el = $("view3d");
+    var parts = project.parts.filter(function(p){ return countStitches(p) > 0; });
+    if (!parts.length){
+      el.innerHTML = '<p class="empty-note">Noch keine Daten f\u00fcr die 3D-Vorschau.</p>';
+      return;
+    }
+
+    var W = 620, H = 460, cx = W/2, cy = H*0.68;
+    var rad = rotation * Math.PI / 180;
+    var cosR = Math.cos(rad), sinR = Math.sin(rad);
+    var tilt = 0.42;
+
+    function project3(x, y, z){
+      var xr = x*cosR - z*sinR;
+      var zr = x*sinR + z*cosR;
+      return { x: cx + xr, y: cy - y + zr*tilt };
+    }
+
+    var allRadii = [];
+    parts.forEach(function(part){
+      buildLayout(part).forEach(function(row){
+        var n = row.cells.filter(function(c){ return !c.skip; }).length;
+        if (n) allRadii.push(n / (2*Math.PI));
+      });
+    });
+    var maxR = allRadii.length ? Math.max.apply(null, allRadii) : 1;
+    var scale = Math.min(140 / maxR, 20);
+
+    var svg = '<svg viewBox="0 0 '+W+' '+H+'" width="'+W+'" height="'+H+'" xmlns="http://www.w3.org/2000/svg" font-family="Jost, sans-serif">';
+    var baseY = 0;
+
+    parts.forEach(function(part){
+      var layout = buildLayout(part);
+      var color = "#A7B39A";
+
+      layout.forEach(function(row, ri){
+        var n = row.cells.filter(function(c){ return !c.skip; }).length;
+        if (!n) return;
+        var r = (n / (2*Math.PI)) * scale;
+        var avgH = row.cells.reduce(function(s,c){ return s + (c.height||1); }, 0) / row.cells.length;
+        var stepY = avgH * 5;
+
+        var y;
+        if (part.shape === "scheibe"){
+          y = baseY + ri*0.8;
+        } else if (part.shape === "flach"){
+          y = baseY + ri*stepY;
+          r = maxR * scale;
+        } else {
+          y = baseY + ri*stepY;
+        }
+
+        var pts = [];
+        var steps = Math.min(Math.max(n, 10), 64);
+        for (var i=0;i<=steps;i++){
+          var t = i/steps;
+          var px, pz;
+          if (part.shape === "flach"){
+            px = -r + t*2*r;
+            pz = 0;
+          } else {
+            var ang = t * Math.PI * 2;
+            px = Math.cos(ang) * r;
+            pz = Math.sin(ang) * r;
+          }
+          var p = project3(px, y, pz);
+          pts.push(p.x.toFixed(1)+","+p.y.toFixed(1));
+        }
+        var denom = Math.max(1, layout.length - 1);
+        var opacity = (0.35 + 0.5 * (ri / denom)).toFixed(2);
+        svg += '<polyline points="'+pts.join(" ")+'" fill="none" stroke="'+color+'" stroke-width="1.6" opacity="'+opacity+'"/>';
+
+        if (part.shape !== "flach"){
+          var maxDots = Math.min(n, 48);
+          for (var k=0;k<maxDots;k++){
+            var a2 = (k/maxDots)*Math.PI*2;
+            var p2 = project3(Math.cos(a2)*r, y, Math.sin(a2)*r);
+            svg += '<circle cx="'+p2.x.toFixed(1)+'" cy="'+p2.y.toFixed(1)+'" r="1.4" fill="#8B6F5B" opacity="'+opacity+'"/>';
+          }
+        }
+
+        if (ri === layout.length - 1){
+          var lp = project3(0, y, 0);
+          svg += '<text x="'+(lp.x + maxR*scale*0.8 + 10).toFixed(1)+'" y="'+(lp.y - 4).toFixed(1)+'" font-size="11" fill="#8B6F5B">'+part.name+' \u00b7 '+layout.length+' R \u00b7 '+countStitches(part)+' M</text>';
+        }
+      });
+
+      var partHeight = layout.reduce(function(sum,row){
+        if (!row.cells.length) return sum;
+        if (part.shape === "scheibe") return sum + 0.8;
+        var avgH = row.cells.reduce(function(s,c){ return s+(c.height||1); },0)/row.cells.length;
+        return sum + avgH*5;
+      }, 0);
+      baseY += partHeight + 8;
+    });
+
+    svg += '<line x1="40" y1="'+(cy+30)+'" x2="'+(W-40)+'" y2="'+(cy+30)+'" stroke="#D6C5B5" stroke-width="1" stroke-dasharray="4 6"/>';
+    svg += '</svg>';
+    el.innerHTML = svg;
+  }
+
+  $("rot").addEventListener("input", function(){
+    rotation = parseInt(this.value, 10) || 0;
+    render3D();
+  });
+
+  function renderText(){
+    var inst = $("instructions");
+    inst.innerHTML = "";
+    var any = project.parts.some(function(p){ return p.actions.length; });
+    if (!any){ inst.innerHTML = '<p class="empty-note">Noch keine Maschen.</p>'; return; }
+
+    project.parts.forEach(function(part){
+      if (!part.actions.length) return;
+      var title = document.createElement("div");
+      title.className = "chart-part-title";
+      title.textContent = part.name + " \u00b7 " + (part.mode==="rounds" ? "in Runden" : "in Reihen");
+      inst.appendChild(title);
+
+      var groups = {};
+      var cursor = 1;
+      part.actions.forEach(function(a){
+        var r = a.row || cursor;
+        if (!groups[r]) groups[r] = [];
+        groups[r].push(a);
+        cursor = r;
+      });
+      Object.keys(groups).sort(function(x,y){ return x-y; }).forEach(function(r){
+        var box = document.createElement("div");
+        box.className = "row-block";
+        var prefix = part.mode === "rounds" ? "Runde " : "Reihe ";
+        box.innerHTML = '<div class="row-block-head"><h4>'+prefix+r+'</h4><span>'+groups[r].length+' Aktionen</span></div>';
+        var chips = document.createElement("div");
+        chips.className = "chips";
+        groups[r].forEach(function(a){
+          var c = document.createElement("span");
+          c.className = "chip";
+          var t = a.label;
+          if (a.stitch && a.placement && a.placement !== "normal") t += placementText(a.placement);
+          c.textContent = t;
+          chips.appendChild(c);
+        });
+        box.appendChild(chips);
+        inst.appendChild(box);
+      });
+    });
+  }
+
+  function renderKey(){
+    var used = {}, order = [];
+    project.parts.forEach(function(p){
+      p.actions.forEach(function(a){
+        if (a.stitch && !used[a.stitch]){ used[a.stitch] = a; order.push(a.stitch); }
+      });
+    });
+    $("keyCount").textContent = order.length ? order.length + " Symbole" : "";
+    var el = $("key");
+    el.innerHTML = "";
+    if (!order.length){ el.innerHTML = '<p class="empty-note">Wird automatisch erstellt.</p>'; return; }
+    order.forEach(function(code){
+      var a = used[code];
+      var d = document.createElement("div");
+      d.className = "key-item";
+      d.innerHTML = '<div class="key-symbol">'+escapeXml(a.symbol)+'</div><div><b>'+a.stitch+'</b><span>'+(a.name||"")+'</span></div>';
+      el.appendChild(d);
+    });
+  }
+
+  function buildData(){
+    return {
+      type: "prettycrochet-pattern",
+      version: 2,
+      parts: project.parts.map(function(p){
+        return {
+          name: p.name, mode: p.mode, shape: p.shape,
+          totalStitches: countStitches(p),
+          rows: buildLayout(p).map(function(row){
+            return {
+              row: row.row,
+              direction: row.dir === 1 ? "rechts" : "links",
+              stitches: row.cells.filter(function(c){ return !c.skip; }).length,
+              codes: row.cells.map(function(c){ return c.code; })
+            };
+          }),
+          actions: p.actions.map(function(a){
+            return { row:a.row, stitch:a.stitch, count:a.count, placement:a.placement,
+              special:a.special, note:a.note||"", yarn:a.yarn||null };
+          })
+        };
+      })
+    };
+  }
+
+  function renderData(){
+    var any = project.parts.some(function(p){ return p.actions.length; });
+    $("dataPreview").textContent = any ? JSON.stringify(buildData(), null, 2) : "Noch keine Daten.";
+  }
+
+  $("copy").addEventListener("click", function(){
+    var text = $("instructions").innerText;
+    if (navigator.clipboard) navigator.clipboard.writeText(text);
+    var b = $("copy"), old = b.textContent;
+    b.textContent = "Kopiert \u2713";
+    setTimeout(function(){ b.textContent = old; }, 1200);
+  });
+
+  $("exportJson").addEventListener("click", function(){
+    var blob = new Blob([JSON.stringify(buildData(), null, 2)], { type:"application/json" });
+    var url = URL.createObjectURL(blob);
+    var a = document.createElement("a");
+    a.href = url; a.download = "prettycrochet-muster.json";
+    document.body.appendChild(a); a.click(); a.remove();
+    URL.revokeObjectURL(url);
+  });
+
+  $("search").addEventListener("input", drawLibrary);
+  $("category").addEventListener("change", drawLibrary);
+
+  function renderAll(){
+    renderPartList();
+    renderChart();
+    render3D();
+    renderText();
+    renderKey();
+    renderData();
+  }
+
+  load();
+  $("yarn").value = yarn.name;
+  $("color").value = yarn.color;
+  $("jumpRow").value = activePart().cursorRow;
+  drawLibrary();
+  renderAll();
+
+})();
+</script>
+
+</body>
+</html>
