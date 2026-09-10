@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <script src="https://analytics.ahrefs.com/analytics.js" data-key="OvkMGMTTpoU/1pLa2QkBCQ" async></script>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sommer-Häkeltasche mit Trägern: Die komplette Anleitung | PrettyCrochet</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --creme:   #FAF6F1;
+      --salbei:  #A7B39A;
+      --beige:   #D6C5B5;
+      --braun:   #8B6F5B;
+      --espresso:#4A3B32;
+      --white:   #FFFFFF;
+      --muted:   #9A8880;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--creme);
+      color: var(--espresso);
+      font-family: 'Jost', sans-serif;
+      font-weight: 300;
+      line-height: 1.75;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 1.1rem 6vw;
+      background: rgba(250,246,241,0.92);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--beige);
+    }
+    .logo-wrap { display: flex; align-items: center; gap: 0.75rem; text-decoration: none; }
+    .logo-text {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.45rem; font-weight: 600;
+      color: var(--espresso); letter-spacing: 0.02em;
+    }
+    .logo-text span { color: var(--salbei); }
+    .nav-links { display: flex; gap: 2.2rem; list-style: none; }
+    .nav-links a {
+      font-size: 0.82rem; font-weight: 400; letter-spacing: 0.1em;
+      text-transform: uppercase; text-decoration: none;
+      color: var(--espresso); transition: color 0.2s;
+    }
+    .nav-links a:hover, .nav-links a.active { color: var(--salbei); }
+    .nav-cta {
+      font-size: 0.8rem; font-weight: 500; letter-spacing: 0.08em;
+      text-transform: uppercase; text-decoration: none;
+      color: var(--white); background: var(--espresso);
+      padding: 0.6rem 1.4rem; border-radius: 2px; transition: background 0.2s;
+    }
+    .nav-cta:hover { background: var(--braun); }
+
+    /* ── PAGE HERO ── */
+    .page-hero { padding: 11rem 10vw 4rem; background: var(--beige); text-align: center; }
+    .breadcrumb {
+      font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase;
+      color: var(--braun); margin-bottom: 1.5rem;
+    }
+    .breadcrumb a { color: var(--braun); text-decoration: none; border-bottom: 1px solid rgba(139,111,91,0.35); }
+    .breadcrumb a:hover { border-color: var(--braun); }
+    .page-hero .label { justify-content: center; }
+    .page-hero .label::before { display: none; }
+    .page-hero h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.2rem, 4.6vw, 3.6rem);
+      font-weight: 300; line-height: 1.15;
+      color: var(--espresso); margin-bottom: 1.2rem;
+    }
+    .page-hero h1 em { font-style: italic; color: var(--braun); }
+    .page-hero p.sub { max-width: 56ch; margin: 0 auto 2rem; color: var(--braun); font-size: 1rem; }
+
+    .meta-row { display: flex; justify-content: center; gap: 2.5rem; flex-wrap: wrap; }
+    .meta-item { display: flex; flex-direction: column; align-items: center; gap: 0.3rem; }
+    .meta-item .meta-icon { font-size: 1.3rem; }
+    .meta-item .meta-label {
+      font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--braun); opacity: 0.75;
+    }
+    .meta-item .meta-value { font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; color: var(--espresso); }
+
+    .label {
+      font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--salbei); margin-bottom: 0.6rem;
+      display: flex; align-items: center; gap: 0.7rem;
+    }
+    .label::before { content:''; display:inline-block; width:24px; height:1px; background:var(--salbei); }
+
+    h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.8rem, 3vw, 2.6rem);
+      font-weight: 300; line-height: 1.2;
+      color: var(--espresso); margin-bottom: 1.5rem;
+    }
+    h2 em { font-style: italic; color: var(--braun); }
+
+    section { padding: 4.5rem 10vw; }
+
+    /* ── INTRO ── */
+    .intro-section { background: var(--white); }
+    .intro-text { max-width: 70ch; font-size: 1.02rem; }
+    .intro-text p { margin-bottom: 1.2rem; }
+    .intro-text a { color: var(--braun); }
+
+    /* ── MATERIAL + ABKÜRZUNGEN ── */
+    .prep-section { background: var(--creme); }
+    .prep-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 3rem; }
+    .prep-block h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.25rem; font-weight: 400;
+      margin-bottom: 1.2rem; color: var(--braun);
+    }
+    .material-list { list-style: none; display: flex; flex-direction: column; gap: 0.7rem; }
+    .material-list li {
+      display: flex; gap: 0.7rem; align-items: baseline;
+      font-size: 0.92rem; padding-bottom: 0.7rem;
+      border-bottom: 1px solid var(--beige);
+    }
+    .material-list li::before { content: '—'; color: var(--salbei); flex-shrink: 0; }
+    .abbr-table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+    .abbr-table tr { border-bottom: 1px solid var(--beige); }
+    .abbr-table td { padding: 0.65rem 0.4rem; }
+    .abbr-table td:first-child {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 600; color: var(--braun); width: 70px;
+    }
+
+    /* ── PATTERN STEPS ── */
+    .pattern-section { background: var(--white); }
+    .pattern-part { max-width: 78ch; margin-bottom: 3.5rem; }
+    .pattern-part:last-child { margin-bottom: 0; }
+    .pattern-part-header {
+      display: flex; align-items: baseline; gap: 1rem;
+      margin-bottom: 1rem; border-bottom: 2px solid var(--salbei); padding-bottom: 0.6rem;
+    }
+    .pattern-part-icon { font-size: 1.6rem; }
+    .pattern-part h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem; font-weight: 400; color: var(--espresso);
+    }
+    .pattern-part-count { font-size: 0.78rem; color: var(--muted); letter-spacing: 0.04em; margin-left: auto; }
+    .round-list { list-style: none; }
+    .round-list li {
+      display: grid; grid-template-columns: 100px 1fr; gap: 1rem;
+      font-size: 0.92rem; padding: 0.55rem 0;
+      border-bottom: 1px dashed var(--beige);
+    }
+    .round-list li:last-child { border-bottom: none; }
+    .round-label { font-family: 'Cormorant Garamond', serif; font-weight: 600; color: var(--braun); }
+    .pattern-note {
+      margin-top: 1rem; font-size: 0.86rem; color: var(--muted);
+      background: var(--creme); padding: 0.9rem 1.1rem;
+      border-left: 3px solid var(--salbei);
+    }
+
+    /* ── MARKER-DIAGRAMM ── */
+    .marker-section { background: var(--creme); }
+    .marker-visual {
+      display: flex; align-items: center; justify-content: center;
+      gap: 0.4rem; max-width: 78ch; margin: 0 auto 1.6rem;
+      padding: 1.6rem; background: var(--white);
+      border: 1px solid var(--beige); flex-wrap: wrap;
+    }
+    .marker-block {
+      display: flex; flex-direction: column; align-items: center; gap: 0.3rem;
+      padding: 0.7rem 1rem; font-size: 0.78rem; color: var(--muted); text-align: center;
+    }
+    .marker-block .marker-count { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; color: var(--espresso); }
+    .marker-block.marked { color: var(--braun); }
+    .marker-block.marked .marker-count { color: var(--braun); }
+    .marker-pin { font-size: 1.1rem; }
+    .marker-arrow { color: var(--beige); font-size: 1.2rem; }
+    .marker-list { list-style: none; max-width: 78ch; margin: 0 auto; }
+    .marker-list li {
+      display: flex; gap: 0.7rem; font-size: 0.92rem;
+      padding: 0.6rem 0; border-bottom: 1px solid var(--beige);
+    }
+    .marker-list li::before { content: '—'; color: var(--salbei); flex-shrink: 0; }
+    .marker-list li:last-child { border-bottom: none; }
+
+    /* ── TRÄGER ── */
+    .strap-section { background: var(--white); }
+    .strap-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; max-width: 78ch; }
+    .strap-card { background: var(--creme); border: 1px solid var(--beige); padding: 1.8rem; }
+    .strap-card h4 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.2rem; font-weight: 400; color: var(--braun); margin-bottom: 0.9rem;
+    }
+
+    /* ── ZUSAMMENNÄHEN ── */
+    .assembly-section { background: var(--creme); }
+    .steps-list { display: flex; flex-direction: column; max-width: 74ch; }
+    .step-row {
+      display: grid; grid-template-columns: 50px 1fr; gap: 1.6rem;
+      padding: 1.5rem 0; border-bottom: 1px solid var(--beige);
+    }
+    .step-row:first-child { padding-top: 0; }
+    .step-row:last-child { border-bottom: none; }
+    .step-num { font-family: 'Cormorant Garamond', serif; font-size: 1.7rem; font-weight: 300; color: var(--salbei); }
+    .step-content h4 { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; font-weight: 400; margin-bottom: 0.3rem; }
+    .step-content p { font-size: 0.9rem; color: var(--muted); }
+
+    /* ── TIPP BOX ── */
+    .tipp-section { background: var(--espresso); }
+    .tipp-section .label { color: var(--salbei); }
+    .tipp-section .label::before { background: var(--salbei); }
+    .tipp-section h2 { color: var(--creme); }
+    .tipp-section h2 em { color: var(--salbei); }
+    .tipp-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px;
+      background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.08);
+    }
+    .tipp-item { background: var(--espresso); padding: 2rem 1.6rem; }
+    .tipp-item h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem; font-weight: 400; color: var(--creme); margin-bottom: 0.6rem;
+    }
+    .tipp-item p { font-size: 0.85rem; color: var(--beige); }
+
+    /* ── CTA ── */
+    .next-section { background: var(--beige); text-align: center; padding: 5rem 10vw; }
+    .next-section .label { justify-content: center; }
+    .next-section .label::before { display: none; }
+    .next-section p { color: var(--braun); max-width: 46ch; margin: 0 auto 2rem; font-size: 0.95rem; }
+    .btn-primary {
+      display: inline-block; background: var(--espresso); color: var(--white);
+      padding: 0.9rem 2rem; font-size: 0.82rem; font-weight: 500;
+      letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none;
+      border-radius: 2px; transition: background 0.2s;
+    }
+    .btn-primary:hover { background: var(--braun); }
+
+    /* ── FOOTER ── */
+    footer { background: var(--espresso); color: var(--beige); padding: 4rem 10vw 2rem; }
+    .footer-top {
+      display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 4rem;
+      padding-bottom: 3rem; border-bottom: 1px solid rgba(214,197,181,0.15); margin-bottom: 2rem;
+    }
+    .footer-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem; font-weight: 400; color: var(--creme);
+      display: block; margin-bottom: 1rem;
+    }
+    .footer-logo span { color: var(--salbei); }
+    footer p { font-size: 0.83rem; color: rgba(214,197,181,0.6); line-height: 1.8; max-width: 32ch; }
+    footer h4 {
+      font-size: 0.7rem; letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--salbei); margin-bottom: 1.2rem;
+    }
+    footer ul { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
+    footer ul a { font-size: 0.84rem; color: rgba(214,197,181,0.7); text-decoration: none; transition: color 0.2s; }
+    footer ul a:hover { color: var(--creme); }
+    .footer-bottom { text-align: center; font-size: 0.72rem; color: rgba(214,197,181,0.35); letter-spacing: 0.06em; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 850px) {
+      .nav-links { display: none; }
+      .prep-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+      .strap-grid { grid-template-columns: 1fr; }
+      .tipp-grid { grid-template-columns: 1fr; }
+      .footer-top { grid-template-columns: 1fr; gap: 2rem; }
+      .round-list li { grid-template-columns: 80px 1fr; }
+      .meta-row { gap: 1.5rem; }
+      .marker-visual { flex-direction: column; }
+      .marker-arrow { transform: rotate(90deg); }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="logo-wrap">
+    <span class="logo-text">Pretty<span>Crochet</span></span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="anleitungen.html">Anleitungen</a></li>
+    <li><a href="amigurumi.html">Amigurumi</a></li>
+    <li><a href="empfehlungen.html">Empfehlungen</a></li>
+    <li><a href="ueber-mich.html">Über mich</a></li>
+  </ul>
+  <a href="index.html#newsletter" class="nav-cta">Newsletter</a>
+</nav>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <p class="breadcrumb"><a href="index.html">Start</a> · <a href="anleitungen.html">Anleitungen</a> · Sommer-Häkeltasche</p>
+  <div class="label">Taschen</div>
+  <h1>Sommer-Häkeltasche<br>mit <em>Trägern</em></h1>
+  <p class="sub">Eine luftige Tasche im Netzmuster mit ovalem Boden und zwei selbst gehäkelten Trägern – perfekt für Strand, Markt oder als Alltagsbegleiter.</p>
+  <div class="meta-row">
+    <div class="meta-item">
+      <span class="meta-icon">⭐</span>
+      <span class="meta-label">Level</span>
+      <span class="meta-value">Fortgeschritten</span>
+    </div>
+    <div class="meta-item">
+      <span class="meta-icon">📐</span>
+      <span class="meta-label">Basis</span>
+      <span class="meta-value">42 Maschen</span>
+    </div>
+    <div class="meta-item">
+      <span class="meta-icon">🔄</span>
+      <span class="meta-label">Körper</span>
+      <span class="meta-value">14 Runden</span>
+    </div>
+    <div class="meta-item">
+      <span class="meta-icon">🎒</span>
+      <span class="meta-label">Träger</span>
+      <span class="meta-value">je 13 Reihen</span>
+    </div>
+  </div>
+</section>
+
+<!-- INTRO -->
+<section class="intro-section">
+  <div class="label">Über diese Anleitung</div>
+  <h2>Eine Tasche <em>für den Sommer</em></h2>
+  <div class="intro-text">
+    <p>Diese Tasche startet mit einer einfachen Luftmaschenkette, die durch eine Fächer-Rundung am Kettenende zu einem ovalen Boden wird. Von dort aus wächst der Taschenkörper in durchgehenden Stäbchen-Runden nach oben, bevor an zwei markierten Stellen die Träger direkt weitergearbeitet werden.</p>
+    <p>Zähl bei den ersten Runden lieber einmal mehr nach als zu wenig – wenn die 42 Maschen einmal sitzen, läuft der Rest fast von allein. Falls dir Begriffe wie „Stb" oder „Wende-Luftmaschen" noch nichts sagen, wirf vorher einen Blick in die <a href="haekeln-basics.html">Häkel-Basics</a>.</p>
+  </div>
+</section>
+
+<!-- MATERIAL & ABKÜRZUNGEN -->
+<section class="prep-section">
+  <div class="label">Vorbereitung</div>
+  <h2>Material <em>& Abkürzungen</em></h2>
+  <div class="prep-grid">
+    <div class="prep-block">
+      <h3>Das brauchst du</h3>
+      <ul class="material-list">
+        <li>Baumwoll- oder Baumwollmix-Garn, ca. 250–300 g</li>
+        <li>Häkelnadel passend zur Garnstärke (Angabe auf der Banderole beachten)</li>
+        <li>2 Maschenmarkierer für die Trägerpositionen</li>
+        <li>Vernähnadel / Wollnadel</li>
+        <li>Schere</li>
+        <li>Optional: dünner Stoff als Innenfutter</li>
+      </ul>
+    </div>
+    <div class="prep-block">
+      <h3>Verwendete Abkürzungen</h3>
+      <table class="abbr-table">
+        <tr><td>LM</td><td>Luftmasche</td></tr>
+        <tr><td>LMK</td><td>Luftmaschenkette</td></tr>
+        <tr><td>Stb</td><td>Stäbchen</td></tr>
+        <tr><td>Km</td><td>Kettmasche</td></tr>
+        <tr><td>M</td><td>Masche(n)</td></tr>
+        <tr><td>R</td><td>Reihe / Runde</td></tr>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ANLEITUNG -->
+<section class="pattern-section">
+  <div class="label">Die Anleitung</div>
+  <h2>Schritt für <em>Schritt</em></h2>
+
+  <!-- 1. BASIS -->
+  <div class="pattern-part">
+    <div class="pattern-part-header">
+      <span class="pattern-part-icon">🧵</span>
+      <h3>1. Der Anfang (Basis)</h3>
+      <span class="pattern-part-count">42 M zu Beginn</span>
+    </div>
+    <ul class="round-list">
+      <li><span class="round-label">LMK</span><span>38 Luftmaschen für die Breite häkeln.</span></li>
+      <li><span class="round-label">Wende-LM</span><span>Am Ende der Kette 4 weitere Luftmaschen anhäkeln – insgesamt liegen jetzt 42 Maschen vor dir.</span></li>
+      <li><span class="round-label">1. Stb</span><span>Das erste Stäbchen in die 4. Luftmasche von der Nadel aus arbeiten.</span></li>
+    </ul>
+  </div>
+
+  <!-- 2. TASCHENBODEN -->
+  <div class="pattern-part">
+    <div class="pattern-part-header">
+      <span class="pattern-part-icon">⭕</span>
+      <h3>2. Der Taschenboden (Die Rundung)</h3>
+      <span class="pattern-part-count">Wendepunkt am Kettenende</span>
+    </div>
+    <ul class="round-list">
+      <li><span class="round-label">Rundung</span><span>Am Ende der ersten Luftmaschenkette angekommen: in die letzte Luftmasche insgesamt 3 Stäbchen häkeln, dabei nach jedem Stäbchen 1 Luftmasche einfügen – also Stb, LM, Stb, LM, Stb, LM.</span></li>
+    </ul>
+    <p class="pattern-note">Diese kleine Fächer-Rundung an der Kettenspitze ist der Dreh- und Angelpunkt: Von hier aus geht es auf der Unterseite der Ausgangskette zurück, und der Boden wird oval statt eckig.</p>
+  </div>
+
+  <!-- 3. TASCHENKÖRPER -->
+  <div class="pattern-part">
+    <div class="pattern-part-header">
+      <span class="pattern-part-icon">👜</span>
+      <h3>3. Der Taschenkörper</h3>
+      <span class="pattern-part-count">14 Runden · je 42 Stb</span>
+    </div>
+    <ul class="round-list">
+      <li><span class="round-label">Anzahl</span><span>Insgesamt 14 Runden für den Körper der Tasche häkeln.</span></li>
+      <li><span class="round-label">Maschen</span><span>Jede Runde hat durchgehend 42 Stäbchen.</span></li>
+      <li><span class="round-label">Rundenstart</span><span>Jede Runde beginnt mit 4 Luftmaschen.</span></li>
+      <li><span class="round-label">Rundenende</span><span>Jede Runde endet mit einer Kettmasche in die 3. Luftmasche des Rundenanfangs.</span></li>
+    </ul>
+    <p class="pattern-note">Setz dir am Rundenanfang einen Maschenmarkierer und versetze ihn mit jeder neuen Runde – bei 14 gleichen Runden verliert man den Übergang sonst schnell aus den Augen.</p>
+  </div>
+</section>
+
+<!-- 4. MARKIERUNG DER TRÄGER -->
+<section class="marker-section">
+  <div class="label">Vorbereitung für die Träger</div>
+  <h2>4. Markierung <em>der Träger</em></h2>
+
+  <div class="marker-visual">
+    <div class="marker-block">
+      <span class="marker-count">7</span>
+      <span>Stb</span>
+    </div>
+    <span class="marker-arrow">→</span>
+    <div class="marker-block marked">
+      <span class="marker-pin">📍</span>
+      <span class="marker-count">8.</span>
+      <span>Stb (Marker links)</span>
+    </div>
+    <span class="marker-arrow">→</span>
+    <div class="marker-block">
+      <span class="marker-count">5</span>
+      <span>Stb frei (Mitte)</span>
+    </div>
+    <span class="marker-arrow">→</span>
+    <div class="marker-block marked">
+      <span class="marker-pin">📍</span>
+      <span class="marker-count">8.</span>
+      <span>Stb (Marker rechts)</span>
+    </div>
+    <span class="marker-arrow">→</span>
+    <div class="marker-block">
+      <span class="marker-count">7</span>
+      <span>Stb</span>
+    </div>
+  </div>
+
+  <ul class="marker-list">
+    <li>Der Körper hat 42 Stäbchen – das ergibt 21 Stäbchen pro Seite.</li>
+    <li>Von der linken Seite 8 Stäbchen abzählen und einen Markierer ins 8. Stäbchen setzen.</li>
+    <li>Von der rechten Seite ebenfalls 8 Stäbchen abzählen und einen Markierer ins 8. Stäbchen setzen.</li>
+    <li>Zwischen den beiden Markierungen bleiben in der Mitte genau 5 Stäbchen frei.</li>
+  </ul>
+</section>
+
+<!-- 5. TRÄGER -->
+<section class="strap-section">
+  <div class="label">Letzter Häkelabschnitt</div>
+  <h2>5. Die Träger <em>(pro Seite)</em></h2>
+  <p class="intro-text" style="margin-bottom:2rem;">Ab den beiden Markierungen wird jeweils nur noch über die markierten Maschen weitergearbeitet – für jeden Träger einzeln, in zwei Abschnitten.</p>
+  <div class="strap-grid">
+    <div class="strap-card">
+      <h4>Abschnitt A – Schräge formen</h4>
+      <ul class="round-list">
+        <li><span class="round-label">R 1–5</span><span>5 Reihen mit Abnahmen an den Rändern häkeln, um die Schräge für den Trägeransatz zu formen.</span></li>
+      </ul>
+    </div>
+    <div class="strap-card">
+      <h4>Abschnitt B – Trägerlänge</h4>
+      <ul class="round-list">
+        <li><span class="round-label">R 6–13</span><span>8 weitere Reihen ohne Abnahmen im Netzmuster häkeln, bis der Träger fertig ist.</span></li>
+      </ul>
+    </div>
+  </div>
+  <p class="pattern-note" style="max-width:78ch; margin-top:1.6rem;">Beide Träger werden nach demselben Schema gearbeitet: erst die fünf Abnahme-Reihen für die Schräge, danach die acht geraden Reihen für die Länge. Miss den zweiten Träger am ersten entlang, damit beide gleich lang werden.</p>
+</section>
+
+<!-- FERTIGSTELLUNG -->
+<section class="assembly-section">
+  <div class="label">Zum Schluss</div>
+  <h2>Tasche <em>fertigstellen</em></h2>
+  <div class="steps-list">
+    <div class="step-row">
+      <span class="step-num">01</span>
+      <div class="step-content">
+        <h4>Fäden vernähen</h4>
+        <p>Alle losen Fadenenden von Boden, Körper und beiden Trägern sorgfältig ins Innere ziehen und vernähen.</p>
+      </div>
+    </div>
+    <div class="step-row">
+      <span class="step-num">02</span>
+      <div class="step-content">
+        <h4>Träger positionieren</h4>
+        <p>Die Enden der Träger auf die gegenüberliegende Seite legen und die Länge prüfen, bevor du nähst.</p>
+      </div>
+    </div>
+    <div class="step-row">
+      <span class="step-num">03</span>
+      <div class="step-content">
+        <h4>Auf der Innenseite zusammennähen</h4>
+        <p>Beide Träger mit der Wollnadel auf der Innenseite der Tasche festnähen – so bleibt die Naht von außen unsichtbar.</p>
+      </div>
+    </div>
+    <div class="step-row">
+      <span class="step-num">04</span>
+      <div class="step-content">
+        <h4>Optional: Futter einnähen</h4>
+        <p>Ein dünner Baumwollstoff von innen eingenäht sorgt dafür, dass nichts durch das Netzmuster rutscht.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TIPPS -->
+<section class="tipp-section">
+  <div class="label">Damit es gelingt</div>
+  <h2>Meine <em>Tipps</em> für dich</h2>
+  <div class="tipp-grid">
+    <div class="tipp-item">
+      <h3>Maschen immer nachzählen</h3>
+      <p>Bei 14 Runden mit je 42 Stäbchen lohnt es sich, am Ende jeder Runde kurz nachzuzählen – so fällt eine verrutschte Masche sofort auf.</p>
+    </div>
+    <div class="tipp-item">
+      <h3>Marker sitzen lassen</h3>
+      <p>Setz die Markierer beim Abzählen und lass sie bis zum Ende der Träger-Reihen stecken, damit du dich immer wieder orientieren kannst.</p>
+    </div>
+    <div class="tipp-item">
+      <h3>Träger parallel häkeln</h3>
+      <p>Arbeite beide Träger im Wechsel Reihe für Reihe, statt erst den einen fertigzustellen – so werden sie garantiert gleich lang.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="next-section">
+  <div class="label">Geschafft?</div>
+  <h2>Entdecke <em>mehr Anleitungen</em></h2>
+  <p>In der Übersicht findest du weitere Projekte zum Nachhäkeln – von Amigurumi bis Wohndeko.</p>
+  <a href="anleitungen.html" class="btn-primary">Zu allen Anleitungen</a>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div>
+      <span class="footer-logo">Pretty<span>Crochet</span></span>
+      <p>Ein Blog über die Liebe zum Häkeln – mit ehrlichen Empfehlungen, kostenlosen Anleitungen und einer Community für alle, die mit Wolle und Nadel Dinge erschaffen.</p>
+    </div>
+    <div>
+      <h4>Navigation</h4>
+      <ul>
+        <li><a href="anleitungen.html">Anleitungen</a></li>
+        <li><a href="amigurumi.html">Amigurumi</a></li>
+        <li><a href="haekeln-basics.html">Für Anfänger</a></li>
+        <li><a href="empfehlungen.html">Empfehlungen</a></li>
+        <li><a href="ueber-mich.html">Über mich</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Rechtliches</h4>
+      <ul>
+        <li><a href="#">Impressum</a></li>
+        <li><a href="#">Datenschutz</a></li>
+        <li><a href="#">Affiliate-Hinweis</a></li>
+        <li><a href="#">Cookie-Einstellungen</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">© 2026 PrettyCrochet · Natürlich. Zeitlos. Handgemacht.</div>
+</footer>
+
+</body>
+</html>
