@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <script src="https://analytics.ahrefs.com/analytics.js" data-key="OvkMGMTTpoU/1pLa2QkBCQ" async></script>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Wohndeko häkeln: Anleitungen & Ideen | PrettyCrochet</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --creme:   #FAF6F1;
+      --salbei:  #A7B39A;
+      --beige:   #D6C5B5;
+      --braun:   #8B6F5B;
+      --espresso:#4A3B32;
+      --white:   #FFFFFF;
+      --muted:   #9A8880;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--creme);
+      color: var(--espresso);
+      font-family: 'Jost', sans-serif;
+      font-weight: 300;
+      line-height: 1.75;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 1.1rem 6vw;
+      background: rgba(250,246,241,0.92);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--beige);
+    }
+    .logo-wrap { display: flex; align-items: center; gap: 0.75rem; text-decoration: none; }
+    .logo-text {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.45rem; font-weight: 600;
+      color: var(--espresso); letter-spacing: 0.02em;
+    }
+    .logo-text span { color: var(--salbei); }
+    .nav-links { display: flex; gap: 2.2rem; list-style: none; }
+    .nav-links a {
+      font-size: 0.82rem; font-weight: 400; letter-spacing: 0.1em;
+      text-transform: uppercase; text-decoration: none;
+      color: var(--espresso); transition: color 0.2s;
+    }
+    .nav-links a:hover, .nav-links a.active { color: var(--salbei); }
+    .nav-cta {
+      font-size: 0.8rem; font-weight: 500; letter-spacing: 0.08em;
+      text-transform: uppercase; text-decoration: none;
+      color: var(--white); background: var(--espresso);
+      padding: 0.6rem 1.4rem; border-radius: 2px; transition: background 0.2s;
+    }
+    .nav-cta:hover { background: var(--braun); }
+
+    /* ── PAGE HERO ── */
+    .page-hero { padding: 11rem 10vw 5rem; background: var(--beige); text-align: center; }
+    .breadcrumb {
+      font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase;
+      color: var(--braun); margin-bottom: 1.5rem;
+    }
+    .breadcrumb a { color: var(--braun); text-decoration: none; border-bottom: 1px solid rgba(139,111,91,0.35); }
+    .breadcrumb a:hover { border-color: var(--braun); }
+    .page-hero .label { justify-content: center; }
+    .page-hero .label::before { display: none; }
+    .page-hero h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.4rem, 5vw, 4rem);
+      font-weight: 300; line-height: 1.15;
+      color: var(--espresso); margin-bottom: 1.2rem;
+    }
+    .page-hero h1 em { font-style: italic; color: var(--braun); }
+    .page-hero p.sub { max-width: 52ch; margin: 0 auto; color: var(--braun); font-size: 1rem; }
+
+    .label {
+      font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--salbei); margin-bottom: 0.6rem;
+      display: flex; align-items: center; gap: 0.7rem;
+    }
+    .label::before { content:''; display:inline-block; width:24px; height:1px; background:var(--salbei); }
+
+    h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.8rem, 3vw, 2.6rem);
+      font-weight: 300; line-height: 1.2;
+      color: var(--espresso); margin-bottom: 1.5rem;
+    }
+    h2 em { font-style: italic; color: var(--braun); }
+
+    section { padding: 5rem 10vw; }
+
+    /* ── INTRO ── */
+    .intro-section { background: var(--white); }
+    .intro-text { max-width: 70ch; font-size: 1.02rem; }
+    .intro-text p { margin-bottom: 1.2rem; }
+    .intro-text a { color: var(--braun); }
+
+    /* ── RÄUME ── */
+    .rooms-section { background: var(--creme); }
+    .rooms-grid {
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px;
+      background: var(--beige); border: 1px solid var(--beige);
+    }
+    .room-item {
+      background: var(--white); padding: 2rem 1.6rem;
+      display: flex; flex-direction: column; gap: 0.6rem;
+    }
+    .room-icon { font-size: 1.7rem; }
+    .room-item h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.12rem; font-weight: 400; }
+    .room-item p { font-size: 0.84rem; color: var(--muted); }
+
+    /* ── MATERIAL ── */
+    .material-section { background: var(--white); }
+    .material-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px;
+      background: var(--beige); border: 1px solid var(--beige);
+    }
+    .material-item {
+      background: var(--creme); padding: 2rem 1.8rem;
+      display: flex; flex-direction: column; gap: 0.6rem;
+    }
+    .material-icon { font-size: 1.7rem; }
+    .material-item h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; font-weight: 400; }
+    .material-item p { font-size: 0.85rem; color: var(--muted); }
+
+    /* ── TECHNIKEN ── */
+    .steps-section { background: var(--creme); }
+    .steps-list { display: flex; flex-direction: column; max-width: 74ch; }
+    .step-row {
+      display: grid; grid-template-columns: 60px 1fr; gap: 1.6rem;
+      padding: 1.8rem 0; border-bottom: 1px solid var(--beige);
+    }
+    .step-row:first-child { padding-top: 0; }
+    .step-row:last-child { border-bottom: none; }
+    .step-num { font-family: 'Cormorant Garamond', serif; font-size: 2rem; font-weight: 300; color: var(--salbei); }
+    .step-content h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-weight: 400; margin-bottom: 0.4rem; }
+    .step-content p { font-size: 0.92rem; color: var(--muted); }
+
+    /* ── PROJEKTE ── */
+    .projects-section { background: var(--white); }
+    .projects-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+    .project-card {
+      background: var(--creme); border: 1px solid var(--beige);
+      text-decoration: none; color: var(--espresso);
+      display: flex; flex-direction: column;
+      transition: box-shadow 0.25s, transform 0.25s;
+    }
+    .project-card:hover { box-shadow: 0 10px 30px rgba(74,59,50,0.1); transform: translateY(-2px); }
+    .project-card.is-soon { opacity: 0.62; pointer-events: none; }
+    .project-thumb {
+      height: 150px; background: var(--beige);
+      display: flex; align-items: center; justify-content: center; font-size: 3.2rem;
+    }
+    .project-card:nth-child(3n+2) .project-thumb { background: #E8EDE5; }
+    .project-card:nth-child(3n+3) .project-thumb { background: #EDE8E2; }
+    .project-body { padding: 1.5rem; flex: 1; display: flex; flex-direction: column; }
+    .project-tags { display: flex; gap: 0.4rem; flex-wrap: wrap; margin-bottom: 0.7rem; }
+    .project-tag {
+      font-size: 0.62rem; letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--white); background: var(--salbei);
+      padding: 0.2rem 0.55rem; border-radius: 2px;
+    }
+    .project-tag.level { background: var(--braun); }
+    .project-tag.soon { background: var(--muted); }
+    .project-body h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.22rem; font-weight: 400; line-height: 1.3; margin-bottom: 0.5rem;
+    }
+    .project-body p { font-size: 0.85rem; color: var(--muted); flex: 1; }
+    .project-meta {
+      font-size: 0.72rem; color: var(--muted); letter-spacing: 0.05em; text-transform: uppercase;
+      border-top: 1px solid var(--beige); padding-top: 0.8rem; margin-top: 1.2rem;
+    }
+
+    /* ── TIPPS ── */
+    .tipp-section { background: var(--espresso); }
+    .tipp-section .label { color: var(--salbei); }
+    .tipp-section .label::before { background: var(--salbei); }
+    .tipp-section h2 { color: var(--creme); }
+    .tipp-section h2 em { color: var(--salbei); }
+    .tipp-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px;
+      background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.08);
+    }
+    .tipp-item { background: var(--espresso); padding: 2rem 1.6rem; }
+    .tipp-item h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem; font-weight: 400; color: var(--creme); margin-bottom: 0.6rem;
+    }
+    .tipp-item p { font-size: 0.85rem; color: var(--beige); }
+
+    /* ── CTA ── */
+    .next-section { background: var(--beige); text-align: center; padding: 5rem 10vw; }
+    .next-section .label { justify-content: center; }
+    .next-section .label::before { display: none; }
+    .next-section p { color: var(--braun); max-width: 46ch; margin: 0 auto 2rem; font-size: 0.95rem; }
+    .btn-primary {
+      display: inline-block; background: var(--espresso); color: var(--white);
+      padding: 0.9rem 2rem; font-size: 0.82rem; font-weight: 500;
+      letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none;
+      border-radius: 2px; transition: background 0.2s;
+    }
+    .btn-primary:hover { background: var(--braun); }
+
+    /* ── FOOTER ── */
+    footer { background: var(--espresso); color: var(--beige); padding: 4rem 10vw 2rem; }
+    .footer-top {
+      display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 4rem;
+      padding-bottom: 3rem; border-bottom: 1px solid rgba(214,197,181,0.15); margin-bottom: 2rem;
+    }
+    .footer-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem; font-weight: 400; color: var(--creme);
+      display: block; margin-bottom: 1rem;
+    }
+    .footer-logo span { color: var(--salbei); }
+    footer p { font-size: 0.83rem; color: rgba(214,197,181,0.6); line-height: 1.8; max-width: 32ch; }
+    footer h4 {
+      font-size: 0.7rem; letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--salbei); margin-bottom: 1.2rem;
+    }
+    footer ul { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
+    footer ul a { font-size: 0.84rem; color: rgba(214,197,181,0.7); text-decoration: none; transition: color 0.2s; }
+    footer ul a:hover { color: var(--creme); }
+    .footer-bottom { text-align: center; font-size: 0.72rem; color: rgba(214,197,181,0.35); letter-spacing: 0.06em; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      .nav-links { display: none; }
+      .rooms-grid { grid-template-columns: 1fr 1fr; }
+      .material-grid { grid-template-columns: 1fr; }
+      .projects-grid { grid-template-columns: 1fr 1fr; }
+      .tipp-grid { grid-template-columns: 1fr; }
+      .footer-top { grid-template-columns: 1fr; gap: 2rem; }
+      .step-row { grid-template-columns: 40px 1fr; }
+    }
+    @media (max-width: 620px) {
+      .rooms-grid { grid-template-columns: 1fr; }
+      .projects-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="logo-wrap">
+    <span class="logo-text">Pretty<span>Crochet</span></span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="anleitungen.html">Anleitungen</a></li>
+    <li><a href="#" class="active">Wohndeko</a></li>
+    <li><a href="empfehlungen.html">Empfehlungen</a></li>
+    <li><a href="ueber-mich.html">Über mich</a></li>
+  </ul>
+  <a href="index.html#newsletter" class="nav-cta">Newsletter</a>
+</nav>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <p class="breadcrumb"><a href="index.html">Start</a> · <a href="anleitungen.html">Anleitungen</a> · Wohndeko</p>
+  <div class="label">Kategorie</div>
+  <h1>Wohndeko:<br>Gemütliches <em>selbst gemacht</em></h1>
+  <p class="sub">Körbe, Kissen, Untersetzer und Wandschmuck – Häkelprojekte, die deinem Zuhause Wärme geben und dabei ganz nebenbei nützlich sind.</p>
+</section>
+
+<!-- INTRO -->
+<section class="intro-section">
+  <div class="label">Warum Wohndeko?</div>
+  <h2>Häkeln, das man <em>täglich sieht</em></h2>
+  <div class="intro-text">
+    <p>Wohndeko ist für mich die dankbarste Häkelkategorie überhaupt. Die Projekte sind meist flach oder rund gearbeitet, verzeihen kleine Unregelmäßigkeiten und man sieht sie danach jeden Tag – anders als ein Schal, der acht Monate im Schrank liegt.</p>
+    <p>Dazu kommt: Viele Wohndeko-Projekte wachsen schnell. Ein Untersetzer ist in einer halben Stunde fertig, ein kleiner Korb an einem Abend. Das macht sie perfekt für alle, die gerade die Grundmaschen gelernt haben und ein Erfolgserlebnis brauchen, bevor sie sich an Größeres wagen.</p>
+    <p>Falls dir Begriffe wie „feste Masche" oder „Stäbchen" noch nichts sagen, starte am besten mit den <a href="haekeln-basics.html">Häkel-Basics</a> – danach ist jedes Projekt auf dieser Seite gut machbar.</p>
+  </div>
+</section>
+
+<!-- RÄUME -->
+<section class="rooms-section">
+  <div class="label">Ideen nach Raum</div>
+  <h2>Für jeden Raum <em>etwas</em></h2>
+  <div class="rooms-grid">
+    <div class="room-item">
+      <span class="room-icon">🛋️</span>
+      <h3>Wohnzimmer</h3>
+      <p>Kissenhüllen, Plaids und Körbe für Zeitschriften oder Wolle.</p>
+    </div>
+    <div class="room-item">
+      <span class="room-icon">🍽️</span>
+      <h3>Küche & Esszimmer</h3>
+      <p>Untersetzer, Topflappen und Brotkörbe aus fester Baumwolle.</p>
+    </div>
+    <div class="room-item">
+      <span class="room-icon">🛏️</span>
+      <h3>Schlafzimmer</h3>
+      <p>Weiche Bettvorleger, Utensilos und Lavendelsäckchen.</p>
+    </div>
+    <div class="room-item">
+      <span class="room-icon">🪴</span>
+      <h3>Balkon & Flur</h3>
+      <p>Blumenampeln, Übertöpfe und Wandkränze für den Eingang.</p>
+    </div>
+  </div>
+</section>
+
+<!-- MATERIAL -->
+<section class="material-section">
+  <div class="label">Ausstattung</div>
+  <h2>Material <em>für Wohndeko</em></h2>
+  <div class="material-grid">
+    <div class="material-item">
+      <span class="material-icon">🧶</span>
+      <h3>Feste Baumwolle</h3>
+      <p>Für Untersetzer, Topflappen und alles, was gewaschen wird. Formstabil und hitzebeständiger als Acryl.</p>
+    </div>
+    <div class="material-item">
+      <span class="material-icon">🪢</span>
+      <h3>Textilgarn / Rope</h3>
+      <p>Dickes Garn für Körbe und Übertöpfe – steht von allein und wächst rasend schnell.</p>
+    </div>
+    <div class="material-item">
+      <span class="material-icon">🌾</span>
+      <h3>Jute & Naturgarn</h3>
+      <p>Für den rustikalen Boho-Look bei Wandkränzen und Pflanzenhängern.</p>
+    </div>
+    <div class="material-item">
+      <span class="material-icon">🪝</span>
+      <h3>Größere Nadeln</h3>
+      <p>Bei Textilgarn brauchst du 6–10 mm. Ein bequemer Griff ist hier wichtiger als sonst.</p>
+    </div>
+    <div class="material-item">
+      <span class="material-icon">⭕</span>
+      <h3>Metall- oder Holzringe</h3>
+      <p>Basis für Wandkränze und Blumenampeln – gibt es in vielen Durchmessern.</p>
+    </div>
+    <div class="material-item">
+      <span class="material-icon">🔖</span>
+      <h3>Maschenmarkierer</h3>
+      <p>Unverzichtbar bei runden Projekten, damit du den Rundenanfang nicht verlierst.</p>
+    </div>
+  </div>
+</section>
+
+<!-- TECHNIKEN -->
+<section class="steps-section">
+  <div class="label">Grundtechniken</div>
+  <h2>Was du <em>können solltest</em></h2>
+  <div class="steps-list">
+    <div class="step-row">
+      <span class="step-num">01</span>
+      <div class="step-content">
+        <h3>Flach in Runden häkeln</h3>
+        <p>Die Basis für Untersetzer, Körbe und Teppiche: gleichmäßige Zunahmen pro Runde sorgen dafür, dass die Scheibe flach bleibt und sich nicht wellt oder wölbt.</p>
+      </div>
+    </div>
+    <div class="step-row">
+      <span class="step-num">02</span>
+      <div class="step-content">
+        <h3>Ins hintere Maschenglied</h3>
+        <p>Der Trick hinter der Rippenoptik von Körben: Wenn du nur ins hintere Maschenglied einstichst, entsteht eine feine horizontale Struktur und die Wand knickt sauber nach oben.</p>
+      </div>
+    </div>
+    <div class="step-row">
+      <span class="step-num">03</span>
+      <div class="step-content">
+        <h3>Vom Boden in die Höhe</h3>
+        <p>Sobald die Scheibe groß genug ist, hörst du mit den Zunahmen auf und häkelst gerade weiter – daraus wird von allein die Wand des Korbs.</p>
+      </div>
+    </div>
+    <div class="step-row">
+      <span class="step-num">04</span>
+      <div class="step-content">
+        <h3>Einzelteile zusammensetzen</h3>
+        <p>Blüten, Blätter und Applikationen werden separat gehäkelt und anschließend arrangiert und aufgenäht – so entstehen Kränze und verzierte Kissen.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJEKTE -->
+<section class="projects-section">
+  <div class="label">Anleitungen</div>
+  <h2>Wohndeko-<em>Projekte</em></h2>
+  <div class="projects-grid">
+
+    <span class="project-card is-soon">
+      <div class="project-thumb">🌸</div>
+      <div class="project-body">
+        <div class="project-tags">
+          <span class="project-tag">Wandschmuck</span>
+          <span class="project-tag level">Mittel</span>
+          <span class="project-tag soon">Demnächst</span>
+        </div>
+        <h3>Blumenkranz für die Wand</h3>
+        <p>Einzelne Blüten und Blätter auf einem Ring arrangiert – Frühlingsgefühle das ganze Jahr über.</p>
+        <span class="project-meta">In Arbeit</span>
+      </div>
+    </span>
+
+    <span class="project-card is-soon">
+      <div class="project-thumb">🧺</div>
+      <div class="project-body">
+        <div class="project-tags">
+          <span class="project-tag">Aufbewahrung</span>
+          <span class="project-tag level">Anfänger</span>
+          <span class="project-tag soon">Demnächst</span>
+        </div>
+        <h3>Korb aus Textilgarn</h3>
+        <p>Runder Boden, feste Maschen ins hintere Maschenglied – der Klassiker für Wolle, Post oder Kleinkram.</p>
+        <span class="project-meta">In Arbeit</span>
+      </div>
+    </span>
+
+    <span class="project-card is-soon">
+      <div class="project-thumb">☕</div>
+      <div class="project-body">
+        <div class="project-tags">
+          <span class="project-tag">Küche</span>
+          <span class="project-tag level">Anfänger</span>
+          <span class="project-tag soon">Demnächst</span>
+        </div>
+        <h3>Untersetzer im 4er-Set</h3>
+        <p>Das perfekte erste Projekt nach den Grundmaschen: in einer halben Stunde fertig und sofort im Einsatz.</p>
+        <span class="project-meta">In Arbeit</span>
+      </div>
+    </span>
+
+    <span class="project-card is-soon">
+      <div class="project-thumb">🛋️</div>
+      <div class="project-body">
+        <div class="project-tags">
+          <span class="project-tag">Wohnzimmer</span>
+          <span class="project-tag level">Mittel</span>
+          <span class="project-tag soon">Demnächst</span>
+        </div>
+        <h3>Kissenhülle mit Struktur</h3>
+        <p>Zwei quadratische Flächen mit Reliefmaschen, hinten mit Knopfleiste zum Abnehmen und Waschen.</p>
+        <span class="project-meta">In Arbeit</span>
+      </div>
+    </span>
+
+    <span class="project-card is-soon">
+      <div class="project-thumb">🪴</div>
+      <div class="project-body">
+        <div class="project-tags">
+          <span class="project-tag">Balkon</span>
+          <span class="project-tag level">Mittel</span>
+          <span class="project-tag soon">Demnächst</span>
+        </div>
+        <h3>Blumenampel aus Jute</h3>
+        <p>Netzartige Hängevorrichtung für Übertöpfe – wenige Maschen, große Wirkung.</p>
+        <span class="project-meta">In Arbeit</span>
+      </div>
+    </span>
+
+    <span class="project-card is-soon">
+      <div class="project-thumb">🌿</div>
+      <div class="project-body">
+        <div class="project-tags">
+          <span class="project-tag">Wandschmuck</span>
+          <span class="project-tag level">Anfänger</span>
+          <span class="project-tag soon">Demnächst</span>
+        </div>
+        <h3>Blätter-Girlande</h3>
+        <p>Kleine Blätter auf einer Schnur aufgereiht – ideal, um Reste zu verbrauchen.</p>
+        <span class="project-meta">In Arbeit</span>
+      </div>
+    </span>
+
+  </div>
+</section>
+
+<!-- TIPPS -->
+<section class="tipp-section">
+  <div class="label">Damit es gelingt</div>
+  <h2>Meine <em>Wohndeko-Tipps</em></h2>
+  <div class="tipp-grid">
+    <div class="tipp-item">
+      <h3>Runde Scheiben regelmäßig prüfen</h3>
+      <p>Wölbt sich deine Scheibe nach oben, fehlen Zunahmen. Wellt sie sich am Rand, sind es zu viele. Leg sie ab und zu flach auf den Tisch.</p>
+    </div>
+    <div class="tipp-item">
+      <h3>Farben auf den Raum abstimmen</h3>
+      <p>Gedeckte Naturtöne wirken in fast jedem Einrichtungsstil ruhig. Setze lieber mit einem einzelnen Akzentteil Farbe statt mit allen Stücken gleichzeitig.</p>
+    </div>
+    <div class="tipp-item">
+      <h3>Fest häkeln bei Körben</h3>
+      <p>Je enger die Maschen, desto formstabiler der Korb. Nimm im Zweifel eine Nadelstärke kleiner als auf der Banderole angegeben.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="next-section">
+  <div class="label">Bereit?</div>
+  <h2>Starte mit den <em>Grundlagen</em></h2>
+  <p>Die meisten Wohndeko-Projekte brauchen nur feste Maschen und Stäbchen – beides lernst du in den Häkel-Basics.</p>
+  <a href="haekeln-basics.html" class="btn-primary">Zu den Häkel-Basics</a>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div>
+      <span class="footer-logo">Pretty<span>Crochet</span></span>
+      <p>Ein Blog über die Liebe zum Häkeln – mit ehrlichen Empfehlungen, kostenlosen Anleitungen und einer Community für alle, die mit Wolle und Nadel Dinge erschaffen.</p>
+    </div>
+    <div>
+      <h4>Navigation</h4>
+      <ul>
+        <li><a href="anleitungen.html">Anleitungen</a></li>
+        <li><a href="amigurumi.html">Amigurumi</a></li>
+        <li><a href="haekeln-basics.html">Für Anfänger</a></li>
+        <li><a href="empfehlungen.html">Empfehlungen</a></li>
+        <li><a href="ueber-mich.html">Über mich</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Rechtliches</h4>
+      <ul>
+        <li><a href="#">Impressum</a></li>
+        <li><a href="#">Datenschutz</a></li>
+        <li><a href="#">Affiliate-Hinweis</a></li>
+        <li><a href="#">Cookie-Einstellungen</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">© 2026 PrettyCrochet · Natürlich. Zeitlos. Handgemacht.</div>
+</footer>
+
+</body>
+</html>
