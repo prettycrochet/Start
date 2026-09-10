@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
+  <script src="https://analytics.ahrefs.com/analytics.js" data-key="OvkMGMTTpoU/1pLa2QkBCQ" async></script>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Häkeln lernen: Die Basics für Anfänger | PrettyCrochet</title>
@@ -206,7 +207,46 @@
     }
 
     /* ── STITCH CARDS (Grundmaschen) ── */
+
+    /* ── SPRUNGMARKEN ── */
+    .jump-nav {
+      background: var(--creme);
+      padding: 2rem 10vw;
+      display: flex; gap: 0.6rem; flex-wrap: wrap; justify-content: center;
+      border-bottom: 1px solid var(--beige);
+    }
+    .jump-nav a {
+      font-size: 0.74rem; letter-spacing: 0.06em; text-transform: uppercase;
+      text-decoration: none; color: var(--espresso);
+      background: var(--white); border: 1px solid var(--beige);
+      padding: 0.5rem 1rem; border-radius: 999px;
+      transition: border-color 0.2s;
+    }
+    .jump-nav a:hover { border-color: var(--salbei); }
+
     .stitch-section { background: var(--creme); }
+    .substep-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.4rem;
+      font-weight: 400;
+      color: var(--braun);
+      margin-bottom: 0.8rem;
+    }
+    .substep-intro {
+      max-width: 70ch;
+      font-size: 0.95rem;
+      color: var(--espresso);
+      margin-bottom: 2rem;
+    }
+    .substep-list { margin-bottom: 1.4rem; }
+    .pattern-note-basic {
+      max-width: 70ch;
+      font-size: 0.86rem;
+      color: var(--muted);
+      background: var(--white);
+      padding: 0.9rem 1.1rem;
+      border-left: 3px solid var(--salbei);
+    }
     .stitch-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -349,22 +389,14 @@
 
 <!-- NAV -->
 <nav>
-  <a href="index.html" class="logo-wrap">
-    <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <circle cx="17" cy="17" r="11" stroke="#A7B39A" stroke-width="1.5" fill="none"/>
-      <path d="M10 14 Q17 10 24 14" stroke="#A7B39A" stroke-width="1" fill="none" stroke-linecap="round"/>
-      <path d="M9 18 Q17 22 25 18" stroke="#A7B39A" stroke-width="1" fill="none" stroke-linecap="round"/>
-      <line x1="24" y1="6" x2="10" y2="28" stroke="#4A3B32" stroke-width="1.8" stroke-linecap="round"/>
-      <ellipse cx="22.5" cy="8.5" rx="1.8" ry="1" transform="rotate(-52 22.5 8.5)" stroke="#4A3B32" stroke-width="1.2" fill="none"/>
-      <path d="M10 28 Q7 32 11 33" stroke="#8B6F5B" stroke-width="1.2" fill="none" stroke-linecap="round"/>
-    </svg>
-    <span class="logo-text">Pretty<span>Crochet</span></span>
-  </a>
+<a href="index.html" class="logo-wrap">
+  <span class="logo-text">Pretty<span>Crochet</span></span>
+</a>
   <ul class="nav-links">
-    <li><a href="index.html">Anleitungen</a></li>
-    <li><a href="#" class="active">Materialien</a></li>
-    <li><a href="index.html#newsletter">Empfehlungen</a></li>
-    <li><a href="#">Über mich</a></li>
+    <li><a href="#" class="active">Häkel Basics</a></li>
+    <li><a href="muster-generator.html">Muster Generator</a></li>
+    <li><a href="anleitungen.html">Anleitungen</a></li>
+    <li><a href="ueber-mich.html">Über mich</a></li>
   </ul>
   <a href="index.html#newsletter" class="nav-cta">Newsletter</a>
 </nav>
@@ -377,8 +409,22 @@
   <p class="sub">Alles, was du wissen musst, bevor du mit deinem ersten Projekt startest – Material, Grundhaltung und die wichtigsten Maschen einfach erklärt.</p>
 </section>
 
+
+<!-- SPRUNGMARKEN -->
+<div class="jump-nav">
+  <a href="#material">Material</a>
+  <a href="#haltung">1 · Grundhaltung</a>
+  <a href="#maschen">2 · Grundmaschen</a>
+  <a href="#reihen">3 · Reihen</a>
+  <a href="#runden">4 · Runden</a>
+  <a href="#maschenprobe">5 · Maschenprobe</a>
+  <a href="#haekelschrift">6 · Häkelschrift</a>
+  <a href="#fehler">Fehler beheben</a>
+  <a href="#checkliste">Checkliste</a>
+</div>
+
 <!-- INTRO -->
-<section class="intro-section">
+<section class="intro-section" id="start">
   <div class="label">Los geht's</div>
   <h2>Bevor du <em>startest</em></h2>
   <div class="intro-text">
@@ -388,7 +434,7 @@
 </section>
 
 <!-- MATERIAL -->
-<section class="material-section">
+<section class="material-section" id="material">
   <div class="label">Ausstattung</div>
   <h2>Das brauchst du <em>zum Start</em></h2>
   <div class="material-grid">
@@ -426,7 +472,7 @@
 </section>
 
 <!-- GRUNDHALTUNG -->
-<section class="steps-section">
+<section class="steps-section" id="haltung">
   <div class="label">Schritt 1</div>
   <h2>Die richtige <em>Grundhaltung</em></h2>
   <div class="steps-list">
@@ -463,9 +509,52 @@
 </section>
 
 <!-- GRUNDMASCHEN -->
-<section class="stitch-section">
+<section class="stitch-section" id="maschen">
   <div class="label">Schritt 2</div>
   <h2>Die 4 <em>Grundmaschen</em></h2>
+
+  <h3 class="substep-title">Zuerst: Der Luftmaschenanschlag</h3>
+  <p class="substep-intro">Fast jede Häkelanleitung beginnt mit einer Grundkette aus Luftmaschen – dem sogenannten Anschlag. Er legt die spätere Breite deines Projekts fest und ist die Basis, in die du deine erste Reihe häkelst.</p>
+  <div class="steps-list substep-list">
+    <div class="step-row">
+      <span class="step-num">01</span>
+      <div class="step-content">
+        <h3>Anfangsschlinge machen</h3>
+        <p>Wickle das Garn über Kreuz um deinen linken Zeige- und Mittelfinger, sodass eine Schlaufe entsteht. Führe die Nadel unter den hinteren Faden dieser Schlaufe und zieh ihn mit der Nadel hindurch – so entsteht ein kleiner Knoten, den du dann leicht auf der Nadel festziehst.</p>
+      </div>
+    </div>
+    <div class="step-row">
+      <span class="step-num">02</span>
+      <div class="step-content">
+        <h3>Umschlag</h3>
+        <p>Leg das Arbeitsgarn einmal von hinten nach vorne über die Nadel – das ist der sogenannte Umschlag.</p>
+      </div>
+    </div>
+    <div class="step-row">
+      <span class="step-num">03</span>
+      <div class="step-content">
+        <h3>Durchziehen</h3>
+        <p>Zieh den Umschlag mit der Nadel durch die Schlinge, die bereits auf der Nadel sitzt. Fertig ist deine erste Luftmasche.</p>
+      </div>
+    </div>
+    <div class="step-row">
+      <span class="step-num">04</span>
+      <div class="step-content">
+        <h3>Kette fortsetzen</h3>
+        <p>Wiederhole Umschlag und Durchziehen, bis deine Luftmaschenkette so lang ist, wie es die Anleitung vorgibt.</p>
+      </div>
+    </div>
+    <div class="step-row">
+      <span class="step-num">05</span>
+      <div class="step-content">
+        <h3>Maschen zählen</h3>
+        <p>Zähl zur Kontrolle nach: Jede kleine V-Form in der Kette ist eine Luftmasche – die Schlinge direkt auf der Nadel zählt nicht mit.</p>
+      </div>
+    </div>
+  </div>
+  <p class="pattern-note-basic">Tipp: Häkle die Anschlagkette etwas lockerer als den Rest deines Projekts – das macht es leichter, in der ersten Reihe wieder in die Maschen einzustechen.</p>
+
+  <h3 class="substep-title" style="margin-top:3rem;">Die 4 Grundmaschen im Überblick</h3>
   <div class="stitch-grid">
     <div class="stitch-card">
       <span class="stitch-abbr">Lm</span>
@@ -510,6 +599,260 @@
   </div>
 </section>
 
+
+<!-- SCHRITT 3: REIHEN & WENDEN -->
+<section class="steps-section" id="reihen">
+  <div class="label">Schritt 3</div>
+  <h2>Reihen häkeln <em>&amp; wenden</em></h2>
+  <p class="substep-intro">Sobald die Grundkette steht, arbeitest du Reihe für Reihe darüber. Der entscheidende Punkt dabei ist das Wenden – und die Wendeluftmaschen, die dafür sorgen, dass die neue Reihe die richtige Höhe bekommt.</p>
+  <div class="steps-list">
+    <div class="step-row">
+      <span class="step-num">01</span>
+      <div class="step-content">
+        <h3>In die richtige Masche einstechen</h3>
+        <p>Von oben betrachtet bildet jede Masche ein kleines „V". Stich normalerweise unter beide Schenkel dieses V ein – so bleibt das Maschenbild geschlossen und gleichmäßig.</p>
+      </div>
+    </div>
+    <div class="step-row">
+      <span class="step-num">02</span>
+      <div class="step-content">
+        <h3>Reihe zu Ende arbeiten</h3>
+        <p>Häkle bis in die letzte Masche der Vorreihe. Genau dort wird am häufigsten eine Masche vergessen – die Arbeit wird dann von Reihe zu Reihe schmaler.</p>
+      </div>
+    </div>
+    <div class="step-row">
+      <span class="step-num">03</span>
+      <div class="step-content">
+        <h3>Wendeluftmaschen häkeln</h3>
+        <p>Bevor du wendest, brauchst du Höhe für die nächste Reihe: 1 Lm bei festen Maschen, 2 Lm beim halben Stäbchen, 3 Lm beim Stäbchen. Sie ersetzen je nach Maschenart die erste Masche der neuen Reihe.</p>
+      </div>
+    </div>
+    <div class="step-row">
+      <span class="step-num">04</span>
+      <div class="step-content">
+        <h3>Arbeit wenden</h3>
+        <p>Dreh die Arbeit wie ein Buchblatt um – immer in dieselbe Richtung. So bleiben die Ränder gleichmäßig und du behältst die Übersicht, welche Seite gerade vorn liegt.</p>
+      </div>
+    </div>
+    <div class="step-row">
+      <span class="step-num">05</span>
+      <div class="step-content">
+        <h3>Ränder kontrollieren</h3>
+        <p>Zähl am Ende jeder Reihe die Maschen. Bleibt die Zahl gleich, sind deine Ränder gerade. Nimmt sie zu oder ab, liegt es fast immer an der ersten oder letzten Masche.</p>
+      </div>
+    </div>
+  </div>
+  <p class="pattern-note-basic">Hartnäckigster Anfängerfehler: versehentlich in die Wendeluftmaschen einstechen oder sie am Ende auslassen. Häkle die ersten Übungsstücke lieber mit festen Maschen – dort ist die Wendeluftmasche nur eine einzige und fällt weniger ins Gewicht.</p>
+</section>
+
+<!-- SCHRITT 4: IN RUNDEN -->
+<section class="stitch-section" id="runden">
+  <div class="label">Schritt 4</div>
+  <h2>In Runden <em>häkeln</em></h2>
+  <p class="substep-intro">Nicht alles wird in Reihen gearbeitet. Taschen, Mützen, Körbe und alle Amigurumi entstehen in Runden – entweder spiralig oder mit geschlossenen Runden.</p>
+  <div class="stitch-grid">
+    <div class="stitch-card">
+      <span class="stitch-abbr">MR</span>
+      <h3>Der Magic Ring</h3>
+      <p>Der Start fast jeder Runde-Arbeit: ein Fadenring, in den du die erste Runde häkelst und den du danach straff zuziehst – so bleibt kein Loch in der Mitte.</p>
+      <ol>
+        <li>Faden zu einer Schlaufe legen</li>
+        <li>Erste Runde in die Schlaufe häkeln</li>
+        <li>Am losen Fadenende zuziehen</li>
+      </ol>
+    </div>
+    <div class="stitch-card">
+      <span class="stitch-abbr">Spirale</span>
+      <h3>Spiralrunden</h3>
+      <p>Es wird ohne Rundenabschluss durchgehend weitergehäkelt. Typisch für Amigurumi, weil kein sichtbarer Übergang entsteht.</p>
+      <ol>
+        <li>Rundenanfang mit Markierer kennzeichnen</li>
+        <li>Durchgehend weiterhäkeln</li>
+        <li>Markierer bei jeder Runde versetzen</li>
+      </ol>
+    </div>
+    <div class="stitch-card">
+      <span class="stitch-abbr">Km</span>
+      <h3>Geschlossene Runden</h3>
+      <p>Jede Runde wird mit einer Kettmasche geschlossen und mit Luftmaschen neu begonnen. Ergibt eine sichtbare Naht, aber saubere Musterübergänge.</p>
+      <ol>
+        <li>Runde mit Km in die erste Masche schließen</li>
+        <li>Mit Wendeluftmaschen neu beginnen</li>
+        <li>Naht möglichst hinten platzieren</li>
+      </ol>
+    </div>
+    <div class="stitch-card">
+      <span class="stitch-abbr">Zun</span>
+      <h3>Zunehmen &amp; Abnehmen</h3>
+      <p>Über gezielte Zu- und Abnahmen entstehen runde und dreidimensionale Formen – vom flachen Untersetzer bis zum Amigurumi-Kopf.</p>
+      <ol>
+        <li>Zunahme: 2 Maschen in dieselbe Masche</li>
+        <li>Abnahme: 2 Maschen zusammen abmaschen</li>
+        <li>Gleichmäßig über die Runde verteilen</li>
+      </ol>
+    </div>
+  </div>
+  <p class="pattern-note-basic">Faustregel für flache Kreise: In jeder Runde kommen so viele Zunahmen dazu, wie du in der ersten Runde Maschen hattest. Bei 6 Maschen zu Beginn also 6 Zunahmen pro Runde – dann bleibt die Scheibe flach.</p>
+</section>
+
+<!-- SCHRITT 5: MASCHENPROBE -->
+<section class="steps-section" id="maschenprobe">
+  <div class="label">Schritt 5</div>
+  <h2>Die <em>Maschenprobe</em></h2>
+  <p class="substep-intro">Die Maschenprobe ist der langweiligste und gleichzeitig wichtigste Schritt jeder Anleitung. Sie entscheidet darüber, ob dein Projekt am Ende die angegebene Größe hat – denn jede Person häkelt unterschiedlich fest.</p>
+  <div class="steps-list">
+    <div class="step-row">
+      <span class="step-num">01</span>
+      <div class="step-content">
+        <h3>Probestück häkeln</h3>
+        <p>Häkle ein Quadrat von etwa 15 × 15 cm in der Maschenart, die die Anleitung vorgibt – mit dem Garn und der Nadel, die du auch fürs Projekt verwenden willst.</p>
+      </div>
+    </div>
+    <div class="step-row">
+      <span class="step-num">02</span>
+      <div class="step-content">
+        <h3>10 × 10 cm ausmessen</h3>
+        <p>Leg das Stück flach hin, ohne zu ziehen. Markiere ein Feld von 10 × 10 cm und zähle darin die Maschen in der Breite und die Reihen in der Höhe.</p>
+      </div>
+    </div>
+    <div class="step-row">
+      <span class="step-num">03</span>
+      <div class="step-content">
+        <h3>Mit der Anleitung vergleichen</h3>
+        <p>Hast du mehr Maschen als angegeben, häkelst du zu fest – nimm eine größere Nadel. Hast du weniger, häkelst du zu locker – nimm eine kleinere.</p>
+      </div>
+    </div>
+    <div class="step-row">
+      <span class="step-num">04</span>
+      <div class="step-content">
+        <h3>Notieren</h3>
+        <p>Schreib dir auf, welche Nadelstärke bei welchem Garn gepasst hat. Nach ein paar Projekten hast du deine persönliche Tabelle und sparst dir viele Proben.</p>
+      </div>
+    </div>
+  </div>
+  <p class="pattern-note-basic">Bei Amigurumi kannst du die Maschenprobe meist überspringen – dort kommt es nicht auf die exakte Größe an, sondern nur darauf, dass die Maschen dicht genug sind, damit die Füllung nicht durchscheint.</p>
+</section>
+
+<!-- HÄKELSCHRIFT -->
+<section class="stitch-section" id="haekelschrift">
+  <div class="label">Schritt 6</div>
+  <h2>Häkelschrift <em>lesen</em></h2>
+  <p class="substep-intro">Viele Anleitungen zeigen das Muster nicht nur als Text, sondern auch als Diagramm aus Symbolen. Wenn du die wichtigsten Zeichen kennst, kannst du auf einen Blick erfassen, wie ein Muster aufgebaut ist.</p>
+  <div class="stitch-grid">
+    <div class="stitch-card">
+      <span class="stitch-abbr">○</span>
+      <h3>Luftmasche</h3>
+      <p>Ein kleiner Kreis oder ein Oval. Meist bilden sie die unterste Reihe eines Diagramms – die Grundkette.</p>
+    </div>
+    <div class="stitch-card">
+      <span class="stitch-abbr">×</span>
+      <h3>Feste Masche</h3>
+      <p>Ein Kreuz oder ein X. Je nach Quelle auch als kleines „t" ohne Querstrich dargestellt.</p>
+    </div>
+    <div class="stitch-card">
+      <span class="stitch-abbr">T</span>
+      <h3>Halbes Stäbchen</h3>
+      <p>Ein senkrechter Strich mit einem Querbalken oben. Je mehr Querstriche, desto höher die Masche.</p>
+    </div>
+    <div class="stitch-card">
+      <span class="stitch-abbr">†</span>
+      <h3>Stäbchen</h3>
+      <p>Senkrechter Strich mit einem Schrägstrich in der Mitte. Zwei Schrägstriche bedeuten Doppelstäbchen.</p>
+    </div>
+  </div>
+  <p class="pattern-note-basic">Diagramme werden von unten nach oben gelesen. In Reihen wechselt die Leserichtung mit jeder Reihe: ungerade Reihen von rechts nach links, gerade Reihen von links nach rechts. In Runden liest du von der Mitte nach außen. Ausprobieren kannst du das direkt im <a href="muster-generator.html" style="color:var(--braun)">Muster-Generator</a>.</p>
+</section>
+
+<!-- TYPISCHE FEHLER -->
+<section class="steps-section" id="fehler">
+  <div class="label">Problemlösung</div>
+  <h2>Typische <em>Anfängerfehler</em></h2>
+  <p class="substep-intro">Fast jede Schwierigkeit am Anfang lässt sich auf eine Handvoll Ursachen zurückführen. Hier sind die häufigsten – und was jeweils dagegen hilft.</p>
+  <div class="steps-list">
+    <div class="step-row">
+      <span class="step-num">01</span>
+      <div class="step-content">
+        <h3>Die Arbeit wird schmaler</h3>
+        <p><strong>Ursache:</strong> Die letzte Masche jeder Reihe wird übersehen. <strong>Lösung:</strong> Nach jeder Reihe zählen und die allerletzte Masche bewusst suchen – sie sitzt oft versteckt direkt neben der Wendeluftmasche.</p>
+      </div>
+    </div>
+    <div class="step-row">
+      <span class="step-num">02</span>
+      <div class="step-content">
+        <h3>Die Arbeit wird breiter</h3>
+        <p><strong>Ursache:</strong> Es wird zusätzlich in die Wendeluftmasche eingestochen. <strong>Lösung:</strong> Bei festen Maschen zählt die Wendeluftmasche nicht als Masche – häkle nicht hinein.</p>
+      </div>
+    </div>
+    <div class="step-row">
+      <span class="step-num">03</span>
+      <div class="step-content">
+        <h3>Der Kreis wellt sich</h3>
+        <p><strong>Ursache:</strong> Zu viele Zunahmen. <strong>Lösung:</strong> Eine Runde ohne Zunahmen einschieben oder die Anzahl pro Runde reduzieren.</p>
+      </div>
+    </div>
+    <div class="step-row">
+      <span class="step-num">04</span>
+      <div class="step-content">
+        <h3>Der Kreis wölbt sich zur Schale</h3>
+        <p><strong>Ursache:</strong> Zu wenige Zunahmen. <strong>Lösung:</strong> Zunahmen ergänzen – bei Amigurumi ist genau diese Wölbung allerdings gewollt.</p>
+      </div>
+    </div>
+    <div class="step-row">
+      <span class="step-num">05</span>
+      <div class="step-content">
+        <h3>Die Maschen sind ungleichmäßig</h3>
+        <p><strong>Ursache:</strong> Wechselnde Fadenspannung, oft durch Pausen. <strong>Lösung:</strong> Kommt mit der Übung von allein. Größere Abschnitte am Stück häkeln hilft zusätzlich.</p>
+      </div>
+    </div>
+    <div class="step-row">
+      <span class="step-num">06</span>
+      <div class="step-content">
+        <h3>Die Hand verkrampft</h3>
+        <p><strong>Ursache:</strong> Zu fester Griff, meist bei zu dünnem Garn. <strong>Lösung:</strong> Pausen machen, ergonomische Nadel ausprobieren und mit dickerem Garn üben.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CHECKLISTE -->
+<section class="material-section" id="checkliste">
+  <div class="label">Dein Fortschritt</div>
+  <h2>Bist du <em>startklar?</em></h2>
+  <p class="substep-intro">Wenn du diese sechs Punkte abhaken kannst, bist du bereit für dein erstes richtiges Projekt.</p>
+  <div class="material-grid">
+    <div class="material-item">
+      <span class="material-icon">✓</span>
+      <h3>Anschlagkette</h3>
+      <p>Du kannst eine Luftmaschenkette in gewünschter Länge häkeln und die Maschen darin zählen.</p>
+    </div>
+    <div class="material-item">
+      <span class="material-icon">✓</span>
+      <h3>Grundmaschen</h3>
+      <p>Feste Masche und Stäbchen gehen dir ohne Nachschlagen von der Hand.</p>
+    </div>
+    <div class="material-item">
+      <span class="material-icon">✓</span>
+      <h3>Gerade Ränder</h3>
+      <p>Dein Übungsquadrat hat über mehrere Reihen dieselbe Maschenzahl.</p>
+    </div>
+    <div class="material-item">
+      <span class="material-icon">✓</span>
+      <h3>Magic Ring</h3>
+      <p>Du bekommst einen Fadenring zu und kannst darin die erste Runde arbeiten.</p>
+    </div>
+    <div class="material-item">
+      <span class="material-icon">✓</span>
+      <h3>Zu- und Abnehmen</h3>
+      <p>Du weißt, wie du eine Masche verdoppelst und zwei Maschen zusammen abmaschst.</p>
+    </div>
+    <div class="material-item">
+      <span class="material-icon">✓</span>
+      <h3>Vernähen</h3>
+      <p>Du kannst Fadenenden mit der Vernähnadel unsichtbar im Maschenbild verstecken.</p>
+    </div>
+  </div>
+</section>
+
 <!-- TIPPS -->
 <section class="tipp-section">
   <div class="label">Für den Anfang</div>
@@ -535,7 +878,7 @@
   <div class="label">Bereit?</div>
   <h2>Dein erstes <em>Projekt</em></h2>
   <p>Sobald du die Grundmaschen sicher beherrschst, ist der Häkel-Bär die perfekte erste Anleitung für den Einstieg in Amigurumi.</p>
-  <a href="index.html" class="btn-primary">Zu den Anleitungen</a>
+  <a href="haekel-baer.html" class="btn-primary">Zum Häkel-Bären</a>
 </section>
 
 <!-- FOOTER -->
@@ -548,11 +891,12 @@
     <div>
       <h4>Navigation</h4>
       <ul>
-        <li><a href="index.html">Anleitungen</a></li>
-        <li><a href="#">Materialien</a></li>
-        <li><a href="index.html#newsletter">Empfehlungen</a></li>
-        <li><a href="#">Über mich</a></li>
-        <li><a href="#">Kontakt</a></li>
+        <li><a href="anleitungen.html">Anleitungen</a></li>
+        <li><a href="amigurumi.html">Amigurumi</a></li>
+        <li><a href="wohndeko.html">Wohndeko</a></li>
+        <li><a href="muster-generator.html">Muster-Generator</a></li>
+        <li><a href="empfehlungen.html">Empfehlungen</a></li>
+        <li><a href="ueber-mich.html">Über mich</a></li>
       </ul>
     </div>
     <div>
