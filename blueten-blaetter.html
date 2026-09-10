@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <script src="https://analytics.ahrefs.com/analytics.js" data-key="OvkMGMTTpoU/1pLa2QkBCQ" async></script>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Blüten & Blätter häkeln: Anleitung für 5 Modelle | PrettyCrochet</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --creme:   #FAF6F1;
+      --salbei:  #A7B39A;
+      --beige:   #D6C5B5;
+      --braun:   #8B6F5B;
+      --espresso:#4A3B32;
+      --white:   #FFFFFF;
+      --muted:   #9A8880;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--creme);
+      color: var(--espresso);
+      font-family: 'Jost', sans-serif;
+      font-weight: 300;
+      line-height: 1.75;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 1.1rem 6vw;
+      background: rgba(250,246,241,0.92);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--beige);
+    }
+    .logo-wrap { display: flex; align-items: center; gap: 0.75rem; text-decoration: none; }
+    .logo-text {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.45rem; font-weight: 600;
+      color: var(--espresso); letter-spacing: 0.02em;
+    }
+    .logo-text span { color: var(--salbei); }
+    .nav-links { display: flex; gap: 2.2rem; list-style: none; }
+    .nav-links a {
+      font-size: 0.82rem; font-weight: 400; letter-spacing: 0.1em;
+      text-transform: uppercase; text-decoration: none;
+      color: var(--espresso); transition: color 0.2s;
+    }
+    .nav-links a:hover, .nav-links a.active { color: var(--salbei); }
+    .nav-cta {
+      font-size: 0.8rem; font-weight: 500; letter-spacing: 0.08em;
+      text-transform: uppercase; text-decoration: none;
+      color: var(--white); background: var(--espresso);
+      padding: 0.6rem 1.4rem; border-radius: 2px; transition: background 0.2s;
+    }
+    .nav-cta:hover { background: var(--braun); }
+
+    /* ── PAGE HERO ── */
+    .page-hero { padding: 11rem 10vw 4rem; background: var(--beige); text-align: center; }
+    .breadcrumb {
+      font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase;
+      color: var(--braun); margin-bottom: 1.5rem;
+    }
+    .breadcrumb a { color: var(--braun); text-decoration: none; border-bottom: 1px solid rgba(139,111,91,0.35); }
+    .breadcrumb a:hover { border-color: var(--braun); }
+    .page-hero .label { justify-content: center; }
+    .page-hero .label::before { display: none; }
+    .page-hero h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.2rem, 4.6vw, 3.6rem);
+      font-weight: 300; line-height: 1.15;
+      color: var(--espresso); margin-bottom: 1.2rem;
+    }
+    .page-hero h1 em { font-style: italic; color: var(--braun); }
+    .page-hero p.sub { max-width: 56ch; margin: 0 auto 2rem; color: var(--braun); font-size: 1rem; }
+
+    .meta-row { display: flex; justify-content: center; gap: 2.5rem; flex-wrap: wrap; }
+    .meta-item { display: flex; flex-direction: column; align-items: center; gap: 0.3rem; }
+    .meta-item .meta-icon { font-size: 1.3rem; }
+    .meta-item .meta-label {
+      font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--braun); opacity: 0.75;
+    }
+    .meta-item .meta-value { font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; color: var(--espresso); }
+
+    .label {
+      font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--salbei); margin-bottom: 0.6rem;
+      display: flex; align-items: center; gap: 0.7rem;
+    }
+    .label::before { content:''; display:inline-block; width:24px; height:1px; background:var(--salbei); }
+
+    h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.8rem, 3vw, 2.6rem);
+      font-weight: 300; line-height: 1.2;
+      color: var(--espresso); margin-bottom: 1.5rem;
+    }
+    h2 em { font-style: italic; color: var(--braun); }
+
+    section { padding: 4.5rem 10vw; }
+
+    /* ── INTRO ── */
+    .intro-section { background: var(--white); }
+    .intro-text { max-width: 70ch; font-size: 1.02rem; }
+    .intro-text p { margin-bottom: 1.2rem; }
+    .intro-text a { color: var(--braun); }
+
+    /* ── MATERIAL + ABKÜRZUNGEN ── */
+    .prep-section { background: var(--creme); }
+    .prep-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 3rem; }
+    .prep-block h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.25rem; font-weight: 400;
+      margin-bottom: 1.2rem; color: var(--braun);
+    }
+    .material-list { list-style: none; display: flex; flex-direction: column; gap: 0.7rem; }
+    .material-list li {
+      display: flex; gap: 0.7rem; align-items: baseline;
+      font-size: 0.92rem; padding-bottom: 0.7rem;
+      border-bottom: 1px solid var(--beige);
+    }
+    .material-list li::before { content: '—'; color: var(--salbei); flex-shrink: 0; }
+    .abbr-table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+    .abbr-table tr { border-bottom: 1px solid var(--beige); }
+    .abbr-table td { padding: 0.6rem 0.4rem; }
+    .abbr-table td:first-child {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 600; color: var(--braun); width: 62px;
+    }
+
+    /* ── SPRUNGMARKEN ── */
+    .jump-nav {
+      background: var(--white); padding: 2rem 10vw;
+      display: flex; gap: 0.7rem; flex-wrap: wrap; justify-content: center;
+      border-bottom: 1px solid var(--beige);
+    }
+    .jump-nav a {
+      font-size: 0.76rem; letter-spacing: 0.08em; text-transform: uppercase;
+      text-decoration: none; color: var(--espresso);
+      background: var(--creme); border: 1px solid var(--beige);
+      padding: 0.55rem 1.1rem; border-radius: 999px;
+      transition: border-color 0.2s;
+    }
+    .jump-nav a:hover { border-color: var(--salbei); }
+
+    /* ── PATTERN ── */
+    .pattern-section { background: var(--white); }
+    .pattern-section:nth-of-type(even) { background: var(--creme); }
+    .pattern-part { max-width: 78ch; }
+    .pattern-part-header {
+      display: flex; align-items: baseline; gap: 1rem;
+      margin-bottom: 1rem; border-bottom: 2px solid var(--salbei); padding-bottom: 0.6rem;
+    }
+    .pattern-part-icon { font-size: 1.6rem; }
+    .pattern-part h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem; font-weight: 400; color: var(--espresso);
+    }
+    .pattern-part-count { font-size: 0.78rem; color: var(--muted); letter-spacing: 0.04em; margin-left: auto; }
+    .pattern-lead { font-size: 0.95rem; color: var(--muted); margin-bottom: 1.2rem; max-width: 66ch; }
+    .round-list { list-style: none; }
+    .round-list li {
+      display: grid; grid-template-columns: 92px 1fr; gap: 1rem;
+      font-size: 0.92rem; padding: 0.6rem 0;
+      border-bottom: 1px dashed var(--beige);
+    }
+    .round-list li:last-child { border-bottom: none; }
+    .round-label { font-family: 'Cormorant Garamond', serif; font-weight: 600; color: var(--braun); }
+    .round-stitches { font-size: 0.78rem; color: var(--salbei); margin-left: 0.4rem; }
+    .pattern-note {
+      margin-top: 1.1rem; font-size: 0.86rem; color: var(--muted);
+      background: var(--creme); padding: 0.9rem 1.1rem;
+      border-left: 3px solid var(--salbei);
+    }
+    .pattern-section:nth-of-type(even) .pattern-note { background: var(--white); }
+
+    /* ── VERWENDUNG ── */
+    .use-section { background: var(--espresso); }
+    .use-section .label { color: var(--salbei); }
+    .use-section .label::before { background: var(--salbei); }
+    .use-section h2 { color: var(--creme); }
+    .use-section h2 em { color: var(--salbei); }
+    .use-grid {
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px;
+      background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.08);
+    }
+    .use-item { background: var(--espresso); padding: 1.9rem 1.5rem; }
+    .use-icon { font-size: 1.6rem; display: block; margin-bottom: 0.7rem; }
+    .use-item h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.08rem; font-weight: 400; color: var(--creme); margin-bottom: 0.5rem;
+    }
+    .use-item p { font-size: 0.83rem; color: var(--beige); }
+
+    /* ── TIPPS ── */
+    .tipp-section { background: var(--creme); }
+    .tipp-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.4rem; }
+    .tipp-card {
+      background: var(--white); border: 1px solid var(--beige);
+      padding: 1.8rem; border-left: 3px solid var(--salbei);
+    }
+    .tipp-card h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.12rem; font-weight: 400; margin-bottom: 0.5rem;
+    }
+    .tipp-card p { font-size: 0.86rem; color: var(--muted); }
+
+    /* ── CTA ── */
+    .next-section { background: var(--beige); text-align: center; padding: 5rem 10vw; }
+    .next-section .label { justify-content: center; }
+    .next-section .label::before { display: none; }
+    .next-section p { color: var(--braun); max-width: 46ch; margin: 0 auto 2rem; font-size: 0.95rem; }
+    .btn-primary {
+      display: inline-block; background: var(--espresso); color: var(--white);
+      padding: 0.9rem 2rem; font-size: 0.82rem; font-weight: 500;
+      letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none;
+      border-radius: 2px; transition: background 0.2s;
+    }
+    .btn-primary:hover { background: var(--braun); }
+
+    /* ── FOOTER ── */
+    footer { background: var(--espresso); color: var(--beige); padding: 4rem 10vw 2rem; }
+    .footer-top {
+      display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 4rem;
+      padding-bottom: 3rem; border-bottom: 1px solid rgba(214,197,181,0.15); margin-bottom: 2rem;
+    }
+    .footer-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem; font-weight: 400; color: var(--creme);
+      display: block; margin-bottom: 1rem;
+    }
+    .footer-logo span { color: var(--salbei); }
+    footer p { font-size: 0.83rem; color: rgba(214,197,181,0.6); line-height: 1.8; max-width: 32ch; }
+    footer h4 {
+      font-size: 0.7rem; letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--salbei); margin-bottom: 1.2rem;
+    }
+    footer ul { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
+    footer ul a { font-size: 0.84rem; color: rgba(214,197,181,0.7); text-decoration: none; transition: color 0.2s; }
+    footer ul a:hover { color: var(--creme); }
+    .footer-bottom { text-align: center; font-size: 0.72rem; color: rgba(214,197,181,0.35); letter-spacing: 0.06em; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      .nav-links { display: none; }
+      .prep-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+      .use-grid { grid-template-columns: 1fr 1fr; }
+      .tipp-grid { grid-template-columns: 1fr; }
+      .footer-top { grid-template-columns: 1fr; gap: 2rem; }
+      .round-list li { grid-template-columns: 74px 1fr; }
+      .meta-row { gap: 1.5rem; }
+    }
+    @media (max-width: 620px) {
+      .use-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="logo-wrap">
+    <span class="logo-text">Pretty<span>Crochet</span></span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="anleitungen.html">Anleitungen</a></li>
+    <li><a href="wohndeko.html">Wohndeko</a></li>
+    <li><a href="empfehlungen.html">Empfehlungen</a></li>
+    <li><a href="ueber-mich.html">Über mich</a></li>
+  </ul>
+  <a href="index.html#newsletter" class="nav-cta">Newsletter</a>
+</nav>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <p class="breadcrumb"><a href="index.html">Start</a> · <a href="wohndeko.html">Wohndeko</a> · Blüten & Blätter</p>
+  <div class="label">Wohndeko</div>
+  <h1>Blüten &amp; Blätter<br><em>häkeln</em></h1>
+  <p class="sub">Fünf kleine Modelle für zwischendurch: drei Blütenformen, zwei Blattvarianten und eine Spirale. Perfekt, um Reste zu verbrauchen, Taschen zu verzieren oder einen Kranz zu bestücken.</p>
+  <div class="meta-row">
+    <div class="meta-item">
+      <span class="meta-icon">⭐</span>
+      <span class="meta-label">Level</span>
+      <span class="meta-value">Anfänger+</span>
+    </div>
+    <div class="meta-item">
+      <span class="meta-icon">⏱️</span>
+      <span class="meta-label">Pro Teil</span>
+      <span class="meta-value">10–25 Min.</span>
+    </div>
+    <div class="meta-item">
+      <span class="meta-icon">🌸</span>
+      <span class="meta-label">Modelle</span>
+      <span class="meta-value">6 Varianten</span>
+    </div>
+    <div class="meta-item">
+      <span class="meta-icon">🪝</span>
+      <span class="meta-label">Nadel</span>
+      <span class="meta-value">3,0 mm</span>
+    </div>
+  </div>
+</section>
+
+<!-- INTRO -->
+<section class="intro-section">
+  <div class="label">Über diese Anleitung</div>
+  <h2>Kleine Projekte, <em>große Wirkung</em></h2>
+  <div class="intro-text">
+    <p>Blüten und Blätter sind meine liebste Häkelei für zwischendurch. Sie brauchen kaum Material, sind in einer Viertelstunde fertig und lassen sich endlos kombinieren – als Kranz an der Wand, als Applikation auf einer Tasche oder einfach als kleines Mitbringsel.</p>
+    <p>Alle sechs Modelle auf dieser Seite starten mit einem Fadenring oder einer Luftmaschenkette und kommen mit den Grundmaschen aus. Wenn du feste Maschen und Stäbchen beherrschst, kannst du sofort loslegen. Falls nicht, schau vorher kurz in die <a href="haekeln-basics.html">Häkel-Basics</a>.</p>
+    <p>Die Modelle sind bewusst so aufgebaut, dass sie aufeinander aufbauen: Blüte 1 ist einlagig und flach, Blüte 2 bekommt eine zweite Blütenlage darunter, Blüte 3 wird gerollt statt in Runden gearbeitet. Häkle sie in dieser Reihenfolge, dann hast du am Ende drei verschiedene Techniken gelernt.</p>
+  </div>
+</section>
+
+<!-- MATERIAL -->
+<section class="prep-section">
+  <div class="label">Vorbereitung</div>
+  <h2>Material <em>& Abkürzungen</em></h2>
+  <div class="prep-grid">
+    <div class="prep-block">
+      <h3>Das brauchst du</h3>
+      <ul class="material-list">
+        <li>Reste von glattem Baumwollgarn in Blüten- und Blattfarben</li>
+        <li>Häkelnadel 3,0 mm (oder passend zum Garn, eher eine Nummer kleiner)</li>
+        <li>Vernähnadel mit großem Öhr</li>
+        <li>Schere</li>
+        <li>Optional: kleine Knöpfe oder Perlen für die Blütenmitte</li>
+        <li>Optional: Metall- oder Holzring als Kranzbasis</li>
+      </ul>
+    </div>
+    <div class="prep-block">
+      <h3>Verwendete Abkürzungen</h3>
+      <table class="abbr-table">
+        <tr><td>Lm</td><td>Luftmasche</td></tr>
+        <tr><td>Km</td><td>Kettmasche</td></tr>
+        <tr><td>fM</td><td>Feste Masche</td></tr>
+        <tr><td>hStb</td><td>Halbes Stäbchen</td></tr>
+        <tr><td>Stb</td><td>Stäbchen</td></tr>
+        <tr><td>dStb</td><td>Doppelstäbchen</td></tr>
+        <tr><td>MR</td><td>Magic Ring / Fadenring</td></tr>
+        <tr><td>[ ]</td><td>Inhalt in dieselbe Masche arbeiten</td></tr>
+        <tr><td>* … *</td><td>Wiederholung</td></tr>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- SPRUNGMARKEN -->
+<div class="jump-nav">
+  <a href="#ring">Der Fadenring</a>
+  <a href="#bluete1">Blüte 1</a>
+  <a href="#bluete2">Blüte 2</a>
+  <a href="#bluete3">Spiralrose</a>
+  <a href="#blatt1">Einfaches Blatt</a>
+  <a href="#blatt2">Blatt mit Stiel</a>
+  <a href="#spirale">Korkenzieher</a>
+</div>
+
+<!-- FADENRING -->
+<section class="pattern-section" id="ring">
+  <div class="label">Grundlage</div>
+  <h2>Der <em>Fadenring</em></h2>
+  <div class="pattern-part">
+    <p class="pattern-lead">Fast jede Blüte beginnt mit einem Ring, den du am Ende straff zuziehen kannst – so entsteht eine geschlossene Blütenmitte ohne Loch. Es gibt zwei Wege dorthin.</p>
+    <ul class="round-list">
+      <li><span class="round-label">Variante A</span><span><strong>Fadenring:</strong> Leg den Faden zu einer Schlaufe, stich mit der Nadel hinein, hol den Arbeitsfaden und zieh ihn als Schlinge durch. Sichere sie mit 1 Lm. Alle Maschen der 1. Runde arbeitest du in diesen Ring, das lose Fadenende ziehst du am Ende zu.</span></li>
+      <li><span class="round-label">Variante B</span><span><strong>Luftmaschenring:</strong> 5 Lm häkeln und mit 1 Km in die erste Lm zum Ring schließen. Die Maschen der 1. Runde arbeitest du dann in die Mitte des Rings. Etwas einfacher, aber die Mitte bleibt leicht offen.</span></li>
+    </ul>
+    <p class="pattern-note">Für Anfängerinnen ist Variante B entspannter. Sobald du sicherer wirst, lohnt sich der Fadenring – die Blütenmitte sieht damit deutlich sauberer aus.</p>
+  </div>
+</section>
+
+<!-- BLÜTE 1 -->
+<section class="pattern-section" id="bluete1">
+  <div class="label">Modell 01</div>
+  <h2>Blüte 1: <em>Die einfache Fünfblättrige</em></h2>
+  <div class="pattern-part">
+    <div class="pattern-part-header">
+      <span class="pattern-part-icon">🌼</span>
+      <h3>Einlagige Blüte</h3>
+      <span class="pattern-part-count">2 Runden · ca. 5 cm</span>
+    </div>
+    <p class="pattern-lead">Das Einsteigermodell: eine flache Blüte mit fünf runden Blättern, die in einem Durchgang entsteht. Ideal als Applikation auf Taschen oder Mützen.</p>
+    <ul class="round-list">
+      <li><span class="round-label">R 1</span><span>15 fM in den MR häkeln, mit 1 Km in die erste fM zur Runde schließen. <span class="round-stitches">(15 M)</span></span></li>
+      <li><span class="round-label">R 2</span><span>Jetzt entstehen 5 Blütenblätter über je 3 Maschen: <em>1 fM in die nächste M, [1 hStb, 3 Stb, 1 hStb] in die folgende M, 1 fM in die nächste M</em> – ab hier noch 4× wiederholen. <span class="round-stitches">(5 Blätter)</span></span></li>
+      <li><span class="round-label">Abschluss</span><span>Mit 1 Km in die erste fM schließen, Faden abschneiden und vernähen.</span></li>
+    </ul>
+    <p class="pattern-note">Für die Blütenmitte kannst du einen kleinen Knopf oder eine Perle aufnähen. Oder du häkelst die erste Runde in einer zweiten Farbe – dann leuchtet die Mitte von allein.</p>
+  </div>
+</section>
+
+<!-- BLÜTE 2 -->
+<section class="pattern-section" id="bluete2">
+  <div class="label">Modell 02</div>
+  <h2>Blüte 2: <em>Die zweilagige</em></h2>
+  <div class="pattern-part">
+    <div class="pattern-part-header">
+      <span class="pattern-part-icon">🌺</span>
+      <h3>Blüte mit zwei Blütenlagen</h3>
+      <span class="pattern-part-count">5 Runden · ca. 8 cm</span>
+    </div>
+    <p class="pattern-lead">Hier liegt eine zweite, größere Blütenlage hinter der ersten – dadurch wird die Blüte plastisch statt flach. Der Trick: Die untere Lage wird auf Luftmaschenbögen gearbeitet, die du hinter der Arbeit ansetzt.</p>
+    <ul class="round-list">
+      <li><span class="round-label">R 1</span><span>12 fM in den MR, mit 1 Km schließen. <span class="round-stitches">(12 M)</span></span></li>
+      <li><span class="round-label">R 2</span><span><em>1 fM in die nächste M, 3 Lm, 1 M überspringen</em> – insgesamt 6× arbeiten, mit 1 Km schließen. <span class="round-stitches">(6 Bögen)</span></span></li>
+      <li><span class="round-label">R 3</span><span>In jeden Luftmaschenbogen: [1 fM, 1 hStb, 3 Stb, 1 hStb, 1 fM]. <span class="round-stitches">(6 kleine Blätter)</span></span></li>
+      <li><span class="round-label">R 4</span><span>Jetzt hinter die Arbeit greifen: Faden mit 1 Km um den Steg zwischen zwei fM der Runde 2 anschlingen, dann <em>5 Lm, 1 Km um den nächsten Steg</em> – 6× rundherum. <span class="round-stitches">(6 hintere Bögen)</span></span></li>
+      <li><span class="round-label">R 5</span><span>In jeden hinteren Bogen: [1 fM, 1 hStb, 5 Stb, 1 hStb, 1 fM]. <span class="round-stitches">(6 große Blätter)</span></span></li>
+      <li><span class="round-label">Abschluss</span><span>Mit 1 Km schließen, Faden abschneiden und vernähen.</span></li>
+    </ul>
+    <p class="pattern-note">Für einen Farbverlauf wechselst du nach Runde 3 die Farbe – die untere Lage in einem dunkleren Ton lässt die Blüte deutlich tiefer wirken.</p>
+  </div>
+</section>
+
+<!-- BLÜTE 3 -->
+<section class="pattern-section" id="bluete3">
+  <div class="label">Modell 03</div>
+  <h2>Blüte 3: <em>Die Spiralrose</em></h2>
+  <div class="pattern-part">
+    <div class="pattern-part-header">
+      <span class="pattern-part-icon">🌹</span>
+      <h3>Gerollte Rose</h3>
+      <span class="pattern-part-count">1 Reihe · ca. 6 cm</span>
+    </div>
+    <p class="pattern-lead">Diese Blüte wird nicht in Runden gehäkelt, sondern als langer Streifen, den du anschließend zur Rose aufrollst. Das Ergebnis sieht aufwendig aus, ist aber die schnellste Blüte auf dieser Seite.</p>
+    <ul class="round-list">
+      <li><span class="round-label">Kette</span><span>30 Lm anschlagen.</span></li>
+      <li><span class="round-label">R 1</span><span>In die 3. Lm ab Nadel 2 Stb häkeln. Dann in jede weitere Lm ebenfalls 2 Stb. <span class="round-stitches">(ca. 56 Stb)</span></span></li>
+      <li><span class="round-label">Rollen</span><span>Faden abschneiden, aber lang lassen. Den Streifen von einem Ende her locker zur Spirale aufrollen – die untere Kante bildet dabei den Blütenboden.</span></li>
+      <li><span class="round-label">Fixieren</span><span>Mit dem langen Fadenende unten durch alle Lagen stechen und die Rolle mit ein paar Stichen sichern.</span></li>
+    </ul>
+    <p class="pattern-note">Je mehr Stäbchen du pro Luftmasche arbeitest, desto voller wird die Rose. Mit 3 Stb pro Lm bekommst du eine üppige Blüte, mit nur 1 Stb eine schlanke Knospe.</p>
+  </div>
+</section>
+
+<!-- BLATT 1 -->
+<section class="pattern-section" id="blatt1">
+  <div class="label">Modell 04</div>
+  <h2>Blatt 1: <em>Das einfache Blatt</em></h2>
+  <div class="pattern-part">
+    <div class="pattern-part-header">
+      <span class="pattern-part-icon">🍃</span>
+      <h3>Einlagiges Blatt</h3>
+      <span class="pattern-part-count">1 Runde · ca. 4 cm</span>
+    </div>
+    <p class="pattern-lead">Ein schmales Blatt, das rund um eine Luftmaschenkette gearbeitet wird. Die Spitze entsteht ganz von allein, indem du an der Kettenspitze mehrere Maschen in dieselbe Luftmasche häkelst.</p>
+    <ul class="round-list">
+      <li><span class="round-label">Kette</span><span>10 Lm anschlagen.</span></li>
+      <li><span class="round-label">Hinweg</span><span>Ab der 2. Lm ab Nadel: 1 fM, 1 hStb, 5 Stb, 1 hStb – bis zur letzten Lm arbeiten.</span></li>
+      <li><span class="round-label">Spitze</span><span>In die letzte Lm 3 fM häkeln – das ergibt die Blattspitze.</span></li>
+      <li><span class="round-label">Rückweg</span><span>Auf der gegenüberliegenden Seite der Kette in die noch freien Maschenglieder zurückarbeiten: 1 hStb, 5 Stb, 1 hStb, 1 fM.</span></li>
+      <li><span class="round-label">Abschluss</span><span>Mit 1 Km in die erste fM schließen, Faden abschneiden.</span></li>
+    </ul>
+    <p class="pattern-note">Willst du ein breiteres Blatt, ersetze die 5 Stb durch 3 Stb und 2 dStb – das macht die Mitte deutlich bauchiger.</p>
+  </div>
+</section>
+
+<!-- BLATT 2 -->
+<section class="pattern-section" id="blatt2">
+  <div class="label">Modell 05</div>
+  <h2>Blatt 2: <em>Das Blatt mit Stiel</em></h2>
+  <div class="pattern-part">
+    <div class="pattern-part-header">
+      <span class="pattern-part-icon">🌿</span>
+      <h3>Blatt mit angehäkeltem Stiel</h3>
+      <span class="pattern-part-count">1 Runde + Stiel · ca. 7 cm</span>
+    </div>
+    <p class="pattern-lead">Dieselbe Grundform wie Blatt 1, nur größer und mit einem Stiel, der direkt angehäkelt wird. Damit lässt sich das Blatt später am Kranz oder Zweig befestigen, ohne dass man die Naht sieht.</p>
+    <ul class="round-list">
+      <li><span class="round-label">Kette</span><span>14 Lm anschlagen.</span></li>
+      <li><span class="round-label">Hinweg</span><span>Ab der 2. Lm ab Nadel: 1 fM, 2 hStb, 3 Stb, 3 dStb, 2 Stb, 1 hStb.</span></li>
+      <li><span class="round-label">Spitze</span><span>In die letzte Lm 3 fM häkeln.</span></li>
+      <li><span class="round-label">Rückweg</span><span>Auf der Gegenseite zurück: 1 hStb, 2 Stb, 3 dStb, 3 Stb, 2 hStb, 1 fM.</span></li>
+      <li><span class="round-label">Stiel</span><span>Nicht abschneiden: 8 Lm häkeln, dann je 1 Km zurück in jede dieser 8 Lm arbeiten. <span class="round-stitches">(Stiel ca. 3 cm)</span></span></li>
+      <li><span class="round-label">Abschluss</span><span>Mit 1 Km am Blattansatz enden, Faden abschneiden und vernähen.</span></li>
+    </ul>
+    <p class="pattern-note">Für ein Blätterpaar häkelst du das zweite Blatt einfach an den Stiel des ersten an, statt den Faden abzuschneiden – so entsteht ein natürlich wirkender kleiner Zweig.</p>
+  </div>
+</section>
+
+<!-- SPIRALE -->
+<section class="pattern-section" id="spirale">
+  <div class="label">Modell 06</div>
+  <h2>Extra: <em>Die Korkenzieher-Ranke</em></h2>
+  <div class="pattern-part">
+    <div class="pattern-part-header">
+      <span class="pattern-part-icon">🌀</span>
+      <h3>Gedrehte Ranke</h3>
+      <span class="pattern-part-count">1 Reihe · Länge frei</span>
+    </div>
+    <p class="pattern-lead">Die Ranke rollt sich beim Häkeln ganz von selbst zur Spirale auf – weil du in jede Luftmasche mehrere Maschen arbeitest und das Material dadurch mehr Länge braucht, als die Kette hergibt.</p>
+    <ul class="round-list">
+      <li><span class="round-label">Kette</span><span>25 Lm anschlagen (oder mehr für eine längere Ranke).</span></li>
+      <li><span class="round-label">R 1</span><span>Ab der 2. Lm ab Nadel in jede Lm 3 fM häkeln. Die Arbeit dreht sich dabei automatisch ein.</span></li>
+      <li><span class="round-label">Abschluss</span><span>Faden abschneiden und vernähen, die Spirale mit den Fingern in Form zupfen.</span></li>
+    </ul>
+    <p class="pattern-note">Mehr Drehung gefällig? Häkle 4 fM statt 3 in jede Luftmasche – dann kringelt sich die Ranke deutlich enger. Mit 2 fM wird sie dagegen fast gerade und eignet sich eher als Schnur.</p>
+  </div>
+</section>
+
+<!-- VERWENDUNG -->
+<section class="use-section">
+  <div class="label">Und jetzt?</div>
+  <h2>Was du damit <em>machen kannst</em></h2>
+  <div class="use-grid">
+    <div class="use-item">
+      <span class="use-icon">🖼️</span>
+      <h3>Wandkranz</h3>
+      <p>Blüten, Blätter und Ranken auf einem Metallring arrangieren und festnähen – erst legen, dann fixieren.</p>
+    </div>
+    <div class="use-item">
+      <span class="use-icon">👜</span>
+      <h3>Taschen-Applikation</h3>
+      <p>Eine einzelne Blüte auf eine gehäkelte Tasche nähen verwandelt ein schlichtes Stück in ein Unikat.</p>
+    </div>
+    <div class="use-item">
+      <span class="use-icon">🎁</span>
+      <h3>Geschenkanhänger</h3>
+      <p>Kleine Blüte mit einem Faden an der Schleife befestigen – schöner als jede gekaufte Karte.</p>
+    </div>
+    <div class="use-item">
+      <span class="use-icon">🪴</span>
+      <h3>Blumenstrauß</h3>
+      <p>Blüten auf Blumendraht ziehen, mit Floristenband umwickeln und zu einem Strauß binden, der nie welkt.</p>
+    </div>
+  </div>
+</section>
+
+<!-- TIPPS -->
+<section class="tipp-section">
+  <div class="label">Damit es gelingt</div>
+  <h2>Meine <em>Tipps</em></h2>
+  <div class="tipp-grid">
+    <div class="tipp-card">
+      <h3>Eher fest häkeln</h3>
+      <p>Lockere Maschen lassen Blüten schlapp wirken. Nimm eine Nadelstärke kleiner als auf der Banderole angegeben, dann behalten die Blätter ihre Form.</p>
+    </div>
+    <div class="tipp-card">
+      <h3>Erst legen, dann nähen</h3>
+      <p>Bei Kränzen und Applikationen alles zuerst nur auflegen und ein Foto machen. Oft sieht die zweite Anordnung besser aus als die erste.</p>
+    </div>
+    <div class="tipp-card">
+      <h3>Ungerade Anzahl wirkt natürlicher</h3>
+      <p>Drei oder fünf Blüten pro Gruppe wirken lebendiger als vier. Das gleiche gilt für Blätter – lieber asymmetrisch als perfekt verteilt.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="next-section">
+  <div class="label">Weiter geht's</div>
+  <h2>Mehr <em>Wohndeko</em></h2>
+  <p>In der Wohndeko-Übersicht findest du weitere Projekte für dein Zuhause – von Körben bis Kissenhüllen.</p>
+  <a href="wohndeko.html" class="btn-primary">Zur Wohndeko-Übersicht</a>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div>
+      <span class="footer-logo">Pretty<span>Crochet</span></span>
+      <p>Ein Blog über die Liebe zum Häkeln – mit ehrlichen Empfehlungen, kostenlosen Anleitungen und einer Community für alle, die mit Wolle und Nadel Dinge erschaffen.</p>
+    </div>
+    <div>
+      <h4>Navigation</h4>
+      <ul>
+        <li><a href="anleitungen.html">Anleitungen</a></li>
+        <li><a href="wohndeko.html">Wohndeko</a></li>
+        <li><a href="amigurumi.html">Amigurumi</a></li>
+        <li><a href="empfehlungen.html">Empfehlungen</a></li>
+        <li><a href="ueber-mich.html">Über mich</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Rechtliches</h4>
+      <ul>
+        <li><a href="#">Impressum</a></li>
+        <li><a href="#">Datenschutz</a></li>
+        <li><a href="#">Affiliate-Hinweis</a></li>
+        <li><a href="#">Cookie-Einstellungen</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">© 2026 PrettyCrochet · Natürlich. Zeitlos. Handgemacht.</div>
+</footer>
+
+</body>
+</html>
