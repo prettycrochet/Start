@@ -1,0 +1,1548 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#FBF3E7">
+  <meta name="description" content="Dein virtuelles Häkelatelier: Zu- und Abnahmen, Maschenglieder, Garnfarben und Runden ausprobieren und jede Maschenverbindung verstehen.">
+  <title>PrettyCrochet – Crochet Simulator V2</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='20' fill='%239CAF88'/%3E%3Cpath d='M10 23C7 9 26 7 29 18C31 27 17 32 13 22C9 12 26 11 24 23M23 25L31 32' fill='none' stroke='%234A2E1E' stroke-width='2.3' stroke-linecap='round'/%3E%3C/svg%3E">
+  <style>
+@font-face{font-family:AtelierSerif;src:local('Baskerville'),local('Palatino Linotype'),local('Book Antiqua');font-display:swap}
+:root{--cream:#FBF3E7;--espresso:#4A2E1E;--sage:#9CAF88;--sage-dark:#526645;--muted:#8b7969;--line:#e6dcd0;--paper:#fffaf2;--white:#fffdf8;--sage-light:#e9eddf;--serif:AtelierSerif,Georgia,'Times New Roman',serif;--sans:'Avenir Next',Avenir,'Segoe UI',sans-serif;--radius:14px;color-scheme:light;font-family:var(--sans);font-size:16px;color:var(--espresso);background:var(--cream)}
+*{box-sizing:border-box}body{margin:0}button,a,input{-webkit-tap-highlight-color:transparent}button{font:inherit;color:inherit;cursor:pointer}button:disabled{opacity:.35;cursor:not-allowed}button,a,input{outline-offset:4px}button:focus-visible,a:focus-visible,input:focus-visible{outline:2px solid var(--sage-dark)}button{border:0;background:none}a{color:inherit}svg{display:block}h1,h2,h3,p{margin:0}button,[role=button]{touch-action:manipulation}button{transition:background .18s,border-color .18s,transform .18s}button:active:not(:disabled){transform:translateY(1px)}[hidden]{display:none!important}.site-header{height:94px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 4%;gap:20px;background:rgba(255,250,242,.5)}.brand{display:flex;gap:12px;align-items:center;text-decoration:none;font-family:var(--serif);font-size:29px;letter-spacing:-1.1px;line-height:1}.brand-mark{width:45px;height:45px;display:grid;place-items:center;border-radius:50%;background:var(--sage)}.brand-mark svg{width:36px;height:36px;fill:none;stroke:var(--espresso);stroke-width:1.7;stroke-linecap:round}.brand-italic{font-style:italic}.brand small{display:block;font-family:var(--sans);font-size:12px;font-weight:500;letter-spacing:2.3px;margin-top:9px}.header-actions{display:flex;gap:15px;align-items:center}.button{min-height:44px;display:inline-flex;align-items:center;justify-content:center;gap:9px;border-radius:9px;font-size:14px;font-weight:600;white-space:nowrap;padding:11px 17px}.button svg,.icon-button svg,[data-icon] svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}.text-button{font-weight:500}.text-button:hover{background:#efe5d7}.demo-button{border:1px solid #c9b9a6;background:#fcf7ee}.demo-button:hover{background:#f1e7d8}.primary-button{background:var(--espresso);color:var(--paper)}.primary-button:hover{background:#634530}.icon-button{height:40px;width:40px;display:grid;place-items:center;border-radius:8px}.icon-button:hover{background:#eee6da}main{max-width:1640px;margin:auto;padding:30px 4% 0}.atelier-heading{display:flex;justify-content:space-between;align-items:flex-end;gap:20px;margin-bottom:24px}.eyebrow{font-family:var(--sans);font-size:12px;letter-spacing:1.6px;font-weight:600;line-height:1.5}.atelier-heading .eyebrow{color:var(--muted);font-size:12px;margin-bottom:8px}h1{font-family:var(--serif);font-size:31px;letter-spacing:-.65px;line-height:1.15;font-weight:400}.heading-note{font-family:var(--serif);font-style:italic;color:var(--muted);font-size:15px;padding-bottom:2px}.studio{display:grid;grid-template-columns:238px minmax(300px,1fr) 264px;grid-template-rows:minmax(540px,calc(100dvh - 311px)) auto;max-height:none;border:1px solid #decfbd;border-radius:var(--radius);background:var(--white);overflow:hidden;box-shadow:0 7px 26px #52321c06}.tools-panel,.details-panel{padding:24px 20px;min-width:0}.tools-panel{border-right:1px solid var(--line);display:flex;flex-direction:column}.panel-heading{display:flex;justify-content:space-between;align-items:center;gap:8px}h2{font-size:15px;font-weight:600}.panel-heading>[data-icon]{color:var(--muted)}.small-badge{font-size:12px;color:var(--sage-dark);border:1px solid #d7dfc9;border-radius:5px;padding:3px 6px;white-space:nowrap}.panel-intro{font-size:12px;line-height:1.6;color:var(--muted);margin:8px 0 21px}.stitch-tools{display:flex;flex-direction:column;gap:8px}.stitch-tool{display:flex;align-items:center;width:100%;min-height:61px;border:1px solid transparent;border-radius:10px;padding:6px 10px 6px 8px;text-align:left;gap:9px;background:#faf7f0;position:relative}.stitch-tool:hover{background:#eeeede;border-color:#cfdbc0}.stitch-tool.active{background:var(--sage-light);border-color:#b9c9a8}.stitch-tool .stitch-icon{width:37px;height:42px;flex-shrink:0}.stitch-tool strong{font-size:14px;font-weight:600;display:block;line-height:1.3}.stitch-tool small{font-size:12px;font-weight:500;color:var(--muted);display:block;letter-spacing:.5px;margin-top:4px}.stitch-tool .tool-plus{font-size:19px;color:#7f936b;margin-left:auto;opacity:0;font-weight:400}.stitch-tool:hover .tool-plus,.stitch-tool.active .tool-plus{opacity:1}.yarn-choice{display:flex;align-items:center;gap:9px;padding:20px 0;margin-top:12px;border-bottom:1px solid var(--line)}.color-sample{width:29px;height:29px;border-radius:50%;background:var(--sage);border:5px double #edf0df;box-shadow:0 0 0 1px #bdcbaa}.yarn-choice span:not(.color-sample){font-size:12px;color:var(--muted)}.yarn-choice strong{display:block;font-size:12px;margin-top:2px;font-weight:500}.yarn-weight{margin-left:auto;font-family:var(--serif);font-style:italic}.tool-tip{padding-top:20px}.tool-tip .eyebrow{font-size:12px;color:var(--muted)}.tool-tip h3{font-family:var(--serif);font-size:20px;font-weight:400;margin:9px 0 7px}.tool-tip p{font-size:13px;line-height:1.65;color:#7c6a59}.work-panel{min-width:0;display:flex;flex-direction:column;background:#fdf8ee}.canvas-toolbar{height:64px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 23px;flex-shrink:0;background:var(--white)}.canvas-title{display:flex;align-items:center;gap:9px;font-size:14px}.canvas-title>[data-icon]{color:var(--muted)}.canvas-title strong{font-weight:500}.work-canvas{position:relative;flex:1;min-height:380px;background-color:#fbf7ee;background-image:radial-gradient(#d5c9b86b .8px,transparent .8px);background-size:19px 19px;overflow:hidden}.canvas-meta{position:absolute;top:20px;left:22px;right:22px;display:flex;justify-content:space-between;align-items:center;gap:8px;z-index:2;pointer-events:none}.row-badge{background:#fffcf5;border:1px solid #e2d8ca;border-radius:6px;padding:6px 9px;font-size:12px;color:#7b6957;box-shadow:0 1px 2px #4a2e1e04}#side-label{font-size:12px;color:#9a8977}#crochet-canvas{width:100%;height:100%;position:absolute;inset:0;touch-action:none;user-select:none;padding:55px 9px 57px}.yarn-stitch{cursor:pointer;outline:none}.stitch-hit{fill:transparent;stroke:transparent;stroke-width:1.8}.yarn-stitch:hover .stitch-hit{fill:#c9d8b430;stroke:#70865880}.yarn-stitch:focus-visible .stitch-hit{stroke:#4a623e;stroke-dasharray:3 3}.row-label{font-family:var(--sans);font-size:12px;fill:#9d8d7c;letter-spacing:.4px}.empty-state{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;pointer-events:none;padding:66px 20px 65px}.empty-stitch{height:60px;width:72px;display:flex;justify-content:center;align-items:center;margin-bottom:18px;transform:rotate(-20deg)}.empty-stitch svg{width:72px;height:85px}.empty-state .eyebrow{font-size:12px;color:#95816b;margin-bottom:12px;letter-spacing:1.4px}.empty-state h2{font-family:var(--serif);font-size:35px;font-weight:400;line-height:1.12;letter-spacing:-.55px}.empty-state>p:not(.eyebrow){font-size:14px;line-height:1.65;color:var(--muted);margin:16px 0 23px}.empty-state button{pointer-events:auto}.empty-demo{margin-top:14px;font-size:12px;padding:7px;color:#806b55}.empty-demo span{margin-left:5px}.canvas-bottom{position:absolute;bottom:19px;left:22px;right:22px;display:flex;align-items:center;justify-content:space-between;gap:12px;pointer-events:none}.canvas-help{color:#97816c;font-size:12px;line-height:1.4}.zoom-control{display:flex;align-items:center;pointer-events:auto;background:var(--white);border:1px solid var(--line);border-radius:8px;box-shadow:0 2px 5px #4a2e1e05;flex-shrink:0}.zoom-control button{font-size:12px;min-width:32px;min-height:32px;display:grid;place-items:center;padding:4px 8px;border-radius:7px}.zoom-control button:hover{background:#ede8db}.zoom-control [data-icon] svg{width:13px;height:13px}.counter-bar{display:grid;grid-template-columns:repeat(3,1fr);padding:19px 10px;border-top:1px solid var(--line);background:#fffaf3;flex-shrink:0}.counter-bar>div{display:flex;flex-direction:column;align-items:center;gap:5px;border-right:1px solid var(--line)}.counter-bar>div:last-child{border:0}.counter-bar strong{font-family:var(--serif);font-size:28px;font-weight:400;line-height:1}.counter-bar span{font-size:12px;color:var(--muted)}.details-panel{border-left:1px solid var(--line);display:flex;flex-direction:column}.stitch-details{padding:26px 0 20px;flex:1}.details-empty{padding-top:30px}.detail-empty-icon{height:54px;width:54px;border:1px dashed #c9baa6;border-radius:50%;display:grid;place-items:center;color:#a28d72;margin-bottom:24px}.detail-empty-icon svg{height:23px;width:23px}.details-empty h3{font-family:var(--serif);font-size:23px;font-weight:400;line-height:1.2;margin-bottom:13px}.details-empty p{font-size:14px;line-height:1.75;color:var(--muted)}.details-empty .detail-tip{border-top:1px solid var(--line);margin-top:25px;padding-top:19px;font-size:12px}.detail-number{font-size:12px;letter-spacing:1.3px;color:var(--muted);margin-bottom:13px}.detail-type{display:flex;align-items:center;gap:12px;margin-bottom:22px}.detail-type .stitch-icon{width:47px;height:58px;flex-shrink:0}.detail-type h3{font-family:var(--serif);font-size:25px;font-weight:400;line-height:1.1}.detail-type p{font-size:12px;line-height:1.5;color:var(--muted);margin-top:7px}.detail-stats{display:flex;flex-direction:column;gap:13px;padding:17px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}.detail-stats div{display:flex;justify-content:space-between;gap:8px;font-size:12px}.detail-stats dt{color:var(--muted)}.detail-stats dd{margin:0;text-align:right}.parent-card{margin:20px 0;background:#f1efe4;border:1px solid #e3dfce;border-radius:9px;padding:13px}.parent-card .eyebrow{font-size:12px;color:#8b795f;letter-spacing:1.1px}.parent-link{display:flex;gap:8px;align-items:center;text-align:left;width:100%;padding:12px 0 1px}.parent-link strong{font-size:13px;display:block;font-weight:600}.parent-link small{display:block;font-size:12px;color:#88755f;margin-top:4px}.parent-link>.arrow{margin-left:auto;color:#7f6c53}.parent-card>p{font-size:12px;color:var(--muted);line-height:1.65;margin-top:9px}.detail-instruction{font-size:13px;line-height:1.75;color:#81705f}.detail-children{font-size:12px;color:#8e7a63;margin-top:14px;line-height:1.6}.connection-option{border-top:1px solid var(--line);padding-top:19px}.connection-option label{display:flex;align-items:center;gap:8px;font-size:12px;cursor:pointer;line-height:1.5}.connection-option input{appearance:none;width:29px;height:17px;border-radius:20px;background:#d9d4c7;position:relative;cursor:pointer;margin:0;flex-shrink:0}.connection-option input:before{content:'';position:absolute;width:11px;height:11px;top:3px;left:3px;background:#fffdf8;border-radius:50%;transition:transform .2s}.connection-option input:checked{background:#83986e}.connection-option input:checked:before{transform:translateX(12px)}.connection-option p{font-size:12px;line-height:1.7;color:var(--muted);margin-top:10px}.action-bar{grid-column:1/-1;display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:79px;border-top:1px solid #dfd3c3;background:var(--white);padding:15px 22px}.history-actions{display:flex;gap:8px}.undo-button{border:1px solid #d8c9b5;background:#fcf6ea}.undo-button:hover:not(:disabled){background:#eee3d0}.redo-button{font-weight:500}.redo-button:hover:not(:disabled){background:#f1ebdf}.action-hint{font-size:12px;line-height:1.5;color:#88745e;text-align:center}.next-button{background:var(--sage);color:#30442a}.next-button:hover:not(:disabled){background:#91a67c}.below-studio{display:flex;justify-content:space-between;gap:12px;padding:17px 1px;color:#a18c76;font-size:12px;line-height:1.6}.below-studio p:first-child{display:flex;gap:7px;align-items:center}.below-studio [data-icon] svg{width:12px;height:12px}.toast{position:fixed;bottom:27px;left:50%;transform:translate(-50%,14px);max-width:min(560px,calc(100vw - 30px));padding:14px 22px;background:var(--espresso);color:#fff9ef;border-radius:11px;box-shadow:0 5px 20px #4a2e1e24;font-size:14px;line-height:1.5;z-index:30;opacity:0;pointer-events:none;transition:opacity .2s,transform .2s}.toast.visible{opacity:1;transform:translate(-50%,0)}.toast.error{background:#774b36}dialog{max-width:530px;width:calc(100vw - 32px);max-height:85dvh;border:1px solid #d6c5b0;border-radius:17px;padding:32px;background:var(--paper);color:var(--espresso);box-shadow:0 20px 90px #35200f40}dialog::backdrop{background:#38271655;backdrop-filter:blur(3px)}.dialog-close{position:absolute;top:12px;right:12px}dialog>.eyebrow{font-size:12px;color:var(--muted);padding-right:25px}dialog h2{font-family:var(--serif);font-size:35px;font-weight:400;letter-spacing:-.5px;margin:10px 0 24px}.help-steps{list-style:none;padding:0;counter-reset:steps;display:grid;gap:20px}.help-steps li{counter-increment:steps;position:relative;padding-left:37px}.help-steps li:before{content:counter(steps);position:absolute;left:0;top:0;background:#e1e7d5;color:#536745;width:24px;height:24px;display:grid;place-items:center;border-radius:50%;font-size:12px}.help-steps strong{font-size:14px}.help-steps p{font-size:14px;color:#89745f;line-height:1.7;margin-top:5px}.learning-note{background:#edeadb;border-radius:8px;padding:14px;margin:25px 0 18px}.learning-note strong{font-size:12px}.learning-note p,.keyboard-note{font-size:12px;line-height:1.7;color:#7f6b53}.learning-note p{margin-top:5px}.keyboard-note{margin-bottom:22px}.turning #crochet-canvas{animation:turn-work .46s ease-in-out}@keyframes turn-work{0%{opacity:.6;transform:scaleX(.9)}45%{opacity:.3;transform:scaleX(.04)}100%{opacity:1;transform:scaleX(1)}}
+@media(min-width:1450px){.studio{grid-template-columns:258px minmax(400px,1fr) 280px}.tools-panel,.details-panel{padding:27px 24px}.work-canvas{min-height:450px}.stitch-tool{min-height:67px}}
+@media(max-width:1150px){main{padding:23px 24px 0}.site-header{padding:0 24px}.studio{grid-template-columns:207px minmax(270px,1fr) 220px}.tools-panel,.details-panel{padding:22px 15px}.panel-heading h2{font-size:14px}.small-badge{font-size:12px;padding:2px 4px}.stitch-tool{padding-left:4px;gap:6px}.stitch-tool strong{font-size:13px}.yarn-weight{display:none}.canvas-help{max-width:180px}.action-hint{font-size:12px}.heading-note{display:none}.action-bar{padding:14px 16px;gap:8px}.detail-type{gap:7px}.detail-type h3{font-size:22px}}
+@media(max-width:950px){.studio{grid-template-columns:210px minmax(300px,1fr);grid-template-rows:minmax(540px,auto) auto auto}.details-panel{grid-column:1/-1;border-left:0;border-top:1px solid var(--line);padding:20px 24px;display:grid;grid-template-columns:1fr 220px;gap:5px 25px}.details-panel>.panel-heading{grid-column:1/-1}.stitch-details{padding:15px 0 0;min-width:0}.details-empty{padding-top:0;display:flex;align-items:center;gap:15px}.detail-empty-icon{margin:0;flex-shrink:0}.details-empty h3{font-size:20px;margin-bottom:0}.details-empty p{font-size:12px;line-height:1.5;max-width:250px}.details-empty .detail-tip{display:none}.connection-option{border-top:0;align-self:center;padding-top:10px}.detail-selected{display:grid;grid-template-columns:1fr 1fr;gap:0 17px}.detail-number{grid-column:1/-1}.detail-type{margin-bottom:10px}.detail-stats{margin:0;padding:4px 0;border:0;gap:9px}.parent-card{margin:8px 0 0}.detail-instruction{margin-top:12px;font-size:12px}.detail-children{grid-column:1/-1}.action-bar{grid-row:2;grid-column:1/-1}.tool-tip{padding-top:18px}.action-hint{display:none}.studio{overflow:clip}}
+@media(max-width:680px){.site-header{height:80px;padding:0 17px;gap:10px}.brand{font-size:25px;gap:8px;letter-spacing:-.8px}.brand-mark{width:36px;height:36px}.brand-mark svg{width:29px;height:29px}.brand small{font-size:12px;letter-spacing:1.6px;margin-top:7px}.header-actions{gap:3px}.header-actions .text-button{width:36px;padding:0}.header-actions .text-button>span:last-child{display:none}.demo-button{font-size:12px;padding:8px 10px;gap:5px;min-height:37px}.demo-button svg{width:13px;height:13px}main{padding:21px 12px 0}.atelier-heading{margin:0 5px 20px}.atelier-heading .eyebrow{font-size:12px;letter-spacing:1.2px;margin-bottom:7px}h1{font-size:27px;max-width:350px}.studio{display:flex;flex-direction:column;border-radius:12px}.tools-panel{order:1;border-right:0;border-bottom:1px solid var(--line);padding:16px 12px 12px}.panel-heading h2{font-size:13px}.tools-panel .small-badge{font-size:12px}.panel-intro{font-size:12px;margin:5px 0 12px}.stitch-tools{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:5px}.stitch-tool{display:flex;flex-direction:column;justify-content:flex-start;gap:4px;min-height:98px;padding:7px 2px 6px;text-align:center;border:1px solid #ede7dc;background:#faf7ef;border-radius:8px}.stitch-tool .stitch-icon{height:33px;width:29px}.stitch-tool strong{font-size:12px;line-height:1.3;font-weight:500;word-break:normal;hyphens:auto}.stitch-tool small{font-size:12px;margin-top:4px}.stitch-tool .tool-plus{display:none}.yarn-choice,.tool-tip{display:none}.work-panel{order:2}.canvas-toolbar{height:52px;padding:0 14px}.canvas-title{font-size:12px;gap:7px}.canvas-title svg{width:15px;height:15px}.work-canvas{min-height:370px;height:45dvh;flex:auto}.canvas-meta{top:15px;left:14px;right:14px}.row-badge{font-size:12px;padding:5px 7px}#side-label{font-size:12px}.empty-state{padding:45px 12px 47px}.empty-stitch{height:36px;margin-bottom:9px}.empty-stitch svg{height:51px;width:52px}.empty-state .eyebrow{font-size:12px;letter-spacing:1.1px;margin-bottom:10px}.empty-state h2{font-size:30px}.empty-state>p:not(.eyebrow){font-size:12px;margin:12px 0 16px}.empty-state .primary-button{font-size:12px;min-height:43px}.empty-demo{font-size:12px;margin-top:8px}.canvas-bottom{bottom:13px;left:14px;right:14px}.canvas-help{font-size:12px;max-width:150px}.zoom-control button{min-height:31px;min-width:28px;font-size:12px;padding:3px 6px}.counter-bar{padding:16px 5px}.counter-bar strong{font-size:26px}.counter-bar span{font-size:12px}.action-bar{order:3;padding:12px 10px;min-height:70px;gap:7px;position:sticky;bottom:0;z-index:10;box-shadow:0 -3px 8px #4a2e1e05}.history-actions{gap:2px}.action-bar .button{font-size:12px;min-height:43px;padding:10px 9px;gap:5px}.action-bar .button svg{width:16px;height:16px}.redo-button>span:last-child{display:none}.action-bar .redo-button{width:36px;padding:9px}.next-button{margin-left:auto}.details-panel{order:4;display:block;padding:20px 19px}.stitch-details{padding-top:16px}.details-empty{display:block;padding-left:51px;position:relative;min-height:80px}.detail-empty-icon{position:absolute;left:0;top:0;width:36px;height:36px}.detail-empty-icon svg{width:18px;height:18px}.details-empty h3{font-size:20px;margin-bottom:8px}.details-empty p{font-size:13px;max-width:none;line-height:1.7}.details-empty .detail-tip{display:none}.connection-option{margin-top:20px;border-top:1px solid var(--line);padding-top:15px}.connection-option label{font-size:12px}.connection-option p{font-size:12px;max-width:280px}.below-studio{display:block;text-align:center;font-size:12px;padding:15px 0 18px}.below-studio p:first-child{justify-content:center;margin-bottom:4px}.toast{bottom:18px;font-size:13px;padding:12px 16px}.detail-type h3{font-size:23px}.detail-selected{gap:0 14px}.parent-card{padding:11px}.parent-link strong{font-size:12px}.parent-link small{font-size:12px}.detail-stats div{font-size:12px}.detail-instruction{font-size:12px}.detail-number{font-size:12px}.detail-children{font-size:12px}}
+@media(max-width:370px){.site-header{padding:0 10px}.brand{font-size:23px}.demo-button{font-size:12px;padding:8px}.brand-mark{width:31px;height:31px}.header-actions .text-button{width:27px}h1{font-size:25px}.stitch-tool strong{font-size:12px}.stitch-tools{gap:3px}.tools-panel{padding-left:8px;padding-right:8px}.action-bar .button{font-size:12px}.canvas-help{max-width:130px}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+
+/* Readable controls and content-driven panel height, including enlarged text. */
+@media(min-width:951px){.studio{grid-template-rows:minmax(620px,auto) auto}.tools-panel,.details-panel{padding-top:24px;padding-bottom:24px}}
+.panel-intro,.connection-option label,.stitch-tool strong,.canvas-title,.detail-stats div,.action-hint{font-size:14px}
+.tool-tip p,.details-empty p,.detail-instruction{font-size:14px;line-height:1.7}
+.empty-state>p:not(.eyebrow),.help-steps p{font-size:16px}
+.brand small{font-size:10px}.eyebrow{font-size:12px}.tool-tip .eyebrow{font-size:12px;letter-spacing:1px}
+.canvas-help{font-size:12px}.counter-bar span{font-size:12px}.stitch-tool{min-height:64px}.tool-tip{padding-top:17px}
+@media(max-width:1150px){.stitch-tool strong{font-size:14px}.stitch-tool{gap:4px}.small-badge{font-size:12px}.canvas-help{max-width:150px}.panel-heading{flex-wrap:wrap}.tools-panel .small-badge{display:none}.panel-intro{font-size:13px}.yarn-choice{margin-top:4px}.tool-tip p{font-size:14px}.heading-note{display:none}}
+@media(max-width:680px){.brand{font-size:24px}.brand small{font-size:8px}.header-actions .demo-button{font-size:12px}.header-actions .text-button{width:30px}.stitch-tool strong{font-size:12px;overflow-wrap:anywhere}.stitch-tool small{font-size:12px}.stitch-tool{min-height:111px}.stitch-tools{gap:4px}.panel-intro{font-size:13px}.canvas-title{font-size:14px}.canvas-help{font-size:12px;max-width:140px}.row-badge,#side-label{font-size:12px}.empty-state .eyebrow{font-size:11px}.empty-state>p:not(.eyebrow){font-size:14px}.empty-state .primary-button{font-size:14px}.empty-demo{font-size:12px}.canvas-meta{top:12px}.counter-bar span{font-size:12px;text-align:center}.action-bar .button{font-size:13px}.below-studio{font-size:12px}.details-empty p,.connection-option label,.detail-stats div{font-size:14px}.connection-option p{font-size:12px}.detail-selected{grid-template-columns:1fr 1fr}.detail-instruction{font-size:14px}.parent-link strong{font-size:14px}.parent-link small{font-size:12px}.detail-number{font-size:12px}.detail-type{grid-column:1/-1}.detail-stats{grid-column:1/-1;margin:10px 0}.parent-card{grid-column:1/-1}.detail-instruction{grid-column:1/-1}.action-bar{position:static}.work-canvas{min-height:405px}.atelier-heading .eyebrow{font-size:12px}.yarn-weight{display:none}}
+@media(max-width:370px){.brand{font-size:21px}.brand-mark{display:none}.header-actions{gap:0}.site-header{padding:0 12px}.header-actions .demo-button{padding:8px;font-size:12px}.header-actions .text-button{width:32px}.action-bar .button{font-size:12px}.canvas-meta{left:10px;right:10px}.canvas-help{max-width:130px;font-size:12px}.tools-panel{padding-left:7px;padding-right:7px}.stitch-tool{min-height:119px}}
+
+/* V2 extends the original atelier: the work surface and yarn remain central. */
+.version-badge{font-size:12px;letter-spacing:1.5px;border:1px solid #cbd6ba;border-radius:30px;padding:8px 12px;white-space:nowrap;color:#526645}
+.project-settings{display:flex;align-items:center;gap:18px;flex-wrap:wrap;margin-bottom:16px}
+.mode-choice{display:flex;border:1px solid #d7caba;border-radius:10px;padding:3px;background:var(--paper);gap:3px}
+.mode-choice button{min-height:44px;border-radius:7px;font-size:14px;padding:9px 15px}
+.mode-choice button[aria-pressed=true]{background:var(--sage-light);box-shadow:0 1px 3px #4a2e1e0a}
+.project-settings label{display:flex;align-items:center;gap:9px;font-size:14px}
+.project-settings p{font-size:13px;color:#806c58;flex:1;min-width:170px}
+select,input[type=number]{font:inherit;color:var(--espresso);background:var(--paper);border:1px solid #d9cbb8;border-radius:8px;min-height:44px;padding:8px 10px;max-width:100%;min-width:0}
+select:focus-visible,input:focus-visible{outline:2px solid var(--sage-dark);outline-offset:2px}
+.demo-strip{display:flex;align-items:center;gap:10px;margin-bottom:18px;flex-wrap:wrap}
+.demo-strip>span{font-family:var(--serif);font-style:italic;font-size:16px;color:#8a725d;margin-right:4px}
+.demo-strip>button{display:flex;align-items:center;gap:10px;min-height:46px;padding:9px 14px;border:1px solid #dfd0bd;border-radius:9px;background:#fffaf2;font-size:12px;color:#90765f}
+.demo-strip strong{font-size:14px;font-weight:500;color:var(--espresso)}
+.demo-strip small{font-size:12px;border-left:1px solid #e0d5c4;padding-left:10px}
+.demo-strip>button:hover{background:#eaf0e0;border-color:#c2d0b0}
+.studio{grid-template-columns:252px minmax(280px,1fr) 288px;grid-template-rows:minmax(680px,auto) auto}
+.tools-panel{padding:22px 18px}
+.tools-panel .panel-intro{min-height:21px;margin:9px 0 14px;font-size:14px}
+.tool-tabs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:4px;margin-bottom:20px;border-bottom:1px solid var(--line);padding-bottom:12px}
+.tool-tabs button{font-size:13px;min-height:40px;padding:7px 4px;border-radius:7px}
+.tool-tabs button[aria-selected=true]{background:var(--sage-light);color:#45603a;font-weight:600}
+.tool-tabs button:hover{background:#eff0e5}
+.tool-pane{min-width:0}
+.tool-pane>select{width:100%}
+.stitch-tool{min-height:60px}
+.field-label{display:flex;flex-direction:column;gap:8px;font-size:14px;line-height:1.45;margin:17px 0 8px}
+.field-label select{width:100%;font-size:14px}
+.mini-note{font-size:13px;line-height:1.6;color:#806c58;margin:10px 0}
+.subtle-button{font-size:13px;padding:9px 6px;min-height:44px;white-space:normal}
+.subtle-button:hover{background:#eee9dc}
+.outlined-button{border:1px solid #d6c5b0;background:#fffaf2;white-space:normal}
+.outlined-button:hover{background:#eee9dc}
+#height-chain-button{margin-top:8px;text-align:left;width:100%}
+.yarn-choice{display:flex;margin-top:auto;padding:18px 0 0;gap:10px;border-bottom:0;border-top:1px solid var(--line)}
+.yarn-choice strong{font-size:14px}
+.yarn-choice .subtle-button{margin-left:auto}
+.color-sample{flex-shrink:0;border-color:#ffffff55}
+.technique-choice{display:flex;flex-direction:column;gap:9px}
+.technique-choice button{padding:14px 12px;text-align:left;border:1px solid #deceb9;border-radius:9px;background:#faf7ef}
+.technique-choice button[aria-pressed=true]{border-color:#a5bb8f;background:#e9efdf}
+.technique-choice strong{display:block;font-size:14px;font-weight:600}
+.technique-choice span{display:block;font-size:13px;line-height:1.5;color:#836f5b;margin-top:5px}
+.technique-help{font-size:14px;line-height:1.65;margin:15px 0;color:#725d48}
+#apply-technique,#cancel-technique,#change-yarn,#skip-button,#marker-button{width:100%;font-size:14px;white-space:normal}
+.tool-divider{border-top:1px solid var(--line);margin:20px 0}
+.insertion-options{display:grid;gap:9px}
+.insertion-options button{border:1px solid #ded0be;border-radius:9px;min-height:48px;font-size:14px;padding:10px;text-align:left;line-height:1.4}
+.insertion-options button[aria-pressed=true]{background:#e6edda;border-color:#adbf9b}
+.yarn-options{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin:14px 0}
+.yarn-options button{display:flex;align-items:center;gap:8px;min-height:62px;border:1px solid #e5d8c6;border-radius:8px;padding:9px;font-size:14px;text-align:left}
+.yarn-options button[aria-pressed=true]{border-color:#9aad87;background:#edf1e5}
+.yarn-swatch{width:25px;height:25px;background:var(--yarn);border-radius:50%;flex-shrink:0;border:1px solid #4a2e1e25;box-shadow:inset 0 0 0 3px #ffffff30}
+.marker-list{display:flex;flex-wrap:wrap;gap:7px;margin-top:20px}
+.insertion-bar{padding:15px 18px 12px;border-top:1px solid var(--line);background:#fffaf2}
+.insertion-head{display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap}
+.insertion-head strong{font-weight:500;font-size:14px}
+#preview-label{font-size:12px;color:#617451}
+.target-options{display:flex;gap:6px;overflow-x:auto;padding:9px 0;scrollbar-width:thin;max-width:100%}
+.target-options button{flex:0 0 auto;min-width:44px;min-height:44px;border:1px solid #ddcfbb;border-radius:8px;padding:6px 9px;font-size:14px;background:#fffdf8}
+.target-options button[aria-pressed=true]{background:#dfe8d2;border-color:#879d72;color:#354928}
+.target-options button.skipped{text-decoration:line-through;color:#9a7560;border-style:dashed}
+.quick-loops{display:flex;gap:6px;margin-top:3px}
+.quick-loops button{border:1px solid #ddcfbb;border-radius:7px;min-height:44px;flex:1;padding:7px 12px;font-size:14px;background:#fffdf8}
+.quick-loops button[aria-pressed=true]{background:#ede0cb;border-color:#c8a77f}
+.loop-hit:hover{stroke:#C18B50;stroke-opacity:.4;cursor:crosshair}
+.yarn-stitch.selected .stitch-hit{stroke:#70865a;stroke-width:1.6;fill:#a9c28b15}
+.skipped-stitch .stitch-hit{stroke:#aa795b80;stroke-dasharray:4 4}
+.ring-anchor{cursor:pointer;outline-offset:4px}
+.ring-anchor:focus-visible circle{stroke:#526645;stroke-width:3}
+.detail-selected{display:block}
+.details-panel{padding:22px 18px;overflow:auto;max-height:900px}
+.stitch-details{flex:none;padding:18px 0 10px}
+.detail-stats{display:grid;gap:10px;margin:18px 0;padding:14px 0}
+.detail-stats>div{display:flex;align-items:flex-start;gap:12px;font-size:14px;line-height:1.5}
+.detail-stats dd{max-width:66%;overflow-wrap:anywhere;margin:0;text-align:right}
+.detail-stats dd i,.pattern-row i{width:11px;height:11px;display:inline-block;border-radius:50%;border:1px solid #4a2e1e22;margin-right:7px;flex-shrink:0}
+.stitch-link{min-height:44px;padding:7px 10px;font-size:14px;border:1px solid #ddd0bd;border-radius:7px;background:#fffcf5}
+.stitch-link:hover{background:#e8eedd;border-color:#b9cba3}
+.stitch-links{display:flex;gap:5px;flex-wrap:wrap;font-size:14px;line-height:1.5;margin:9px 0 3px}
+.children-card{margin:16px 0}
+.parent-card p{font-size:13px;line-height:1.5;margin-top:8px}
+.parent-card .stitch-link{background:#fffaf0}
+.detail-type h3{font-size:24px}
+.detail-instruction{font-size:14px}
+.edit-insertion{font-size:13px}
+.detail-marker{margin-top:12px;width:100%;font-size:14px}
+.connection-option{margin-top:14px;padding-top:16px}
+.connection-option label{font-size:14px;line-height:1.5;align-items:flex-start}
+.connection-option input{min-width:18px;min-height:18px;accent-color:#758d5f;margin-top:2px}
+.connection-option p{font-size:13px;line-height:1.6}
+.pattern-panel{margin-top:24px;padding-top:20px;border-top:1px solid var(--line)}
+.pattern-panel h2{font-family:var(--serif);font-size:23px;font-weight:400}
+.pattern-row{padding:14px 0;border-bottom:1px solid var(--line)}
+.pattern-row>div{display:flex;justify-content:space-between;gap:10px;font-size:14px}
+.pattern-row>div strong{font-weight:600}
+.pattern-row>div>span{color:#826d56;font-size:13px;white-space:nowrap}
+.pattern-row p{font-size:14px;line-height:1.55;display:flex;align-items:baseline;gap:0;margin:9px 0 0;flex-wrap:wrap}
+.pattern-row p>span{flex:1;min-width:100px}
+.pattern-row p small{font-size:12px;color:#8a725d;display:block;width:100%;padding-left:18px}
+.pattern-note{display:block;font-size:12px;color:#8a725d;margin-top:7px}
+.round-actions{display:flex;align-items:center;justify-content:flex-end;gap:8px;flex-wrap:wrap;margin-left:auto}
+.action-bar{flex-wrap:wrap;gap:9px}
+.action-bar .button{white-space:normal;text-align:center}
+.action-hint{flex:1;min-width:140px}
+.counter-bar{padding:17px 6px}
+.zoom-control button{min-width:40px;min-height:40px}
+#crochet-canvas{padding:55px 6px 63px}
+@media(min-width:1450px){.studio{grid-template-columns:260px minmax(400px,1fr) 310px}.details-panel,.tools-panel{padding:25px 22px}}
+@media(max-width:1150px) and (min-width:951px){.studio{grid-template-columns:226px minmax(260px,1fr) 254px}.tools-panel,.details-panel{padding:20px 14px}.yarn-options{grid-template-columns:1fr}.tool-tabs button{font-size:12px}.action-hint{display:none}}
+@media(max-width:950px){.studio{grid-template-columns:230px minmax(280px,1fr);grid-template-rows:minmax(650px,auto) auto auto}.details-panel{display:block;max-height:none;grid-column:1/-1}.stitch-details{padding-top:18px}.pattern-panel{margin-top:22px}.action-hint{display:none}.details-empty{display:block;padding:10px 0}.details-empty .detail-empty-icon{display:none}.details-empty p{max-width:none;font-size:14px}.details-empty h3{margin-bottom:10px}}
+@media(max-width:680px){
+  .site-header{height:76px}.atelier-heading{margin-bottom:16px}h1{font-size:26px}.version-badge{font-size:11px;padding:7px 9px}
+  .project-settings{gap:10px;margin:0 4px 14px}.mode-choice{width:100%}.mode-choice button{flex:1;padding:8px 5px;font-size:14px}
+  .project-settings p{font-size:12px;line-height:1.5;margin:0}.project-settings label{width:100%;justify-content:space-between}.project-settings select{flex:1;max-width:75%;font-size:14px}
+  .demo-strip{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;margin-bottom:14px}
+  .demo-strip>span{display:none}.demo-strip>button{display:flex;flex-wrap:wrap;justify-content:center;gap:5px;padding:10px 4px;font-size:12px;min-height:68px}
+  .demo-strip strong{font-size:13px}.demo-strip small{border:0;width:100%;padding:0;font-size:12px}
+  .studio{display:flex}.tools-panel{padding:16px 12px 12px}.tools-panel .panel-intro{margin:5px 0 9px;font-size:13px;min-height:0}
+  .tool-tabs{display:flex;gap:4px;overflow-x:auto;scrollbar-width:thin;margin-bottom:10px;padding-bottom:9px;max-width:100%}
+  .tool-tabs button{flex:0 0 auto;min-height:44px;font-size:14px;padding:7px 9px}
+  .stitch-tools{grid-template-columns:repeat(5,minmax(0,1fr));gap:4px}
+  .stitch-tool{min-height:112px;padding:8px 2px 7px;gap:5px}
+  .stitch-tool strong{font-size:12px;line-height:1.4;overflow-wrap:normal}
+  .stitch-tool .stitch-icon{height:31px;width:28px}.stitch-tool small{font-size:12px}
+  #pane-stitches>.mini-note{display:none}#height-chain-button{font-size:13px;margin-top:4px;padding:5px;min-height:44px}
+  .yarn-choice{margin-top:10px;padding-top:8px;gap:10px}.yarn-choice span:not(.color-sample){font-size:12px}.yarn-choice strong{font-size:14px}.yarn-choice .color-sample{width:22px;height:22px}
+  .technique-choice{flex-direction:row}.technique-choice button{flex:1;padding:12px 10px;min-width:0}
+  .technique-choice strong{font-size:14px}.technique-choice span{font-size:13px}
+  .insertion-options{grid-template-columns:1fr}.yarn-options{grid-template-columns:repeat(2,1fr)}
+  .work-canvas{height:390px;min-height:390px}
+  .empty-state h2{font-size:29px}.empty-state>p:not(.eyebrow){font-size:14px}
+  .canvas-meta{left:12px;right:12px}.canvas-bottom{left:12px;right:12px;bottom:12px}
+  #crochet-canvas{padding-top:48px;padding-bottom:56px}
+  .insertion-bar{padding:13px 12px 11px}.insertion-head strong{font-size:14px}.target-options{padding-top:10px}
+  .quick-loops button{padding:6px 9px}.counter-bar span{font-size:12px}
+  .action-bar{position:sticky;bottom:0;z-index:10;padding:11px 10px;gap:9px;flex-wrap:wrap}
+  .action-bar .button{font-size:13px;padding:8px 10px;min-height:44px}
+  .round-actions{gap:6px;flex:1;min-width:150px}.round-actions>.button{flex:1}
+  .history-actions{flex-shrink:0}.action-bar .redo-button{width:44px}
+  .details-panel{padding:21px 17px}.detail-selected{display:block}.detail-stats{margin:16px 0}
+  .detail-stats dd{max-width:67%}.connection-option label{font-size:14px}.connection-option p{max-width:none;font-size:13px}
+  .below-studio p{line-height:1.6}.below-studio p:last-child{padding:0 18px}
+  .toast{bottom:86px}.header-actions .demo-button{white-space:normal}
+}
+@media(max-width:370px){.version-badge{display:none}.stitch-tool{min-height:122px}.demo-strip>button{gap:3px}.demo-strip strong{font-size:12px}.quick-loops button{padding:6px}}
+
+</style>
+  
+</head>
+<body>
+  <header class="site-header">
+    <a href="#" class="brand" aria-label="PrettyCrochet – Startseite">
+      <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 40 40"><path d="M10 23C7 9 26 7 29 18C31 27 17 32 13 22C9 12 26 11 24 23M23 25L31 32"/></svg></span>
+      <span>Pretty<span class="brand-italic">Crochet</span><small>CROCHET SIMULATOR</small></span>
+    </a>
+    <div class="header-actions">
+      <button class="button text-button" id="help-button"><span data-icon="help"></span><span>So funktioniert’s</span></button>
+      <button class="button demo-button" id="demo-button"><span data-icon="play"></span><span>Beispiel starten</span></button>
+    </div>
+  </header>
+  <main>
+    <div class="atelier-heading">
+      <div><p class="eyebrow">DEIN VIRTUELLES HÄKELATELIER</p><h1>Eine Masche. Viele Möglichkeiten.</h1></div>
+      <span class="version-badge">VERSION 02</span>
+    </div>
+    <div class="project-settings">
+      <div class="mode-choice" role="group" aria-label="Arbeitsmodus"><button data-mode="rows" aria-pressed="true">Reihen häkeln</button><button data-mode="rounds" aria-pressed="false">In Runden häkeln</button></div>
+      <label id="round-style-label" hidden>Rundenart <select id="round-style"><option value="joined">Geschlossene Runden</option><option value="spiral">Spiralrunden</option></select></label>
+      <p id="mode-note">Starte mit einer Luftmaschenkette.</p>
+    </div>
+    <div class="demo-strip" aria-label="Häkelbeispiele"><span>Ausprobieren</span><button data-demo="increase">01 <strong>Zunahmen</strong><small>6 → 12</small></button><button data-demo="decrease">02 <strong>Abnahmen</strong><small>12 → 6</small></button><button data-demo="circle">03 <strong>Kreis</strong><small>6 → 12</small></button></div>
+    <div class="studio">
+      <aside class="tools-panel" aria-label="Werkzeuge und Maschenauswahl">
+        <div class="panel-heading"><h2>Deine Werkzeuge</h2><span class="small-badge">V2</span></div>
+        <p class="panel-intro" id="tool-instruction">Jeder Klick häkelt eine Masche.</p>
+        <div class="tool-tabs" role="tablist" aria-label="Werkzeugkategorien"><button id="tab-stitches" data-tab="stitches" role="tab" aria-selected="true" aria-controls="pane-stitches">Maschen</button><button id="tab-technique" data-tab="technique" role="tab" aria-selected="false" aria-controls="pane-technique">Technik</button><button id="tab-insertion" data-tab="insertion" role="tab" aria-selected="false" aria-controls="pane-insertion">Einstich</button><button id="tab-yarn" data-tab="yarn" role="tab" aria-selected="false" aria-controls="pane-yarn">Garn</button><button id="tab-markers" data-tab="markers" role="tab" aria-selected="false" aria-controls="pane-markers">Markierung</button></div>
+        <div id="pane-stitches" class="tool-pane" role="tabpanel" aria-labelledby="tab-stitches"><div id="stitch-tools" class="stitch-tools"></div><button class="button subtle-button" id="height-chain-button">Höhen-Luftmasche hinzufügen</button><p class="mini-note">Höhen-Luftmaschen und Abschluss-Kettmaschen zählen separat.</p></div>
+        <div id="pane-technique" class="tool-pane" role="tabpanel" aria-labelledby="tab-technique" hidden>
+          <div class="technique-choice"><button data-technique="increase"><strong>Zunahme</strong><span>Mehrere Maschen in eine Masche</span></button><button data-technique="decrease"><strong>Zusammen abmaschen</strong><span>Mehrere Maschen werden zu einer</span></button></div>
+          <label class="field-label" for="technique-type">Maschenart</label><select id="technique-type"><option value="singleCrochet">Feste Masche</option><option value="halfDoubleCrochet">Halbes Stäbchen</option><option value="doubleCrochet">Stäbchen</option></select>
+          <label class="field-label" id="increase-count-label">Maschen in eine Einstichstelle <input id="increase-count" type="number" min="2" max="20" step="1" value="2"></label>
+          <p id="technique-help" class="technique-help">Wähle eine Technik und ihre Einstichstelle.</p>
+          <button id="apply-technique" class="button primary-button" disabled>Technik anwenden</button><button id="cancel-technique" class="button subtle-button" hidden>Vorschau verwerfen</button>
+          <div class="tool-divider"></div><button id="skip-button" class="button outlined-button">Masche überspringen</button>
+        </div>
+        <div id="pane-insertion" class="tool-pane" role="tabpanel" aria-labelledby="tab-insertion" hidden><p class="mini-note">Einstich für die nächsten Maschen. Die Auswahl wird am Garn hervorgehoben.</p><div id="insertion-options" class="insertion-options"></div></div>
+        <div id="pane-yarn" class="tool-pane" role="tabpanel" aria-labelledby="tab-yarn" hidden><p class="mini-note">Wähle die Farbe deines nächsten Garns.</p><div id="yarn-options" class="yarn-options"></div><button id="change-yarn" class="button primary-button">Garn wechseln</button><p class="mini-note">Alle neuen Maschen verwenden das gewählte Garn.</p></div>
+        <div id="pane-markers" class="tool-pane" role="tabpanel" aria-labelledby="tab-markers" hidden><p class="mini-note">Tippe eine Masche an, um dir diese Stelle zu merken.</p><button id="marker-button" class="button outlined-button">Markierer setzen</button><div id="marker-list" class="marker-list"></div></div>
+        <div class="yarn-choice"><span id="active-yarn-sample" class="color-sample"></span><div><span>Aktives Garn</span><strong id="active-yarn-name">Sage</strong></div><button id="open-yarn" class="button subtle-button">Wechseln</button></div>
+      </aside>
+      <section class="work-panel" aria-label="Häkel-Arbeitsbereich">
+        <div class="canvas-toolbar"><div class="canvas-title"><span data-icon="layers"></span><strong>Dein Häkelstück</strong></div><button class="icon-button" id="reset-button" title="Neu beginnen" aria-label="Neu beginnen"><span data-icon="reset"></span></button></div>
+        <div class="work-canvas" id="work-canvas">
+          <div class="canvas-meta"><span id="row-badge" class="row-badge">Luftmaschenkette</span><span id="side-label">Der Anfang</span></div>
+          <svg id="crochet-canvas" xmlns="http://www.w3.org/2000/svg" role="group" aria-label="Dein Häkelstück. Wähle eine Masche aus, um sie zu untersuchen."></svg>
+          <div class="empty-state" id="empty-state">
+            <div id="empty-stitch" class="empty-stitch" aria-hidden="true"></div>
+            <p class="eyebrow">HIER BEGINNT DEIN HÄKELSTÜCK</p>
+            <h2>Alles beginnt mit<br>einer Luftmasche.</h2>
+            <p>Klicke auf „Luftmasche“ und lass<br>deine erste Kette wachsen.</p>
+            <button class="button primary-button" id="first-stitch-button"><span data-icon="plus"></span>Erste Luftmasche häkeln</button>
+            <button class="empty-demo" id="empty-demo-button">Oder das Beispiel entdecken <span aria-hidden="true">↗</span></button>
+          </div>
+          <div class="canvas-bottom"><span class="canvas-help" id="canvas-help">Dein nächstes Lieblingshobby beginnt hier.</span><div class="zoom-control"><button id="zoom-out" aria-label="Verkleinern"><span data-icon="minus"></span></button><button id="zoom-fit" title="Häkelstück einpassen" aria-label="Häkelstück einpassen">100 %</button><button id="zoom-in" aria-label="Vergrößern"><span data-icon="plus"></span></button></div></div>
+        </div>
+        <div class="insertion-bar"><div class="insertion-head"><strong id="target-label">Deine Einstichstelle</strong><span id="preview-label" hidden>Vorschau · noch nicht gehäkelt</span></div><div id="target-options" class="target-options" aria-label="Einstichmaschen"></div><div class="quick-loops" role="group" aria-label="Maschenglied auswählen"><button data-insertion="bothLoops">Beide</button><button data-insertion="frontLoop">Vorne</button><button data-insertion="backLoop">Hinten</button></div></div>
+        <div class="counter-bar" aria-label="Maschenzähler"><div><strong id="row-count">0</strong><span id="level-counter-label">Reihe</span></div><div><strong id="current-count">0</strong><span id="current-counter-label">In dieser Reihe</span></div><div><strong id="total-count">0</strong><span>Maschen inkl. LM/KM</span></div></div>
+      </section>
+      <aside class="details-panel" aria-label="Informationen zur ausgewählten Masche">
+        <div class="panel-heading"><h2>Genau hingeschaut</h2><span data-icon="inspect"></span></div>
+        <div id="stitch-details" class="stitch-details"></div>
+        <div class="connection-option"><label><input type="checkbox" id="show-connections"><span>Maschenstruktur anzeigen</span></label><p>Folge den Verbindungen zwischen Einstich- und Folgemaschen.</p></div>
+        <div class="pattern-panel"><h2>Dein Muster wächst</h2><p class="mini-note">Zusammenfassung deiner ausgeführten Schritte.</p><div id="pattern-summary"></div></div>
+      </aside>
+      <div class="action-bar">
+        <div class="history-actions"><button class="button undo-button" id="undo-button" disabled><span data-icon="undo"></span><span>Rückgängig</span></button><button class="button redo-button" id="redo-button" disabled><span data-icon="redo"></span><span>Wiederholen</span></button></div>
+        <p class="action-hint" id="action-hint">Häkle zuerst deine Luftmaschenkette.</p>
+        <div class="round-actions"><button class="button outlined-button" id="close-ring-button" hidden>Zum Ring schließen</button><button class="button outlined-button" id="close-round-button" hidden>Runde schließen · KM</button><button class="button next-button" id="next-row-button" disabled><span data-icon="turn"></span><span id="next-level-label">Nächste Reihe</span></button></div>
+      </div>
+    </div>
+    <div class="below-studio"><p><span data-icon="heart"></span>Einfach anfangen. Jede Masche zählt.</p><p>2D-Lernmodell · Form vereinfacht · Arbeit bleibt bis zum Neuladen erhalten.</p></div>
+  </main>
+  <div class="toast" role="status" aria-live="polite" id="toast"></div>
+  <dialog id="help-dialog" aria-labelledby="help-title">
+    <button class="icon-button dialog-close" aria-label="Schließen" data-close-dialog><span data-icon="close"></span></button>
+    <p class="eyebrow">WILLKOMMEN IM HÄKELATELIER</p><h2 id="help-title">Masche für Masche.</h2>
+    <ol class="help-steps"><li><strong>Wähle Reihen oder Runden.</strong><p>Häkle zuerst Luftmaschen. Bei Reihen wählst du danach „Nächste Reihe“, bei Runden „Zum Ring schließen“.</p></li><li><strong>Bestimme deinen Einstich.</strong><p>Tippe eine Masche oder ihre Nummer unter dem Häkelstück an. Wähle beide Maschenglieder, vorne oder hinten. Ein Klick auf eine Maschenart häkelt eine neue Masche.</p></li><li><strong>Verändere die Form.</strong><p>Unter „Technik“ bereitest du Zunahmen vor oder wählst mehrere benachbarte Maschen für eine Abnahme. Die transparenten Maschen sind die Vorschau. Erst „Häkeln“ speichert sie.</p></li><li><strong>Häkle im Kreis.</strong><p>In Runde 1 kannst du direkt in den Ring oder in einzelne Luftmaschen einstechen. Geschlossene Runden enden mit einer Kettmasche; danach sind Höhen-Luftmaschen möglich. Bei Spiralrunden markiert „Nächste Runde“ nur den Zählbeginn.</p></li><li><strong>Probiere frei aus.</strong><p>Wechsle das Garn, überspringe Maschen oder setze mehrere Markierer. Auch wiederholtes Einstechen ist erlaubt. Rückgängig und Wiederholen umfassen alle diese Schritte.</p></li></ol>
+    <div class="learning-note"><strong>So liest du das Modell</strong><p>Die Grundkette ist Reihe/Runde 0. Höhen-Luftmaschen und Abschluss-Kettmaschen zählen zur Gesamtzahl, aber nicht zu den Arbeitsmaschen einer Reihe. Du kannst Reihen weiterhin ohne explizite Höhen-Luftmaschen beginnen. Form und Garn sind stilisiert; Fadenspannung, Fall und echte Produktmaße werden noch nicht berechnet.</p></div>
+    <p class="keyboard-note">Zoomen mit + / − oder zwei Fingern. Zum Verschieben die Arbeitsfläche ziehen. Rückgängig: Strg/⌘ + Z.</p>
+    <button class="button primary-button" data-close-dialog>Los geht’s</button>
+  </dialog>
+  <noscript>Bitte aktiviere JavaScript, um den Häkel-Simulator zu verwenden.</noscript>
+<script type="module">
+// stitch-types.js
+/** Central stitch catalogue. All dimensions belong to the visual projection.
+ *  Paths use a normalized 100 × 100 space, with the insertion point at 0,0.
+ *  Adding a stitch does not require changing the engine or renderer.
+ */
+const inserted = {
+  attachment: 'insert', width: 48,
+  allowedConnections: ['chain', 'slipStitch', 'singleCrochet', 'halfDoubleCrochet', 'doubleCrochet'],
+};
+const crown = 'M -43 -86 C -25 -101 23 -101 43 -86 C 30 -74 12 -67 0 -66 C -16 -70 -32 -77 -43 -86';
+const topLoopShapes = Object.freeze({
+  backLoop: 'M -42 0 Q 0 -36 42 0',
+  frontLoop: 'M -42 0 Q 0 36 42 0',
+});
+const stitchTypes = Object.freeze({
+  chain: {
+    id: 'chain', label: 'Luftmasche', short: 'LM', height: 25, width: 48,
+    attachment: 'chain', allowedConnections: [],
+    description: 'Eine Schlaufe durch die nächste. So entsteht die Grundlage deines Häkelstücks.',
+    instruction: 'Faden holen und durch die Schlaufe auf der Nadel ziehen.',
+    heightLabel: 'Die Grundlage',
+    visualShape: [
+      'M -44 -48 C -34 -95 20 -100 44 -51 C 30 -3 -26 1 -44 -48',
+      'M -42 -47 C -19 -46 6 -56 30 -77',
+      'M -31 -20 C -10 -28 13 -43 39 -53',
+    ],
+  },
+  slipStitch: {
+    ...inserted, id: 'slipStitch', label: 'Kettmasche', short: 'KM', height: 17,
+    description: 'Sehr flach und dicht. Verbindet Maschen, ohne viel Höhe hinzuzufügen.',
+    instruction: 'Einstechen, Faden holen und durch beide Schlaufen ziehen.',
+    heightLabel: 'Sehr flach',
+    visualShape: ['M -41 -52 C -30 -94 22 -97 42 -58 C 23 -15 -22 -4 -41 -52', 'M -32 -28 C -7 -37 8 -57 31 -72'],
+  },
+  singleCrochet: {
+    ...inserted, id: 'singleCrochet', label: 'Feste Masche', short: 'fM', height: 46,
+    description: 'Kompakt und dicht. Feste Maschen ergeben ein stabiles, gleichmäßiges Häkelstück.',
+    instruction: 'Einstechen, Faden holen. Noch einmal Faden holen und durch beide Schlaufen ziehen.',
+    heightLabel: 'Kompakt · niedrige Höhe',
+    visualShape: [
+      'M -15 -2 C -27 -26 -37 -56 -30 -82',
+      'M 14 -2 C 29 -29 31 -57 24 -83',
+      'M -15 -2 C 0 -26 23 -48 27 -80',
+      'M 14 -4 C 4 -24 -19 -47 -27 -80', crown,
+    ],
+  },
+  halfDoubleCrochet: {
+    ...inserted, id: 'halfDoubleCrochet', label: 'Halbes Stäbchen', short: 'hStb', height: 71,
+    description: 'Etwas höher und weicher. Ein Mittelweg zwischen fester Masche und Stäbchen.',
+    instruction: 'Umschlag, einstechen, Faden holen. Faden durch alle drei Schlaufen ziehen.',
+    heightLabel: 'Mittlere Höhe',
+    visualShape: [
+      'M -13 -2 C -25 -26 -32 -56 -27 -83',
+      'M 13 -2 C 25 -29 31 -55 25 -83',
+      'M -14 -3 C -2 -25 17 -42 22 -69',
+      'M -25 -49 C -9 -62 14 -46 27 -62',
+      'M -25 -62 C -8 -74 13 -59 25 -73', crown,
+    ],
+  },
+  doubleCrochet: {
+    ...inserted, id: 'doubleCrochet', label: 'Stäbchen', short: 'Stb', height: 99,
+    description: 'Hoch und luftig. Stäbchen lassen dein Häkelstück schneller in die Höhe wachsen.',
+    instruction: 'Umschlag, einstechen, Faden holen. Zweimal Faden durch jeweils zwei Schlaufen ziehen.',
+    heightLabel: 'Deutlich höher · luftig',
+    visualShape: [
+      'M -13 -1 C -22 -25 -31 -56 -27 -85',
+      'M 13 -1 C 25 -29 31 -60 25 -85',
+      'M -13 -2 C -2 -28 17 -47 21 -77',
+      'M -25 -35 C -9 -49 12 -32 26 -47',
+      'M -26 -49 C -11 -61 14 -46 26 -62',
+      'M -26 -64 C -9 -78 13 -62 26 -77', crown,
+    ],
+  },
+});
+const stitchList = Object.values(stitchTypes);
+// Existing V1 body paths are retained; their crown is replaced by two named,
+// individually selectable loop segments. Geometry stays in the catalogue.
+for (const type of stitchList) {
+  type.topLoops = topLoopShapes;
+  type.bodyShape = type.visualShape.filter(path => path !== crown);
+}
+const DEFAULT_COLOR = '#9CAF88';
+
+
+// yarn-data.js
+const yarns = Object.freeze([
+  { yarnId: 'sage', name: 'Sage', color: '#9CAF88', thickness: 7.3 },
+  { yarnId: 'cream', name: 'Cream', color: '#E8D9C1', thickness: 7.3 },
+  { yarnId: 'espresso', name: 'Espresso', color: '#4A2E1E', thickness: 7.3 },
+  { yarnId: 'rose', name: 'Dusty Rose', color: '#C98D93', thickness: 7.3 },
+  { yarnId: 'terracotta', name: 'Terracotta', color: '#BC7155', thickness: 7.3 },
+  { yarnId: 'blue', name: 'Blue', color: '#789BAE', thickness: 7.3 },
+]);
+const insertionPoints = Object.freeze({
+  bothLoops: { label: 'Beide Maschenglieder', short: 'beide', abbreviation: '' },
+  frontLoop: { label: 'Vorderes Maschenglied', short: 'vorne', abbreviation: 'vMG' },
+  backLoop: { label: 'Hinteres Maschenglied', short: 'hinten', abbreviation: 'hMG' },
+  chainSpace: { label: 'Luftmaschenraum / Ring', short: 'LM-Raum', abbreviation: 'LM-Raum' },
+  stitchSpace: { label: 'Zwischen den Maschen', short: 'Zwischenraum', abbreviation: 'Zwischenraum' },
+});
+const decreaseTypes = ['singleCrochet', 'halfDoubleCrochet', 'doubleCrochet'];
+
+
+// stitch-data.js
+
+/** V1 snapshots remain readable. Coordinates are deliberately projected in
+ * layout.js, never used as the source of crochet relationships. */
+function migrateState(snapshot) {
+  const state = structuredClone(snapshot);
+  state.schemaVersion = 2;
+  state.mode ??= 'rows'; state.roundStyle ??= 'joined';
+  state.round = state.mode === 'rounds' ? state.row : null;
+  state.insertionPoint ??= 'bothLoops'; state.activeYarnId ??= 'sage';
+  state.yarns ??= yarns.map(y => ({ ...y }));
+  state.anchors ??= []; state.closures ??= []; state.markers ??= [];
+  state.actions ??= []; state.completedLevels ??= [];
+  state.roundPhase ??= 'working';
+  state.rowAnchors ??= []; state.turnCount ??= state.mode === 'rows' ? state.row : 0;
+  for (const s of state.stitches) {
+    s.parentStitchIds ??= s.parentStitchId == null ? [] : [s.parentStitchId];
+    s.childStitchIds ??= [...(s.children ?? [])];
+    s.parentStitchId = s.parentStitchIds[0] ?? null; s.children = [...s.childStitchIds];
+    s.round ??= state.mode === 'rounds' ? s.row : null;
+    s.insertionPoint ??= 'bothLoops'; s.insertionFace ??= s.row % 2;
+    s.anchorId ??= null; s.role ??= 'stitch'; s.countsAsStitch ??= true;
+    s.yarnId ??= state.yarns.find(y => y.color === s.color)?.yarnId ?? 'sage';
+    s.usage ??= s.childStitchIds.length ? 'used' : 'unused'; s.operation ??= 'stitch';
+  }
+  if (state.cursor == null) {
+    const targets = state.stitches.filter(s => s.row === state.row - 1 && s.countsAsStitch);
+    if (state.mode === 'rows') targets.reverse();
+    const last = state.stitches.filter(s => s.row === state.row && s.parentStitchIds.length).at(-1);
+    state.cursor = last ? Math.max(...last.parentStitchIds.map(id => targets.findIndex(s => s.id === id))) + 1 : 0;
+  }
+  return state;
+}
+
+
+// engine.js
+
+
+
+/** Renderer-independent crochet graph. Row 0 is the foundation chain.
+ *  position is the creation order within a row (1-based).
+ *  parentStitchIds records insertion, previousStitchId records yarn continuity.
+ *  Foundation chains link through previousStitchId; they have no insertion parent.
+ *  Joins and optional height chains are explicit, non-counting stitches.
+ */
+const initialState = (mode = 'rows', roundStyle = 'joined') => ({
+  schemaVersion: 2, stitches: [], row: 0, round: mode === 'rounds' ? 0 : null,
+  nextId: 1, rowAnchors: [], turnCount: 0, mode, roundStyle, roundPhase: 'working',
+  anchors: [], closures: [], markers: [], actions: [], completedLevels: [], cursor: 0,
+  yarns: yarns.map(y => ({ ...y })), activeYarnId: 'sage', insertionPoint: 'bothLoops',
+});
+const rowStitches = (state, row = state.row) => state.stitches.filter(s => s.row === row && s.countsAsStitch !== false);
+const getStitch = (state, id) => state.stitches.find(s => s.id === id) ?? null;
+const workingDirection = row => row % 2 === 0 ? 1 : -1;
+const availableTargets = state => state.row === 0 ? [] : rowStitches(state, state.row - 1);
+const workingTargets = state => state.mode === 'rounds' ? availableTargets(state) : availableTargets(state).slice().reverse();
+const currentRing = state => state.mode === 'rounds' && state.row === 1 ? state.anchors.find(a => a.type === 'chainRing') ?? null : null;
+const levelLabel = (state, level = state.row) => level === 0 ? 'Luftmaschenkette' : `${state.mode === 'rounds' ? 'Runde' : 'Reihe'} ${level}`;
+class CrochetError extends Error {}
+
+const idsOf = ids => ids == null ? [] : Array.isArray(ids) ? [...ids] : [ids];
+const record = (state, action) => ({ ...state, actions: [...state.actions, { id: state.actions.length + 1, level: state.row, ...action }] });
+const optionsOf = value => typeof value === 'string' ? { color: value } : value ?? {};
+
+function validateInsertion(state, typeId, parents, options = {}) {
+  if (!Object.hasOwn(stitchTypes, typeId)) throw new CrochetError('Diese Maschenart gibt es noch nicht.');
+  const point = options.insertionPoint ?? state.insertionPoint;
+  if (!Object.hasOwn(insertionPoints, point)) throw new CrochetError('Diese Einstichstelle ist nicht verfügbar.');
+  if (stitchTypes[typeId].attachment === 'chain') {
+    if (options.operation === 'decrease') throw new CrochetError('Luftmaschen können nicht zusammen abgemascht werden.');
+    return true;
+  }
+  if (state.row === 0) throw new CrochetError(state.mode === 'rounds' ? 'Erstelle zuerst Luftmaschen und schließe sie zum Ring.' : 'Beginne mit Luftmaschen und wähle dann „Nächste Reihe“.');
+  if (state.mode === 'rounds' && state.roundPhase === 'closed' && !options.closure) throw new CrochetError('Die Runde ist geschlossen. Wähle „Nächste Runde“.');
+  const ids = idsOf(parents);
+  if (options.anchorId) {
+    const anchor = currentRing(state);
+    if (!anchor || anchor.id !== options.anchorId || ids.length || options.operation === 'decrease') throw new CrochetError('Wähle den Luftmaschenring als eigene Einstichfläche.');
+    if (point !== 'chainSpace') throw new CrochetError('In den Ring wird als Luftmaschenraum eingestochen.');
+    return true;
+  }
+  if (!ids.length || new Set(ids).size !== ids.length) throw new CrochetError('Wähle eine gültige Einstichmasche aus.');
+  for (const id of ids) {
+    const parent = getStitch(state, id);
+    if (!parent || parent.countsAsStitch === false || parent.row !== state.row - 1) throw new CrochetError('Wähle eine Masche der unmittelbar vorherigen Reihe oder Runde.');
+    if (!stitchTypes[typeId].allowedConnections.includes(parent.type)) throw new CrochetError('Diese Verbindung wird noch nicht unterstützt.');
+    if (point === 'chainSpace' && parent.type !== 'chain') throw new CrochetError('Für einen Luftmaschenraum wähle eine Luftmasche oder den Ring.');
+  }
+  if (options.operation === 'decrease') {
+    if (!decreaseTypes.includes(typeId) || ids.length < 2) throw new CrochetError('Wähle mindestens zwei benachbarte Maschen für die Abnahme.');
+    if (['chainSpace','stitchSpace'].includes(point)) throw new CrochetError('Abnahmen werden hier in Maschenglieder gearbeitet.');
+    const targets = workingTargets(state), indices = ids.map(id => targets.findIndex(s => s.id === id)).sort((a,b) => a-b);
+    const linear = indices.at(-1) - indices[0] + 1 === indices.length;
+    const circular = state.mode === 'rounds' && indices.filter((v,i) => ((indices[(i+1)%indices.length] - v + targets.length) % targets.length) > 1).length <= 1;
+    if (!linear && !circular) throw new CrochetError('Für eine Abnahme müssen die ausgewählten Maschen nebeneinanderliegen.');
+  } else if (ids.length !== 1) throw new CrochetError('Mehrere Einstichmaschen sind nur bei einer Abnahme möglich.');
+  return true;
+}
+
+/** Primitive immutable graph edit, shared by ordinary stitches and atomic techniques. */
+function appendStitch(state, typeId, parents = [], options = {}) {
+  if (!options.closure) validateInsertion(state, typeId, parents, options);
+  const type = stitchTypes[typeId], yarn = state.yarns.find(y => y.yarnId === (options.yarnId ?? state.activeYarnId));
+  if (!yarn) throw new CrochetError('Dieses Garn ist nicht verfügbar.');
+  const color = options.color ?? yarn.color;
+  if (!/^#[0-9a-f]{6}$/i.test(color)) throw new CrochetError('Bitte wähle eine gültige Garnfarbe.');
+  const parentStitchIds = type.attachment === 'chain' ? [] : idsOf(parents);
+  const previous = state.stitches.at(-1), role = options.role ?? 'stitch';
+  const countsAsStitch = role === 'stitch';
+  const stitch = {
+    id: state.nextId, type: typeId, row: state.row, round: state.mode === 'rounds' ? state.row : null,
+    position: countsAsStitch ? rowStitches(state).length + 1 : null,
+    parentStitchIds, childStitchIds: [], parentStitchId: parentStitchIds[0] ?? null, children: [],
+    previousStitchId: previous?.id ?? null, anchorId: options.anchorId ?? null,
+    insertionPoint: options.insertionPoint ?? state.insertionPoint, insertionFace: state.turnCount % 2,
+    yarnId: yarn.yarnId, color, yarnStart: !!previous && (previous.yarnId !== yarn.yarnId || previous.color !== color),
+    role, countsAsStitch, operation: options.operation ?? 'stitch', status: 'completed', usage: 'unused',
+  };
+  const targets = workingTargets(state), consumed = parentStitchIds.map(id => targets.findIndex(s => s.id === id));
+  return {
+    ...state, nextId: state.nextId + 1,
+    cursor: consumed.length ? Math.max(...consumed) + 1 : state.cursor,
+    stitches: [...state.stitches.map(s => {
+      if (!parentStitchIds.includes(s.id)) return options.anchorId && state.anchors.find(a => a.id === options.anchorId)?.stitchIds.includes(s.id) ? { ...s, usage: 'used' } : s;
+      const children = [...s.childStitchIds, stitch.id];
+      return { ...s, childStitchIds: children, children, usage: options.closure ? s.usage : 'used' };
+    }), stitch],
+    anchors: state.anchors.map(a => a.id === stitch.anchorId ? { ...a, childStitchIds: [...a.childStitchIds, stitch.id] } : a),
+  };
+}
+
+function addStitch(state, typeId, parents = null, colorOrOptions = {}) {
+  let options = optionsOf(colorOrOptions);
+  if (typeId === 'chain' && state.mode === 'rounds' && state.roundPhase === 'closed') options = { ...options, role: 'turningChain' };
+  const next = appendStitch(state, typeId, parents, options);
+  return record(next, { kind: options.role === 'turningChain' ? 'turningChain' : 'stitch', type: typeId, stitchIds: [next.nextId - 1], label: `${stitchTypes[typeId].label} häkeln` });
+}
+
+function increase(state, type, parent, count = 2, options = {}) {
+  if (!Number.isInteger(count) || count < 2 || count > 20) throw new CrochetError('Eine Zunahme benötigt 2 bis 20 Maschen.');
+  if (stitchTypes[type]?.attachment !== 'insert') throw new CrochetError('Wähle eine Masche, die eingestochen wird.');
+  let next = state; const created = [];
+  for (let i = 0; i < count; i++) { next = appendStitch(next, type, parent, { ...options, operation: 'increase' }); created.push(next.nextId - 1); }
+  return record(next, { kind: 'increase', type, count, stitchIds: created, label: `Zunahme: ${count} ${stitchTypes[type].short}` });
+}
+
+function decrease(state, type, parents, options = {}) {
+  const ids = idsOf(parents);
+  const next = appendStitch(state, type, ids, { ...options, operation: 'decrease' });
+  return record(next, { kind: 'decrease', type, count: ids.length, stitchIds: [next.nextId - 1], label: `${ids.length} ${stitchTypes[type].short} zusammen abmaschen` });
+}
+
+function finishSources(state) {
+  return { ...state, stitches: state.stitches.map(s => s.row === state.row - 1 && s.usage === 'unused' ? { ...s, usage: 'skipped' } : s) };
+}
+
+function nextRow(state) {
+  if (!rowStitches(state).length) throw new CrochetError('Häkle zuerst mindestens eine Masche in dieser Reihe.');
+  if (state.mode === 'rounds' && !state.anchors.length) throw new CrochetError('Schließe die Luftmaschenkette zuerst zum Ring.');
+  if (state.mode === 'rounds' && state.roundStyle === 'joined' && state.roundPhase !== 'closed') throw new CrochetError('Schließe die Runde zuerst mit einer Kettmasche.');
+  return record({
+    ...finishSources(state), row: state.row + 1, round: state.mode === 'rounds' ? state.row + 1 : null,
+    turnCount: state.turnCount + (state.mode === 'rows' ? 1 : 0), cursor: 0, roundPhase: 'working',
+    insertionPoint: state.insertionPoint === 'chainSpace' ? 'bothLoops' : state.insertionPoint,
+    completedLevels: [...new Set([...state.completedLevels, state.row])],
+    rowAnchors: [...state.rowAnchors, { row: state.row + 1, previousStitchId: state.stitches.at(-1).id }],
+  }, { kind: 'turn', label: state.mode === 'rows' ? 'Arbeit wenden' : 'Nächste Runde beginnen' });
+}
+
+// The previous row is worked back from its last-created stitch, irrespective of
+// absolute coordinates. This remains correct after skipped stitches or increases.
+function recommendedTarget(state) {
+  return workingTargets(state).slice(state.cursor).find(s => s.usage !== 'skipped')?.id ?? null;
+}
+
+function closeRing(state) {
+  if (state.mode !== 'rounds' || state.row !== 0 || state.anchors.length) throw new CrochetError('Ein Luftmaschenring kann nur am Anfang des Rundenmodus geschlossen werden.');
+  const chain = rowStitches(state);
+  if (chain.length < 2 || chain.some(s => s.type !== 'chain')) throw new CrochetError('Häkle zuerst mindestens zwei Luftmaschen für den Ring.');
+  let next = appendStitch(state, 'slipStitch', [chain[0].id], { closure: true, role: 'ringJoin', insertionPoint: 'bothLoops' });
+  const closingStitchId = next.nextId - 1;
+  next = { ...next, row: 1, round: 1, cursor: 0, completedLevels: [0], insertionPoint: 'chainSpace',
+    anchors: [{ id: 'ring-1', type: 'chainRing', stitchIds: chain.map(s => s.id), closingStitchId, childStitchIds: [] }],
+    closures: [{ kind: 'ring', level: 0, fromStitchId: chain.at(-1).id, toStitchId: chain[0].id, viaStitchId: closingStitchId }],
+  };
+  return record(next, { kind: 'closeRing', level: 0, stitchIds: [closingStitchId], label: 'Luftmaschenring schließen' });
+}
+
+function closeRound(state) {
+  if (state.mode !== 'rounds' || state.row === 0 || state.roundStyle !== 'joined' || state.roundPhase === 'closed') throw new CrochetError('Hier gibt es keine offene geschlossene Runde.');
+  const stitches = rowStitches(state);
+  if (!stitches.length) throw new CrochetError('Häkle zuerst Maschen in dieser Runde.');
+  let next = appendStitch(state, 'slipStitch', [stitches[0].id], { closure: true, role: 'roundJoin', insertionPoint: 'bothLoops' });
+  const closingStitchId = next.nextId - 1;
+  next = { ...finishSources(next), roundPhase: 'closed', completedLevels: [...new Set([...state.completedLevels, state.row])],
+    closures: [...state.closures, { kind: 'round', level: state.row, fromStitchId: stitches.at(-1).id, toStitchId: stitches[0].id, viaStitchId: closingStitchId }],
+  };
+  return record(next, { kind: 'closeRound', stitchIds: [closingStitchId], label: 'Runde mit Kettmasche schließen' });
+}
+
+function skipStitch(state, id) {
+  const index = workingTargets(state).findIndex(s => s.id === id);
+  if (index < 0) throw new CrochetError('Wähle eine Masche der vorherigen Reihe oder Runde.');
+  const parent = getStitch(state, id);
+  if (parent.usage === 'used') throw new CrochetError('Hier ist schon eine Masche eingestochen. Du kannst eine andere Masche überspringen.');
+  return record({ ...state, cursor: index + 1, stitches: state.stitches.map(s => s.id === id ? { ...s, usage: 'skipped' } : s) }, { kind: 'skip', parentStitchIds: [id], label: `Masche #${id} überspringen` });
+}
+
+function changeYarn(state, yarnId) {
+  if (!state.yarns.some(y => y.yarnId === yarnId)) throw new CrochetError('Dieses Garn ist nicht verfügbar.');
+  if (state.activeYarnId === yarnId) return state;
+  return record({ ...state, activeYarnId: yarnId }, { kind: 'yarn', yarnId, label: 'Garn wechseln' });
+}
+
+function setInsertionPoint(state, point) {
+  if (!Object.hasOwn(insertionPoints, point)) throw new CrochetError('Diese Einstichstelle ist nicht verfügbar.');
+  if (state.insertionPoint === point) return state;
+  return record({ ...state, insertionPoint: point }, { kind: 'insertion', insertionPoint: point, label: insertionPoints[point].label });
+}
+
+function editStitchInsertion(state, id, point) {
+  const stitch = getStitch(state, id);
+  if (!stitch || stitch.role !== 'stitch' || stitch.type === 'chain') throw new CrochetError('Wähle eine eingestochene Arbeitsmasche.');
+  validateInsertion({ ...state, row: stitch.row, roundPhase: 'working' }, stitch.type, stitch.parentStitchIds,
+    { insertionPoint: point, anchorId: stitch.anchorId, operation: stitch.operation });
+  if (stitch.insertionPoint === point) return state;
+  return record({ ...state, stitches: state.stitches.map(s => s.id === id ? { ...s, insertionPoint: point } : s) },
+    { kind: 'editInsertion', stitchId: id, insertionPoint: point, label: `Einstich von #${id} ändern` });
+}
+
+function toggleMarker(state, id) {
+  if (!getStitch(state, id)) throw new CrochetError('Wähle zuerst eine Masche für den Markierer aus.');
+  const exists = state.markers.some(m => m.stitchId === id);
+  const markers = exists ? state.markers.filter(m => m.stitchId !== id) : [...state.markers, { id: `marker-${id}`, stitchId: id, color: '#BE7656', label: 'Maschenmarkierer' }];
+  return record({ ...state, markers }, { kind: 'marker', stitchId: id, label: exists ? 'Markierer entfernen' : 'Markierer setzen' });
+}
+
+function summary(state) {
+  return { row: state.row, rowCount: rowStitches(state).length, totalCount: state.stitches.length, turnCount: state.turnCount };
+}
+
+/** Immutable full-state history, including turns and demo loading. Selection and
+ *  zoom are UI state and never manufacture a crochet history entry. */
+class CrochetEngine {
+  constructor(snapshot) { this.state = snapshot ? migrateState(snapshot) : initialState(); this.past = []; this.future = []; }
+  commit(next) { if (next === this.state) return this.state; this.past.push(this.state); this.state = next; this.future = []; return this.state; }
+  add(type, parent = null, options = {}) { return this.commit(addStitch(this.state, type, parent, options)); }
+  increase(type, parent, count = 2, options = {}) { return this.commit(increase(this.state, type, parent, count, options)); }
+  decrease(type, parents, options = {}) { return this.commit(decrease(this.state, type, parents, options)); }
+  turn() { return this.commit(nextRow(this.state)); }
+  closeRing() { return this.commit(closeRing(this.state)); }
+  closeRound() { return this.commit(closeRound(this.state)); }
+  skip(id) { return this.commit(skipStitch(this.state, id)); }
+  yarn(id) { return this.commit(changeYarn(this.state, id)); }
+  insertion(point) { return this.commit(setInsertionPoint(this.state, point)); }
+  editInsertion(id, point) { return this.commit(editStitchInsertion(this.state, id, point)); }
+  marker(id) { return this.commit(toggleMarker(this.state, id)); }
+  setMode(mode, roundStyle = 'joined') {
+    if (!['rows','rounds'].includes(mode) || !['joined','spiral'].includes(roundStyle)) throw new CrochetError('Dieser Arbeitsmodus ist nicht verfügbar.');
+    if (this.state.stitches.length) throw new CrochetError('Beginne ein neues Stück, um den Arbeitsmodus zu ändern.');
+    return this.commit(record({ ...this.state, mode, roundStyle, round: mode === 'rounds' ? 0 : null }, { kind: 'mode', label: 'Arbeitsmodus ändern' }));
+  }
+  undo() {
+    if (!this.past.length) return false;
+    this.future.push(this.state); this.state = this.past.pop(); return true;
+  }
+  redo() {
+    if (!this.future.length) return false;
+    this.past.push(this.state); this.state = this.future.pop(); return true;
+  }
+  reset() { this.commit(initialState(this.state.mode, this.state.roundStyle)); }
+  demo(scenario = 'basics') {
+    // Keep the preceding work recoverable, and each demo stitch individually undoable.
+    if (scenario !== 'basics') {
+      const e = new CrochetEngine();
+      const count = scenario === 'decrease' ? 12 : 6;
+      if (!['increase','decrease','circle'].includes(scenario)) throw new CrochetError('Dieses Beispiel ist nicht verfügbar.');
+      if (scenario === 'circle') e.setMode('rounds');
+      for (let i = 0; i < count; i++) e.add('chain');
+      if (scenario === 'circle') {
+        e.closeRing();
+        for (let i = 0; i < 6; i++) e.add('singleCrochet', [], { anchorId: 'ring-1', insertionPoint: 'chainSpace' });
+        e.closeRound(); e.turn();
+      } else {
+        e.turn();
+        for (const parent of workingTargets(e.state)) e.add('singleCrochet', parent.id);
+        e.turn();
+      }
+      e.yarn(scenario === 'decrease' ? 'rose' : scenario === 'circle' ? 'cream' : 'terracotta');
+      const parents = workingTargets(e.state);
+      if (scenario === 'decrease') for (let i = 0; i < parents.length; i += 2) e.decrease('singleCrochet', parents.slice(i,i+2).map(s => s.id));
+      else for (const parent of parents) e.increase('singleCrochet', parent.id);
+      // Loading a demo is one action; all preceding user work is restored by Undo.
+      return this.commit(record(e.state, { kind: 'demo', label: `Beispiel: ${scenario}` }));
+    }
+    if (this.state.stitches.length || this.state.mode !== 'rows') this.commit(initialState());
+    for (let i = 0; i < 10; i++) this.add('chain');
+    this.turn();
+    for (const parent of availableTargets(this.state).slice().reverse()) this.add('singleCrochet', parent.id);
+    this.turn();
+    for (const parent of availableTargets(this.state).slice().reverse()) this.add('doubleCrochet', parent.id);
+    return this.state;
+  }
+}
+
+
+// layout.js
+
+
+/** Pure graph → 2D projection. The simulation never consumes these coordinates. */
+function layoutStitches(state) {
+  const radial = state.mode === 'rounds' && state.anchors.length > 0;
+  const result = radial ? layoutRounds(state) : layoutRows(state);
+  const mirror = radial ? 1 : state.row % 2 === 0 ? -1 : 1;
+  const nodes = result.nodes.map(n => {
+    const x = n.x * mirror || 0, rotation = n.rotation * mirror;
+    const angle = rotation * Math.PI / 180;
+    const topX = x + Math.sin(angle) * n.height * .92;
+    const topY = n.y - Math.cos(angle) * n.height * .92;
+    return { ...n, x, rotation, topX, topY,
+      frontLoop: localPoint(x,n.y,rotation,0,-n.height*.92+5),
+      backLoop: localPoint(x,n.y,rotation,0,-n.height*.92-5),
+    };
+  });
+  return { nodes, byId: new Map(nodes.map(n => [n.id, n])), mirror, radial, anchors: result.anchors ?? [] };
+}
+
+const mean = values => values.length ? values.reduce((a,b) => a+b,0)/values.length : 0;
+const clamp = (v,a,b) => Math.max(a,Math.min(b,v));
+function localPoint(x,y,rotation,lx,ly) {
+  const a=rotation*Math.PI/180;
+  return { x:x+lx*Math.cos(a)-ly*Math.sin(a), y:y+lx*Math.sin(a)+ly*Math.cos(a) };
+}
+function dimensions(state, stitch, radial=false) {
+  const type=stitchTypes[stitch.type];
+  const thickness=state.yarns?.find(y=>y.yarnId===stitch.yarnId)?.thickness??7.3;
+  return { width:type.width*(radial?.93:1), height:type.height*(radial?.73:1), thickness };
+}
+
+/** Parent cells reserve room for unfinished work. An increase expands its cell;
+ * a decrease contributes only 1/N of its width to each parent. Explicit skips
+ * retain a small open space rather than silently filling the gap. */
+function parentCells(state, parents, children, radial=false) {
+  const cells=[];
+  for(const parent of parents) {
+    const linked=children.filter(s=>s.parentStitchIds.includes(parent.id));
+    const width=linked.length ? linked.reduce((sum,s)=>sum+dimensions(state,s,radial).width*.94/s.parentStitchIds.length,0)
+      : parent.width*.94*(parent.usage==='skipped'?.62:1);
+    cells.push({parent,children:linked,width});
+  }
+  return cells;
+}
+function layoutRows(state) {
+  const nodes=new Map();
+  for(let row=0;row<=state.row;row++) {
+    const stitches=rowStitches(state,row);
+    const previousRow=[...nodes.values()].filter(n=>n.row===row-1&&n.countsAsStitch!==false).sort((a,b)=>a.x-b.x);
+    const cells=parentCells(state,previousRow,stitches);
+    let edge=mean(previousRow.map(n=>n.x))-cells.reduce((sum,c)=>sum+c.width,0)/2;
+    for(const cell of cells){cell.center=edge+cell.width/2;edge+=cell.width;}
+    let foundationX=0;
+    for(const stitch of stitches) {
+      const size=dimensions(state,stitch), previous=nodes.get(stitch.previousStitchId);
+      const parents=stitch.parentStitchIds.map(id=>nodes.get(id)).filter(Boolean);
+      let x=0,y=0,rotation=0;
+      if(row===0){x=foundationX;foundationX+=size.width*.94;}
+      else if(parents.length){
+        const ownCells=cells.filter(c=>stitch.parentStitchIds.includes(c.parent.id));
+        x=mean(ownCells.map(c=>c.center));
+        if(parents.length===1){
+          const cell=ownCells[0];
+          const siblings=cell.children.filter(s=>s.parentStitchIds.length===1).sort((a,b)=>workingDirection(row)*(a.position-b.position));
+          const total=siblings.reduce((sum,s)=>sum+dimensions(state,s).width*.94,0);
+          let offset=-total/2;
+          for(const sibling of siblings){const w=dimensions(state,sibling).width*.94;if(sibling.id===stitch.id){x=cell.center+offset+w/2;break;}offset+=w;}
+        }
+        const parentY=mean(parents.map(p=>p.y-p.height*.92));
+        y=parentY+7;
+        if(stitch.insertionPoint==='frontLoop')y+=4;
+        if(stitch.insertionPoint==='backLoop')y-=4;
+        if(stitch.insertionPoint==='chainSpace')y+=parents[0].height*.27;
+        if(stitch.insertionPoint==='stitchSpace')x+=workingDirection(row)*size.width*.42;
+        const anchorX=mean(parents.map(p=>p.x));
+        const siblingCount=ownCells[0]?.children.filter(s=>s.parentStitchIds.length===1).length??1;
+        if(parents.length>1)y-=18;
+        else if(siblingCount>1)y-=12+Math.min(24,Math.abs(x-anchorX)*.12);
+        rotation=parents.length===1&&siblingCount>1?clamp((x-anchorX)*.26,-16,16):0;
+      } else {
+        x=(previous?.x??0)+workingDirection(row)*size.width*.94;
+        y=(previous?previous.y-previous.height*.92:0)+size.height*.5;
+      }
+      nodes.set(stitch.id,{...stitch,...size,x,y,rotation});
+    }
+    for(const stitch of state.stitches.filter(s=>s.row===row&&s.countsAsStitch===false)){
+      const parent=nodes.get(stitch.parentStitchIds[0])??nodes.get(stitch.previousStitchId);
+      nodes.set(stitch.id,{...stitch,...dimensions(state,stitch),x:(parent?.x??0)+28,y:(parent?.y??0)-(parent?.height??0),rotation:0});
+    }
+  }
+  return {nodes:[...nodes.values()]};
+}
+
+function layoutRounds(state) {
+  const nodes=new Map(), ring=state.anchors.find(a=>a.type==='chainRing');
+  const foundation=rowStitches(state,0), innerRadius=Math.max(24,foundation.length*24/(2*Math.PI));
+  let outerRadius=innerRadius+19;
+  for(let row=0;row<=state.row;row++) {
+    const stitches=rowStitches(state,row), parents=[...nodes.values()].filter(n=>n.row===row-1&&n.countsAsStitch!==false).sort((a,b)=>a.position-b.position);
+    const childrenWithParents=stitches.filter(s=>s.parentStitchIds.length);
+    const cells=parentCells(state,parents,childrenWithParents,true);
+    let total=cells.reduce((sum,c)=>sum+c.width,0), angleCursor=-Math.PI/2-(cells[0]?.width??0)/Math.max(total,1)*Math.PI;
+    for(const cell of cells){cell.arc=cell.width/Math.max(total,1)*Math.PI*2;cell.angle=angleCursor+cell.arc/2;angleCursor+=cell.arc;}
+    const averageHeight=mean(stitches.map(s=>dimensions(state,s,true).height))||32;
+    const reservedCount=stitches.length+parents.filter(p=>!stitches.some(s=>s.parentStitchIds.includes(p.id))&&p.usage!=='skipped').length;
+    const expansion=row>1&&parents.length ? Math.max(-.75,Math.min(2,(reservedCount-parents.length)/parents.length)) : 0;
+    const baseRadius=row===0?innerRadius:outerRadius-6+averageHeight*.65*expansion;
+    const ringChildren=stitches.filter(s=>s.anchorId===ring.id);
+    let rowOuter=outerRadius;
+    for(const stitch of stitches){
+      const size=dimensions(state,stitch,true);
+      let angle,slotArc;
+      if(row===0){angle=-Math.PI/2+(stitch.position-1)/foundation.length*Math.PI*2;size.height=19;size.width=32;slotArc=Math.PI*2/foundation.length;}
+      else if(stitch.anchorId===ring.id){const i=ringChildren.findIndex(s=>s.id===stitch.id);slotArc=Math.PI*2/Math.max(ringChildren.length,1);angle=-Math.PI/2+i*slotArc;}
+      else if(stitch.parentStitchIds.length){
+        const own=cells.filter(c=>stitch.parentStitchIds.includes(c.parent.id));
+        const vector={x:mean(own.map(c=>Math.cos(c.angle))),y:mean(own.map(c=>Math.sin(c.angle)))};
+        angle=Math.atan2(vector.y,vector.x);slotArc=own.reduce((s,c)=>s+c.arc,0);
+        if(own.length===1){
+          const siblings=own[0].children.filter(s=>s.parentStitchIds.length===1);
+          const index=siblings.findIndex(s=>s.id===stitch.id);
+          slotArc=own[0].arc/Math.max(siblings.length,1);
+          angle=own[0].angle-own[0].arc/2+slotArc*(index+.5);
+        }
+      } else {const previous=nodes.get(stitch.previousStitchId);angle=(previous?.angle??-Math.PI/2)+.2;slotArc=.2;}
+      let radius=baseRadius;
+      if(row>0&&state.roundStyle==='spiral')radius+=averageHeight*.35*(stitch.position-1)/Math.max(stitches.length,1);
+      if(stitch.insertionPoint==='frontLoop')radius-=3;
+      if(stitch.insertionPoint==='backLoop')radius+=3;
+      if(row>0)size.width=clamp((radius+size.height)*slotArc*.83,size.width*.8,size.width*1.4);
+      nodes.set(stitch.id,{...stitch,...size,x:Math.cos(angle)*radius,y:Math.sin(angle)*radius,rotation:angle*180/Math.PI+90,angle,radius});
+      rowOuter=Math.max(rowOuter,radius+size.height*.92);
+    }
+    outerRadius=rowOuter;
+    for(const stitch of state.stitches.filter(s=>s.row===row&&s.countsAsStitch===false)){
+      const parent=nodes.get(stitch.parentStitchIds[0])??nodes.get(stitch.previousStitchId);
+      const angle=(parent?.angle??-Math.PI/2)-.19;
+      const radius=(parent?.radius??innerRadius)+(parent?.height??0)*.55;
+      nodes.set(stitch.id,{...stitch,...dimensions(state,stitch,true),width:26,height:13,x:Math.cos(angle)*radius,y:Math.sin(angle)*radius,rotation:angle*180/Math.PI+90,angle,radius});
+    }
+  }
+  return {nodes:[...nodes.values()],anchors:[{...ring,x:0,y:0,radius:innerRadius-3}]};
+}
+
+
+// pattern-summary.js
+
+
+
+/** Summarizes performed operations; it never invents an instruction or fills skips. */
+function patternSummary(state) {
+  const result=[];
+  for(let level=0;level<=state.row;level++){
+    const stitches=rowStitches(state,level), tokens=[];
+    for(let i=0;i<stitches.length;i++){
+      const s=stitches[i], type=stitchTypes[s.type];
+      let label=type.short;
+      if(s.operation==='decrease')label=`${s.parentStitchIds.length} ${type.short} zus.`;
+      else if(s.parentStitchIds.length===1){
+        let run=1;
+        while(stitches[i+run]&&sameGroup(s,stitches[i+run]))run++;
+        if(run>1){label=run===2?`Zunahme (${type.short})`:`${run} ${type.short} in 1 M`;i+=run-1;}
+      }
+      const suffix=insertionPoints[s.insertionPoint]?.abbreviation;
+      if(suffix&&s.parentStitchIds.length)label+=` · ${suffix}`;
+      if(s.anchorId)label+=' in Ring';
+      tokens.push({label,yarnId:s.yarnId,color:s.color});
+    }
+    const parts=[];
+    for(let i=0;i<tokens.length;){
+      let end=i+1;while(end<tokens.length&&tokens[end].yarnId===tokens[i].yarnId&&tokens[end].color===tokens[i].color)end++;
+      const yarn=state.yarns.find(y=>y.yarnId===tokens[i].yarnId);
+      parts.push({yarnId:yarn?.yarnId,color:tokens[i].color??yarn?.color??'#9CAF88',yarn:yarn?.name??'Garn',text:compress(tokens.slice(i,end).map(t=>t.label))});i=end;
+    }
+    const auxiliary=state.stitches.filter(s=>s.row===level&&s.countsAsStitch===false);
+    const skipped=state.stitches.filter(s=>s.row===level-1&&s.usage==='skipped'&&s.countsAsStitch).length;
+    if(stitches.length||auxiliary.length)result.push({level,label:levelLabel(state,level),count:stitches.length,parts,
+      notes:[auxiliary.some(s=>s.role==='ringJoin')?'Zum Ring geschlossen':null,auxiliary.some(s=>s.role==='roundJoin')?'Mit KM geschlossen':null,
+        auxiliary.filter(s=>s.role==='turningChain').length?`${auxiliary.filter(s=>s.role==='turningChain').length} Höhen-LM`:null,
+        skipped?`${skipped}× übersprungen`:null].filter(Boolean),
+    });
+  }
+  return result;
+}
+function sameGroup(a,b){return b.parentStitchIds.length===1&&a.parentStitchIds[0]===b.parentStitchIds[0]&&a.type===b.type&&a.yarnId===b.yarnId&&a.color===b.color&&a.insertionPoint===b.insertionPoint&&b.operation!=='decrease';}
+function compress(tokens){
+  if(!tokens.length)return '';
+  for(let period=1;period<=Math.floor(tokens.length/2);period++){
+    if(tokens.length%period===0&&tokens.every((t,i)=>t===tokens[i%period])){
+      const repeat=tokens.length/period;
+      return period===1?`${repeat}× ${tokens[0]}`:`(${compress(tokens.slice(0,period))}) × ${repeat}`;
+    }
+  }
+  const out=[];
+  for(let i=0;i<tokens.length;){let j=i+1;while(tokens[j]===tokens[i])j++;out.push(j-i===1?tokens[i]:`${j-i}× ${tokens[i]}`);i=j;}
+  return out.join(', ');
+}
+
+
+// renderer.js
+
+
+
+const NS = 'http://www.w3.org/2000/svg';
+// Bake the normalized geometry into world coordinates so yarn thickness also
+// scales naturally with the viewport zoom (rather than non-scaling strokes).
+function shapePath(d, type) {
+  let coordinate = 0;
+  return d.replace(/-?\d*\.?\d+/g, value => String(Number(value) * ((coordinate++ % 2 === 0 ? type.width : type.height) / 100)));
+}
+const svgElement = (tag, attrs = {}) => {
+  const el = document.createElementNS(NS, tag);
+  for (const [key, value] of Object.entries(attrs)) el.setAttribute(key, value);
+  return el;
+};
+function textLabel(label, attrs) { const e = svgElement('text', attrs); e.textContent = label; return e; }
+function mix(hex, target, ratio) {
+  const c = hex.slice(1).match(/../g).map(v => parseInt(v, 16));
+  return '#' + c.map((v, i) => Math.round(v + (target[i] - v) * ratio).toString(16).padStart(2, '0')).join('');
+}
+
+/** Multi-strand yarn: shadow, body, twisted ply and a light catching edge.
+ *  The renderer reads visualShape; it contains no stitch-type branches. */
+function yarnPath(d, color, width = 7.5, normalized = false) {
+  const g = svgElement('g', { 'pointer-events': 'none' });
+  const base = { d, fill: 'none', 'stroke-linecap': 'round', 'stroke-linejoin': 'round' };
+  if (normalized) base['vector-effect'] = 'non-scaling-stroke';
+  for (const layer of [
+    { stroke: mix(color, [62, 49, 32], .36), 'stroke-width': width + 1.7 },
+    { stroke: color, 'stroke-width': width },
+    { stroke: mix(color, [255, 251, 227], .5), 'stroke-width': width * .59, opacity: .62 },
+    { stroke: mix(color, [69, 69, 47], .25), 'stroke-width': width * .77, 'stroke-dasharray': '1.1 4.8', 'stroke-linecap': 'butt', opacity: .56 },
+    { stroke: mix(color, [255, 255, 240], .73), 'stroke-width': 1.05, 'stroke-dasharray': '2.6 3.3', opacity: .72 },
+  ]) g.append(svgElement('path', { ...base, ...layer }));
+  return g;
+}
+
+function stitchIcon(typeId, color = '#9CAF88') {
+  const type = stitchTypes[typeId];
+  const svg = svgElement('svg', { viewBox: '-31 -108 62 115', 'aria-hidden': 'true', class: 'stitch-icon' });
+  const group = svgElement('g', { transform: `scale(.52 ${Math.min(type.height / 100, .77)}) translate(0 -18)` });
+  for (const d of type.visualShape) group.append(yarnPath(d, color, 3.2, true));
+  svg.append(group); return svg;
+}
+
+class CrochetRenderer {
+  constructor(svg, onSelect) {
+    this.svg = svg; this.onSelect = onSelect; this.zoom = 1; this.pan = { x: 0, y: 0 }; this.viewBox = [0, 0, 720, 420];
+    this.drag = null; this.didDrag = false; this.pointers = new Map(); this.pinch = null;
+    svg.addEventListener('click', e => {
+      if (this.didDrag) { this.didDrag = false; return; }
+      const target = e.target.closest('[data-stitch]');
+      const anchor = e.target.closest('[data-anchor]');
+      if (anchor) { this.onAnchorSelect?.(anchor.dataset.anchor); return; }
+      this.onSelect(target ? Number(target.dataset.stitch) : null, e.target.closest('[data-loop]')?.dataset.loop);
+    });
+    svg.addEventListener('keydown', e => {
+      const target = e.target.closest('[data-stitch]');
+      const anchor = e.target.closest('[data-anchor]');
+      if(anchor && ['Enter', ' '].includes(e.key)){e.preventDefault();this.onAnchorSelect?.(anchor.dataset.anchor);return;}
+      if (target && ['Enter', ' '].includes(e.key)) { e.preventDefault(); this.onSelect(Number(target.dataset.stitch), e.target.closest('[data-loop]')?.dataset.loop); }
+    });
+    svg.addEventListener('pointerdown', e => {
+      this.didDrag = false;
+      this.pointers.set(e.pointerId, { x: e.clientX, y: e.clientY });
+      if (this.pointers.size === 2) {
+        const p = [...this.pointers.values()];
+        this.pinch = { distance: Math.hypot(p[0].x - p[1].x, p[0].y - p[1].y), zoom: this.zoom };
+        this.drag = null; return;
+      }
+      this.drag = { id: e.pointerId, x: e.clientX, y: e.clientY, pan: { ...this.pan } };
+    });
+    svg.addEventListener('pointermove', e => {
+      if (this.pointers.has(e.pointerId)) this.pointers.set(e.pointerId, { x: e.clientX, y: e.clientY });
+      if (this.pinch && this.pointers.size === 2) {
+        const p = [...this.pointers.values()];
+        const distance = Math.hypot(p[0].x - p[1].x, p[0].y - p[1].y);
+        this.setZoom(this.pinch.zoom * distance / Math.max(this.pinch.distance, 1)); this.didDrag = true; return;
+      }
+      if (!this.drag || this.drag.id !== e.pointerId) return;
+      const dx = e.clientX - this.drag.x, dy = e.clientY - this.drag.y;
+      if (Math.hypot(dx, dy) < 6 && !this.didDrag) return;
+      this.didDrag = true;
+      const rect = svg.getBoundingClientRect();
+      const scale = Math.max(this.viewBox[2] / rect.width, this.viewBox[3] / rect.height);
+      this.pan = { x: this.drag.pan.x - dx * scale, y: this.drag.pan.y - dy * scale };
+      this.applyViewBox();
+    });
+    const stop = e => { this.pointers.delete(e.pointerId); this.drag = null; if (this.pointers.size < 2) this.pinch = null; };
+    window.addEventListener('pointerup', stop); svg.addEventListener('pointercancel', stop);
+  }
+  setZoom(value) { this.zoom = Math.max(.5, Math.min(5, value)); this.applyViewBox(); this.onZoom?.(this.zoom); }
+  fit() { this.zoom = 1; this.pan = { x: 0, y: 0 }; this.applyViewBox(); this.onZoom?.(this.zoom); }
+  applyViewBox() {
+    const [x, y, w, h] = this.baseViewBox ?? [0, 0, 720, 420];
+    const width = w / this.zoom, height = h / this.zoom;
+    this.viewBox = [x + (w - width) / 2 + this.pan.x, y + (h - height) / 2 + this.pan.y, width, height];
+    this.svg.setAttribute('viewBox', this.viewBox.join(' '));
+  }
+
+  focusStitch(id) {
+    const node=this.projection?.byId.get(id);if(!node)return;
+    const rect=this.svg.getBoundingClientRect();if(rect.width>550)return;
+    const scale=Math.min(rect.width/this.viewBox[2],rect.height/this.viewBox[3]);
+    if(node.width*scale>=42)return;
+    this.zoom=Math.min(5,this.zoom*44/Math.max(node.width*scale,1));
+    const [x,y,w,h]=this.baseViewBox;
+    this.pan={x:node.x-(x+w/2),y:node.y-node.height/2-(y+h/2)};
+    this.applyViewBox();this.onZoom?.(this.zoom);
+  }
+  render(state, selectedId, {showConnections=false,targetId=null,targetIds=[],insertionPoint=state.insertionPoint,anchorId=null,previewState=null}={}) {
+    const focusedId=document.activeElement?.dataset?.stitch;
+    const projection=layoutStitches(state),{nodes,byId,anchors,radial}=projection;
+    this.projection=projection;
+    this.svg.replaceChildren();
+    if(!nodes.length){this.baseViewBox=[0,0,500,320];this.applyViewBox();return;}
+    const future=previewState?layoutStitches(previewState):null;
+    const ghostNodes=future?.nodes.filter(n=>!byId.has(n.id))??[];
+    const all=[...nodes,...ghostNodes];
+    const bounds=all.flatMap(n=>[
+      localPosition(n,-n.width*.65,12),localPosition(n,n.width*.65,12),
+      localPosition(n,-n.width*.65,-n.height-18),localPosition(n,n.width*.65,-n.height-18)
+    ]);
+    const minX=Math.min(...bounds.map(p=>p.x))-50,maxX=Math.max(...bounds.map(p=>p.x))+50;
+    const minY=Math.min(...bounds.map(p=>p.y))-45,maxY=Math.max(...bounds.map(p=>p.y))+40;
+    const width=Math.max(maxX-minX,420),height=Math.max(maxY-minY,280);
+    this.baseViewBox=[(minX+maxX-width)/2,(minY+maxY-height)/2,width,height];this.applyViewBox();
+    const defs=svgElement('defs'),shadow=svgElement('filter',{id:'yarn-shadow',x:'-30%',y:'-30%',width:'160%',height:'180%'});
+    shadow.append(svgElement('feDropShadow',{dx:0,dy:2,stdDeviation:1.5,'flood-color':'#4A2E1E','flood-opacity':'.12'}));defs.append(shadow);this.svg.append(defs);
+    const fabric=svgElement('g',{filter:'url(#yarn-shadow)'}),active=byId.get(selectedId);
+    const selectedParents=new Set(active?.parentStitchIds??[]);
+    const targetSet=new Set(targetIds.length?targetIds:[targetId??(selectedId?null:recommendedTarget(state))]);
+    for(const anchor of anchors){
+      const group=svgElement('g',{'data-anchor':anchor.id,tabindex:0,role:'button','aria-label':'In den Luftmaschenring einstechen',class:'ring-anchor'});
+      group.append(svgElement('circle',{cx:anchor.x,cy:anchor.y,r:Math.max(anchor.radius,20),fill:anchorId===anchor.id?'#e2e9d9':'#fffaf2',
+        'fill-opacity':'.75',stroke:anchorId===anchor.id?'#526645':'#b5a58e','stroke-width':1.3,'stroke-dasharray':'3 3'}));
+      group.append(textLabel('Ring',{x:anchor.x,y:anchor.y+4,'font-size':12,'text-anchor':'middle',fill:'#78664f','pointer-events':'none'}));
+      this.svg.append(group);
+    }
+    for(const node of nodes){
+      const previous=byId.get(node.previousStitchId);
+      if(previous){
+        const p={x:previous.topX,y:previous.topY+2},q={x:node.topX,y:node.topY+2};
+        let middle={x:(p.x+q.x)/2,y:(p.y+q.y)/2+10};
+        if(radial){
+          const d=Math.atan2(q.y,q.x)-Math.atan2(p.y,p.x);
+          const delta=Math.atan2(Math.sin(d),Math.cos(d)),a=Math.atan2(p.y,p.x)+delta/2;
+          const radius=(Math.hypot(p.x,p.y)+Math.hypot(q.x,q.y))/2/Math.max(Math.cos(delta/2),.55);
+          middle={x:Math.cos(a)*radius,y:Math.sin(a)*radius};
+        }
+        fabric.append(yarnPath('M '+p.x+' '+p.y+' Q '+middle.x+' '+middle.y+' '+q.x+' '+q.y,node.color,5.5));
+      }
+      for(const id of node.parentStitchIds){
+        const parent=byId.get(id);if(!parent)continue;
+        const p=insertionPosition(parent,node.insertionPoint,state,node.insertionFace);
+        const q=localPosition(node,0,-3);
+        if(node.role==='stitch'&&node.parentStitchIds.length>2) {
+          const join=localPosition(node,0,-node.height*.6);
+          fabric.append(yarnPath('M '+p.x+' '+p.y+' L '+join.x+' '+join.y,node.color,4.5));
+        }
+      }
+      if(node.anchorId){
+        const inner=anchors.find(a=>a.id===node.anchorId);
+        const radius=inner?.radius??20,a=node.angle??0;
+        fabric.append(yarnPath('M '+Math.cos(a)*radius+' '+Math.sin(a)*radius+' L '+node.x+' '+node.y,node.color,5.8));
+      }
+      if(node.yarnStart){
+        const p=localPosition(node,8,-node.height*.6);
+        fabric.append(yarnPath('M '+p.x+' '+p.y+' q 19 2 18 20',node.color,4.5));
+      }
+    }
+    const first=nodes[0];
+    if(!radial)fabric.append(yarnPath('M '+(first.x+13)+' '+(first.y-10)+' q 27 24 12 31',first.color,5));
+    const rect=this.svg.getBoundingClientRect();
+    const viewScale=Math.min((rect.width||600)/this.viewBox[2],(rect.height||400)/this.viewBox[3]);
+    for(const node of nodes){
+      const selected=node.id===selectedId||targetIds.includes(node.id),target=targetSet.has(node.id),isParent=selectedParents.has(node.id);
+      const group=svgElement('g',{transform:'translate('+node.x+' '+node.y+') rotate('+node.rotation+')',
+        'data-stitch':node.id,tabindex:0,role:'button','aria-pressed':selected,
+        'aria-label':stitchTypes[node.type].label+', Masche '+node.id+', '+levelLabel(state,node.row)+', Position '+(node.position??'Abschluss'),
+        class:'yarn-stitch'+(selected?' selected':'')+(node.usage==='skipped'?' skipped-stitch':'')});
+      const hitW=Math.max(node.width,44/Math.max(viewScale,.3)),hitH=Math.max(node.height+18,44/Math.max(viewScale,.3));
+      group.append(svgElement('rect',{x:-hitW/2,y:-node.height/2-hitH/2,width:hitW,height:hitH,rx:12,class:'stitch-hit'}));
+      if(selected||isParent||target){
+        group.append(svgElement('rect',{x:-node.width*.61,y:-node.height-16,width:node.width*1.22,height:node.height+28,rx:13,
+          fill:selected?'#dae6ca':'#ebd8be','fill-opacity':'.45',stroke:selected?'#526b43':'#a3764f',
+          'stroke-width':selected?2.3:1.4,'stroke-dasharray':selected?'none':'4 3','pointer-events':'none'}));
+      }
+      group.append(stitchBody(node,byId,state,anchors));
+      const loops=svgElement('g',{transform:'translate(0 '+(-node.height*.92)+')'});
+      for(const [point,d] of Object.entries(stitchTypes[node.type].topLoops)){
+        const loopPath=shapePath(d,{width:node.width,height:48});
+        const used=node.childStitchIds.some(id=>{
+          const child=byId.get(id);return child&&child.role==='stitch'&&physicalPoint(child.insertionPoint,state,child.insertionFace)===point;
+        });
+        const selectedPoint=isParent?physicalPoint(active.insertionPoint,state,active.insertionFace):insertionPoint;
+        const highlight=(target||isParent)&&(selectedPoint==='bothLoops'||selectedPoint===point);
+        loops.append(yarnPath(loopPath,highlight?'#C18B50':node.color,node.thickness??7.3));
+        if(used)loops.append(svgElement('path',{d:loopPath,fill:'none',stroke:'#4A2E1E','stroke-width':1.3,'stroke-dasharray':'1 4',opacity:'.5','pointer-events':'none'}));
+        const hit=svgElement('path',{d:loopPath,fill:'none',stroke:'transparent','stroke-width':14,'data-loop':point,class:'loop-hit',role:'button',
+          'aria-label':(point==='frontLoop'?'Vorderes':'Hinteres')+' Maschenglied von #'+node.id});
+        const title=svgElement('title');title.textContent=(point==='frontLoop'?'Vorderes':'Hinteres')+' Maschenglied · #'+node.id;hit.append(title);loops.append(hit);
+      }
+      group.append(loops);
+      if(node.usage==='skipped'){
+        group.append(textLabel('−',{x:0,y:16,'font-size':17,'text-anchor':'middle',fill:'#a56c51','pointer-events':'none'}));
+      }
+      fabric.append(group);
+    }
+    this.svg.append(fabric);
+    const links=svgElement('g',{'pointer-events':'none'});
+    for(const node of nodes){
+      if(!showConnections&&node.id!==selectedId&&!targetIds.includes(node.id))continue;
+      for(const id of node.parentStitchIds){
+        const parent=byId.get(id);if(!parent)continue;
+        const p=insertionPosition(parent,node.insertionPoint,state,node.insertionFace),q={x:node.topX,y:node.topY};
+        links.append(svgElement('path',{d:'M '+q.x+' '+q.y+' Q '+node.x+' '+node.y+' '+p.x+' '+p.y,fill:'none',stroke:'#855632',
+          'stroke-width':node.id===selectedId?2.1:1.1,'stroke-dasharray':'3 4',opacity:node.id===selectedId?.95:.55}));
+        links.append(svgElement('circle',{cx:p.x,cy:p.y,r:3,fill:'#ad8158',stroke:'#fff9ef','stroke-width':1}));
+      }
+      if(node.anchorId){
+        const anchor=anchors.find(a=>a.id===node.anchorId);
+        links.append(svgElement('path',{d:'M '+node.topX+' '+node.topY+' L '+anchor.x+' '+anchor.y,fill:'none',stroke:'#855632','stroke-width':1.2,'stroke-dasharray':'3 4',opacity:'.6'}));
+      }
+    }
+    for(const node of nodes){
+      const children=node.childStitchIds.map(id=>byId.get(id)).filter(n=>n?.countsAsStitch&&n.parentStitchIds.length===1);
+      if(children.length>1){
+        const labelPoint=localPosition(node,node.width*.5,13);
+        links.append(textLabel(children.length+'×',{x:labelPoint.x,y:labelPoint.y,'font-size':12,'font-weight':600,fill:'#81603f','text-anchor':'middle',
+          stroke:'#fff9ef','stroke-width':3,'paint-order':'stroke'}));
+      }
+      if(state.markers.some(m=>m.stitchId===node.id)){
+        links.append(svgElement('rect',{x:node.topX+node.width*.25,y:node.topY-14,width:9,height:22,rx:4,fill:'#BE7656',stroke:'#fff8ed','stroke-width':1.5}));
+      }
+    }
+    for(const id of targetSet){
+      const target=byId.get(id);if(!target)continue;
+      const point=insertionPosition(target,insertionPoint,state,state.turnCount%2);
+      links.append(svgElement('circle',{cx:point.x,cy:point.y,r:8,fill:'none',stroke:'#B78448','stroke-width':2}));
+      links.append(svgElement('circle',{cx:point.x,cy:point.y,r:2.7,fill:'#B78448'}));
+    }
+    this.svg.append(links);
+    if(ghostNodes.length){
+      const ghosts=svgElement('g',{opacity:'.38','pointer-events':'none',class:'preview-stitches'});
+      for(const node of ghostNodes){
+        for(const id of node.parentStitchIds){
+          const p=insertionPosition(byId.get(id),node.insertionPoint,state,node.insertionFace);
+          ghosts.append(yarnPath('M '+p.x+' '+p.y+' L '+node.x+' '+node.y,node.color,6));
+        }
+        const group=svgElement('g',{transform:'translate('+node.x+' '+node.y+') rotate('+node.rotation+')'});
+        group.append(stitchBody(node,byId,state,anchors));
+        for(const d of Object.values(stitchTypes[node.type].topLoops)){
+          const loop=svgElement('g',{transform:'translate(0 '+(-node.height*.92)+')'});loop.append(yarnPath(shapePath(d,{width:node.width,height:48}),node.color));group.append(loop);
+        }
+        ghosts.append(group);
+      }
+      this.svg.append(ghosts);
+    }
+    if(!radial){
+      for(const row of [...new Set(nodes.map(n=>n.row))]){
+        const rowNodes=nodes.filter(n=>n.row===row);
+        const x=minX+14,y=rowNodes.reduce((sum,n)=>sum+n.y-n.height/2,0)/rowNodes.length+4;
+        this.svg.append(textLabel(row===0?'LM':String(row).padStart(2,'0'),{x,y,class:'row-label','text-anchor':'middle','pointer-events':'none'}));
+      }
+    }
+    if(active){
+      const badge=svgElement('g',{'pointer-events':'none'});
+      badge.append(svgElement('rect',{x:active.topX-23,y:active.topY-44,width:46,height:25,rx:12,fill:'#4A2E1E'}));
+      badge.append(textLabel('#'+active.id,{x:active.topX,y:active.topY-27,fill:'#fff9ef','text-anchor':'middle','font-size':13,'font-family':'sans-serif'}));this.svg.append(badge);
+    }
+    if(focusedId)this.svg.querySelector('[data-stitch="'+focusedId+'"]')?.focus({preventScroll:true});
+  }
+}
+function localPosition(node,x,y){
+  const angle=node.rotation*Math.PI/180;
+  return {x:node.x+x*Math.cos(angle)-y*Math.sin(angle),y:node.y+x*Math.sin(angle)+y*Math.cos(angle)};
+}
+function physicalPoint(point,state,face){
+  if(state.mode==='rows'&&state.turnCount%2!==face){
+    if(point==='frontLoop')return 'backLoop';if(point==='backLoop')return 'frontLoop';
+  }
+  return point;
+}
+function insertionPosition(node,point,state,face){
+  point=physicalPoint(point,state,face);
+  if(point==='frontLoop')return localPosition(node,0,-node.height*.92+8.6);
+  if(point==='backLoop')return localPosition(node,0,-node.height*.92-8.6);
+  if(point==='chainSpace')return localPosition(node,0,-node.height*.45);
+  if(point==='stitchSpace')return localPosition(node,node.width*.52,-node.height*.85);
+  return {x:node.topX,y:node.topY};
+}
+function stitchBody(node,byId,state,anchors){
+  const group=svgElement('g',{'pointer-events':'none'});
+  let attachmentPoints=node.role==='stitch'?node.parentStitchIds.map(id=>insertionPosition(byId.get(id),node.insertionPoint,state,node.insertionFace)):[];
+  if(node.anchorId){
+    const ring=anchors.find(a=>a.id===node.anchorId),a=node.angle??0;
+    if(ring)attachmentPoints=[{x:Math.cos(a)*ring.radius,y:Math.sin(a)*ring.radius}];
+  }
+  const angle=-node.rotation*Math.PI/180;
+  const local=attachmentPoints.map(p=>({x:(p.x-node.x)*Math.cos(angle)-(p.y-node.y)*Math.sin(angle),y:(p.x-node.x)*Math.sin(angle)+(p.y-node.y)*Math.cos(angle)})).sort((a,b)=>a.x-b.x);
+  for(const d of stitchTypes[node.type].bodyShape){
+    const coords=d.match(/-?\d*\.?\d+/g).map(Number);
+    let path=shapePath(d,node);
+    // Only the legs deform. The centrally defined wraps and top loops stay intact.
+    if(local.length&&coords[1]>-12){
+      const attachment=local.length===1?local[0]:coords[0]<0?local[0]:local.at(-1);
+      let axis=0;
+      path=d.replace(/-?\d*\.?\d+/g,value=>{
+        const index=axis++,y=coords[index%2?index:index+1];
+        const weight=Math.max(0,1-Math.abs(y)/82);
+        return String(Number(value)*(index%2?node.height:node.width)/100+weight*(index%2?attachment.y:attachment.x));
+      });
+    }
+    group.append(yarnPath(path,node.color,node.thickness??7.3));
+  }
+  return group;
+}
+
+
+// webmcp.js
+
+/** Progressive enhancement only: the app requires no agent or AI integration. */
+function registerCrochetTools(actions, doc = typeof document === 'undefined' ? null : document) {
+  const context = doc?.modelContext;
+  if (!context?.registerTool) return () => {};
+  const lifecycle = new AbortController();
+  const empty = { type: 'object', properties: {}, additionalProperties: false };
+  const tools = [
+    { name: 'read_crochet_piece', title: 'Häkelstück lesen', description: 'Read all individual stitches, insertion parents, yarn connections and current row without changing the piece.', inputSchema: empty, annotations: { readOnlyHint: true, untrustedContentHint: false }, execute: input => { validateObject(input, []); return actions.read(); } },
+    { name: 'add_crochet_stitch', title: 'Eine Masche häkeln', description: 'Create one stitch using the visible crochet controls and update the working surface. For inserted stitches, specify an insertion parent from the preceding row.', inputSchema: { type: 'object', properties: { type: { type: 'string', enum: Object.keys(stitchTypes) }, parentId: { type: 'integer', minimum: 1 } }, required: ['type'], additionalProperties: false }, execute: input => {
+      validateObject(input, ['type', 'parentId']);
+      if (!Object.hasOwn(stitchTypes, input.type)) throw new Error('Unknown stitch type.');
+      if (input.parentId !== undefined && (!Number.isInteger(input.parentId) || input.parentId < 1)) throw new Error('parentId must be a positive integer.');
+      return actions.add(input.type, input.parentId);
+    } },
+    { name: 'turn_crochet_row', title: 'Nächste Reihe beginnen', description: 'Finish the current nonempty row, turn the piece, and select the first insertion target.', inputSchema: empty, execute: input => { validateObject(input, []); return actions.turn(); } },
+    { name: 'start_crochet_example', title: 'Häkelbeispiel starten', description: 'Replace the visible piece with 10 chains, 10 single crochets and 10 double crochets. Prior work is recoverable with undo.', inputSchema: empty, execute: input => { validateObject(input, []); return actions.demo(); } },
+    { name: 'undo_crochet_action', title: 'Häkelschritt rückgängig machen', description: 'Undo one stitch, row turn or reset and update the visible piece.', inputSchema: empty, execute: input => { validateObject(input, []); return actions.undo(); } },
+    { name: 'redo_crochet_action', title: 'Häkelschritt wiederholen', description: 'Redo the most recently undone crochet action and update the visible piece.', inputSchema: empty, execute: input => { validateObject(input, []); return actions.redo(); } },
+  ];
+  for (const tool of tools) {
+    tool.annotations ??= { readOnlyHint: false, untrustedContentHint: false };
+    try { Promise.resolve(context.registerTool(tool, { signal: lifecycle.signal })).catch(() => {}); } catch { /* Unsupported partial implementations must not break crochet. */ }
+  }
+  const cleanup = () => lifecycle.abort();
+  doc.defaultView?.addEventListener('pagehide', cleanup, { once: true });
+  return cleanup;
+}
+function validateObject(input, keys) {
+  if (!input || typeof input !== 'object' || Array.isArray(input)) throw new Error('Expected an object.');
+  if (Object.keys(input).some(key => !keys.includes(key))) throw new Error('Unexpected input field.');
+}
+
+
+// app.js
+
+
+
+
+
+
+const $ = id => document.getElementById(id);
+const paths = {
+  help: '<circle cx="12" cy="12" r="9"/><path d="M9.5 9a2.5 2.5 0 0 1 5 .3c0 1.7-2.5 1.7-2.5 3.7M12 17h.01"/>',
+  play: '<path d="m9 5 10 7-10 7z"/>',
+  plus: '<path d="M12 5v14M5 12h14"/>', minus: '<path d="M5 12h14"/>',
+  undo: '<path d="M8 5 3 10l5 5M3 10h11a6 6 0 0 1 0 12" transform="translate(0 -2)"/>',
+  redo: '<path d="m16 5 5 5-5 5M21 10H10a6 6 0 0 0 0 12" transform="translate(0 -2)"/>',
+  turn: '<path d="m7 3-4 4 4 4M3 7h11a6 6 0 0 1 0 12H7m3-3-3 3 3 3"/>',
+  reset: '<path d="M3 5v5h5M3.5 10a8 8 0 1 1 1 7"/>',
+  inspect: '<circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 4 4M10.5 7.5v6M7.5 10.5h6"/>',
+  layers: '<path d="m12 3 9 5-9 5-9-5 9-5ZM3 12l9 5 9-5M3 16l9 5 9-5"/>',
+  close: '<path d="m6 6 12 12M6 18 18 6"/>',
+  heart: '<path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8Z"/>',
+  link: '<path d="m10 13 4-4M8 16l-1 1a4 4 0 0 1-6-6l4-4a4 4 0 0 1 6 0M13 8l1-1a4 4 0 1 1 6 6l-4 4a4 4 0 0 1-6 0" transform="translate(1 0)"/>',
+};
+const icon = name => `<svg viewBox="0 0 24 24" aria-hidden="true">${paths[name] ?? ''}</svg>`;
+function fillIcons(root = document) { root.querySelectorAll('[data-icon]').forEach(el => { el.innerHTML = icon(el.dataset.icon); }); }
+fillIcons();
+
+
+const engine = new CrochetEngine();
+const ui = { selectedId: null, targetId: null, anchorId: null, selectedIds: [], activeType: 'chain',
+  showConnections: false, tab: 'stitches', technique: null, techniqueType: 'singleCrochet', increaseCount: 2, pendingYarn: 'sage' };
+let toastTimer, turnTimer;
+const escape = value => String(value).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+function notify(message, error = false) {
+  clearTimeout(toastTimer); $('toast').textContent = message;
+  $('toast').className = 'toast visible' + (error ? ' error' : '');
+  toastTimer = setTimeout(() => $('toast').classList.remove('visible'), error ? 6500 : 3800);
+}
+function run(action, message, after) {
+  try { const result=action(); after?.(); render(); if(message)notify(message); return result; }
+  catch(e) { notify(e.message,true); render(); return null; }
+}
+function clearTechnique(){ui.technique=null;ui.selectedIds=[];}
+function chooseDefaultTarget(useRing=!!ui.anchorId) {
+  const ring=useRing?currentRing(engine.state):null;
+  ui.anchorId=ring?.id??null; ui.targetId=ring?null:recommendedTarget(engine.state);
+  ui.selectedIds=ui.technique==='decrease'&&ui.targetId?[ui.targetId]:[];
+}
+function selectStitch(id, point) {
+  const s=getStitch(engine.state,id); ui.selectedId=s?.id??null;
+  if(s?.row===engine.state.row-1&&s.countsAsStitch) {
+    ui.anchorId=null;ui.targetId=s.id;
+    if(ui.technique==='decrease') {
+      if(point){if(!ui.selectedIds.includes(s.id))ui.selectedIds.push(s.id);}
+      else ui.selectedIds=ui.selectedIds.includes(s.id)?ui.selectedIds.filter(n=>n!==s.id):[...ui.selectedIds,s.id];
+    }
+    if(point)engine.insertion(point);
+    else if(engine.state.insertionPoint==='chainSpace'&&s.type!=='chain')engine.insertion('bothLoops');
+  }
+  if(id===null){ui.targetId=null;ui.anchorId=null;ui.selectedIds=[];}
+  render(); if(id!==null)renderer.focusStitch(id);
+}
+function selectRing() {
+  const ring=currentRing(engine.state);if(!ring)return;
+  ui.anchorId=ring.id;ui.targetId=null;ui.selectedId=null;ui.selectedIds=[];
+  engine.insertion('chainSpace'); render();
+}
+const renderer=new CrochetRenderer($('crochet-canvas'),selectStitch);
+renderer.onAnchorSelect=selectRing;
+renderer.onZoom=zoom=>{$('zoom-fit').textContent=Math.round(zoom*100)+' %';};
+$('empty-stitch').append(stitchIcon('chain'));
+for(const type of stitchList) {
+  const button=document.createElement('button');button.className='stitch-tool';button.dataset.type=type.id;
+  button.setAttribute('aria-label',type.label+' häkeln');button.title=type.label+' häkeln · '+type.heightLabel;
+  button.append(stitchIcon(type.id));
+  const label=document.createElement('span');label.innerHTML='<strong>'+type.label+'</strong><small>'+type.short+'</small>';button.append(label);
+  const plus=document.createElement('span');plus.className='tool-plus';plus.textContent='+';plus.setAttribute('aria-hidden','true');button.append(plus);
+  button.addEventListener('click',()=>crochet(type.id));$('stitch-tools').append(button);
+}
+for(const [key,point] of Object.entries(insertionPoints)){
+  const button=document.createElement('button');button.dataset.insertion=key;button.textContent=point.label;$('insertion-options').append(button);
+}
+for(const yarn of engine.state.yarns){
+  const button=document.createElement('button');button.dataset.yarn=yarn.yarnId;
+  button.innerHTML='<span class="yarn-swatch" style="--yarn:'+yarn.color+'"></span><span>'+yarn.name+'</span>';
+  button.addEventListener('click',()=>{ui.pendingYarn=yarn.yarnId;render();});$('yarn-options').append(button);
+}
+function crochet(typeId,explicitParent,options={}) {
+  const oldType=ui.activeType;ui.activeType=typeId;clearTechnique();
+  const parent=explicitParent===undefined?ui.targetId:explicitParent;
+  const opts=explicitParent===undefined&&ui.anchorId&&typeId!=='chain'?{anchorId:ui.anchorId,insertionPoint:'chainSpace',...options}:options;
+  try{
+    engine.add(typeId,parent,opts);
+    const created=engine.state.stitches.at(-1);ui.selectedId=created.id;chooseDefaultTarget();render();
+    if(typeId==='chain'&&engine.state.stitches.length===1)notify('Deine erste Luftmasche! Jeder weitere Klick verlängert die Kette.');
+    return created;
+  }catch(e){if(!stitchTypes[typeId])ui.activeType=oldType;render();notify(e.message,true);return null;}
+}
+function turn(){
+  return !!run(()=>engine.turn(),engine.state.mode==='rows'?'Die Arbeit ist gewendet. Wähle deine nächste Masche.':'Die nächste Runde beginnt.',()=>{
+    clearTechnique();chooseDefaultTarget();ui.selectedId=ui.targetId;
+    if(ui.activeType==='chain')ui.activeType='singleCrochet';
+    renderer.fit();
+    if(engine.state.mode==='rows'){
+      clearTimeout(turnTimer);$('work-canvas').classList.remove('turning');
+      requestAnimationFrame(()=>$('work-canvas').classList.add('turning'));
+      turnTimer=setTimeout(()=>$('work-canvas').classList.remove('turning'),500);
+    }
+  });
+}
+function afterHistory(){
+  clearTechnique();chooseDefaultTarget();ui.selectedId=ui.targetId??engine.state.stitches.at(-1)?.id??null;
+  ui.pendingYarn=engine.state.activeYarnId;
+  if(!engine.state.stitches.length){ui.activeType='chain';renderer.fit();}
+  render();
+}
+function undo(){const changed=engine.undo();if(changed)afterHistory();return changed;}
+function redo(){const changed=engine.redo();if(changed)afterHistory();return changed;}
+function demo(scenario='basics'){
+  engine.demo(scenario);clearTechnique();ui.activeType=scenario==='basics'?'doubleCrochet':'singleCrochet';
+  ui.selectedId=rowStitches(engine.state).at(-1).id;ui.targetId=null;ui.anchorId=null;ui.pendingYarn=engine.state.activeYarnId;
+  renderer.fit();render();
+  const messages={basics:'10 Luftmaschen, 10 feste Maschen und 10 Stäbchen.',increase:'6 → 12: Jede feste Masche trägt zwei neue Maschen.',decrease:'12 → 6: Je zwei Maschen werden gemeinsam abgemascht.',circle:'Dein Kreis wächst: 6 Maschen im Ring, dann 12 Maschen.'};
+  notify(messages[scenario]+' Tippe auf eine Masche, um sie zu untersuchen.');
+}
+function reset(){
+  engine.reset();clearTechnique();ui.selectedId=null;ui.targetId=null;ui.anchorId=null;ui.activeType='chain';ui.pendingYarn=engine.state.activeYarnId;
+  renderer.fit();render();notify('Deine vorige Arbeit kannst du mit „Rückgängig“ zurückholen.');
+}
+function changeTab(tab){
+  ui.tab=tab;if(tab==='stitches')clearTechnique();render();
+}
+function chooseTechnique(technique){
+  ui.technique=technique;
+  if(!ui.targetId){ui.targetId=recommendedTarget(engine.state);ui.anchorId=null;}
+  ui.selectedIds=technique==='decrease'&&ui.targetId?[ui.targetId]:[];
+  if(!decreaseTypes.includes(ui.activeType))ui.activeType='singleCrochet';
+  ui.techniqueType=ui.activeType;
+  render();
+}
+function techniqueState(){
+  if(!ui.technique)return {state:null,error:'Wähle eine Technik.'};
+  try{
+    const state=ui.technique==='increase'
+      ?increase(engine.state,ui.techniqueType,ui.targetId,ui.increaseCount)
+      :decrease(engine.state,ui.techniqueType,ui.selectedIds);
+    return {state,error:null};
+  }catch(e){return {state:null,error:e.message};}
+}
+function applyTechnique(){
+  return run(()=>{
+    if(ui.technique==='increase')engine.increase(ui.techniqueType,ui.targetId,ui.increaseCount);
+    else if(ui.technique==='decrease')engine.decrease(ui.techniqueType,ui.selectedIds);
+    else throw new Error('Wähle eine Technik.');
+    return engine.state;
+  },null,()=>{
+    ui.selectedId=engine.state.stitches.at(-1).id;chooseDefaultTarget();
+  });
+}
+function chooseInsertion(point){
+  run(()=>engine.insertion(point),null,()=>{
+    if(ui.anchorId&&point!=='chainSpace'){ui.anchorId=null;ui.targetId=recommendedTarget(engine.state);}
+  });
+}
+function renderDetails(){
+  const state=engine.state,s=getStitch(state,ui.selectedId),panel=$('stitch-details');
+  if(!s){
+    panel.innerHTML='<div class="details-empty"><div class="detail-empty-icon" data-icon="inspect"></div><h3>Jede Masche<br>hat eine Geschichte.</h3><p>Tippe auf eine Masche. Hier siehst du ihren Einstich, ihr Garn und alle verbundenen Maschen.</p></div>';
+    if(ui.anchorId)panel.innerHTML='<div class="details-empty"><h3>Dein Luftmaschenring</h3><p>Einstechen in die Ringmitte. '+currentRing(state).childStitchIds.length+' Maschen wurden in diesen Ring gearbeitet.</p></div>';
+    fillIcons(panel);return;
+  }
+  const type=stitchTypes[s.type],yarn=state.yarns.find(y=>y.yarnId===s.yarnId);
+  const parents=s.parentStitchIds.map(id=>getStitch(state,id));
+  const childIds=s.childStitchIds;
+  const linkButton=id=>'<button class="stitch-link" data-inspect="'+id+'">#'+id+'</button>';
+  const roleLabels={turningChain:'Höhen-Luftmasche',ringJoin:'Ringabschluss · KM',roundJoin:'Rundenabschluss · KM'};
+  const pointLabel=s.type==='chain'?'Aktive Schlaufe':insertionPoints[s.insertionPoint].label;
+  const usageLabel=s.usage==='used'?'Verwendet':s.usage==='skipped'?'Übersprungen':'Noch frei';
+  panel.innerHTML='<div class="detail-selected"><p class="detail-number">MASCHE #'+s.id+'</p>'+
+    '<div class="detail-type"><div class="detail-yarn"></div><div><h3>'+type.label+'</h3><p>'+escape(roleLabels[s.role]??(s.operation==='decrease'?s.parentStitchIds.length+' zusammen abgemascht':type.heightLabel))+'</p></div></div>'+
+    '<dl class="detail-stats"><div><dt>'+ (state.mode==='rounds'?'Runde':'Reihe')+'</dt><dd>'+s.row+'</dd></div>'+
+    '<div><dt>Position</dt><dd>'+(s.countsAsStitch?s.position+' von '+rowStitches(state,s.row).length:'Abschluss / Höhe')+'</dd></div>'+
+    '<div><dt>Garn</dt><dd><i style="background:'+s.color+'"></i>'+escape(yarn?.name??'Garn')+'</dd></div>'+
+    '<div><dt>Einstich</dt><dd>'+pointLabel+'</dd></div><div><dt>Status</dt><dd>'+usageLabel+'</dd></div></dl>'+
+    '<div class="parent-card"><span class="eyebrow">VERBUNDEN MIT</span><div class="stitch-links">'+(s.anchorId?'Luftmaschenring':parents.length?parents.map(p=>linkButton(p.id)).join(''):'Keiner Einstichmasche')+'</div>'+
+    (s.previousStitchId?'<p>Vorher im Faden: '+linkButton(s.previousStitchId)+'</p>':'<p>Hier beginnt der Faden.</p>')+'</div>'+
+    '<div class="children-card"><span class="eyebrow">FOLGEMASCHEN · CHILDREN</span><div class="stitch-links">'+(childIds.length?childIds.map(linkButton).join(''):'Noch keine')+'</div></div>'+
+    '<p class="detail-instruction">'+type.instruction+'</p>'+
+    (s.role==='stitch'&&s.type!=='chain'&&!s.anchorId?'<label class="field-label edit-insertion">Einstich dieser Masche ändern<select id="edit-insertion">'+Object.entries(insertionPoints).filter(([key])=>(s.operation!=='decrease'||!['chainSpace','stitchSpace'].includes(key))&&(key!=='chainSpace'||parents.every(p=>p.type==='chain'))).map(([key,p])=>'<option value="'+key+'"'+(s.insertionPoint===key?' selected':'')+'>'+p.label+'</option>').join('')+'</select></label>':'')+
+    '<button class="button outlined-button detail-marker" id="detail-marker">'+(state.markers.some(m=>m.stitchId===s.id)?'Markierer entfernen':'Markierer setzen')+'</button></div>';
+  panel.querySelector('.detail-yarn').append(stitchIcon(s.type,s.color));
+  panel.querySelectorAll('[data-inspect]').forEach(b=>b.addEventListener('click',()=>selectStitch(Number(b.dataset.inspect))));
+  $('detail-marker').addEventListener('click',()=>run(()=>engine.marker(s.id)));
+  $('edit-insertion')?.addEventListener('change',e=>run(()=>engine.editInsertion(s.id,e.target.value),'Einstich geändert. Mit Rückgängig stellst du ihn wieder her.'));
+}
+function renderPattern(){
+  const rows=patternSummary(engine.state);
+  $('pattern-summary').innerHTML=rows.length?rows.map(row=>'<div class="pattern-row"><div><strong>'+row.label+'</strong><span>'+row.count+' M</span></div>'+
+    row.parts.map(p=>'<p><i style="background:'+p.color+'"></i><span>'+escape(p.text)+'</span><small>'+escape(p.yarn)+'</small></p>').join('')+
+    row.notes.map(n=>'<small class="pattern-note">'+escape(n)+'</small>').join('')+'</div>').join(''):'<p class="mini-note">Deine ersten Maschen erscheinen hier.</p>';
+}
+function renderTargets(){
+  const state=engine.state,targets=workingTargets(state);
+  $('target-label').textContent=ui.technique==='decrease'?'Gemeinsam abmaschen: '+(ui.selectedIds.map(id=>'#'+id).join(' + ')||'Maschen auswählen')
+    :ui.anchorId?'Einstich in den Luftmaschenring':ui.targetId?'Einstich in #'+ui.targetId:'Einstichstelle auswählen';
+  const chips=targets.map(s=>'<button data-target="'+s.id+'" aria-pressed="'+(ui.technique==='decrease'?ui.selectedIds.includes(s.id):ui.targetId===s.id)+'" class="'+(s.usage==='skipped'?'skipped':'')+'" title="Masche #'+s.id+' · '+stitchTypes[s.type].label+'">#'+s.id+'</button>').join('');
+  $('target-options').innerHTML=(currentRing(state)?'<button id="ring-target" aria-pressed="'+!!ui.anchorId+'">In den Ring</button>':'')+chips+
+    (!targets.length?'<span class="mini-note">'+(state.row===0?'Häkle deine Grundkette.':'Keine Einstichmaschen verfügbar.')+'</span>':'');
+  $('target-options').querySelectorAll('[data-target]').forEach(b=>b.addEventListener('click',()=>selectStitch(Number(b.dataset.target))));
+  $('ring-target')?.addEventListener('click',selectRing);
+}
+function render(){
+  const state=engine.state,counts=summary(state),rounds=state.mode==='rounds',preview=techniqueState();
+  renderer.render(state,ui.selectedId,{showConnections:ui.showConnections,targetId:ui.targetId,targetIds:ui.selectedIds,insertionPoint:state.insertionPoint,anchorId:ui.anchorId,previewState:preview.state});
+  $('empty-state').hidden=state.stitches.length>0;
+  $('row-count').textContent=counts.row;$('current-count').textContent=counts.rowCount;$('total-count').textContent=counts.totalCount;
+  $('level-counter-label').textContent=rounds?'Runde':'Reihe';$('current-counter-label').textContent=rounds?'In dieser Runde':'In dieser Reihe';
+  $('row-badge').textContent=levelLabel(state);
+  $('side-label').textContent=state.row===0?'Der Anfang':rounds?(state.roundStyle==='spiral'?'Spiralrunde':state.roundPhase==='closed'?'Runde geschlossen':'Geschlossene Runden'):(state.row%2?'Vorderseite':'Rückseite')+' · ←';
+  $('undo-button').disabled=!engine.past.length;$('redo-button').disabled=!engine.future.length;
+  $('undo-button').title=engine.state.actions.at(-1)?.label??'Rückgängig';
+  $('next-row-button').disabled=!counts.rowCount||(rounds&&(state.row===0||(state.roundStyle==='joined'&&state.roundPhase!=='closed')));
+  $('next-row-button').hidden=rounds&&state.row===0;
+  $('next-level-label').textContent=rounds?'Nächste Runde':'Nächste Reihe';
+  $('close-ring-button').hidden=!rounds||state.row!==0;$('close-ring-button').disabled=counts.rowCount<2;
+  $('close-round-button').hidden=!rounds||state.row===0||state.roundStyle==='spiral'||state.roundPhase==='closed';$('close-round-button').disabled=!counts.rowCount;
+  $('reset-button').disabled=!counts.totalCount;
+  $('height-chain-button').disabled=state.row===0;
+  $('canvas-help').textContent=state.stitches.length?'Masche antippen · Zoomen mit + / −':'Hier wächst deine erste Maschenkette.';
+  $('tool-instruction').textContent=state.row===0?'Ein Klick. Eine Luftmasche.':ui.technique?'Wähle deine Einstichmaschen.':ui.anchorId?'Nächster Klick: in den Ring.':ui.targetId?'Nächster Klick: in #'+ui.targetId+'.':'Wähle eine Einstichstelle.';
+  $('action-hint').textContent=rounds?(state.row===0?'Kette fertig? Schließe deinen Ring.':state.roundStyle==='spiral'?'Rundenwechsel zählt weiter, ohne Kettmasche.':'Schließe jede Runde mit einer Kettmasche.'):'Jede Reihe darf ihre eigene Maschenzahl haben.';
+  document.querySelectorAll('[data-mode]').forEach(b=>{b.disabled=state.stitches.length>0;b.setAttribute('aria-pressed',b.dataset.mode===state.mode);});
+  $('round-style-label').hidden=!rounds;$('round-style').disabled=state.stitches.length>0;$('round-style').value=state.roundStyle;
+  $('mode-note').textContent=state.stitches.length?'Anderer Modus? Mit „Neu beginnen“ startest du ein neues Stück.':rounds?'Beginne z. B. mit 6 Luftmaschen.':'Starte mit einer Luftmaschenkette.';
+  document.querySelectorAll('[data-tab]').forEach(b=>{const active=b.dataset.tab===ui.tab;b.setAttribute('aria-selected',active);b.tabIndex=active?0:-1;$('pane-'+b.dataset.tab).hidden=!active;});
+  document.querySelectorAll('.stitch-tool').forEach(b=>{const active=b.dataset.type===ui.activeType;b.classList.toggle('active',active);b.setAttribute('aria-pressed',active);});
+  document.querySelectorAll('[data-insertion]').forEach(b=>b.setAttribute('aria-pressed',b.dataset.insertion===state.insertionPoint));
+  document.querySelectorAll('[data-technique]').forEach(b=>b.setAttribute('aria-pressed',b.dataset.technique===ui.technique));
+  $('technique-type').value=ui.techniqueType;$('increase-count-label').hidden=ui.technique!=='increase';
+  $('apply-technique').disabled=!preview.state;$('cancel-technique').hidden=!ui.technique;
+  const verb=ui.technique==='decrease'?ui.selectedIds.length+' '+stitchTypes[ui.techniqueType].short+' zusammen häkeln':ui.increaseCount+' '+stitchTypes[ui.techniqueType].short+' in 1 M häkeln';
+  $('apply-technique').textContent=ui.technique?verb:'Technik anwenden';
+  $('technique-help').textContent=preview.error??(ui.technique==='increase'?'Die transparenten Maschen zeigen deine Zunahme.':'Die transparenten Maschen zeigen deine Abnahme.');
+  $('preview-label').hidden=!preview.state;
+  $('skip-button').disabled=!ui.targetId;
+  const yarn=state.yarns.find(y=>y.yarnId===state.activeYarnId);
+  $('active-yarn-name').textContent=yarn.name;$('active-yarn-sample').style.background=yarn.color;
+  document.querySelectorAll('[data-yarn]').forEach(b=>b.setAttribute('aria-pressed',b.dataset.yarn===ui.pendingYarn));
+  $('change-yarn').disabled=ui.pendingYarn===state.activeYarnId;
+  $('marker-button').disabled=!ui.selectedId;
+  $('marker-button').textContent=state.markers.some(m=>m.stitchId===ui.selectedId)?'Markierer entfernen':'Markierer setzen';
+  $('marker-list').innerHTML=state.markers.map(m=>'<button class="stitch-link" data-marker="'+m.stitchId+'">Markierer #'+m.stitchId+'</button>').join('');
+  $('marker-list').querySelectorAll('[data-marker]').forEach(b=>b.addEventListener('click',()=>selectStitch(Number(b.dataset.marker))));
+  renderDetails();renderTargets();renderPattern();
+}
+$('first-stitch-button').addEventListener('click',()=>crochet('chain'));
+$('height-chain-button').addEventListener('click',()=>crochet('chain',null,{role:'turningChain'}));
+$('demo-button').addEventListener('click',()=>demo());$('empty-demo-button').addEventListener('click',()=>demo());
+document.querySelectorAll('[data-demo]').forEach(b=>b.addEventListener('click',()=>demo(b.dataset.demo)));
+$('next-row-button').addEventListener('click',turn);$('undo-button').addEventListener('click',undo);$('redo-button').addEventListener('click',redo);
+$('reset-button').addEventListener('click',reset);
+$('close-ring-button').addEventListener('click',()=>run(()=>engine.closeRing(),'Dein Ring ist geschlossen. Häkle jetzt in die Mitte oder in eine Luftmasche.',()=>{clearTechnique();chooseDefaultTarget(true);ui.selectedId=null;ui.activeType='singleCrochet';renderer.fit();}));
+$('close-round-button').addEventListener('click',()=>run(()=>engine.closeRound(),'Runde geschlossen. Du kannst Höhen-Luftmaschen hinzufügen und die nächste Runde beginnen.',()=>{clearTechnique();ui.targetId=null;ui.anchorId=null;ui.selectedId=engine.state.stitches.at(-1).id;}));
+document.querySelectorAll('[data-mode]').forEach(b=>b.addEventListener('click',()=>run(()=>engine.setMode(b.dataset.mode,$('round-style').value))));
+$('round-style').addEventListener('change',e=>run(()=>engine.setMode('rounds',e.target.value)));
+document.querySelectorAll('[data-tab]').forEach(b=>{
+  b.addEventListener('click',()=>changeTab(b.dataset.tab));
+  b.addEventListener('keydown',e=>{
+    if(!['ArrowLeft','ArrowRight','Home','End'].includes(e.key))return;
+    e.preventDefault();const tabs=[...document.querySelectorAll('[data-tab]')],index=tabs.indexOf(b);
+    const next=e.key==='Home'?0:e.key==='End'?tabs.length-1:(index+(e.key==='ArrowRight'?1:-1)+tabs.length)%tabs.length;
+    changeTab(tabs[next].dataset.tab);tabs[next].focus();
+  });
+});
+document.querySelectorAll('[data-technique]').forEach(b=>b.addEventListener('click',()=>chooseTechnique(b.dataset.technique)));
+$('technique-type').addEventListener('change',e=>{ui.techniqueType=e.target.value;render();});
+$('increase-count').addEventListener('input',e=>{ui.increaseCount=Number(e.target.value);render();});
+$('apply-technique').addEventListener('click',applyTechnique);
+$('cancel-technique').addEventListener('click',()=>{clearTechnique();render();});
+$('skip-button').addEventListener('click',()=>run(()=>engine.skip(ui.targetId),null,()=>{chooseDefaultTarget();ui.selectedId=ui.targetId;}));
+document.querySelectorAll('[data-insertion]').forEach(b=>b.addEventListener('click',()=>chooseInsertion(b.dataset.insertion)));
+$('open-yarn').addEventListener('click',()=>changeTab('yarn'));
+$('change-yarn').addEventListener('click',()=>run(()=>engine.yarn(ui.pendingYarn),'Dein neues Garn ist bereit.'));
+$('marker-button').addEventListener('click',()=>run(()=>engine.marker(ui.selectedId)));
+$('show-connections').addEventListener('change',e=>{ui.showConnections=e.target.checked;render();});
+$('zoom-in').addEventListener('click',()=>renderer.setZoom(renderer.zoom+.25));
+$('zoom-out').addEventListener('click',()=>renderer.setZoom(renderer.zoom-.25));$('zoom-fit').addEventListener('click',()=>renderer.fit());
+$('help-button').addEventListener('click',()=>$('help-dialog').showModal());
+document.querySelectorAll('[data-close-dialog]').forEach(el=>el.addEventListener('click',()=>$('help-dialog').close()));
+$('help-dialog').addEventListener('click',e=>{
+  if(e.target===$('help-dialog')){const r=e.target.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)e.target.close();}
+});
+document.addEventListener('keydown',e=>{
+  if($('help-dialog').open||e.target.matches('input,select,textarea,[contenteditable]'))return;
+  const modifier=e.ctrlKey||e.metaKey;
+  if(modifier&&e.key.toLowerCase()==='z'){e.preventDefault();e.shiftKey?redo():undo();}
+  else if(modifier&&e.key.toLowerCase()==='y'){e.preventDefault();redo();}
+  else if(!modifier&&['+','='].includes(e.key)){e.preventDefault();renderer.setZoom(renderer.zoom+.25);}
+  else if(!modifier&&e.key==='-'){e.preventDefault();renderer.setZoom(renderer.zoom-.25);}
+  else if(e.key==='Escape'&&ui.technique){clearTechnique();render();}
+});
+render();
+registerCrochetTools({
+  read:()=>({...summary(engine.state),mode:engine.state.mode,roundStyle:engine.state.roundStyle,stitches:renderer.projection.nodes,
+    anchors:structuredClone(engine.state.anchors),markers:structuredClone(engine.state.markers),pattern:patternSummary(engine.state),selectedId:ui.selectedId,targetId:ui.targetId}),
+  add:(type,parentId)=>{
+    const created=crochet(type,parentId);if(!created)throw new Error('Die Masche konnte nicht erstellt werden.');
+    return {stitch:created,...summary(engine.state)};
+  },
+  turn:()=>{if(!turn())throw new Error('Der Reihen-/Rundenwechsel ist noch nicht möglich.');return summary(engine.state);},
+  demo:()=>{demo();return summary(engine.state);},
+  undo:()=>({changed:undo(),...summary(engine.state)}),
+  redo:()=>({changed:redo(),...summary(engine.state)}),
+});
+
+</script>
+</body>
+</html>
