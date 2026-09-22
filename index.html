@@ -83,7 +83,7 @@
     .hero {
       min-height: 70vh;
       display: grid;
-      grid-template-columns: 1fr;
+      grid-template-columns: 1fr 1fr;
       padding-top: 72px;
     }
 
@@ -91,8 +91,23 @@
       display: flex;
       flex-direction: column;
       justify-content: center;
-      padding: 6rem 10vw;
+      padding: 6rem 5vw 6rem 10vw;
       max-width: 900px;
+    }
+
+    .hero-right {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 3rem 8vw 3rem 2rem;
+    }
+
+    .hero-right img {
+      width: 100%;
+      max-width: 600px;
+      height: auto;
+      display: block;
+      object-fit: cover;
     }
 
     .hero-eyebrow {
@@ -462,7 +477,9 @@
     /* ── RESPONSIVE ── */
     @media (max-width: 800px) {
       .hero { grid-template-columns: 1fr; }
-      .hero-left { padding: 4rem 6vw; }
+      .hero-left { padding: 4rem 6vw 2rem; }
+      .hero-right { padding: 0 6vw 4rem; }
+      .hero-right img { max-width: 100%; }
       .cat-grid { grid-template-columns: 1fr 1fr; }
       .posts-grid { grid-template-columns: 1fr; }
       .post-card.featured { grid-row: auto; }
@@ -498,6 +515,10 @@
       <a href="anleitungen.html" class="btn-primary">Anleitungen entdecken</a>
       <a href="#" class="btn-text">Meine Picks →</a>
     </div>
+  </div>
+
+  <div class="hero-right">
+    <img src="images/prettycrochet-hero.png" alt="Handgehäkelte PrettyCrochet Tasche">
   </div>
 </section>
 
