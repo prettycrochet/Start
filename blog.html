@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <script src="https://analytics.ahrefs.com/analytics.js" data-key="OvkMGMTTpoU/1pLa2QkBCQ" async></script>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Blog | PrettyCrochet</title>
+  <meta name="description" content="Der PrettyCrochet Blog: Häkeltrends, Inspiration, Garntipps und Ideen für jede Saison."/>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --creme:   #FAF6F1;
+      --salbei:  #A7B39A;
+      --beige:   #D6C5B5;
+      --braun:   #8B6F5B;
+      --espresso:#4A3B32;
+      --white:   #FFFFFF;
+      --muted:   #9A8880;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--creme);
+      color: var(--espresso);
+      font-family: 'Jost', sans-serif;
+      font-weight: 300;
+      line-height: 1.75;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 200;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.1rem 6vw;
+      background: rgba(250,246,241,0.92);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--beige);
+    }
+
+    .logo-wrap { display: flex; align-items: center; gap: 0.75rem; text-decoration: none; }
+    .logo-text {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.45rem;
+      font-weight: 600;
+      color: var(--espresso);
+      letter-spacing: 0.02em;
+    }
+    .logo-text span { color: var(--salbei); }
+
+    .nav-links { display: flex; gap: 2.2rem; list-style: none; }
+    .nav-links a {
+      font-size: 0.82rem;
+      font-weight: 400;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: var(--espresso);
+      transition: color 0.2s;
+    }
+    .nav-links a:hover,
+    .nav-links a[aria-current="page"] { color: var(--salbei); }
+
+    .nav-cta {
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: var(--white);
+      background: var(--espresso);
+      padding: 0.6rem 1.4rem;
+      border-radius: 2px;
+      transition: background 0.2s;
+    }
+    .nav-cta:hover { background: var(--braun); }
+
+    /* ── SECTIONS ── */
+    section { padding: 6rem 10vw; }
+
+    .label {
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--salbei);
+      margin-bottom: 0.6rem;
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+    }
+    .label::before { content:''; display:inline-block; width:24px; height:1px; background:var(--salbei); }
+
+    h1, h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      line-height: 1.15;
+      color: var(--espresso);
+    }
+    h1 { font-size: clamp(2.6rem, 5vw, 4.2rem); margin-bottom: 1.2rem; }
+    h2 { font-size: clamp(2rem, 3.5vw, 3rem); margin-bottom: 3rem; }
+    h1 em, h2 em { font-style: italic; color: var(--braun); }
+
+    /* ── BLOG HEADER ── */
+    .blog-head { padding-top: calc(72px + 5rem); padding-bottom: 3rem; }
+    .blog-intro { font-size: 1rem; color: var(--muted); max-width: 52ch; }
+
+    /* ── POSTS ── */
+    .posts-section { padding-top: 0; }
+
+    .posts-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+
+    .post-card {
+      background: var(--white);
+      text-decoration: none;
+      color: var(--espresso);
+      display: flex;
+      flex-direction: column;
+      transition: box-shadow 0.25s;
+      border: 1px solid transparent;
+    }
+    .post-card:hover { box-shadow: 0 8px 32px rgba(74,59,50,0.1); border-color: var(--beige); }
+
+    .post-thumb {
+      aspect-ratio: 16 / 9;
+      background: var(--beige);
+      overflow: hidden;
+    }
+    .post-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.4s; }
+    .post-card:hover .post-thumb img { transform: scale(1.03); }
+
+    .post-card.featured {
+      grid-column: 1 / -1;
+      display: grid;
+      grid-template-columns: 1.4fr 1fr;
+    }
+    .post-card.featured .post-thumb { aspect-ratio: auto; min-height: 100%; }
+
+    .post-body { padding: 1.6rem; flex: 1; display: flex; flex-direction: column; }
+    .post-card.featured .post-body { padding: 2.5rem; justify-content: center; }
+    .post-tag {
+      font-size: 0.68rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--salbei);
+      margin-bottom: 0.5rem;
+    }
+    .post-body h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem;
+      font-weight: 400;
+      line-height: 1.3;
+      margin-bottom: 0.6rem;
+    }
+    .post-card.featured .post-body h3 { font-size: 1.9rem; }
+    .post-body p { font-size: 0.88rem; color: var(--muted); }
+    .post-card.featured .post-body p { flex: 0; }
+    .post-meta {
+      font-size: 0.72rem;
+      margin-top: 1.2rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      border-top: 1px solid var(--creme);
+      padding-top: 0.8rem;
+      color: var(--muted);
+    }
+    .post-more {
+      font-size: 0.8rem;
+      color: var(--salbei);
+      letter-spacing: 0.08em;
+      margin-top: 1.2rem;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--espresso);
+      color: var(--beige);
+      padding: 4rem 10vw 2rem;
+    }
+    .footer-top {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 4rem;
+      padding-bottom: 3rem;
+      border-bottom: 1px solid rgba(214,197,181,0.15);
+      margin-bottom: 2rem;
+    }
+    .footer-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem;
+      font-weight: 400;
+      color: var(--creme);
+      display: block;
+      margin-bottom: 1rem;
+    }
+    .footer-logo span { color: var(--salbei); }
+    footer p { font-size: 0.83rem; color: rgba(214,197,181,0.6); line-height: 1.8; max-width: 32ch; }
+    footer h4 {
+      font-size: 0.7rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--salbei);
+      margin-bottom: 1.2rem;
+    }
+    footer ul { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
+    footer ul a { font-size: 0.84rem; color: rgba(214,197,181,0.7); text-decoration: none; transition: color 0.2s; }
+    footer ul a:hover { color: var(--creme); }
+    .footer-bottom {
+      text-align: center;
+      font-size: 0.72rem;
+      color: rgba(214,197,181,0.35);
+      letter-spacing: 0.06em;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      .posts-grid { grid-template-columns: 1fr 1fr; }
+      .post-card.featured { grid-template-columns: 1fr; }
+      .post-card.featured .post-thumb { aspect-ratio: 16 / 9; }
+    }
+    @media (max-width: 800px) {
+      section { padding: 4rem 6vw; }
+      .blog-head { padding-top: calc(72px + 3rem); padding-bottom: 2rem; }
+      .posts-section { padding-top: 0; }
+      .posts-grid { grid-template-columns: 1fr; }
+      .post-card.featured .post-body { padding: 1.6rem; }
+      .footer-top { grid-template-columns: 1fr; gap: 2rem; }
+      .nav-links { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+<a href="index.html" class="logo-wrap">
+  <span class="logo-text">Pretty<span>Crochet</span></span>
+</a>
+  <ul class="nav-links">
+    <li><a href="haekeln-basics.html">Häkel Basics</a></li>
+    <li><a href="PrettyCrochet-Simulator-V2.html">Häkel Simulator</a></li>
+    <li><a href="anleitungen.html">Anleitungen</a></li>
+    <li><a href="blog.html" aria-current="page">Blog</a></li>
+    <li><a href="ueber-mich.html">Über mich</a></li>
+  </ul>
+  <a href="index.html#newsletter" class="nav-cta">Newsletter</a>
+</nav>
+
+<!-- BLOG HEADER -->
+<section class="blog-head">
+  <div class="label">Blog</div>
+  <h1>Neues aus der <em>Häkelwelt</em></h1>
+  <p class="blog-intro">Trends, Inspiration und Garntipps für jede Saison – hier findest du alle Blogbeiträge von PrettyCrochet.</p>
+</section>
+
+<!-- BEITRÄGE -->
+<!-- Neue Beiträge oben einfügen: Der neueste bekommt class="post-card featured", die älteren nur class="post-card". -->
+<section class="posts-section">
+  <div class="posts-grid">
+    <a href="haekeltrends-herbst-2026.html" class="post-card featured">
+      <div class="post-thumb">
+        <img src="assets/Blog/2026-09-22_Herbstblog-2026_01.jpg" alt="Häkeltrends Herbst 2026: Mohair-Schal, Oversize-Cardigan, Granny-Square-Weste und -Tasche, gehäkelte Kürbisse und Mütze" width="1440" height="810">
+      </div>
+      <div class="post-body">
+        <span class="post-tag">Trends</span>
+        <h3>Häkeltrends Herbst 2026: Die 6 wichtigsten Trends für die gemütliche Saison</h3>
+        <p>Mohair, Oversize-Cardigans, flache Zöpfe, Granny Squares als Mode, 3D-Kürbisse und Weihnachtsgeschenke – mit Farben, Garntipps und Projektideen.</p>
+        <span class="post-meta">22. September 2026 · 5 Min. Lesezeit</span>
+        <span class="post-more">Weiterlesen →</span>
+      </div>
+    </a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div>
+      <span class="footer-logo">Pretty<span>Crochet</span></span>
+      <p>Ein Blog über die Liebe zum Häkeln – mit ehrlichen Empfehlungen, kostenlosen Anleitungen und einer Community für alle, die mit Wolle und Nadel Dinge erschaffen.</p>
+    </div>
+    <div>
+      <h4>Navigation</h4>
+      <ul>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="PrettyCrochet-Simulator-V2.html">Muster Generator</a></li>
+        <li><a href="#">Materialien</a></li>
+        <li><a href="#">Empfehlungen</a></li>
+        <li><a href="ueber-mich.html">Über mich</a></li>
+        <li><a href="mailto:prettycrochetstudio@gmail.com">Kontakt</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Rechtliches</h4>
+      <ul>
+        <li><a href="#">Impressum</a></li>
+        <li><a href="#">Datenschutz</a></li>
+        <li><a href="#">Cookie-Einstellungen</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">© 2026 PrettyCrochet · Natürlich. Zeitlos. Handgemacht.</div>
+</footer>
+
+</body>
+</html>
