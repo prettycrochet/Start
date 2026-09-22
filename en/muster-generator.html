@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="en">
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Muster-Generator: Anleitung, Diagramm & 3D-Vorschau | PrettyCrochet</title>
+<title>Pattern Generator: Instructions, Chart &amp; 3D Preview | PrettyCrochet</title>
+  <meta name="description" content="Place crochet stitches with a click and automatically get written instructions, a symbol chart with working direction and a 3D preview – free and in your browser."/>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet"/>
 <style>
   :root{--creme:#FAF6F1;--salbei:#A7B39A;--beige:#D6C5B5;--braun:#8B6F5B;--espresso:#4A3B32;--white:#FFFFFF;--muted:#9A8880;}
@@ -141,19 +142,19 @@
   <span class="logo-text">Pretty<span>Crochet</span></span>
 </a>
   <ul class="nav-links">
-    <li><a href="#" class="active">Häkel Basics</a></li>
-    <li><a href="muster-generator.html">Muster Generator</a></li>
-    <li><a href="anleitungen.html">Anleitungen</a></li>
-    <li><a href="ueber-mich.html">Über mich</a></li>
+    <li><a href="#" class="active">Crochet Basics</a></li>
+    <li><a href="muster-generator.html">Pattern Generator</a></li>
+    <li><a href="anleitungen.html">Patterns</a></li>
+    <li><a href="ueber-mich.html">About me</a></li>
   </ul>
-  <div class="nav-right"><div class="lang-switch" aria-label="Sprache wählen"><span aria-current="true">DE</span><span aria-hidden="true">|</span><a href="en/muster-generator.html" hreflang="en" lang="en">EN</a></div><a href="index.html#newsletter" class="nav-cta">Newsletter</a></div>
+  <div class="nav-right"><div class="lang-switch" aria-label="Choose language"><a href="../muster-generator.html" hreflang="de" lang="de">DE</a><span aria-hidden="true">|</span><span aria-current="true">EN</span></div><a href="index.html#newsletter" class="nav-cta">Newsletter</a></div>
 </nav>
 
 <section class="page-hero">
-  <p class="breadcrumb"><a href="index.html">Start</a> · Muster-Generator</p>
-  <div class="label">Interaktiv</div>
-  <h1>Muster-<em>Generator</em></h1>
-  <p class="sub">Maschen per Klick setzen – daraus entstehen automatisch Textanleitung, Symbol-Diagramm mit Laufrichtung und eine 3D-Schemavorschau. Dein Projekt lässt sich in Bauteile aufteilen, etwa Boden in Runden und Körper in Reihen.</p>
+  <p class="breadcrumb"><a href="index.html">Home</a> · Pattern Generator</p>
+  <div class="label">Interactive</div>
+  <h1>Pattern <em>Generator</em></h1>
+  <p class="sub">Place stitches with a click – and you'll automatically get written instructions, a symbol chart with working direction and a 3D schematic preview. You can split your project into parts, for example a base in rounds and a body in rows. Uses US crochet terms.</p>
 </section>
 
 <section class="app-section">
@@ -161,102 +162,102 @@
 
     <aside>
       <div class="panel">
-        <h3>Bauteile</h3>
+        <h3>Parts</h3>
         <div id="part-list" class="part-list"></div>
-        <label class="field-label">Name des Bauteils</label>
-        <input type="text" id="newPartName" placeholder="z. B. Boden, Körper, Henkel"/>
-        <label class="field-label">Arbeitsweise</label>
+        <label class="field-label">Part name</label>
+        <input type="text" id="newPartName" placeholder="e.g. base, body, handle"/>
+        <label class="field-label">Working method</label>
         <select id="newPartMode">
-          <option value="rounds">In Runden (spiralig)</option>
-          <option value="rows">In Reihen (mit Wenden)</option>
+          <option value="rounds">In rounds (spiral)</option>
+          <option value="rows">In rows (with turning)</option>
         </select>
-        <label class="field-label">Form für 3D-Vorschau</label>
+        <label class="field-label">Shape for 3D preview</label>
         <select id="newPartShape">
-          <option value="scheibe">Flacher Boden / Scheibe</option>
-          <option value="roehre">Röhre / Wand</option>
-          <option value="kugel">Kugel / Amigurumi</option>
-          <option value="flach">Flache Fläche / Panel</option>
+          <option value="scheibe">Flat base / disc</option>
+          <option value="roehre">Tube / wall</option>
+          <option value="kugel">Ball / amigurumi</option>
+          <option value="flach">Flat piece / panel</option>
         </select>
-        <button class="btn sage" id="addPart" style="margin-top:0.9rem;">+ Bauteil anlegen</button>
-        <button class="btn danger" id="delPart" style="margin-top:0.6rem;">Aktives Bauteil löschen</button>
+        <button class="btn sage" id="addPart" style="margin-top:0.9rem;">+ Add part</button>
+        <button class="btn danger" id="delPart" style="margin-top:0.6rem;">Delete active part</button>
       </div>
 
       <div class="panel">
-        <h3>Maschenbibliothek</h3>
-        <input type="search" id="search" placeholder="Masche suchen …"/>
+        <h3>Stitch library</h3>
+        <input type="search" id="search" placeholder="Search stitches …"/>
         <select id="category" style="margin-top:0.6rem;">
-          <option value="">Alle Kategorien</option>
-          <option value="basis">Grundmaschen</option>
-          <option value="zunahme">Zunahmen</option>
-          <option value="abnahme">Abnahmen</option>
-          <option value="relief">Relief / Post-Stitches</option>
-          <option value="spezial">Spezialmaschen</option>
+          <option value="">All categories</option>
+          <option value="basis">Basic stitches</option>
+          <option value="zunahme">Increases</option>
+          <option value="abnahme">Decreases</option>
+          <option value="relief">Post stitches</option>
+          <option value="spezial">Special stitches</option>
           <option value="foundation">Foundation</option>
         </select>
         <div id="library" class="stitch-lib"></div>
       </div>
 
       <div class="panel">
-        <h3>Masche setzen</h3>
-        <label class="field-label">Anzahl</label>
+        <h3>Place stitch</h3>
+        <label class="field-label">Count</label>
         <input type="number" id="count" min="1" value="1"/>
-        <label class="field-label">Platzierung</label>
+        <label class="field-label">Placement</label>
         <select id="placement">
-          <option value="normal">Normale Masche</option>
-          <option value="BLO">Hinteres Maschenglied (BLO)</option>
-          <option value="FLO">Vorderes Maschenglied (FLO)</option>
-          <option value="space">In Zwischenraum / Luftmaschenbogen</option>
-          <option value="front-post">Um vorderen Reliefpfosten</option>
-          <option value="back-post">Um hinteren Reliefpfosten</option>
+          <option value="normal">Regular stitch</option>
+          <option value="BLO">Back loop only (BLO)</option>
+          <option value="FLO">Front loop only (FLO)</option>
+          <option value="space">Into space / chain loop</option>
+          <option value="front-post">Around front post</option>
+          <option value="back-post">Around back post</option>
         </select>
-        <button class="btn primary" id="add" style="margin-top:1rem;">Masche setzen</button>
-        <p style="font-size:0.74rem;color:var(--muted);margin-top:0.6rem;">Neue Maschen hängen sich automatisch an die zuletzt gesetzte an. Über „Springen“ arbeitest du gezielt in einer anderen Reihe weiter.</p>
+        <button class="btn primary" id="add" style="margin-top:1rem;">Place stitch</button>
+        <p style="font-size:0.74rem;color:var(--muted);margin-top:0.6rem;">New stitches are automatically added after the last one you placed. Use “Jump” to continue working in a different row.</p>
 
         <div class="quick-grid">
-          <button class="btn quick-btn" id="qSkip">↷ Überspringen</button>
-          <button class="btn quick-btn" id="qTurn">↺ Wenden</button>
-          <button class="btn quick-btn" id="qTurning">Wendemaschen</button>
-          <button class="btn sage quick-btn" id="qNextRow">+ Nächste Reihe</button>
+          <button class="btn quick-btn" id="qSkip">↷ Skip</button>
+          <button class="btn quick-btn" id="qTurn">↺ Turn</button>
+          <button class="btn quick-btn" id="qTurning">Turning chain</button>
+          <button class="btn sage quick-btn" id="qNextRow">+ Next row</button>
         </div>
 
-        <label class="field-label">Startpunkt setzen (Reihe/Runde)</label>
+        <label class="field-label">Set starting point (row/round)</label>
         <div style="display:grid;grid-template-columns:1fr auto;gap:0.5rem;">
           <input type="number" id="jumpRow" min="1" value="1"/>
-          <button class="btn ghost" id="setStart" style="width:auto;padding:0.6rem 0.8rem;">Springen</button>
+          <button class="btn ghost" id="setStart" style="width:auto;padding:0.6rem 0.8rem;">Jump</button>
         </div>
       </div>
 
       <div class="panel">
-        <h3>Spezialaktion</h3>
+        <h3>Special action</h3>
         <select id="special">
-          <option value="increase">Zunahme</option>
-          <option value="decrease">Abnahme</option>
-          <option value="repeat">Wiederholung</option>
-          <option value="join">Runde schließen</option>
-          <option value="fasten">Abmaschen / Faden abschneiden</option>
-          <option value="marker">Maschenmarkierer setzen</option>
-          <option value="custom">Eigene Notiz</option>
+          <option value="increase">Increase</option>
+          <option value="decrease">Decrease</option>
+          <option value="repeat">Repeat</option>
+          <option value="join">Join round</option>
+          <option value="fasten">Fasten off / cut yarn</option>
+          <option value="marker">Place stitch marker</option>
+          <option value="custom">Custom note</option>
         </select>
-        <input type="text" id="note" placeholder="Optional: eigene Beschreibung" style="margin-top:0.6rem;"/>
-        <button class="btn" id="addSpecial" style="margin-top:0.8rem;">Spezialaktion hinzufügen</button>
+        <input type="text" id="note" placeholder="Optional: your own description" style="margin-top:0.6rem;"/>
+        <button class="btn" id="addSpecial" style="margin-top:0.8rem;">Add special action</button>
       </div>
 
       <div class="panel">
-        <h3>Garn</h3>
-        <label class="field-label">Garnname</label>
+        <h3>Yarn</h3>
+        <label class="field-label">Yarn name</label>
         <input type="text" id="yarn" value="Sage 01"/>
-        <label class="field-label">Farbe</label>
+        <label class="field-label">Color</label>
         <input type="color" id="color" value="#A7B39A"/>
         <div class="btn-row stack">
-          <button class="btn" id="yarnBtn">Neues Garn ansetzen</button>
-          <button class="btn" id="fastenYarn">✂️ Garn abschneiden / vernähen</button>
+          <button class="btn" id="yarnBtn">Join new yarn</button>
+          <button class="btn" id="fastenYarn">✂️ Cut yarn / weave in</button>
         </div>
       </div>
 
       <div class="panel">
         <div class="btn-row">
-          <button class="btn ghost" id="undo">↶ Rückgängig</button>
-          <button class="btn danger" id="clear">Bauteil leeren</button>
+          <button class="btn ghost" id="undo">↶ Undo</button>
+          <button class="btn danger" id="clear">Clear part</button>
         </div>
       </div>
     </aside>
@@ -264,48 +265,48 @@
     <main>
       <div class="out-card">
         <div class="out-head">
-          <div><div class="label" style="margin-bottom:0.2rem;">Symbol-Diagramm</div><h2>Maschenbild mit Laufrichtung</h2></div>
+          <div><div class="label" style="margin-bottom:0.2rem;">Symbol chart</div><h2>Stitch chart with working direction</h2></div>
           <span id="chartInfo" style="font-size:0.78rem;color:var(--muted);"></span>
         </div>
         <div id="stats" class="stat-row"></div>
-        <div id="chart" class="chart-scroll"><p class="empty-note">Noch keine Maschen gesetzt.</p></div>
-        <p class="notice">Die Pfeile zeigen die Arbeitsrichtung jeder Reihe. Nach „Wenden“ läuft die nächste Reihe automatisch in die Gegenrichtung. Rechts neben jeder Reihe steht die Maschenzahl, damit du direkt prüfen kannst, wie viele Maschen du brauchst.</p>
+        <div id="chart" class="chart-scroll"><p class="empty-note">No stitches placed yet.</p></div>
+        <p class="notice">The arrows show the working direction of each row. After “Turn”, the next row automatically runs in the opposite direction. The stitch count is shown next to each row, so you can check right away how many stitches you need.</p>
       </div>
 
       <div class="out-card">
         <div class="out-head">
-          <div><div class="label" style="margin-bottom:0.2rem;">3D-Vorschau</div><h2>Schematische Raumansicht</h2></div>
+          <div><div class="label" style="margin-bottom:0.2rem;">3D preview</div><h2>Schematic 3D view</h2></div>
           <div style="display:flex;gap:0.5rem;align-items:center;">
-            <label style="font-size:0.72rem;color:var(--muted);">Drehung</label>
+            <label style="font-size:0.72rem;color:var(--muted);">Rotation</label>
             <input type="range" id="rot" min="0" max="360" value="30" style="width:130px;"/>
           </div>
         </div>
-        <div id="view3d" class="chart-scroll"><p class="empty-note">Noch keine Daten für die 3D-Vorschau.</p></div>
-        <p class="notice">Die Vorschau ist ein maßstäbliches Schema aus deinen Maschenzahlen, kein fotorealistisches Rendering: Jede Reihe wird nach ihrer Maschenzahl als Umfang dargestellt, die Bauteile stapeln sich in ihrer Reihenfolge übereinander.</p>
+        <div id="view3d" class="chart-scroll"><p class="empty-note">No data for the 3D preview yet.</p></div>
+        <p class="notice">The preview is a to-scale schematic based on your stitch counts, not a photorealistic rendering: each row is drawn as a circumference based on its stitch count, and the parts are stacked on top of each other in their order.</p>
       </div>
 
       <div class="out-card">
         <div class="out-head">
-          <div><div class="label" style="margin-bottom:0.2rem;">Textanleitung</div><h2>Automatisch erzeugte Anleitung</h2></div>
-          <button class="btn" id="copy">Anleitung kopieren</button>
+          <div><div class="label" style="margin-bottom:0.2rem;">Written instructions</div><h2>Automatically generated pattern</h2></div>
+          <button class="btn" id="copy">Copy instructions</button>
         </div>
-        <div id="instructions"><p class="empty-note">Noch keine Maschen.</p></div>
+        <div id="instructions"><p class="empty-note">No stitches yet.</p></div>
       </div>
 
       <div class="out-card">
         <div class="out-head">
-          <div><div class="label" style="margin-bottom:0.2rem;">Pattern Key</div><h2>Verwendete Symbole</h2></div>
+          <div><div class="label" style="margin-bottom:0.2rem;">Pattern key</div><h2>Symbols used</h2></div>
           <span id="keyCount" style="font-size:0.78rem;color:var(--muted);"></span>
         </div>
-        <div id="key" class="key-grid"><p class="empty-note">Wird automatisch erstellt.</p></div>
+        <div id="key" class="key-grid"><p class="empty-note">Created automatically.</p></div>
       </div>
 
       <div class="out-card">
         <div class="out-head">
-          <div><div class="label" style="margin-bottom:0.2rem;">Musterdaten</div><h2>Struktur für Export</h2></div>
-          <button class="btn" id="exportJson">Als JSON exportieren</button>
+          <div><div class="label" style="margin-bottom:0.2rem;">Pattern data</div><h2>Structure for export</h2></div>
+          <button class="btn" id="exportJson">Export as JSON</button>
         </div>
-        <div id="dataPreview" class="data-preview">Noch keine Daten.</div>
+        <div id="dataPreview" class="data-preview">No data yet.</div>
       </div>
     </main>
 
@@ -316,65 +317,65 @@
   <div class="footer-top">
     <div>
       <span class="footer-logo">Pretty<span>Crochet</span></span>
-      <p>Ein Blog über die Liebe zum Häkeln – mit ehrlichen Empfehlungen, kostenlosen Anleitungen und einer Community für alle, die mit Wolle und Nadel Dinge erschaffen.</p>
+      <p>A blog about the love of crochet – with honest recommendations, free patterns and a community for everyone who creates things with yarn and hook.</p>
     </div>
     <div>
       <h4>Navigation</h4>
       <ul>
-        <li><a href="index.html">Anleitungen</a></li>
+        <li><a href="index.html">Patterns</a></li>
         <li><a href="amigurumi.html">Amigurumi</a></li>
-        <li><a href="mein-anleitungsbuch.html">Mein Buch</a></li>
-        <li><a href="#">Muster-Generator</a></li>
+        <li><a href="mein-anleitungsbuch.html">My book</a></li>
+        <li><a href="#">Pattern Generator</a></li>
       </ul>
     </div>
     <div>
-      <h4>Rechtliches</h4>
+      <h4>Legal</h4>
       <ul>
-        <li><a href="#">Impressum</a></li>
-        <li><a href="#">Datenschutz</a></li>
-        <li><a href="#">Affiliate-Hinweis</a></li>
-        <li><a href="#">Cookie-Einstellungen</a></li>
+        <li><a href="#">Legal notice</a></li>
+        <li><a href="#">Privacy policy</a></li>
+        <li><a href="#">Affiliate disclosure</a></li>
+        <li><a href="#">Cookie settings</a></li>
       </ul>
     </div>
   </div>
-  <div class="footer-bottom">© 2026 PrettyCrochet · Natürlich. Zeitlos. Handgemacht.</div>
+  <div class="footer-bottom">© 2026 PrettyCrochet · Natural. Timeless. Handmade.</div>
 </footer>
 
 <script>
 (function(){
   "use strict";
 
-  var STORAGE_KEY = "prettycrochet_musterbuilder_v2";
+  var STORAGE_KEY = "prettycrochet_musterbuilder_v2_en";
 
   var STITCHES = [
-    ["LM","Luftmasche","\u25CB","basis",0.6],
-    ["KM","Kettmasche","\u2322","basis",0.3],
-    ["fM","Feste Masche","\u00D7","basis",1],
-    ["hStb","Halbes St\u00e4bchen","T","basis",1.5],
-    ["Stb","St\u00e4bchen","\u2020","basis",2],
-    ["DStb","Doppelst\u00e4bchen","\u2021","basis",3],
-    ["3fStb","Dreifachst\u00e4bchen","\u2021\u0304","basis",4],
-    ["4fStb","Vierfachst\u00e4bchen","\u2021\u0305","basis",5],
-    ["2fM-Zun","2 fM in 1 M","\u00D7\u00B2","zunahme",1],
-    ["3fM-Zun","3 fM in 1 M","\u00D7\u00B3","zunahme",1],
-    ["2Stb-Zun","2 Stb in 1 M","V","zunahme",2],
-    ["3Stb-Zun","3 Stb in 1 M","W","zunahme",2],
-    ["2fM-Abn","2 fM zusammen","\u2227","abnahme",1],
-    ["2Stb-Abn","2 Stb zusammen","\u039B","abnahme",2],
-    ["3Stb-Abn","3 Stb zusammen","\u039B\u039B","abnahme",2],
-    ["vRStb","Vorderes Reliefst\u00e4bchen","\u0192","relief",2],
-    ["hRStb","Hinteres Reliefst\u00e4bchen","\u0283","relief",2],
-    ["Puff","Puffmasche","P","spezial",1.5],
-    ["Noppe","Noppenmasche","N","spezial",1.5],
-    ["Popcorn","Popcornmasche","\u25CF","spezial",2],
+    ["ch","Chain","○","basis",0.6],
+    ["sl st","Slip stitch","⌢","basis",0.3],
+    ["sc","Single crochet","×","basis",1],
+    ["hdc","Half double crochet","T","basis",1.5],
+    ["dc","Double crochet","†","basis",2],
+    ["tr","Treble crochet","‡","basis",3],
+    ["dtr","Double treble crochet","‡̄","basis",4],
+    ["trtr","Triple treble crochet","‡̅","basis",5],
+    ["2sc-inc","2 sc in 1 st","×²","zunahme",1],
+    ["3sc-inc","3 sc in 1 st","×³","zunahme",1],
+    ["2dc-inc","2 dc in 1 st","V","zunahme",2],
+    ["3dc-inc","3 dc in 1 st","W","zunahme",2],
+    ["sc2tog","2 sc together","∧","abnahme",1],
+    ["dc2tog","2 dc together","Λ","abnahme",2],
+    ["dc3tog","3 dc together","ΛΛ","abnahme",2],
+    ["FPdc","Front post double crochet","ƒ","relief",2],
+    ["BPdc","Back post double crochet","ʃ","relief",2],
+    ["Puff","Puff stitch","P","spezial",1.5],
+    ["Nupp","Nupp stitch","N","spezial",1.5],
+    ["Popcorn","Popcorn stitch","●","spezial",2],
     ["Cluster","Cluster","CL","spezial",2],
-    ["Muschel","Muschel / F\u00e4cher","\u2312","spezial",2],
-    ["V-M","V-Masche","V","spezial",2],
-    ["Picot","Picot","\u2303","spezial",1],
-    ["Bommel","Bommel (Bobble)","B","spezial",2],
-    ["FfM","Foundation feste Masche","FfM","foundation",1],
-    ["FStb","Foundation St\u00e4bchen","FStb","foundation",2],
-    ["MR","Magic Ring","MR","foundation",0.5]
+    ["Shell","Shell / fan","⌒","spezial",2],
+    ["V-st","V-stitch","V","spezial",2],
+    ["Picot","Picot","⌃","spezial",1],
+    ["Bobble","Bobble stitch","B","spezial",2],
+    ["Fsc","Foundation single crochet","Fsc","foundation",1],
+    ["Fdc","Foundation double crochet","Fdc","foundation",2],
+    ["MR","Magic ring","MR","foundation",0.5]
   ];
 
   var $ = function(id){ return document.getElementById(id); };
@@ -386,8 +387,8 @@
   function uid(){ return Date.now().toString(36) + Math.random().toString(36).slice(2,7); }
 
   function defaultProject(){
-    var p1 = { id: uid(), name: "Boden", mode: "rounds", shape: "scheibe", actions: [], cursorRow: 1 };
-    var p2 = { id: uid(), name: "K\u00f6rper", mode: "rows", shape: "roehre", actions: [], cursorRow: 1 };
+    var p1 = { id: uid(), name: "Base", mode: "rounds", shape: "scheibe", actions: [], cursorRow: 1 };
+    var p2 = { id: uid(), name: "Body", mode: "rows", shape: "roehre", actions: [], cursorRow: 1 };
     return { parts: [p1, p2], activeId: p1.id };
   }
 
@@ -426,11 +427,11 @@
   }
 
   function placementText(p){
-    if (p === "BLO") return " ins hintere Maschenglied (BLO)";
-    if (p === "FLO") return " ins vordere Maschenglied (FLO)";
-    if (p === "space") return " in den Zwischenraum/Luftmaschenbogen";
-    if (p === "front-post") return " um den vorderen Reliefpfosten";
-    if (p === "back-post") return " um den hinteren Reliefpfosten";
+    if (p === "BLO") return " in the back loop only (BLO)";
+    if (p === "FLO") return " in the front loop only (FLO)";
+    if (p === "space") return " into the space/chain loop";
+    if (p === "front-post") return " around the front post";
+    if (p === "back-post") return " around the back post";
     return "";
   }
 
@@ -447,35 +448,35 @@
     var count = Math.max(1, parseInt($("count").value,10) || 1);
     addAction({ stitch:selected[0], name:selected[1], symbol:selected[2], height:selected[4],
       count:count, placement:$("placement").value, special:"", note:"",
-      label: count+"\u00D7 "+selected[0], yarn:{name:yarn.name,color:yarn.color} });
+      label: count+"× "+selected[0], yarn:{name:yarn.name,color:yarn.color} });
   });
 
   $("qSkip").addEventListener("click", function(){
     var c = Math.max(1, parseInt($("count").value,10)||1);
-    addAction({ stitch:null, special:"skip", count:c, label:c+" Masche(n) \u00fcberspringen" });
+    addAction({ stitch:null, special:"skip", count:c, label:"Skip "+c+" stitch"+(c===1?"":"es") });
   });
   $("qTurn").addEventListener("click", function(){
     var part = activePart();
     part.cursorRow += 1;
     $("jumpRow").value = part.cursorRow;
-    addAction({ stitch:null, special:"turn", count:0, label:"Arbeit wenden", row: part.cursorRow });
+    addAction({ stitch:null, special:"turn", count:0, label:"Turn work", row: part.cursorRow });
   });
   $("qTurning").addEventListener("click", function(){
     var c = Math.max(1, parseInt($("count").value,10)||1);
-    addAction({ stitch:null, special:"turning", count:c, label:c+" Wendemasche(n)" });
+    addAction({ stitch:null, special:"turning", count:c, label:c+" turning chain"+(c===1?"":"s") });
   });
   $("qNextRow").addEventListener("click", function(){
     var part = activePart();
     part.cursorRow += 1;
     $("jumpRow").value = part.cursorRow;
     addAction({ stitch:null, special:"rowStart", count:0,
-      label:(part.mode==="rounds"?"Neue Runde ":"Neue Reihe ")+part.cursorRow+" beginnen", row: part.cursorRow });
+      label:"Start "+(part.mode==="rounds"?"new round ":"new row ")+part.cursorRow, row: part.cursorRow });
   });
   $("setStart").addEventListener("click", function(){
     var part = activePart();
     var r = Math.max(1, parseInt($("jumpRow").value,10)||1);
     part.cursorRow = r;
-    addAction({ stitch:null, special:"jump", count:0, label:"Weiterarbeiten ab Reihe/Runde "+r, row:r });
+    addAction({ stitch:null, special:"jump", count:0, label:"Continue from row/round "+r, row:r });
   });
 
   $("addSpecial").addEventListener("click", function(){
@@ -483,13 +484,13 @@
     var sp = $("special").value;
     var note = $("note").value;
     var label;
-    if (sp === "increase") label = c+"\u00D7 "+selected[0]+" als Zunahme";
-    else if (sp === "decrease") label = c+"\u00D7 "+selected[0]+" zusammen abmaschen";
-    else if (sp === "repeat") label = c+"\u00D7 Wiederholung";
-    else if (sp === "join") label = "Runde schlie\u00dfen (Km in erste Masche)";
-    else if (sp === "fasten") label = "Abmaschen und Faden abschneiden";
-    else if (sp === "marker") label = "Maschenmarkierer setzen" + (note ? ": "+note : "");
-    else label = note || "Eigene Anweisung";
+    if (sp === "increase") label = c+"× "+selected[0]+" as increase";
+    else if (sp === "decrease") label = c+"× "+selected[0]+" worked together";
+    else if (sp === "repeat") label = "Repeat "+c+"×";
+    else if (sp === "join") label = "Join round (sl st into first stitch)";
+    else if (sp === "fasten") label = "Fasten off and cut yarn";
+    else if (sp === "marker") label = "Place stitch marker" + (note ? ": "+note : "");
+    else label = note || "Custom instruction";
     var isStitch = (sp === "increase" || sp === "decrease");
     addAction({ stitch: isStitch ? selected[0] : null, name:selected[1], symbol:selected[2], height:selected[4],
       count:c, placement:$("placement").value, special:sp, note:note, label:label,
@@ -498,11 +499,11 @@
   });
 
   $("yarnBtn").addEventListener("click", function(){
-    yarn = { name: $("yarn").value || "Neues Garn", color: $("color").value };
-    addAction({ stitch:null, special:"yarn", count:0, label:"Neues Garn ansetzen: "+yarn.name, yarn:{name:yarn.name,color:yarn.color} });
+    yarn = { name: $("yarn").value || "New yarn", color: $("color").value };
+    addAction({ stitch:null, special:"yarn", count:0, label:"Join new yarn: "+yarn.name, yarn:{name:yarn.name,color:yarn.color} });
   });
   $("fastenYarn").addEventListener("click", function(){
-    addAction({ stitch:null, special:"fasten", count:0, label:"Garn abschneiden / vern\u00e4hen" });
+    addAction({ stitch:null, special:"fasten", count:0, label:"Cut yarn / weave in" });
   });
 
   $("undo").addEventListener("click", function(){
@@ -512,13 +513,13 @@
   $("clear").addEventListener("click", function(){
     var part = activePart();
     if (!part.actions.length) return;
-    if (!confirm("Alle Aktionen im Bauteil \"" + part.name + "\" l\u00f6schen?")) return;
+    if (!confirm("Delete all actions in the part \"" + part.name + "\"?")) return;
     part.actions = []; part.cursorRow = 1;
     save(); renderAll();
   });
 
   $("addPart").addEventListener("click", function(){
-    var name = $("newPartName").value.trim() || "Neues Bauteil";
+    var name = $("newPartName").value.trim() || "New part";
     var p = { id: uid(), name:name, mode:$("newPartMode").value, shape:$("newPartShape").value, actions:[], cursorRow:1 };
     project.parts.push(p);
     project.activeId = p.id;
@@ -526,9 +527,9 @@
     save(); renderAll();
   });
   $("delPart").addEventListener("click", function(){
-    if (project.parts.length <= 1){ alert("Es muss mindestens ein Bauteil vorhanden bleiben."); return; }
+    if (project.parts.length <= 1){ alert("At least one part has to remain."); return; }
     var part = activePart();
-    if (!confirm("Bauteil \"" + part.name + "\" mit allen Maschen l\u00f6schen?")) return;
+    if (!confirm("Delete the part \"" + part.name + "\" with all its stitches?")) return;
     project.parts = project.parts.filter(function(p){ return p.id !== part.id; });
     project.activeId = project.parts[0].id;
     save(); renderAll();
@@ -540,7 +541,7 @@
     project.parts.forEach(function(p){
       var d = document.createElement("div");
       d.className = "part-item" + (p.id === project.activeId ? " active" : "");
-      d.innerHTML = '<span class="p-name">'+p.name+'</span><span class="p-meta">'+(p.mode==="rounds"?"Runden":"Reihen")+' \u00b7 '+countStitches(p)+' M</span>';
+      d.innerHTML = '<span class="p-name">'+p.name+'</span><span class="p-meta">'+(p.mode==="rounds"?"Rounds":"Rows")+' · '+countStitches(p)+' sts</span>';
       d.addEventListener("click", function(){
         project.activeId = p.id;
         $("jumpRow").value = p.cursorRow;
@@ -550,7 +551,7 @@
     });
   }
 
-  /* Layout: Maschen in Reihen mit Laufrichtung */
+  /* Layout: stitches in rows with working direction */
   function buildLayout(part){
     var rowsMap = {};
     var order = [];
@@ -567,7 +568,7 @@
       var n = Math.max(1, a.count || 1);
       for (var i=0;i<n;i++){
         if (a.special === "skip"){
-          rowsMap[r].cells.push({ skip:true, symbol:"\u00B7", code:"\u2014" });
+          rowsMap[r].cells.push({ skip:true, symbol:"·", code:"—" });
         } else {
           rowsMap[r].cells.push({ code:a.stitch, symbol:a.symbol || "?", height:a.height || 1,
             color:(a.yarn && a.yarn.color) || "#4A3B32" });
@@ -594,7 +595,7 @@
     var el = $("chart");
     var anyStitch = project.parts.some(function(p){ return countStitches(p) > 0; });
     if (!anyStitch){
-      el.innerHTML = '<p class="empty-note">Noch keine Maschen gesetzt.</p>';
+      el.innerHTML = '<p class="empty-note">No stitches placed yet.</p>';
       $("chartInfo").textContent = "";
       $("stats").innerHTML = "";
       return;
@@ -618,9 +619,9 @@
         var y = padT + visIdx*cell + cell/2;
         var stitchCount = row.cells.filter(function(c){ return !c.skip; }).length;
         totalAll += stitchCount;
-        var prefix = part.mode === "rounds" ? "Rd " : "R ";
-        svg += '<text x="8" y="'+(y+4)+'" font-size="11" fill="#8B6F5B">'+prefix+row.row+' ('+stitchCount+' M)</text>';
-        var arrow = row.dir === 1 ? "\u2192" : "\u2190";
+        var prefix = part.mode === "rounds" ? "Rnd " : "R ";
+        svg += '<text x="8" y="'+(y+4)+'" font-size="11" fill="#8B6F5B">'+prefix+row.row+' ('+stitchCount+' sts)</text>';
+        var arrow = row.dir === 1 ? "→" : "←";
         svg += '<text x="80" y="'+(y+5)+'" font-size="13" fill="#A7B39A">'+arrow+'</text>';
 
         var cells = row.dir === 1 ? row.cells : row.cells.slice().reverse();
@@ -635,23 +636,23 @@
       });
 
       svg += '</svg>';
-      html += '<div class="chart-part-title">'+part.name+' \u00b7 '+(part.mode==="rounds"?"in Runden":"in Reihen")+'</div>' + svg;
+      html += '<div class="chart-part-title">'+part.name+' · '+(part.mode==="rounds"?"in rounds":"in rows")+'</div>' + svg;
     });
 
     el.innerHTML = html;
-    $("chartInfo").textContent = totalAll + " Maschen \u00b7 " + totalRows + " Reihen/Runden";
+    $("chartInfo").textContent = totalAll + " stitches · " + totalRows + " rows/rounds";
 
     var partStats = project.parts.map(function(p){
       return '<div class="stat"><b>'+countStitches(p)+'</b><span>'+p.name+'</span></div>';
     }).join("");
-    $("stats").innerHTML = partStats + '<div class="stat"><b>'+totalAll+'</b><span>Gesamt</span></div>';
+    $("stats").innerHTML = partStats + '<div class="stat"><b>'+totalAll+'</b><span>Total</span></div>';
   }
 
   function render3D(){
     var el = $("view3d");
     var parts = project.parts.filter(function(p){ return countStitches(p) > 0; });
     if (!parts.length){
-      el.innerHTML = '<p class="empty-note">Noch keine Daten f\u00fcr die 3D-Vorschau.</p>';
+      el.innerHTML = '<p class="empty-note">No data for the 3D preview yet.</p>';
       return;
     }
 
@@ -731,7 +732,7 @@
 
         if (ri === layout.length - 1){
           var lp = project3(0, y, 0);
-          svg += '<text x="'+(lp.x + maxR*scale*0.8 + 10).toFixed(1)+'" y="'+(lp.y - 4).toFixed(1)+'" font-size="11" fill="#8B6F5B">'+part.name+' \u00b7 '+layout.length+' R \u00b7 '+countStitches(part)+' M</text>';
+          svg += '<text x="'+(lp.x + maxR*scale*0.8 + 10).toFixed(1)+'" y="'+(lp.y - 4).toFixed(1)+'" font-size="11" fill="#8B6F5B">'+part.name+' · '+layout.length+' R · '+countStitches(part)+' sts</text>';
         }
       });
 
@@ -758,13 +759,13 @@
     var inst = $("instructions");
     inst.innerHTML = "";
     var any = project.parts.some(function(p){ return p.actions.length; });
-    if (!any){ inst.innerHTML = '<p class="empty-note">Noch keine Maschen.</p>'; return; }
+    if (!any){ inst.innerHTML = '<p class="empty-note">No stitches yet.</p>'; return; }
 
     project.parts.forEach(function(part){
       if (!part.actions.length) return;
       var title = document.createElement("div");
       title.className = "chart-part-title";
-      title.textContent = part.name + " \u00b7 " + (part.mode==="rounds" ? "in Runden" : "in Reihen");
+      title.textContent = part.name + " · " + (part.mode==="rounds" ? "in rounds" : "in rows");
       inst.appendChild(title);
 
       var groups = {};
@@ -778,8 +779,9 @@
       Object.keys(groups).sort(function(x,y){ return x-y; }).forEach(function(r){
         var box = document.createElement("div");
         box.className = "row-block";
-        var prefix = part.mode === "rounds" ? "Runde " : "Reihe ";
-        box.innerHTML = '<div class="row-block-head"><h4>'+prefix+r+'</h4><span>'+groups[r].length+' Aktionen</span></div>';
+        var prefix = part.mode === "rounds" ? "Round " : "Row ";
+        var n = groups[r].length;
+        box.innerHTML = '<div class="row-block-head"><h4>'+prefix+r+'</h4><span>'+n+(n===1?' action':' actions')+'</span></div>';
         var chips = document.createElement("div");
         chips.className = "chips";
         groups[r].forEach(function(a){
@@ -803,10 +805,10 @@
         if (a.stitch && !used[a.stitch]){ used[a.stitch] = a; order.push(a.stitch); }
       });
     });
-    $("keyCount").textContent = order.length ? order.length + " Symbole" : "";
+    $("keyCount").textContent = order.length ? order.length + (order.length === 1 ? " symbol" : " symbols") : "";
     var el = $("key");
     el.innerHTML = "";
-    if (!order.length){ el.innerHTML = '<p class="empty-note">Wird automatisch erstellt.</p>'; return; }
+    if (!order.length){ el.innerHTML = '<p class="empty-note">Created automatically.</p>'; return; }
     order.forEach(function(code){
       var a = used[code];
       var d = document.createElement("div");
@@ -827,7 +829,7 @@
           rows: buildLayout(p).map(function(row){
             return {
               row: row.row,
-              direction: row.dir === 1 ? "rechts" : "links",
+              direction: row.dir === 1 ? "right" : "left",
               stitches: row.cells.filter(function(c){ return !c.skip; }).length,
               codes: row.cells.map(function(c){ return c.code; })
             };
@@ -843,14 +845,14 @@
 
   function renderData(){
     var any = project.parts.some(function(p){ return p.actions.length; });
-    $("dataPreview").textContent = any ? JSON.stringify(buildData(), null, 2) : "Noch keine Daten.";
+    $("dataPreview").textContent = any ? JSON.stringify(buildData(), null, 2) : "No data yet.";
   }
 
   $("copy").addEventListener("click", function(){
     var text = $("instructions").innerText;
     if (navigator.clipboard) navigator.clipboard.writeText(text);
     var b = $("copy"), old = b.textContent;
-    b.textContent = "Kopiert \u2713";
+    b.textContent = "Copied ✓";
     setTimeout(function(){ b.textContent = old; }, 1200);
   });
 
@@ -858,7 +860,7 @@
     var blob = new Blob([JSON.stringify(buildData(), null, 2)], { type:"application/json" });
     var url = URL.createObjectURL(blob);
     var a = document.createElement("a");
-    a.href = url; a.download = "prettycrochet-muster.json";
+    a.href = url; a.download = "prettycrochet-pattern.json";
     document.body.appendChild(a); a.click(); a.remove();
     URL.revokeObjectURL(url);
   });
