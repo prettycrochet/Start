@@ -162,6 +162,42 @@
 <link rel="alternate" hreflang="en" href="https://prettycrochet.github.io/Start/en/blog/haekel-taschenanhaenger-herbst.html"/>
 <link rel="alternate" hreflang="x-default" href="https://prettycrochet.github.io/Start/blog/haekel-taschenanhaenger-herbst.html"/>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet"/>
+<style id="site-header">
+  /* Einheitliche Kopfzeile auf allen Seiten – hier zentral anpassen */
+  nav{position:fixed;top:0;left:0;right:0;z-index:200;box-sizing:border-box;display:flex;align-items:center;justify-content:space-between;gap:1rem;margin:0;padding:1.1rem 6vw;background:rgba(250,246,241,0.92);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid #D6C5B5;font-family:'Jost',sans-serif;font-size:16px;font-weight:300;line-height:1.75;}
+  nav .logo-wrap{display:flex;align-items:center;gap:.75rem;text-decoration:none;}
+  nav .logo-text{font-family:'Cormorant Garamond',serif;font-size:1.45rem;font-weight:600;font-style:normal;color:#4A3B32;letter-spacing:.02em;line-height:1.75;}
+  nav .logo-text span{color:#A7B39A;}
+  nav .nav-links{display:flex;gap:2.2rem;list-style:none;margin:0;padding:0;}
+  nav .nav-links li{margin:0;padding:0;}
+  nav .nav-links a{font-family:'Jost',sans-serif;font-size:.82rem;font-weight:400;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;color:#4A3B32;line-height:1.75;white-space:nowrap;border:0;transition:color .2s;}
+  nav .nav-links a:hover,nav .nav-links a[aria-current="page"]{color:#A7B39A;}
+  nav .nav-right{display:flex;align-items:center;gap:1.4rem;}
+  nav .lang-switch{display:flex;align-items:center;gap:.45rem;margin:0;font-family:'Jost',sans-serif;font-size:.78rem;font-weight:300;letter-spacing:.1em;line-height:1.75;color:#9A8880;white-space:nowrap;}
+  nav .lang-switch a{color:inherit;text-decoration:none;border-bottom:1px solid transparent;transition:color .2s,border-color .2s;}
+  nav .lang-switch a:hover{color:#4A3B32;border-color:#A7B39A;}
+  nav .lang-switch [aria-current]{color:#4A3B32;font-weight:500;}
+  nav .nav-cta{display:inline-block;font-family:'Jost',sans-serif;font-size:.8rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;line-height:1.75;color:#FFFFFF;background:#4A3B32;padding:.6rem 1.4rem;border:0;border-radius:2px;white-space:nowrap;transition:background .2s;}
+  nav .nav-cta:hover{background:#8B6F5B;color:#FFFFFF;}
+  @media(max-width:1180px){nav{padding-left:4vw;padding-right:4vw;}nav .nav-links{gap:1.3rem;}nav .nav-links a{font-size:.75rem;letter-spacing:.07em;}}
+  @media(max-width:980px){nav .nav-links{display:none;}}
+  @media(max-width:480px){nav .nav-right{gap:.8rem;}nav .nav-cta{padding:.5rem .85rem;font-size:.7rem;}}
+</style>
+<style id="site-footer">
+  /* Einheitliche Fußzeile auf allen Seiten – hier zentral anpassen */
+  footer:not(.author){box-sizing:border-box;margin:0;background:#4A3B32;color:#D6C5B5;padding:4rem 10vw 2rem;font-family:'Jost',sans-serif;font-size:16px;font-weight:300;line-height:1.75;}
+  footer:not(.author) .footer-top{display:grid;grid-template-columns:2fr 1fr 1fr;gap:4rem;padding-bottom:3rem;border-bottom:1px solid rgba(214,197,181,0.15);margin-bottom:2rem;}
+  footer:not(.author) .footer-logo{display:block;margin:0 0 1rem;font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:400;line-height:1.75;color:#FAF6F1;}
+  footer:not(.author) .footer-logo span{color:#A7B39A;}
+  footer:not(.author) p{margin:0;max-width:32ch;font-size:.83rem;font-weight:300;line-height:1.8;color:rgba(214,197,181,0.6);}
+  footer:not(.author) h4{margin:0 0 1.2rem;font-family:'Jost',sans-serif;font-size:.7rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;line-height:1.75;color:#A7B39A;}
+  footer:not(.author) ul{list-style:none;display:flex;flex-direction:column;gap:.6rem;margin:0;padding:0;}
+  footer:not(.author) li{margin:0;padding:0;}
+  footer:not(.author) ul a{font-family:'Jost',sans-serif;font-size:.84rem;font-weight:300;line-height:1.75;color:rgba(214,197,181,0.7);text-decoration:none;transition:color .2s;}
+  footer:not(.author) ul a:hover{color:#FAF6F1;}
+  footer:not(.author) .footer-bottom{text-align:center;font-size:.72rem;font-weight:300;letter-spacing:.06em;line-height:1.75;color:rgba(214,197,181,0.35);}
+  @media(max-width:800px){footer:not(.author) .footer-top{grid-template-columns:1fr;gap:2rem;}}
+</style>
 </head>
 <body>
 <nav aria-label="Main navigation">
