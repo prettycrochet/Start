@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>How to Crochet a Pumpkin: Easy Fall Decor Pattern in 3 Sizes | PrettyCrochet</title>
+  <meta name="description" content="Ribbed crochet pumpkins made from one simple rectangle – no rounds, no increases. Free step-by-step beginner pattern in US terms, in three sizes."/>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --creme:   #FAF6F1;
+      --salbei:  #A7B39A;
+      --beige:   #D6C5B5;
+      --braun:   #8B6F5B;
+      --espresso:#4A3B32;
+      --white:   #FFFFFF;
+      --muted:   #9A8880;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--creme);
+      color: var(--espresso);
+      font-family: 'Jost', sans-serif;
+      font-weight: 300;
+      line-height: 1.75;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 200;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.1rem 6vw;
+      background: rgba(250,246,241,0.92);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--beige);
+    }
+    .logo-wrap { display: flex; align-items: center; gap: 0.75rem; text-decoration: none; }
+    .logo-text {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.45rem;
+      font-weight: 600;
+      color: var(--espresso);
+      letter-spacing: 0.02em;
+    }
+    .logo-text span { color: var(--salbei); }
+    .nav-links { display: flex; gap: 2.2rem; list-style: none; }
+    .nav-links a {
+      font-size: 0.82rem;
+      font-weight: 400;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: var(--espresso);
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--salbei); }
+    .nav-cta {
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: var(--white);
+      background: var(--espresso);
+      padding: 0.6rem 1.4rem;
+      border-radius: 2px;
+      transition: background 0.2s;
+    }
+    .nav-cta:hover { background: var(--braun); }
+
+    /* ── PAGE HERO ── */
+    .page-hero {
+      padding: 11rem 10vw 4rem;
+      background: var(--beige);
+      text-align: center;
+    }
+    .breadcrumb {
+      font-size: 0.75rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--braun);
+      margin-bottom: 1.5rem;
+    }
+    .breadcrumb a { color: var(--braun); text-decoration: none; border-bottom: 1px solid rgba(139,111,91,0.35); }
+    .breadcrumb a:hover { border-color: var(--braun); }
+    .page-hero .label { justify-content: center; }
+    .page-hero .label::before { display: none; }
+    .page-hero h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.2rem, 4.6vw, 3.6rem);
+      font-weight: 300;
+      line-height: 1.15;
+      color: var(--espresso);
+      margin-bottom: 1.2rem;
+    }
+    .page-hero h1 em { font-style: italic; color: var(--braun); }
+    .page-hero p.sub {
+      max-width: 54ch;
+      margin: 0 auto 2rem;
+      color: var(--braun);
+      font-size: 1rem;
+    }
+
+    /* Meta row: difficulty / time / size */
+    .meta-row {
+      display: flex;
+      justify-content: center;
+      gap: 2.5rem;
+      flex-wrap: wrap;
+    }
+    .meta-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.3rem;
+    }
+    .meta-item .meta-icon { font-size: 1.3rem; }
+    .meta-item .meta-label {
+      font-size: 0.68rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--braun);
+      opacity: 0.75;
+    }
+    .meta-item .meta-value {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.15rem;
+      color: var(--espresso);
+    }
+
+    .label {
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--salbei);
+      margin-bottom: 0.6rem;
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+    }
+    .label::before { content:''; display:inline-block; width:24px; height:1px; background:var(--salbei); }
+
+    h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.8rem, 3vw, 2.6rem);
+      font-weight: 300;
+      line-height: 1.2;
+      color: var(--espresso);
+      margin-bottom: 1.5rem;
+    }
+    h2 em { font-style: italic; color: var(--braun); }
+
+    section { padding: 4.5rem 10vw; }
+
+    /* ── INTRO ── */
+    .intro-section { background: var(--white); }
+    .intro-text { max-width: 70ch; font-size: 1.02rem; }
+    .intro-text p { margin-bottom: 1.2rem; }
+
+    /* ── MATERIAL + ABKÜRZUNGEN ── */
+    .prep-section { background: var(--creme); }
+    .prep-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 3rem;
+    }
+    .prep-block h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.25rem;
+      font-weight: 400;
+      margin-bottom: 1.2rem;
+      color: var(--braun);
+    }
+    .material-list { list-style: none; display: flex; flex-direction: column; gap: 0.7rem; }
+    .material-list li {
+      display: flex;
+      gap: 0.7rem;
+      align-items: baseline;
+      font-size: 0.92rem;
+      padding-bottom: 0.7rem;
+      border-bottom: 1px solid var(--beige);
+    }
+    .material-list li::before { content: '—'; color: var(--salbei); flex-shrink: 0; }
+
+    .abbr-table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+    .abbr-table tr { border-bottom: 1px solid var(--beige); }
+    .abbr-table td { padding: 0.65rem 0.4rem; }
+    .abbr-table td:first-child {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 600;
+      color: var(--braun);
+      width: 70px;
+    }
+
+    /* ── PATTERN STEPS ── */
+    .pattern-section { background: var(--white); }
+    .pattern-part {
+      max-width: 78ch;
+      margin-bottom: 3.5rem;
+    }
+    .pattern-part:last-child { margin-bottom: 0; }
+    .pattern-part-header {
+      display: flex;
+      align-items: baseline;
+      gap: 1rem;
+      margin-bottom: 1rem;
+      border-bottom: 2px solid var(--salbei);
+      padding-bottom: 0.6rem;
+    }
+    .pattern-part-icon { font-size: 1.6rem; }
+    .pattern-part h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem;
+      font-weight: 400;
+      color: var(--espresso);
+    }
+    .pattern-part-count {
+      font-size: 0.78rem;
+      color: var(--muted);
+      letter-spacing: 0.04em;
+      margin-left: auto;
+    }
+    .round-list { list-style: none; }
+    .round-list li {
+      display: grid;
+      grid-template-columns: 90px 1fr;
+      gap: 1rem;
+      font-size: 0.92rem;
+      padding: 0.55rem 0;
+      border-bottom: 1px dashed var(--beige);
+    }
+    .round-list li:last-child { border-bottom: none; }
+    .round-label {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 600;
+      color: var(--braun);
+    }
+    .round-stitches {
+      font-size: 0.78rem;
+      color: var(--salbei);
+      margin-left: 0.4rem;
+    }
+    .pattern-note {
+      margin-top: 1rem;
+      font-size: 0.86rem;
+      color: var(--muted);
+      background: var(--creme);
+      padding: 0.9rem 1.1rem;
+      border-left: 3px solid var(--salbei);
+    }
+
+    /* ── ZUSAMMENNÄHEN STEPS ── */
+    .assembly-section { background: var(--creme); }
+    .steps-list { display: flex; flex-direction: column; max-width: 74ch; }
+    .step-row {
+      display: grid;
+      grid-template-columns: 50px 1fr;
+      gap: 1.6rem;
+      padding: 1.5rem 0;
+      border-bottom: 1px solid var(--beige);
+    }
+    .step-row:first-child { padding-top: 0; }
+    .step-row:last-child { border-bottom: none; }
+    .step-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.7rem;
+      font-weight: 300;
+      color: var(--salbei);
+    }
+    .step-content h4 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem;
+      font-weight: 400;
+      margin-bottom: 0.3rem;
+    }
+    .step-content p { font-size: 0.9rem; color: var(--muted); }
+
+    /* ── TIPP BOX ── */
+    .tipp-section { background: var(--espresso); }
+    .tipp-section .label { color: var(--salbei); }
+    .tipp-section .label::before { background: var(--salbei); }
+    .tipp-section h2 { color: var(--creme); }
+    .tipp-section h2 em { color: var(--salbei); }
+    .tipp-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+    .tipp-item { background: var(--espresso); padding: 2rem 1.6rem; }
+    .tipp-item h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem;
+      font-weight: 400;
+      color: var(--creme);
+      margin-bottom: 0.6rem;
+    }
+    .tipp-item p { font-size: 0.85rem; color: var(--beige); }
+
+    /* ── NEXT STEP CTA ── */
+    .next-section {
+      background: var(--beige);
+      text-align: center;
+      padding: 5rem 10vw;
+    }
+    .next-section .label { justify-content: center; }
+    .next-section .label::before { display: none; }
+    .next-section p { color: var(--braun); max-width: 44ch; margin: 0 auto 2rem; font-size: 0.95rem; }
+    .btn-primary {
+      display: inline-block;
+      background: var(--espresso);
+      color: var(--white);
+      padding: 0.9rem 2rem;
+      font-size: 0.82rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border-radius: 2px;
+      transition: background 0.2s;
+    }
+    .btn-primary:hover { background: var(--braun); }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--espresso);
+      color: var(--beige);
+      padding: 4rem 10vw 2rem;
+    }
+    .footer-top {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 4rem;
+      padding-bottom: 3rem;
+      border-bottom: 1px solid rgba(214,197,181,0.15);
+      margin-bottom: 2rem;
+    }
+    .footer-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem;
+      font-weight: 400;
+      color: var(--creme);
+      display: block;
+      margin-bottom: 1rem;
+    }
+    .footer-logo span { color: var(--salbei); }
+    footer p { font-size: 0.83rem; color: rgba(214,197,181,0.6); line-height: 1.8; max-width: 32ch; }
+    footer h4 {
+      font-size: 0.7rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--salbei);
+      margin-bottom: 1.2rem;
+    }
+    footer ul { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
+    footer ul a { font-size: 0.84rem; color: rgba(214,197,181,0.7); text-decoration: none; transition: color 0.2s; }
+    footer ul a:hover { color: var(--creme); }
+    .footer-bottom {
+      text-align: center;
+      font-size: 0.72rem;
+      color: rgba(214,197,181,0.35);
+      letter-spacing: 0.06em;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 800px) {
+      .nav-links { display: none; }
+      .prep-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+      .tipp-grid { grid-template-columns: 1fr; }
+      .footer-top { grid-template-columns: 1fr; gap: 2rem; }
+      .round-list li { grid-template-columns: 70px 1fr; }
+      .meta-row { gap: 1.5rem; }
+    }
+  
+  /* ── Sprachumschalter DE | EN ── */
+  .nav-right{display:flex;align-items:center;gap:1.4rem;}
+  .lang-switch{display:flex;align-items:center;gap:.45rem;font-size:.78rem;letter-spacing:.1em;color:#9A8880;}
+  .lang-switch a{color:inherit;text-decoration:none;border-bottom:1px solid transparent;transition:color .2s,border-color .2s;}
+  .lang-switch a:hover{color:#4A3B32;border-color:#A7B39A;}
+  .lang-switch [aria-current]{color:#4A3B32;font-weight:500;}
+  header .lang-switch{justify-content:flex-end;margin-bottom:.4rem;}
+  nav{gap:1rem;}
+  @media(max-width:480px){.nav-right{gap:.8rem;}.nav-right .nav-cta{padding:.5rem .85rem;font-size:.7rem;}}
+  .pattern-figure{max-width:760px;margin:0 auto;}
+  .pattern-figure img{display:block;width:100%;height:auto;border-radius:4px;}
+  .pattern-figure figcaption{font-size:.8rem;color:#9A8880;text-align:center;margin-top:.6rem;}
+  .nav-links a[aria-current="page"]{color:#A7B39A;}
+  .nav-links a,.nav-cta,.lang-switch{white-space:nowrap;}
+  @media(max-width:1180px){nav{padding-left:4vw;padding-right:4vw;}.nav-links{gap:1.3rem;}.nav-links a{font-size:.75rem;letter-spacing:.07em;}}
+  @media(max-width:980px){.nav-links{display:none;}}
+</style>
+<link rel="alternate" hreflang="de" href="https://prettycrochet.github.io/Start/anleitungen/kuerbis.html"/>
+<link rel="alternate" hreflang="en" href="https://prettycrochet.github.io/Start/en/anleitungen/kuerbis.html"/>
+<link rel="alternate" hreflang="x-default" href="https://prettycrochet.github.io/Start/anleitungen/kuerbis.html"/>
+</head>
+<body>
+
+<!-- NAV -->
+<nav aria-label="Main navigation">
+  <a href="../index.html" class="logo-wrap" aria-label="PrettyCrochet – home">
+    <span class="logo-text">Pretty<span>Crochet</span></span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="../haekeln-basics.html">Crochet Basics</a></li>
+    <li><a href="../anleitungen.html" aria-current="page" class="active">Patterns</a></li>
+    <li><a href="../werkzeuge/muster-generator.html">Pattern Generator</a></li>
+    <li><a href="../blog.html">Blog</a></li>
+    <li><a href="../ueber-mich.html">About me</a></li>
+  </ul>
+  <div class="nav-right"><div class="lang-switch" aria-label="Choose language"><a href="../../anleitungen/kuerbis.html" hreflang="de" lang="de">DE</a><span aria-hidden="true">|</span><span aria-current="true">EN</span></div><a href="../index.html#newsletter" class="nav-cta">Newsletter</a></div>
+</nav>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <p class="breadcrumb"><a href="../index.html">Home</a> · <a href="../anleitungen.html">Patterns</a> · Pumpkin</p>
+  <div class="label">Fall decor</div>
+  <h1>How to crochet a pumpkin:<br>The easy <em>pattern</em></h1>
+  <p class="sub">Ribbed pumpkins made from a single rectangle – no rounds and no increases. Done in one evening, in three sizes for your fall decor.</p>
+  <div class="meta-row">
+    <div class="meta-item">
+      <span class="meta-icon">⭐</span>
+      <span class="meta-label">Level</span>
+      <span class="meta-value">Beginner</span>
+    </div>
+    <div class="meta-item">
+      <span class="meta-icon">⏱️</span>
+      <span class="meta-label">Time</span>
+      <span class="meta-value">1–2 hrs</span>
+    </div>
+    <div class="meta-item">
+      <span class="meta-icon">📏</span>
+      <span class="meta-label">Sizes</span>
+      <span class="meta-value">approx. 8–15 cm</span>
+    </div>
+    <div class="meta-item">
+      <span class="meta-icon">🪝</span>
+      <span class="meta-label">Hook</span>
+      <span class="meta-value">4.0 mm</span>
+    </div>
+  </div>
+</section>
+
+<!-- BILD -->
+<section class="intro-section" style="padding-bottom:0;">
+  <figure class="pattern-figure">
+    <img src="../../assets/blog/2026-09-22_Herbstblog-2026/2026-09-22_Herbstblog-2026_06.jpg" alt="Three crocheted pumpkins in orange, cream and sage green with ribs and brown stems" width="1440" height="1080" fetchpriority="high" decoding="async">
+    <figcaption>Inspiration: pumpkins in three sizes and colors</figcaption>
+  </figure>
+</section>
+
+<!-- INTRO -->
+<section class="intro-section">
+  <div class="label">Before you start</div>
+  <h2>How the <em>pumpkin</em> comes together</h2>
+  <div class="intro-text">
+    <p>The secret of these pumpkins: you don't crochet a ball, but a flat rectangle of single crochet worked in the back loop only. This creates the typical ribs all by itself. You close the rectangle into a tube, gather both ends, stuff it – and cinch the pumpkin segments with a piece of yarn.</p>
+    <p>Because you only work in rows and never have to count increases or decreases, this is the perfect first project after learning the basic stitches. If “single crochet” or “back loop only” don't mean anything to you yet, take a quick look at the <a href="../haekeln-basics.html" style="color:var(--braun)">Crochet Basics</a> first. This pattern uses US crochet terms.</p>
+  </div>
+</section>
+
+<!-- MATERIAL & ABKÜRZUNGEN -->
+<section class="prep-section">
+  <div class="label">Preparation</div>
+  <h2>Materials <em>& abbreviations</em></h2>
+  <div class="prep-grid">
+    <div class="prep-block">
+      <h3>What you need</h3>
+      <ul class="material-list">
+        <li>Cotton or cotton blend yarn (approx. 80–100 m/50 g) in orange, cream or sage green – approx. 20 g (small), 35 g (medium) or 60 g (large)</li>
+        <li>A small amount of brown for the stem</li>
+        <li>4.0 mm crochet hook</li>
+        <li>Fiberfill</li>
+        <li>Tapestry needle with a large eye</li>
+        <li>Scissors</li>
+        <li>Optional: green scraps for a vine and leaf</li>
+      </ul>
+    </div>
+    <div class="prep-block">
+      <h3>Abbreviations used (US terms)</h3>
+      <table class="abbr-table">
+        <tr><td>ch</td><td>Chain</td></tr>
+        <tr><td>sc</td><td>Single crochet</td></tr>
+        <tr><td>BLO</td><td>Back loop only</td></tr>
+        <tr><td>sl st</td><td>Slip stitch</td></tr>
+        <tr><td>MR</td><td>Magic ring</td></tr>
+        <tr><td>R</td><td>Row / round</td></tr>
+        <tr><td>(x sts)</td><td>Stitch count at the end of the row</td></tr>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- GRÖSSEN -->
+<section class="prep-section" style="padding-top:0;">
+  <div class="prep-block">
+    <h3>The three sizes</h3>
+    <table class="abbr-table">
+      <tr><td><strong>Size</strong></td><td><strong>Foundation</strong></td><td><strong>Stitches per row</strong></td><td><strong>Rows</strong></td></tr>
+      <tr><td>Small (approx. 8 cm)</td><td>ch 16</td><td>15 sc</td><td>30</td></tr>
+      <tr><td>Medium (approx. 11 cm)</td><td>ch 21</td><td>20 sc</td><td>40</td></tr>
+      <tr><td>Large (approx. 15 cm)</td><td>ch 31</td><td>30 sc</td><td>56</td></tr>
+    </table>
+    <p class="pattern-note">The pattern below always gives the numbers in the order small / medium / large. The final size depends on your yarn and tension – the centimeters are a guide.</p>
+  </div>
+</section>
+
+<!-- ANLEITUNG -->
+<section class="pattern-section">
+  <div class="label">The pattern</div>
+  <h2>Step by <em>step</em></h2>
+
+  <!-- RECHTECK -->
+  <div class="pattern-part">
+    <div class="pattern-part-header">
+      <span class="pattern-part-icon">🧶</span>
+      <h3>1. The ribbed rectangle</h3>
+      <span class="pattern-part-count">in orange, cream or sage</span>
+    </div>
+    <ul class="round-list">
+      <li><span class="round-label">Foundation</span><span>Ch 16 / 21 / 31.</span></li>
+      <li><span class="round-label">R 1</span><span>Starting in the 2nd ch from the hook, work 1 sc in each ch. <span class="round-stitches">(15 / 20 / 30 sts)</span></span></li>
+      <li><span class="round-label">R 2</span><span>Ch 1, turn. Work 1 sc BLO in each st. <span class="round-stitches">(15 / 20 / 30 sts)</span></span></li>
+      <li><span class="round-label">R 3–30 / 40 / 56</span><span>Repeat row 2 until you have 30 / 40 / 56 rows in total.</span></li>
+    </ul>
+    <p class="pattern-note">The turning chain doesn't count as a stitch – work the first sc of each row into the first stitch. Count every now and then: if the stitch count stays the same, your ribs will be nice and straight.</p>
+  </div>
+
+  <!-- RÖHRE -->
+  <div class="pattern-part">
+    <div class="pattern-part-header">
+      <span class="pattern-part-icon">🔁</span>
+      <h3>2. Close into a tube</h3>
+      <span class="pattern-part-count">continue directly</span>
+    </div>
+    <ul class="round-list">
+      <li><span class="round-label">Fold</span><span>Don't cut the yarn. Fold the rectangle so the last row lies exactly on top of the foundation chain.</span></li>
+      <li><span class="round-label">Join</span><span>Work 1 sl st into each st through both layers – the last row and the foundation chain.</span></li>
+      <li><span class="round-label">Finish</span><span>Cut the yarn, leaving a tail of approx. 40 cm, and pull it through. Turn the tube inside out so the seam is on the inside.</span></li>
+    </ul>
+    <p class="pattern-note">The ribs now run from top to bottom – just like on a real pumpkin.</p>
+  </div>
+
+  <!-- ZUSAMMENZIEHEN -->
+  <div class="pattern-part">
+    <div class="pattern-part-header">
+      <span class="pattern-part-icon">🎃</span>
+      <h3>3. Gather & stuff</h3>
+      <span class="pattern-part-count">with the tapestry needle</span>
+    </div>
+    <ul class="round-list">
+      <li><span class="round-label">Bottom</span><span>Thread the long tail onto the tapestry needle and sew a running stitch once around through the row ends of one open side. Pull tight so the opening closes, and knot.</span></li>
+      <li><span class="round-label">Stuff</span><span>Stuff the pumpkin with fiberfill through the second opening – evenly, but not too firmly.</span></li>
+      <li><span class="round-label">Top</span><span>Run a new piece of yarn (approx. 40 cm) through the row ends of the second side the same way, pull tight and knot securely. Don't cut the ends – you'll need them for cinching in a moment.</span></li>
+    </ul>
+  </div>
+
+  <!-- SEGMENTE -->
+  <div class="pattern-part">
+    <div class="pattern-part-header">
+      <span class="pattern-part-icon">🪡</span>
+      <h3>4. Cinch the segments</h3>
+      <span class="pattern-part-count">5 / 6 / 8 indents</span>
+    </div>
+    <ul class="round-list">
+      <li><span class="round-label">Insert</span><span>With one yarn end, insert the needle straight down through the center from the top to the bottom.</span></li>
+      <li><span class="round-label">Wrap</span><span>Bring the yarn back up along the outside of the pumpkin and insert it down through the center again.</span></li>
+      <li><span class="round-label">Pull</span><span>Pull gently – this creates the first indent.</span></li>
+      <li><span class="round-label">Repeat</span><span>Wrap the yarn around the outside again, shifted a little each time, until you have 5 / 6 / 8 evenly spaced indents.</span></li>
+      <li><span class="round-label">Finish</span><span>Knot the yarn several times at the top and weave the end in on the inside.</span></li>
+    </ul>
+    <p class="pattern-note">Place the yarn in one of the rib grooves each time – that way it disappears almost invisibly into the fabric.</p>
+  </div>
+
+  <!-- STIEL -->
+  <div class="pattern-part">
+    <div class="pattern-part-header">
+      <span class="pattern-part-icon">🌰</span>
+      <h3>5. The stem</h3>
+      <span class="pattern-part-count">in brown</span>
+    </div>
+    <ul class="round-list">
+      <li><span class="round-label">Rnd 1</span><span>6 sc into the MR. <span class="round-stitches">(6 sts)</span></span></li>
+      <li><span class="round-label">Rnd 2–4 / 5 / 6</span><span>1 sc in each st, continuing in a spiral. <span class="round-stitches">(6 sts)</span></span></li>
+      <li><span class="round-label">Finish</span><span>End with 1 sl st, cut the yarn leaving a tail of approx. 20 cm.</span></li>
+    </ul>
+    <p class="pattern-note">Place the unstuffed stem in the center of the top indent and sew it on all the way around with the tail.</p>
+  </div>
+
+  <!-- EXTRAS -->
+  <div class="pattern-part">
+    <div class="pattern-part-header">
+      <span class="pattern-part-icon">🌿</span>
+      <h3>Optional: vine & leaf</h3>
+      <span class="pattern-part-count">in green</span>
+    </div>
+    <p class="pattern-lead">A little vine or a leaf next to the stem makes your pumpkin even prettier. You'll find the matching patterns on the <a href="blueten-blaetter.html" style="color:var(--braun)">Flowers &amp; Leaves</a> page: the <a href="blueten-blaetter.html#spirale" style="color:var(--braun)">corkscrew vine</a> (with approx. ch 15) and the <a href="blueten-blaetter.html#blatt2" style="color:var(--braun)">leaf with stem</a>. Simply sew both on next to the stem.</p>
+  </div>
+</section>
+
+<!-- TIPPS -->
+<section class="tipp-section">
+  <div class="label">For best results</div>
+  <h2>My <em>tips</em> for you</h2>
+  <div class="tipp-grid">
+    <div class="tipp-item">
+      <h3>Don't overstuff</h3>
+      <p>A pumpkin that's stuffed too firmly is hard to cinch. Use a little less stuffing – the indents will be deeper and prettier.</p>
+    </div>
+    <div class="tipp-item">
+      <h3>Decorate in groups</h3>
+      <p>Three pumpkins in different sizes and colors – for example orange, cream and sage green – look much lovelier together than a single one.</p>
+    </div>
+    <div class="tipp-item">
+      <h3>Velvety with chenille</h3>
+      <p>The same pattern works with chenille yarn. Use the hook size on the yarn label and a few rows less, as the yarn is thicker.</p>
+    </div>
+  </div>
+</section>
+
+<!-- NÄCHSTER SCHRITT -->
+<section class="next-section">
+  <div class="label">More fall?</div>
+  <h2>Crochet <em>trends</em> for fall 2026</h2>
+  <p>Pumpkins are just one of six trends this season. On the blog you'll find mohair, granny squares, oversized cardigans and ideas for holiday gifts.</p>
+  <a href="../blog/haekeltrends-herbst-2026.html" class="btn-primary">Read the fall blog post</a>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div>
+      <span class="footer-logo">Pretty<span>Crochet</span></span>
+      <p>A blog about the love of crochet – with honest recommendations, free patterns and a community for everyone who creates things with yarn and hook.</p>
+    </div>
+    <div>
+      <h4>Navigation</h4>
+      <ul>
+        <li><a href="../haekeln-basics.html">Crochet Basics</a></li>
+        <li><a href="../anleitungen.html">Patterns</a></li>
+        <li><a href="../werkzeuge/muster-generator.html">Pattern Generator</a></li>
+        <li><a href="../blog.html">Blog</a></li>
+        <li><a href="../ueber-mich.html">About me</a></li>
+        <li><a href="mailto:prettycrochetstudio@gmail.com">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Legal</h4>
+      <ul>
+        <li><a href="#">Legal notice</a></li>
+        <li><a href="#">Privacy policy</a></li>
+        <li><a href="#">Affiliate disclosure</a></li>
+        <li><a href="#">Cookie settings</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">© 2026 PrettyCrochet · Natural. Timeless. Handmade.</div>
+</footer>
+
+</body>
+</html>

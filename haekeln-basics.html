@@ -393,6 +393,10 @@
   header .lang-switch{justify-content:flex-end;margin-bottom:.4rem;}
   nav{gap:1rem;}
   @media(max-width:480px){.nav-right{gap:.8rem;}.nav-right .nav-cta{padding:.5rem .85rem;font-size:.7rem;}}
+  .nav-links a[aria-current="page"]{color:#A7B39A;}
+  .nav-links a,.nav-cta,.lang-switch{white-space:nowrap;}
+  @media(max-width:1180px){nav{padding-left:4vw;padding-right:4vw;}.nav-links{gap:1.3rem;}.nav-links a{font-size:.75rem;letter-spacing:.07em;}}
+  @media(max-width:980px){.nav-links{display:none;}}
 </style>
 <link rel="alternate" hreflang="de" href="https://prettycrochet.github.io/Start/haekeln-basics.html"/>
 <link rel="alternate" hreflang="en" href="https://prettycrochet.github.io/Start/en/haekeln-basics.html"/>
@@ -401,14 +405,15 @@
 <body>
 
 <!-- NAV -->
-<nav>
-<a href="index.html" class="logo-wrap">
-  <span class="logo-text">Pretty<span>Crochet</span></span>
-</a>
+<nav aria-label="Hauptnavigation">
+  <a href="index.html" class="logo-wrap" aria-label="PrettyCrochet – zur Startseite">
+    <span class="logo-text">Pretty<span>Crochet</span></span>
+  </a>
   <ul class="nav-links">
-    <li><a href="#" class="active">Häkel Basics</a></li>
-    <li><a href="muster-generator.html">Muster Generator</a></li>
+    <li><a href="haekeln-basics.html" aria-current="page" class="active">Häkel Basics</a></li>
     <li><a href="anleitungen.html">Anleitungen</a></li>
+    <li><a href="werkzeuge/muster-generator.html">Muster-Generator</a></li>
+    <li><a href="blog.html">Blog</a></li>
     <li><a href="ueber-mich.html">Über mich</a></li>
   </ul>
   <div class="nav-right"><div class="lang-switch" aria-label="Sprache wählen"><span aria-current="true">DE</span><span aria-hidden="true">|</span><a href="en/haekeln-basics.html" hreflang="en" lang="en">EN</a></div><a href="index.html#newsletter" class="nav-cta">Newsletter</a></div>
@@ -495,7 +500,7 @@
         <h3>Nadel halten</h3>
         <p>Halte die Häkelnadel wie einen Stift zwischen Daumen und Zeigefinger, oder umfasse sie wie ein Messer – probiere aus, was sich für dich entspannter anfühlt.</p>
       </div>
-      <img class="step-image" src="assets/haekelnadel-halten.png" alt="Häkelnadel richtig halten"/>
+      <img class="step-image" src="assets/allgemein/haekelnadel-halten.png" alt="Häkelnadel richtig halten"/>
     </div>
     <div class="step-row">
       <span class="step-num">02</span>
@@ -773,7 +778,7 @@
       <p>Senkrechter Strich mit einem Schrägstrich in der Mitte. Zwei Schrägstriche bedeuten Doppelstäbchen.</p>
     </div>
   </div>
-  <p class="pattern-note-basic">Diagramme werden von unten nach oben gelesen. In Reihen wechselt die Leserichtung mit jeder Reihe: ungerade Reihen von rechts nach links, gerade Reihen von links nach rechts. In Runden liest du von der Mitte nach außen. Ausprobieren kannst du das direkt im <a href="muster-generator.html" style="color:var(--braun)">Muster-Generator</a>.</p>
+  <p class="pattern-note-basic">Diagramme werden von unten nach oben gelesen. In Reihen wechselt die Leserichtung mit jeder Reihe: ungerade Reihen von rechts nach links, gerade Reihen von links nach rechts. In Runden liest du von der Mitte nach außen. Ausprobieren kannst du das direkt im <a href="werkzeuge/muster-generator.html" style="color:var(--braun)">Muster-Generator</a>.</p>
 </section>
 
 <!-- TYPISCHE FEHLER -->
@@ -891,7 +896,7 @@
   <div class="label">Bereit?</div>
   <h2>Dein erstes <em>Projekt</em></h2>
   <p>Sobald du die Grundmaschen sicher beherrschst, ist der Häkel-Bär die perfekte erste Anleitung für den Einstieg in Amigurumi.</p>
-  <a href="haekel-baer.html" class="btn-primary">Zum Häkel-Bären</a>
+  <a href="anleitungen/haekel-baer.html" class="btn-primary">Zum Häkel-Bären</a>
 </section>
 
 <!-- FOOTER -->
@@ -904,12 +909,12 @@
     <div>
       <h4>Navigation</h4>
       <ul>
+        <li><a href="haekeln-basics.html">Häkel Basics</a></li>
         <li><a href="anleitungen.html">Anleitungen</a></li>
-        <li><a href="amigurumi.html">Amigurumi</a></li>
-        <li><a href="wohndeko.html">Wohndeko</a></li>
-        <li><a href="muster-generator.html">Muster-Generator</a></li>
-        <li><a href="empfehlungen.html">Empfehlungen</a></li>
+        <li><a href="werkzeuge/muster-generator.html">Muster-Generator</a></li>
+        <li><a href="blog.html">Blog</a></li>
         <li><a href="ueber-mich.html">Über mich</a></li>
+        <li><a href="mailto:prettycrochetstudio@gmail.com">Kontakt</a></li>
       </ul>
     </div>
     <div>

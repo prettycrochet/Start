@@ -254,6 +254,10 @@
   header .lang-switch{justify-content:flex-end;margin-bottom:.4rem;}
   nav{gap:1rem;}
   @media(max-width:480px){.nav-right{gap:.8rem;}.nav-right .nav-cta{padding:.5rem .85rem;font-size:.7rem;}}
+  .nav-links a[aria-current="page"]{color:#A7B39A;}
+  .nav-links a,.nav-cta,.lang-switch{white-space:nowrap;}
+  @media(max-width:1180px){nav{padding-left:4vw;padding-right:4vw;}.nav-links{gap:1.3rem;}.nav-links a{font-size:.75rem;letter-spacing:.07em;}}
+  @media(max-width:980px){.nav-links{display:none;}}
 </style>
 <link rel="alternate" hreflang="de" href="https://prettycrochet.github.io/Start/wohndeko.html"/>
 <link rel="alternate" hreflang="en" href="https://prettycrochet.github.io/Start/en/wohndeko.html"/>
@@ -262,14 +266,15 @@
 <body>
 
 <!-- NAV -->
-<nav>
-  <a href="index.html" class="logo-wrap">
+<nav aria-label="Hauptnavigation">
+  <a href="index.html" class="logo-wrap" aria-label="PrettyCrochet – zur Startseite">
     <span class="logo-text">Pretty<span>Crochet</span></span>
   </a>
   <ul class="nav-links">
+    <li><a href="haekeln-basics.html">Häkel Basics</a></li>
     <li><a href="anleitungen.html">Anleitungen</a></li>
-    <li><a href="#" class="active">Wohndeko</a></li>
-    <li><a href="empfehlungen.html">Empfehlungen</a></li>
+    <li><a href="werkzeuge/muster-generator.html">Muster-Generator</a></li>
+    <li><a href="blog.html">Blog</a></li>
     <li><a href="ueber-mich.html">Über mich</a></li>
   </ul>
   <div class="nav-right"><div class="lang-switch" aria-label="Sprache wählen"><span aria-current="true">DE</span><span aria-hidden="true">|</span><a href="en/wohndeko.html" hreflang="en" lang="en">EN</a></div><a href="index.html#newsletter" class="nav-cta">Newsletter</a></div>
@@ -402,7 +407,7 @@
   <h2>Wohndeko-<em>Projekte</em></h2>
   <div class="projects-grid">
 
-    <a href="blueten-blaetter.html" class="project-card">
+    <a href="anleitungen/blueten-blaetter.html" class="project-card">
       <div class="project-thumb">🌸</div>
       <div class="project-body">
         <div class="project-tags">
@@ -412,6 +417,19 @@
         <h3>Blüten &amp; Blätter häkeln</h3>
         <p>Drei Blütenformen, zwei Blattvarianten und eine Ranke – die Bausteine für Kränze, Applikationen und Sträuße.</p>
         <span class="project-meta">6 Modelle · je 10–25 Min.</span>
+      </div>
+    </a>
+
+    <a href="anleitungen/kuerbis.html" class="project-card">
+      <div class="project-thumb">🎃</div>
+      <div class="project-body">
+        <div class="project-tags">
+          <span class="project-tag">Herbstdeko</span>
+          <span class="project-tag level">Anfänger</span>
+        </div>
+        <h3>Kürbis häkeln</h3>
+        <p>Gerippte Kürbisse aus einem Rechteck – in einem Abend fertig und in drei Größen.</p>
+        <span class="project-meta">3 Größen · 1–2 Std.</span>
       </div>
     </a>
 
@@ -526,11 +544,12 @@
     <div>
       <h4>Navigation</h4>
       <ul>
+        <li><a href="haekeln-basics.html">Häkel Basics</a></li>
         <li><a href="anleitungen.html">Anleitungen</a></li>
-        <li><a href="amigurumi.html">Amigurumi</a></li>
-        <li><a href="haekeln-basics.html">Für Anfänger</a></li>
-        <li><a href="empfehlungen.html">Empfehlungen</a></li>
+        <li><a href="werkzeuge/muster-generator.html">Muster-Generator</a></li>
+        <li><a href="blog.html">Blog</a></li>
         <li><a href="ueber-mich.html">Über mich</a></li>
+        <li><a href="mailto:prettycrochetstudio@gmail.com">Kontakt</a></li>
       </ul>
     </div>
     <div>

@@ -340,6 +340,10 @@
   header .lang-switch{justify-content:flex-end;margin-bottom:.4rem;}
   nav{gap:1rem;}
   @media(max-width:480px){.nav-right{gap:.8rem;}.nav-right .nav-cta{padding:.5rem .85rem;font-size:.7rem;}}
+  .nav-links a[aria-current="page"]{color:#A7B39A;}
+  .nav-links a,.nav-cta,.lang-switch{white-space:nowrap;}
+  @media(max-width:1180px){nav{padding-left:4vw;padding-right:4vw;}.nav-links{gap:1.3rem;}.nav-links a{font-size:.75rem;letter-spacing:.07em;}}
+  @media(max-width:980px){.nav-links{display:none;}}
 </style>
 <link rel="alternate" hreflang="de" href="https://prettycrochet.github.io/Start/ueber-mich.html"/>
 <link rel="alternate" hreflang="en" href="https://prettycrochet.github.io/Start/en/ueber-mich.html"/>
@@ -348,17 +352,18 @@
 <body>
 
 <!-- NAV -->
-<nav>
-<a href="index.html" class="logo-wrap">
-  <span class="logo-text">Pretty<span>Crochet</span></span>
-</a>
+<nav aria-label="Main navigation">
+  <a href="index.html" class="logo-wrap" aria-label="PrettyCrochet – home">
+    <span class="logo-text">Pretty<span>Crochet</span></span>
+  </a>
   <ul class="nav-links">
     <li><a href="haekeln-basics.html">Crochet Basics</a></li>
-    <li><a href="muster-generator.html">Pattern Generator</a></li>
     <li><a href="anleitungen.html">Patterns</a></li>
-    <li><a href="ueber-mich.html">About me</a></li>
+    <li><a href="werkzeuge/muster-generator.html">Pattern Generator</a></li>
+    <li><a href="blog.html">Blog</a></li>
+    <li><a href="ueber-mich.html" aria-current="page" class="active">About me</a></li>
   </ul>
-  <div class="nav-right"><div class="lang-switch" aria-label="Choose language"><a href="../ueber-mich.html" hreflang="de" lang="de">DE</a><span aria-hidden="true">|</span><span aria-current="true">EN</span></div><a href="#newsletter" class="nav-cta">Newsletter</a></div>
+  <div class="nav-right"><div class="lang-switch" aria-label="Choose language"><a href="../ueber-mich.html" hreflang="de" lang="de">DE</a><span aria-hidden="true">|</span><span aria-current="true">EN</span></div><a href="index.html#newsletter" class="nav-cta">Newsletter</a></div>
 </nav>
 
 <!-- HERO -->
@@ -495,10 +500,11 @@
     <div>
       <h4>Navigation</h4>
       <ul>
-        <li><a href="mein-anleitungsbuch.html">Patterns</a></li>
-        <li><a href="amigurumi.html">Amigurumi</a></li>
-        <li><a href="haekeln-basics.html">For beginners</a></li>
-        <li><a href="#">About me</a></li>
+        <li><a href="haekeln-basics.html">Crochet Basics</a></li>
+        <li><a href="anleitungen.html">Patterns</a></li>
+        <li><a href="werkzeuge/muster-generator.html">Pattern Generator</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="ueber-mich.html">About me</a></li>
         <li><a href="mailto:prettycrochetstudio@gmail.com">Contact</a></li>
       </ul>
     </div>

@@ -366,6 +366,10 @@
   header .lang-switch{justify-content:flex-end;margin-bottom:.4rem;}
   nav{gap:1rem;}
   @media(max-width:480px){.nav-right{gap:.8rem;}.nav-right .nav-cta{padding:.5rem .85rem;font-size:.7rem;}}
+  .nav-links a[aria-current="page"]{color:#A7B39A;}
+  .nav-links a,.nav-cta,.lang-switch{white-space:nowrap;}
+  @media(max-width:1180px){nav{padding-left:4vw;padding-right:4vw;}.nav-links{gap:1.3rem;}.nav-links a{font-size:.75rem;letter-spacing:.07em;}}
+  @media(max-width:980px){.nav-links{display:none;}}
 </style>
 <link rel="alternate" hreflang="de" href="https://prettycrochet.github.io/Start/anleitungen.html"/>
 <link rel="alternate" hreflang="en" href="https://prettycrochet.github.io/Start/en/anleitungen.html"/>
@@ -374,17 +378,18 @@
 <body>
 
 <!-- NAV -->
-<nav>
-<a href="index.html" class="logo-wrap">
-  <span class="logo-text">Pretty<span>Crochet</span></span>
-</a>
+<nav aria-label="Hauptnavigation">
+  <a href="index.html" class="logo-wrap" aria-label="PrettyCrochet – zur Startseite">
+    <span class="logo-text">Pretty<span>Crochet</span></span>
+  </a>
   <ul class="nav-links">
     <li><a href="haekeln-basics.html">Häkel Basics</a></li>
-    <li><a href="muster-generator.html">Muster Generator</a></li>
-    <li><a href="anleitungen.html">Anleitungen</a></li>
+    <li><a href="anleitungen.html" aria-current="page" class="active">Anleitungen</a></li>
+    <li><a href="werkzeuge/muster-generator.html">Muster-Generator</a></li>
+    <li><a href="blog.html">Blog</a></li>
     <li><a href="ueber-mich.html">Über mich</a></li>
   </ul>
-  <div class="nav-right"><div class="lang-switch" aria-label="Sprache wählen"><span aria-current="true">DE</span><span aria-hidden="true">|</span><a href="en/anleitungen.html" hreflang="en" lang="en">EN</a></div><a href="#newsletter" class="nav-cta">Newsletter</a></div>
+  <div class="nav-right"><div class="lang-switch" aria-label="Sprache wählen"><span aria-current="true">DE</span><span aria-hidden="true">|</span><a href="en/anleitungen.html" hreflang="en" lang="en">EN</a></div><a href="index.html#newsletter" class="nav-cta">Newsletter</a></div>
 </nav>
 
 <!-- PAGE HERO -->
@@ -432,7 +437,7 @@
       </div>
     </a>
 
-    <a href="haekel-baer.html" class="guide-card" data-cat="amigurumi" data-level="anfaenger">
+    <a href="anleitungen/haekel-baer.html" class="guide-card" data-cat="amigurumi" data-level="anfaenger">
       <div class="guide-thumb">🧸</div>
       <div class="guide-body">
         <div class="guide-tags">
@@ -471,7 +476,7 @@
       </div>
     </a>
 
-    <a href="haekeltasche.html" class="guide-card" data-cat="taschen" data-level="fortgeschritten">
+    <a href="anleitungen/haekeltasche.html" class="guide-card" data-cat="taschen" data-level="fortgeschritten">
       <div class="guide-thumb">👜</div>
       <div class="guide-body">
         <div class="guide-tags">
@@ -550,7 +555,7 @@
         <span class="guide-meta">3 Größen · 1–2 Std. <span class="guide-arrow">→</span></span>
       </div>
     </a>
-    <a href="blueten-blaetter.html" class="guide-card" data-cat="wohndeko" data-level="anfaenger">
+    <a href="anleitungen/blueten-blaetter.html" class="guide-card" data-cat="wohndeko" data-level="anfaenger">
       <div class="guide-thumb">🌸</div>
       <div class="guide-body">
         <div class="guide-tags">
@@ -573,7 +578,7 @@
   <p class="tools-intro">Wenn du über das Nachhäkeln hinaus willst: Mit diesen Werkzeugen entwirfst du eigene Muster, speicherst deine Ideen und behältst den Überblick über Maschenzahlen.</p>
   <div class="tools-grid">
 
-    <a href="muster-generator.html" class="tool-item">
+    <a href="werkzeuge/muster-generator.html" class="tool-item">
       <span class="tool-icon">🧮</span>
       <h3>Muster-Generator</h3>
       <p>Maschen per Klick setzen und automatisch Textanleitung, Symbol-Diagramm und 3D-Vorschau erhalten – mit Bauteilen für Boden und Körper.</p>
@@ -615,11 +620,12 @@
     <div>
       <h4>Navigation</h4>
       <ul>
-        <li><a href="#">Anleitungen</a></li>
-        <li><a href="amigurumi.html">Amigurumi</a></li>
-        <li><a href="haekeln-basics.html">Für Anfänger</a></li>
-        <li><a href="empfehlungen.html">Empfehlungen</a></li>
+        <li><a href="haekeln-basics.html">Häkel Basics</a></li>
+        <li><a href="anleitungen.html">Anleitungen</a></li>
+        <li><a href="werkzeuge/muster-generator.html">Muster-Generator</a></li>
+        <li><a href="blog.html">Blog</a></li>
         <li><a href="ueber-mich.html">Über mich</a></li>
+        <li><a href="mailto:prettycrochetstudio@gmail.com">Kontakt</a></li>
       </ul>
     </div>
     <div>

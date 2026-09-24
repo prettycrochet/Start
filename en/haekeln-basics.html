@@ -394,6 +394,10 @@
   header .lang-switch{justify-content:flex-end;margin-bottom:.4rem;}
   nav{gap:1rem;}
   @media(max-width:480px){.nav-right{gap:.8rem;}.nav-right .nav-cta{padding:.5rem .85rem;font-size:.7rem;}}
+  .nav-links a[aria-current="page"]{color:#A7B39A;}
+  .nav-links a,.nav-cta,.lang-switch{white-space:nowrap;}
+  @media(max-width:1180px){nav{padding-left:4vw;padding-right:4vw;}.nav-links{gap:1.3rem;}.nav-links a{font-size:.75rem;letter-spacing:.07em;}}
+  @media(max-width:980px){.nav-links{display:none;}}
 </style>
 <link rel="alternate" hreflang="de" href="https://prettycrochet.github.io/Start/haekeln-basics.html"/>
 <link rel="alternate" hreflang="en" href="https://prettycrochet.github.io/Start/en/haekeln-basics.html"/>
@@ -402,14 +406,15 @@
 <body>
 
 <!-- NAV -->
-<nav>
-<a href="index.html" class="logo-wrap">
-  <span class="logo-text">Pretty<span>Crochet</span></span>
-</a>
+<nav aria-label="Main navigation">
+  <a href="index.html" class="logo-wrap" aria-label="PrettyCrochet – home">
+    <span class="logo-text">Pretty<span>Crochet</span></span>
+  </a>
   <ul class="nav-links">
-    <li><a href="#" class="active">Crochet Basics</a></li>
-    <li><a href="muster-generator.html">Pattern Generator</a></li>
+    <li><a href="haekeln-basics.html" aria-current="page" class="active">Crochet Basics</a></li>
     <li><a href="anleitungen.html">Patterns</a></li>
+    <li><a href="werkzeuge/muster-generator.html">Pattern Generator</a></li>
+    <li><a href="blog.html">Blog</a></li>
     <li><a href="ueber-mich.html">About me</a></li>
   </ul>
   <div class="nav-right"><div class="lang-switch" aria-label="Choose language"><a href="../haekeln-basics.html" hreflang="de" lang="de">DE</a><span aria-hidden="true">|</span><span aria-current="true">EN</span></div><a href="index.html#newsletter" class="nav-cta">Newsletter</a></div>
@@ -497,7 +502,7 @@
         <h3>Holding the hook</h3>
         <p>Hold the crochet hook like a pencil between your thumb and index finger, or grip it like a knife – try out what feels more relaxed for you.</p>
       </div>
-      <img class="step-image" src="../assets/haekelnadel-halten.png" alt="How to hold a crochet hook correctly"/>
+      <img class="step-image" src="../assets/allgemein/haekelnadel-halten.png" alt="How to hold a crochet hook correctly"/>
     </div>
     <div class="step-row">
       <span class="step-num">02</span>
@@ -775,7 +780,7 @@
       <p>A vertical line with a diagonal slash in the middle. Two slashes mean treble crochet.</p>
     </div>
   </div>
-  <p class="pattern-note-basic">Charts are read from bottom to top. In rows, the reading direction changes with every row: odd rows from right to left, even rows from left to right. In rounds, you read from the center outwards. You can try it out right away in the <a href="muster-generator.html" style="color:var(--braun)">Pattern Generator</a>.</p>
+  <p class="pattern-note-basic">Charts are read from bottom to top. In rows, the reading direction changes with every row: odd rows from right to left, even rows from left to right. In rounds, you read from the center outwards. You can try it out right away in the <a href="werkzeuge/muster-generator.html" style="color:var(--braun)">Pattern Generator</a>.</p>
 </section>
 
 <!-- TYPISCHE FEHLER -->
@@ -893,7 +898,7 @@
   <div class="label">Ready?</div>
   <h2>Your first <em>project</em></h2>
   <p>Once you're confident with the basic stitches, the crochet bear is the perfect first pattern to get started with amigurumi.</p>
-  <a href="haekel-baer.html" class="btn-primary">Go to the crochet bear</a>
+  <a href="anleitungen/haekel-baer.html" class="btn-primary">Go to the crochet bear</a>
 </section>
 
 <!-- FOOTER -->
@@ -906,12 +911,12 @@
     <div>
       <h4>Navigation</h4>
       <ul>
+        <li><a href="haekeln-basics.html">Crochet Basics</a></li>
         <li><a href="anleitungen.html">Patterns</a></li>
-        <li><a href="amigurumi.html">Amigurumi</a></li>
-        <li><a href="wohndeko.html">Home decor</a></li>
-        <li><a href="muster-generator.html">Pattern Generator</a></li>
-        <li><a href="empfehlungen.html">Recommendations</a></li>
+        <li><a href="werkzeuge/muster-generator.html">Pattern Generator</a></li>
+        <li><a href="blog.html">Blog</a></li>
         <li><a href="ueber-mich.html">About me</a></li>
+        <li><a href="mailto:prettycrochetstudio@gmail.com">Contact</a></li>
       </ul>
     </div>
     <div>

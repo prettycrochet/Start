@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Kleiner Häkel-Bär: Die komplette Anleitung für Anfänger | PrettyCrochet</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --creme:   #FAF6F1;
+      --salbei:  #A7B39A;
+      --beige:   #D6C5B5;
+      --braun:   #8B6F5B;
+      --espresso:#4A3B32;
+      --white:   #FFFFFF;
+      --muted:   #9A8880;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--creme);
+      color: var(--espresso);
+      font-family: 'Jost', sans-serif;
+      font-weight: 300;
+      line-height: 1.75;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 200;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.1rem 6vw;
+      background: rgba(250,246,241,0.92);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--beige);
+    }
+    .logo-wrap { display: flex; align-items: center; gap: 0.75rem; text-decoration: none; }
+    .logo-text {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.45rem;
+      font-weight: 600;
+      color: var(--espresso);
+      letter-spacing: 0.02em;
+    }
+    .logo-text span { color: var(--salbei); }
+    .nav-links { display: flex; gap: 2.2rem; list-style: none; }
+    .nav-links a {
+      font-size: 0.82rem;
+      font-weight: 400;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: var(--espresso);
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--salbei); }
+    .nav-cta {
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: var(--white);
+      background: var(--espresso);
+      padding: 0.6rem 1.4rem;
+      border-radius: 2px;
+      transition: background 0.2s;
+    }
+    .nav-cta:hover { background: var(--braun); }
+
+    /* ── PAGE HERO ── */
+    .page-hero {
+      padding: 11rem 10vw 4rem;
+      background: var(--beige);
+      text-align: center;
+    }
+    .breadcrumb {
+      font-size: 0.75rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--braun);
+      margin-bottom: 1.5rem;
+    }
+    .breadcrumb a { color: var(--braun); text-decoration: none; border-bottom: 1px solid rgba(139,111,91,0.35); }
+    .breadcrumb a:hover { border-color: var(--braun); }
+    .page-hero .label { justify-content: center; }
+    .page-hero .label::before { display: none; }
+    .page-hero h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.2rem, 4.6vw, 3.6rem);
+      font-weight: 300;
+      line-height: 1.15;
+      color: var(--espresso);
+      margin-bottom: 1.2rem;
+    }
+    .page-hero h1 em { font-style: italic; color: var(--braun); }
+    .page-hero p.sub {
+      max-width: 54ch;
+      margin: 0 auto 2rem;
+      color: var(--braun);
+      font-size: 1rem;
+    }
+
+    /* Meta row: difficulty / time / size */
+    .meta-row {
+      display: flex;
+      justify-content: center;
+      gap: 2.5rem;
+      flex-wrap: wrap;
+    }
+    .meta-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.3rem;
+    }
+    .meta-item .meta-icon { font-size: 1.3rem; }
+    .meta-item .meta-label {
+      font-size: 0.68rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--braun);
+      opacity: 0.75;
+    }
+    .meta-item .meta-value {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.15rem;
+      color: var(--espresso);
+    }
+
+    .label {
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--salbei);
+      margin-bottom: 0.6rem;
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+    }
+    .label::before { content:''; display:inline-block; width:24px; height:1px; background:var(--salbei); }
+
+    h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.8rem, 3vw, 2.6rem);
+      font-weight: 300;
+      line-height: 1.2;
+      color: var(--espresso);
+      margin-bottom: 1.5rem;
+    }
+    h2 em { font-style: italic; color: var(--braun); }
+
+    section { padding: 4.5rem 10vw; }
+
+    /* ── INTRO ── */
+    .intro-section { background: var(--white); }
+    .intro-text { max-width: 70ch; font-size: 1.02rem; }
+    .intro-text p { margin-bottom: 1.2rem; }
+
+    /* ── MATERIAL + ABKÜRZUNGEN ── */
+    .prep-section { background: var(--creme); }
+    .prep-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 3rem;
+    }
+    .prep-block h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.25rem;
+      font-weight: 400;
+      margin-bottom: 1.2rem;
+      color: var(--braun);
+    }
+    .material-list { list-style: none; display: flex; flex-direction: column; gap: 0.7rem; }
+    .material-list li {
+      display: flex;
+      gap: 0.7rem;
+      align-items: baseline;
+      font-size: 0.92rem;
+      padding-bottom: 0.7rem;
+      border-bottom: 1px solid var(--beige);
+    }
+    .material-list li::before { content: '—'; color: var(--salbei); flex-shrink: 0; }
+
+    .abbr-table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+    .abbr-table tr { border-bottom: 1px solid var(--beige); }
+    .abbr-table td { padding: 0.65rem 0.4rem; }
+    .abbr-table td:first-child {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 600;
+      color: var(--braun);
+      width: 70px;
+    }
+
+    /* ── PATTERN STEPS ── */
+    .pattern-section { background: var(--white); }
+    .pattern-part {
+      max-width: 78ch;
+      margin-bottom: 3.5rem;
+    }
+    .pattern-part:last-child { margin-bottom: 0; }
+    .pattern-part-header {
+      display: flex;
+      align-items: baseline;
+      gap: 1rem;
+      margin-bottom: 1rem;
+      border-bottom: 2px solid var(--salbei);
+      padding-bottom: 0.6rem;
+    }
+    .pattern-part-icon { font-size: 1.6rem; }
+    .pattern-part h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem;
+      font-weight: 400;
+      color: var(--espresso);
+    }
+    .pattern-part-count {
+      font-size: 0.78rem;
+      color: var(--muted);
+      letter-spacing: 0.04em;
+      margin-left: auto;
+    }
+    .round-list { list-style: none; }
+    .round-list li {
+      display: grid;
+      grid-template-columns: 90px 1fr;
+      gap: 1rem;
+      font-size: 0.92rem;
+      padding: 0.55rem 0;
+      border-bottom: 1px dashed var(--beige);
+    }
+    .round-list li:last-child { border-bottom: none; }
+    .round-label {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 600;
+      color: var(--braun);
+    }
+    .round-stitches {
+      font-size: 0.78rem;
+      color: var(--salbei);
+      margin-left: 0.4rem;
+    }
+    .pattern-note {
+      margin-top: 1rem;
+      font-size: 0.86rem;
+      color: var(--muted);
+      background: var(--creme);
+      padding: 0.9rem 1.1rem;
+      border-left: 3px solid var(--salbei);
+    }
+
+    /* ── ZUSAMMENNÄHEN STEPS ── */
+    .assembly-section { background: var(--creme); }
+    .steps-list { display: flex; flex-direction: column; max-width: 74ch; }
+    .step-row {
+      display: grid;
+      grid-template-columns: 50px 1fr;
+      gap: 1.6rem;
+      padding: 1.5rem 0;
+      border-bottom: 1px solid var(--beige);
+    }
+    .step-row:first-child { padding-top: 0; }
+    .step-row:last-child { border-bottom: none; }
+    .step-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.7rem;
+      font-weight: 300;
+      color: var(--salbei);
+    }
+    .step-content h4 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem;
+      font-weight: 400;
+      margin-bottom: 0.3rem;
+    }
+    .step-content p { font-size: 0.9rem; color: var(--muted); }
+
+    /* ── TIPP BOX ── */
+    .tipp-section { background: var(--espresso); }
+    .tipp-section .label { color: var(--salbei); }
+    .tipp-section .label::before { background: var(--salbei); }
+    .tipp-section h2 { color: var(--creme); }
+    .tipp-section h2 em { color: var(--salbei); }
+    .tipp-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+    .tipp-item { background: var(--espresso); padding: 2rem 1.6rem; }
+    .tipp-item h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem;
+      font-weight: 400;
+      color: var(--creme);
+      margin-bottom: 0.6rem;
+    }
+    .tipp-item p { font-size: 0.85rem; color: var(--beige); }
+
+    /* ── NEXT STEP CTA ── */
+    .next-section {
+      background: var(--beige);
+      text-align: center;
+      padding: 5rem 10vw;
+    }
+    .next-section .label { justify-content: center; }
+    .next-section .label::before { display: none; }
+    .next-section p { color: var(--braun); max-width: 44ch; margin: 0 auto 2rem; font-size: 0.95rem; }
+    .btn-primary {
+      display: inline-block;
+      background: var(--espresso);
+      color: var(--white);
+      padding: 0.9rem 2rem;
+      font-size: 0.82rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border-radius: 2px;
+      transition: background 0.2s;
+    }
+    .btn-primary:hover { background: var(--braun); }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--espresso);
+      color: var(--beige);
+      padding: 4rem 10vw 2rem;
+    }
+    .footer-top {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 4rem;
+      padding-bottom: 3rem;
+      border-bottom: 1px solid rgba(214,197,181,0.15);
+      margin-bottom: 2rem;
+    }
+    .footer-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem;
+      font-weight: 400;
+      color: var(--creme);
+      display: block;
+      margin-bottom: 1rem;
+    }
+    .footer-logo span { color: var(--salbei); }
+    footer p { font-size: 0.83rem; color: rgba(214,197,181,0.6); line-height: 1.8; max-width: 32ch; }
+    footer h4 {
+      font-size: 0.7rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--salbei);
+      margin-bottom: 1.2rem;
+    }
+    footer ul { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
+    footer ul a { font-size: 0.84rem; color: rgba(214,197,181,0.7); text-decoration: none; transition: color 0.2s; }
+    footer ul a:hover { color: var(--creme); }
+    .footer-bottom {
+      text-align: center;
+      font-size: 0.72rem;
+      color: rgba(214,197,181,0.35);
+      letter-spacing: 0.06em;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 800px) {
+      .nav-links { display: none; }
+      .prep-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+      .tipp-grid { grid-template-columns: 1fr; }
+      .footer-top { grid-template-columns: 1fr; gap: 2rem; }
+      .round-list li { grid-template-columns: 70px 1fr; }
+      .meta-row { gap: 1.5rem; }
+    }
+  
+  /* ── Sprachumschalter DE | EN ── */
+  .nav-right{display:flex;align-items:center;gap:1.4rem;}
+  .lang-switch{display:flex;align-items:center;gap:.45rem;font-size:.78rem;letter-spacing:.1em;color:#9A8880;}
+  .lang-switch a{color:inherit;text-decoration:none;border-bottom:1px solid transparent;transition:color .2s,border-color .2s;}
+  .lang-switch a:hover{color:#4A3B32;border-color:#A7B39A;}
+  .lang-switch [aria-current]{color:#4A3B32;font-weight:500;}
+  header .lang-switch{justify-content:flex-end;margin-bottom:.4rem;}
+  nav{gap:1rem;}
+  @media(max-width:480px){.nav-right{gap:.8rem;}.nav-right .nav-cta{padding:.5rem .85rem;font-size:.7rem;}}
+  .nav-links a[aria-current="page"]{color:#A7B39A;}
+  .nav-links a,.nav-cta,.lang-switch{white-space:nowrap;}
+  @media(max-width:1180px){nav{padding-left:4vw;padding-right:4vw;}.nav-links{gap:1.3rem;}.nav-links a{font-size:.75rem;letter-spacing:.07em;}}
+  @media(max-width:980px){.nav-links{display:none;}}
+</style>
+<link rel="alternate" hreflang="de" href="https://prettycrochet.github.io/Start/anleitungen/haekel-baer.html"/>
+<link rel="alternate" hreflang="en" href="https://prettycrochet.github.io/Start/en/anleitungen/haekel-baer.html"/>
+<link rel="alternate" hreflang="x-default" href="https://prettycrochet.github.io/Start/anleitungen/haekel-baer.html"/>
+</head>
+<body>
+
+<!-- NAV -->
+<nav aria-label="Hauptnavigation">
+  <a href="../index.html" class="logo-wrap" aria-label="PrettyCrochet – zur Startseite">
+    <span class="logo-text">Pretty<span>Crochet</span></span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="../haekeln-basics.html">Häkel Basics</a></li>
+    <li><a href="../anleitungen.html" aria-current="page" class="active">Anleitungen</a></li>
+    <li><a href="../werkzeuge/muster-generator.html">Muster-Generator</a></li>
+    <li><a href="../blog.html">Blog</a></li>
+    <li><a href="../ueber-mich.html">Über mich</a></li>
+  </ul>
+  <div class="nav-right"><div class="lang-switch" aria-label="Sprache wählen"><span aria-current="true">DE</span><span aria-hidden="true">|</span><a href="../en/anleitungen/haekel-baer.html" hreflang="en" lang="en">EN</a></div><a href="../index.html#newsletter" class="nav-cta">Newsletter</a></div>
+</nav>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <p class="breadcrumb"><a href="../index.html">Start</a> · <a href="../amigurumi.html">Amigurumi</a> · Häkel-Bär</p>
+  <div class="label">Amigurumi</div>
+  <h1>Kleiner Häkel-Bär:<br>Die komplette <em>Anleitung</em></h1>
+  <p class="sub">In dieser ausführlichen Schritt-für-Schritt-Anleitung häkelst du in einem Wochenende deinen ersten Amigurumi-Bären – ganz ohne Vorkenntnisse.</p>
+  <div class="meta-row">
+    <div class="meta-item">
+      <span class="meta-icon">⭐</span>
+      <span class="meta-label">Level</span>
+      <span class="meta-value">Anfänger</span>
+    </div>
+    <div class="meta-item">
+      <span class="meta-icon">⏱️</span>
+      <span class="meta-label">Zeit</span>
+      <span class="meta-value">4–6 Std.</span>
+    </div>
+    <div class="meta-item">
+      <span class="meta-icon">📏</span>
+      <span class="meta-label">Größe</span>
+      <span class="meta-value">ca. 18 cm</span>
+    </div>
+    <div class="meta-item">
+      <span class="meta-icon">🪝</span>
+      <span class="meta-label">Nadel</span>
+      <span class="meta-value">3,0 mm</span>
+    </div>
+  </div>
+</section>
+
+<!-- INTRO -->
+<section class="intro-section">
+  <div class="label">Bevor es losgeht</div>
+  <h2>Über diesen <em>Bären</em></h2>
+  <div class="intro-text">
+    <p>Dieser kleine Bär ist bewusst so gestaltet, dass er dein erstes Amigurumi-Projekt sein kann: Er besteht nur aus einfachen Grundformen – Kugeln für Kopf und Körper, kleine Zylinder für Arme und Beine – und braucht keine komplizierten Sondertechniken.</p>
+    <p>Am Ende hast du nicht nur einen fertigen Bären in den Händen, sondern beherrschst auch die wichtigsten Amigurumi-Grundlagen: Magic Ring, Zu- und Abnehmen in Spiralrunden sowie das saubere Zusammennähen der Einzelteile.</p>
+    <p>Falls dir Begriffe wie "fM" oder "Zunahme" noch nichts sagen, wirf vorher gerne einen Blick in die <a href="../haekeln-basics.html" style="color:var(--braun)">Häkel-Basics</a> – dort erkläre ich die Grundmaschen im Detail.</p>
+  </div>
+</section>
+
+<!-- MATERIAL & ABKÜRZUNGEN -->
+<section class="prep-section">
+  <div class="label">Vorbereitung</div>
+  <h2>Material <em>& Abkürzungen</em></h2>
+  <div class="prep-grid">
+    <div class="prep-block">
+      <h3>Das brauchst du</h3>
+      <ul class="material-list">
+        <li>Baumwollgarn (Lauflänge ca. 125 m/50 g) in Hellbraun – ca. 40 g</li>
+        <li>Kleine Reste in Beige für die Schnauze und Fußsohlen</li>
+        <li>Häkelnadel 3,0 mm</li>
+        <li>Füllwatte (ca. 30 g)</li>
+        <li>1 Paar Sicherheitsaugen, 8 mm</li>
+        <li>Maschenmarkierer</li>
+        <li>Vernähnadel mit großem Öhr</li>
+        <li>Schwarzer Stickfaden für die Nase</li>
+        <li>Schere</li>
+      </ul>
+    </div>
+    <div class="prep-block">
+      <h3>Verwendete Abkürzungen</h3>
+      <table class="abbr-table">
+        <tr><td>Lm</td><td>Luftmasche</td></tr>
+        <tr><td>fM</td><td>Feste Masche</td></tr>
+        <tr><td>Zun</td><td>Zunahme (2 fM in dieselbe Masche)</td></tr>
+        <tr><td>Abn</td><td>Unsichtbare Abnahme (2 Maschen zusammenhäkeln)</td></tr>
+        <tr><td>MR</td><td>Magic Ring (Fadenring)</td></tr>
+        <tr><td>[ ]</td><td>Wiederholung des Inhalts in Klammern</td></tr>
+        <tr><td>(x M)</td><td>Maschenzahl am Ende der Runde</td></tr>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ANLEITUNG: EINZELTEILE -->
+<section class="pattern-section">
+  <div class="label">Die Anleitung</div>
+  <h2>Einzelteile <em>häkeln</em></h2>
+
+  <!-- KOPF -->
+  <div class="pattern-part">
+    <div class="pattern-part-header">
+      <span class="pattern-part-icon">🐻</span>
+      <h3>Kopf</h3>
+      <span class="pattern-part-count">1 Teil, in Hellbraun</span>
+    </div>
+    <ul class="round-list">
+      <li><span class="round-label">R 1</span><span>6 fM in MR <span class="round-stitches">(6 M)</span></span></li>
+      <li><span class="round-label">R 2</span><span>[Zun] x 6 <span class="round-stitches">(12 M)</span></span></li>
+      <li><span class="round-label">R 3</span><span>[fM, Zun] x 6 <span class="round-stitches">(18 M)</span></span></li>
+      <li><span class="round-label">R 4</span><span>[2 fM, Zun] x 6 <span class="round-stitches">(24 M)</span></span></li>
+      <li><span class="round-label">R 5</span><span>[3 fM, Zun] x 6 <span class="round-stitches">(30 M)</span></span></li>
+      <li><span class="round-label">R 6–11</span><span>fM in jede Masche <span class="round-stitches">(30 M, 6 Runden ohne Zu-/Abnahme)</span></span></li>
+      <li><span class="round-label">R 12</span><span>[3 fM, Abn] x 6 <span class="round-stitches">(24 M)</span></span></li>
+      <li><span class="round-label">R 13</span><span>[2 fM, Abn] x 6 <span class="round-stitches">(18 M)</span></span></li>
+      <li><span class="round-label">R 14</span><span>[fM, Abn] x 6 <span class="round-stitches">(12 M)</span></span></li>
+    </ul>
+    <p class="pattern-note">Vor Runde 15 die Sicherheitsaugen zwischen Runde 9 und 10 einsetzen, mit ca. 7–8 Maschen Abstand zueinander. Anschließend füllen und weiterhäkeln.</p>
+    <ul class="round-list">
+      <li><span class="round-label">R 15</span><span>[Abn] x 6 <span class="round-stitches">(6 M)</span></span></li>
+    </ul>
+    <p class="pattern-note">Fest abstopfen, Faden durch die letzten 6 Maschen ziehen und vernähen.</p>
+  </div>
+
+  <!-- KÖRPER -->
+  <div class="pattern-part">
+    <div class="pattern-part-header">
+      <span class="pattern-part-icon">🫄</span>
+      <h3>Körper</h3>
+      <span class="pattern-part-count">1 Teil, in Hellbraun</span>
+    </div>
+    <ul class="round-list">
+      <li><span class="round-label">R 1</span><span>6 fM in MR <span class="round-stitches">(6 M)</span></span></li>
+      <li><span class="round-label">R 2</span><span>[Zun] x 6 <span class="round-stitches">(12 M)</span></span></li>
+      <li><span class="round-label">R 3</span><span>[fM, Zun] x 6 <span class="round-stitches">(18 M)</span></span></li>
+      <li><span class="round-label">R 4</span><span>[2 fM, Zun] x 6 <span class="round-stitches">(24 M)</span></span></li>
+      <li><span class="round-label">R 5–10</span><span>fM in jede Masche <span class="round-stitches">(24 M, 6 Runden gerade)</span></span></li>
+      <li><span class="round-label">R 11</span><span>[2 fM, Abn] x 6 <span class="round-stitches">(18 M)</span></span></li>
+      <li><span class="round-label">R 12</span><span>fM in jede Masche <span class="round-stitches">(18 M)</span></span></li>
+      <li><span class="round-label">R 13</span><span>[fM, Abn] x 6 <span class="round-stitches">(12 M)</span></span></li>
+    </ul>
+    <p class="pattern-note">Ab Runde 12 mit Füllwatte stopfen und beim Häkeln laufend nachfüllen.</p>
+    <ul class="round-list">
+      <li><span class="round-label">R 14</span><span>[Abn] x 6 <span class="round-stitches">(6 M)</span></span></li>
+    </ul>
+    <p class="pattern-note">Faden durch die letzten 6 Maschen ziehen, straff zuziehen und vernähen. Einen langen Fadenrest zum Annähen an den Kopf stehen lassen.</p>
+  </div>
+
+  <!-- ARME -->
+  <div class="pattern-part">
+    <div class="pattern-part-header">
+      <span class="pattern-part-icon">💪</span>
+      <h3>Arme</h3>
+      <span class="pattern-part-count">2 Teile, in Hellbraun</span>
+    </div>
+    <ul class="round-list">
+      <li><span class="round-label">R 1</span><span>6 fM in MR <span class="round-stitches">(6 M)</span></span></li>
+      <li><span class="round-label">R 2</span><span>[Zun] x 6 <span class="round-stitches">(12 M)</span></span></li>
+      <li><span class="round-label">R 3</span><span>fM in jede Masche <span class="round-stitches">(12 M)</span></span></li>
+      <li><span class="round-label">R 4</span><span>[fM, Abn] x 4 <span class="round-stitches">(8 M)</span></span></li>
+      <li><span class="round-label">R 5–9</span><span>fM in jede Masche <span class="round-stitches">(8 M, 5 Runden gerade)</span></span></li>
+    </ul>
+    <p class="pattern-note">Leicht stopfen (nur die untere Hälfte), Faden abschneiden und langen Rest zum Annähen stehen lassen.</p>
+  </div>
+
+  <!-- BEINE -->
+  <div class="pattern-part">
+    <div class="pattern-part-header">
+      <span class="pattern-part-icon">🦵</span>
+      <h3>Beine</h3>
+      <span class="pattern-part-count">2 Teile, in Hellbraun</span>
+    </div>
+    <ul class="round-list">
+      <li><span class="round-label">R 1</span><span>6 fM in MR <span class="round-stitches">(6 M)</span></span></li>
+      <li><span class="round-label">R 2</span><span>[Zun] x 6 <span class="round-stitches">(12 M)</span></span></li>
+      <li><span class="round-label">R 3</span><span>[fM, Zun] x 6 <span class="round-stitches">(18 M)</span></span></li>
+      <li><span class="round-label">R 4</span><span>fM in jede Masche <span class="round-stitches">(18 M)</span></span></li>
+      <li><span class="round-label">R 5</span><span>[fM, Abn] x 6 <span class="round-stitches">(12 M)</span></span></li>
+      <li><span class="round-label">R 6–10</span><span>fM in jede Masche <span class="round-stitches">(12 M, 5 Runden gerade)</span></span></li>
+    </ul>
+    <p class="pattern-note">Fest stopfen, Faden abschneiden und langen Rest zum Annähen stehen lassen.</p>
+  </div>
+
+  <!-- OHREN -->
+  <div class="pattern-part">
+    <div class="pattern-part-header">
+      <span class="pattern-part-icon">👂</span>
+      <h3>Ohren</h3>
+      <span class="pattern-part-count">2 Teile, in Hellbraun</span>
+    </div>
+    <ul class="round-list">
+      <li><span class="round-label">R 1</span><span>6 fM in MR <span class="round-stitches">(6 M)</span></span></li>
+      <li><span class="round-label">R 2</span><span>[Zun] x 6 <span class="round-stitches">(12 M)</span></span></li>
+      <li><span class="round-label">R 3</span><span>fM in jede Masche <span class="round-stitches">(12 M)</span></span></li>
+    </ul>
+    <p class="pattern-note">Nicht stopfen, flach zusammendrücken. Faden abschneiden, langen Rest zum Annähen stehen lassen.</p>
+  </div>
+</section>
+
+<!-- ZUSAMMENNÄHEN -->
+<section class="assembly-section">
+  <div class="label">Letzter Schritt</div>
+  <h2>Alles <em>zusammennähen</em></h2>
+  <div class="steps-list">
+    <div class="step-row">
+      <span class="step-num">01</span>
+      <div class="step-content">
+        <h4>Kopf am Körper befestigen</h4>
+        <p>Kopf mittig auf die obere Öffnung des Körpers setzen und mit dem Fadenrest rundherum unsichtbar festnähen.</p>
+      </div>
+    </div>
+    <div class="step-row">
+      <span class="step-num">02</span>
+      <div class="step-content">
+        <h4>Arme & Beine anbringen</h4>
+        <p>Arme seitlich etwa auf Höhe der obersten Körperrunden annähen, Beine unten am Körper – so kann der Bär später sitzen.</p>
+      </div>
+    </div>
+    <div class="step-row">
+      <span class="step-num">03</span>
+      <div class="step-content">
+        <h4>Ohren positionieren</h4>
+        <p>Ohren leicht schräg oben am Kopf anstecken, bis dir die Position gefällt, dann festnähen.</p>
+      </div>
+    </div>
+    <div class="step-row">
+      <span class="step-num">04</span>
+      <div class="step-content">
+        <h4>Gesicht besticken</h4>
+        <p>Mit schwarzem Stickfaden eine kleine Nase und ein Mündchen zwischen die Augen sticken.</p>
+      </div>
+    </div>
+    <div class="step-row">
+      <span class="step-num">05</span>
+      <div class="step-content">
+        <h4>Fäden vernähen</h4>
+        <p>Alle losen Fadenenden sorgfältig ins Innere ziehen und vernähen – fertig ist dein Häkel-Bär!</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TIPPS -->
+<section class="tipp-section">
+  <div class="label">Damit es gelingt</div>
+  <h2>Meine <em>Tipps</em> für dich</h2>
+  <div class="tipp-grid">
+    <div class="tipp-item">
+      <h3>Maschen mitzählen</h3>
+      <p>Notiere dir am Ende jeder Runde die Maschenzahl in Klammern – so merkst du sofort, wenn sich ein Fehler eingeschlichen hat.</p>
+    </div>
+    <div class="tipp-item">
+      <h3>Gleichmäßig stopfen</h3>
+      <p>Fülle in kleinen Portionen und drücke die Watte immer wieder in Form, damit der Bär später keine Beulen hat.</p>
+    </div>
+    <div class="tipp-item">
+      <h3>Augen erst fixieren, wenn du sicher bist</h3>
+      <p>Sicherheitsaugen lassen sich vor dem Einrasten der Rückseite nochmal verschieben – probiere die Position vorher in Ruhe aus.</p>
+    </div>
+  </div>
+</section>
+
+<!-- NÄCHSTER SCHRITT -->
+<section class="next-section">
+  <div class="label">Geschafft?</div>
+  <h2>Entdecke <em>mehr Amigurumi</em></h2>
+  <p>Wenn dir dieser Bär Spaß gemacht hat, findest du in der Amigurumi-Übersicht weitere kleine Figuren zum Nachhäkeln.</p>
+  <a href="../amigurumi.html" class="btn-primary">Zur Amigurumi-Übersicht</a>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div>
+      <span class="footer-logo">Pretty<span>Crochet</span></span>
+      <p>Ein Blog über die Liebe zum Häkeln – mit ehrlichen Empfehlungen, kostenlosen Anleitungen und einer Community für alle, die mit Wolle und Nadel Dinge erschaffen.</p>
+    </div>
+    <div>
+      <h4>Navigation</h4>
+      <ul>
+        <li><a href="../haekeln-basics.html">Häkel Basics</a></li>
+        <li><a href="../anleitungen.html">Anleitungen</a></li>
+        <li><a href="../werkzeuge/muster-generator.html">Muster-Generator</a></li>
+        <li><a href="../blog.html">Blog</a></li>
+        <li><a href="../ueber-mich.html">Über mich</a></li>
+        <li><a href="mailto:prettycrochetstudio@gmail.com">Kontakt</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Rechtliches</h4>
+      <ul>
+        <li><a href="#">Impressum</a></li>
+        <li><a href="#">Datenschutz</a></li>
+        <li><a href="#">Affiliate-Hinweis</a></li>
+        <li><a href="#">Cookie-Einstellungen</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">© 2026 PrettyCrochet · Natürlich. Zeitlos. Handgemacht.</div>
+</footer>
+
+</body>
+</html>

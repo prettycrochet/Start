@@ -255,6 +255,10 @@
   header .lang-switch{justify-content:flex-end;margin-bottom:.4rem;}
   nav{gap:1rem;}
   @media(max-width:480px){.nav-right{gap:.8rem;}.nav-right .nav-cta{padding:.5rem .85rem;font-size:.7rem;}}
+  .nav-links a[aria-current="page"]{color:#A7B39A;}
+  .nav-links a,.nav-cta,.lang-switch{white-space:nowrap;}
+  @media(max-width:1180px){nav{padding-left:4vw;padding-right:4vw;}.nav-links{gap:1.3rem;}.nav-links a{font-size:.75rem;letter-spacing:.07em;}}
+  @media(max-width:980px){.nav-links{display:none;}}
 </style>
 <link rel="alternate" hreflang="de" href="https://prettycrochet.github.io/Start/wohndeko.html"/>
 <link rel="alternate" hreflang="en" href="https://prettycrochet.github.io/Start/en/wohndeko.html"/>
@@ -263,14 +267,15 @@
 <body>
 
 <!-- NAV -->
-<nav>
-  <a href="index.html" class="logo-wrap">
+<nav aria-label="Main navigation">
+  <a href="index.html" class="logo-wrap" aria-label="PrettyCrochet – home">
     <span class="logo-text">Pretty<span>Crochet</span></span>
   </a>
   <ul class="nav-links">
+    <li><a href="haekeln-basics.html">Crochet Basics</a></li>
     <li><a href="anleitungen.html">Patterns</a></li>
-    <li><a href="#" class="active">Home decor</a></li>
-    <li><a href="empfehlungen.html">Recommendations</a></li>
+    <li><a href="werkzeuge/muster-generator.html">Pattern Generator</a></li>
+    <li><a href="blog.html">Blog</a></li>
     <li><a href="ueber-mich.html">About me</a></li>
   </ul>
   <div class="nav-right"><div class="lang-switch" aria-label="Choose language"><a href="../wohndeko.html" hreflang="de" lang="de">DE</a><span aria-hidden="true">|</span><span aria-current="true">EN</span></div><a href="index.html#newsletter" class="nav-cta">Newsletter</a></div>
@@ -403,7 +408,7 @@
   <h2>Home decor <em>projects</em></h2>
   <div class="projects-grid">
 
-    <a href="blueten-blaetter.html" class="project-card">
+    <a href="anleitungen/blueten-blaetter.html" class="project-card">
       <div class="project-thumb">🌸</div>
       <div class="project-body">
         <div class="project-tags">
@@ -413,6 +418,19 @@
         <h3>How to Crochet Flowers &amp; Leaves</h3>
         <p>Three flower shapes, two leaf variations and a vine – the building blocks for wreaths, appliqués and bouquets.</p>
         <span class="project-meta">6 designs · 10–25 min each</span>
+      </div>
+    </a>
+
+    <a href="anleitungen/kuerbis.html" class="project-card">
+      <div class="project-thumb">🎃</div>
+      <div class="project-body">
+        <div class="project-tags">
+          <span class="project-tag">Fall decor</span>
+          <span class="project-tag level">Beginner</span>
+        </div>
+        <h3>How to Crochet a Pumpkin</h3>
+        <p>Ribbed pumpkins made from one rectangle – done in one evening, in three sizes.</p>
+        <span class="project-meta">3 sizes · 1–2 hrs</span>
       </div>
     </a>
 
@@ -527,11 +545,12 @@
     <div>
       <h4>Navigation</h4>
       <ul>
+        <li><a href="haekeln-basics.html">Crochet Basics</a></li>
         <li><a href="anleitungen.html">Patterns</a></li>
-        <li><a href="amigurumi.html">Amigurumi</a></li>
-        <li><a href="haekeln-basics.html">For beginners</a></li>
-        <li><a href="empfehlungen.html">Recommendations</a></li>
+        <li><a href="werkzeuge/muster-generator.html">Pattern Generator</a></li>
+        <li><a href="blog.html">Blog</a></li>
         <li><a href="ueber-mich.html">About me</a></li>
+        <li><a href="mailto:prettycrochetstudio@gmail.com">Contact</a></li>
       </ul>
     </div>
     <div>

@@ -246,6 +246,10 @@
   header .lang-switch{justify-content:flex-end;margin-bottom:.4rem;}
   nav{gap:1rem;}
   @media(max-width:480px){.nav-right{gap:.8rem;}.nav-right .nav-cta{padding:.5rem .85rem;font-size:.7rem;}}
+  .nav-links a[aria-current="page"]{color:#A7B39A;}
+  .nav-links a,.nav-cta,.lang-switch{white-space:nowrap;}
+  @media(max-width:1180px){nav{padding-left:4vw;padding-right:4vw;}.nav-links{gap:1.3rem;}.nav-links a{font-size:.75rem;letter-spacing:.07em;}}
+  @media(max-width:980px){.nav-links{display:none;}}
 </style>
 <link rel="alternate" hreflang="de" href="https://prettycrochet.github.io/Start/blog.html"/>
 <link rel="alternate" hreflang="en" href="https://prettycrochet.github.io/Start/en/blog.html"/>
@@ -254,15 +258,15 @@
 <body>
 
 <!-- NAV -->
-<nav>
-<a href="index.html" class="logo-wrap">
-  <span class="logo-text">Pretty<span>Crochet</span></span>
-</a>
+<nav aria-label="Hauptnavigation">
+  <a href="index.html" class="logo-wrap" aria-label="PrettyCrochet – zur Startseite">
+    <span class="logo-text">Pretty<span>Crochet</span></span>
+  </a>
   <ul class="nav-links">
     <li><a href="haekeln-basics.html">Häkel Basics</a></li>
-    <li><a href="PrettyCrochet-Simulator-V2.html">Häkel Simulator</a></li>
     <li><a href="anleitungen.html">Anleitungen</a></li>
-    <li><a href="blog.html" aria-current="page">Blog</a></li>
+    <li><a href="werkzeuge/muster-generator.html">Muster-Generator</a></li>
+    <li><a href="blog.html" aria-current="page" class="active">Blog</a></li>
     <li><a href="ueber-mich.html">Über mich</a></li>
   </ul>
   <div class="nav-right"><div class="lang-switch" aria-label="Sprache wählen"><span aria-current="true">DE</span><span aria-hidden="true">|</span><a href="en/blog.html" hreflang="en" lang="en">EN</a></div><a href="index.html#newsletter" class="nav-cta">Newsletter</a></div>
@@ -279,9 +283,21 @@
 <!-- Neue Beiträge oben einfügen: Der neueste bekommt class="post-card featured", die älteren nur class="post-card". -->
 <section class="posts-section">
   <div class="posts-grid">
-    <a href="haekeltrends-herbst-2026.html" class="post-card featured">
+    <a href="blog/haekel-taschenanhaenger-herbst.html" class="post-card featured">
       <div class="post-thumb">
-        <img src="assets/Blog/2026-09-22_Herbstblog-2026_01.jpg" alt="Häkeltrends Herbst 2026: Mohair-Schal, Oversize-Cardigan, Granny-Square-Weste und -Tasche, gehäkelte Kürbisse und Mütze" width="1440" height="810">
+        <img src="assets/blog/2026-09-24_Herbstcharms/2026-09-24_Herbstcharms-2026_01.jpg" alt="Braune Handtasche mit gehäkelten Herbst-Anhängern: Pilz, Eichel, Eichenblatt und Mini-Kürbis" width="1440" height="1080">
+      </div>
+      <div class="post-body">
+        <span class="post-tag">Trends &amp; Anleitungen</span>
+        <h3>Häkel-Taschenanhänger: Der Trend 2026 – plus kostenlose Mini-Pilz-Anleitung</h3>
+        <p>Warum gehäkelte Bag Charms gerade überall hängen, welche Herbstmotive angesagt sind – und eine Anfänger-Anleitung für einen Mini-Pilz.</p>
+        <span class="post-meta">23. September 2026 · 6 Min. Lesezeit</span>
+        <span class="post-more">Weiterlesen →</span>
+      </div>
+    </a>
+    <a href="blog/haekeltrends-herbst-2026.html" class="post-card">
+      <div class="post-thumb">
+        <img src="assets/blog/2026-09-22_Herbstblog-2026/2026-09-22_Herbstblog-2026_01.jpg" alt="Häkeltrends Herbst 2026: Mohair-Schal, Oversize-Cardigan, Granny-Square-Weste und -Tasche, gehäkelte Kürbisse und Mütze" width="1440" height="810">
       </div>
       <div class="post-body">
         <span class="post-tag">Trends</span>
@@ -304,10 +320,10 @@
     <div>
       <h4>Navigation</h4>
       <ul>
+        <li><a href="haekeln-basics.html">Häkel Basics</a></li>
+        <li><a href="anleitungen.html">Anleitungen</a></li>
+        <li><a href="werkzeuge/muster-generator.html">Muster-Generator</a></li>
         <li><a href="blog.html">Blog</a></li>
-        <li><a href="PrettyCrochet-Simulator-V2.html">Muster Generator</a></li>
-        <li><a href="#">Materialien</a></li>
-        <li><a href="#">Empfehlungen</a></li>
         <li><a href="ueber-mich.html">Über mich</a></li>
         <li><a href="mailto:prettycrochetstudio@gmail.com">Kontakt</a></li>
       </ul>
@@ -317,6 +333,7 @@
       <ul>
         <li><a href="#">Impressum</a></li>
         <li><a href="#">Datenschutz</a></li>
+        <li><a href="#">Affiliate-Hinweis</a></li>
         <li><a href="#">Cookie-Einstellungen</a></li>
       </ul>
     </div>
