@@ -1,6 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://prettycrochetstudio.com/abkuerzungen.html</loc>
+    <lastmod>2026-09-25</lastmod>
+    <xhtml:link rel="alternate" hreflang="de" href="https://prettycrochetstudio.com/abkuerzungen.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://prettycrochetstudio.com/en/abkuerzungen.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://prettycrochetstudio.com/abkuerzungen.html"/>
+  </url>
+  <url>
+    <loc>https://prettycrochetstudio.com/en/abkuerzungen.html</loc>
+    <lastmod>2026-09-25</lastmod>
+    <xhtml:link rel="alternate" hreflang="de" href="https://prettycrochetstudio.com/abkuerzungen.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://prettycrochetstudio.com/en/abkuerzungen.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://prettycrochetstudio.com/abkuerzungen.html"/>
+  </url>
+  <url>
     <loc>https://prettycrochetstudio.com/amigurumi.html</loc>
     <lastmod>2026-09-25</lastmod>
     <xhtml:link rel="alternate" hreflang="de" href="https://prettycrochetstudio.com/amigurumi.html"/>
@@ -125,6 +139,20 @@
     <xhtml:link rel="alternate" hreflang="de" href="https://prettycrochetstudio.com/blog/haekeltrends-herbst-2026.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://prettycrochetstudio.com/en/blog/haekeltrends-herbst-2026.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://prettycrochetstudio.com/blog/haekeltrends-herbst-2026.html"/>
+  </url>
+  <url>
+    <loc>https://prettycrochetstudio.com/datenschutz.html</loc>
+    <lastmod>2026-09-25</lastmod>
+    <xhtml:link rel="alternate" hreflang="de" href="https://prettycrochetstudio.com/datenschutz.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://prettycrochetstudio.com/en/datenschutz.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://prettycrochetstudio.com/datenschutz.html"/>
+  </url>
+  <url>
+    <loc>https://prettycrochetstudio.com/en/datenschutz.html</loc>
+    <lastmod>2026-09-25</lastmod>
+    <xhtml:link rel="alternate" hreflang="de" href="https://prettycrochetstudio.com/datenschutz.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://prettycrochetstudio.com/en/datenschutz.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://prettycrochetstudio.com/datenschutz.html"/>
   </url>
   <url>
     <loc>https://prettycrochetstudio.com/haekeln-basics.html</loc>

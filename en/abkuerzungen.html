@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Crochet Abbreviations &amp; How to Read Patterns: The Complete Guide | PrettyCrochet</title>
+  <meta name="description" content="All crochet abbreviations from ch to inc with chart symbols, UK equivalents and German terms – plus a step-by-step guide to reading a crochet pattern."/>
+  <link rel="stylesheet" href="../assets/fonts/fonts.css"/>
+  <style>
+    :root {
+      --creme:   #FAF6F1;
+      --salbei:  #A7B39A;
+      --beige:   #D6C5B5;
+      --braun:   #8B6F5B;
+      --espresso:#4A3B32;
+      --white:   #FFFFFF;
+      --muted:   #9A8880;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--creme);
+      color: var(--espresso);
+      font-family: 'Jost', sans-serif;
+      font-weight: 300;
+      line-height: 1.75;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 200;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.1rem 6vw;
+      background: rgba(250,246,241,0.92);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--beige);
+    }
+    .logo-wrap { display: flex; align-items: center; gap: 0.75rem; text-decoration: none; }
+    .logo-text {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.45rem;
+      font-weight: 600;
+      color: var(--espresso);
+      letter-spacing: 0.02em;
+    }
+    .logo-text span { color: var(--salbei); }
+    .nav-links { display: flex; gap: 2.2rem; list-style: none; }
+    .nav-links a {
+      font-size: 0.82rem;
+      font-weight: 400;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: var(--espresso);
+      transition: color 0.2s;
+    }
+    .nav-links a:hover, .nav-links a.active { color: var(--salbei); }
+    .nav-cta {
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: var(--white);
+      background: var(--espresso);
+      padding: 0.6rem 1.4rem;
+      border-radius: 2px;
+      transition: background 0.2s;
+    }
+    .nav-cta:hover { background: var(--braun); }
+
+    /* ── PAGE HERO ── */
+    .page-hero {
+      padding: 11rem 10vw 5rem;
+      background: var(--beige);
+      text-align: center;
+    }
+    .breadcrumb {
+      font-size: 0.75rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--braun);
+      margin-bottom: 1.5rem;
+    }
+    .breadcrumb a { color: var(--braun); text-decoration: none; border-bottom: 1px solid rgba(139,111,91,0.35); }
+    .breadcrumb a:hover { border-color: var(--braun); }
+    .page-hero .label { justify-content: center; }
+    .page-hero .label::before { display: none; }
+    .page-hero h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.4rem, 5vw, 4rem);
+      font-weight: 300;
+      line-height: 1.15;
+      color: var(--espresso);
+      margin-bottom: 1.2rem;
+    }
+    .page-hero h1 em { font-style: italic; color: var(--braun); }
+    .page-hero p.sub {
+      max-width: 50ch;
+      margin: 0 auto;
+      color: var(--braun);
+      font-size: 1rem;
+    }
+
+    .label {
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--salbei);
+      margin-bottom: 0.6rem;
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+    }
+    .label::before { content:''; display:inline-block; width:24px; height:1px; background:var(--salbei); }
+
+    h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.8rem, 3vw, 2.6rem);
+      font-weight: 300;
+      line-height: 1.2;
+      color: var(--espresso);
+      margin-bottom: 1.5rem;
+    }
+    h2 em { font-style: italic; color: var(--braun); }
+
+    section { padding: 5rem 10vw; }
+
+    /* ── INTRO TEXT ── */
+    .intro-section { background: var(--white); }
+    .intro-text {
+      max-width: 70ch;
+      font-size: 1.02rem;
+      color: var(--espresso);
+    }
+    .intro-text p { margin-bottom: 1.2rem; }
+
+    /* ── MATERIAL CHECKLIST ── */
+    .material-section { background: var(--creme); }
+    .material-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--beige);
+      border: 1px solid var(--beige);
+    }
+    .material-item {
+      background: var(--white);
+      padding: 2rem 1.8rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+    .material-icon { font-size: 1.7rem; }
+    .material-item h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.15rem;
+      font-weight: 400;
+    }
+    .material-item p { font-size: 0.85rem; color: var(--muted); }
+
+    /* ── STEP LIST (Grundhaltung) ── */
+    .steps-section { background: var(--white); }
+    .steps-list { display: flex; flex-direction: column; gap: 0; max-width: 74ch; }
+    .step-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 1.6rem;
+      padding: 1.8rem 0;
+      border-bottom: 1px solid var(--beige);
+    }
+    .step-row:first-child { padding-top: 0; }
+    .step-num {
+      flex-shrink: 0;
+      width: 40px;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2rem;
+      font-weight: 300;
+      color: var(--salbei);
+    }
+    .step-content { flex: 1; min-width: 0; }
+    .step-content h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.2rem;
+      font-weight: 400;
+      margin-bottom: 0.4rem;
+    }
+    .step-content p { font-size: 0.92rem; color: var(--muted); }
+
+    /* Kleines Bild rechts neben dem Schritt-Text */
+    .step-image {
+      flex-shrink: 0;
+      align-self: center;
+      width: 96px;
+      height: 96px;
+      object-fit: cover;
+      border-radius: 6px;
+    }
+    @media (max-width: 480px) {
+      .step-image { width: 64px; height: 64px; }
+    }
+
+    /* ── STITCH CARDS (Grundmaschen) ── */
+
+    /* ── SPRUNGMARKEN ── */
+    .jump-nav {
+      background: var(--creme);
+      padding: 2rem 10vw;
+      display: flex; gap: 0.6rem; flex-wrap: wrap; justify-content: center;
+      border-bottom: 1px solid var(--beige);
+    }
+    .jump-nav a {
+      font-size: 0.74rem; letter-spacing: 0.06em; text-transform: uppercase;
+      text-decoration: none; color: var(--espresso);
+      background: var(--white); border: 1px solid var(--beige);
+      padding: 0.5rem 1rem; border-radius: 999px;
+      transition: border-color 0.2s;
+    }
+    .jump-nav a:hover { border-color: var(--salbei); }
+
+    .stitch-section { background: var(--creme); }
+    .substep-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.4rem;
+      font-weight: 400;
+      color: var(--braun);
+      margin-bottom: 0.8rem;
+    }
+    .substep-intro {
+      max-width: 70ch;
+      font-size: 0.95rem;
+      color: var(--espresso);
+      margin-bottom: 2rem;
+    }
+    .substep-list { margin-bottom: 1.4rem; }
+    .pattern-note-basic {
+      max-width: 70ch;
+      font-size: 0.86rem;
+      color: var(--muted);
+      background: var(--white);
+      padding: 0.9rem 1.1rem;
+      border-left: 3px solid var(--salbei);
+    }
+    .stitch-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+    }
+    .stitch-card {
+      background: var(--white);
+      padding: 2.2rem;
+      border-left: 3px solid var(--salbei);
+    }
+    .stitch-abbr {
+      display: inline-block;
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--white);
+      background: var(--braun);
+      padding: 0.25rem 0.6rem;
+      border-radius: 2px;
+      margin-bottom: 0.9rem;
+    }
+    .stitch-card h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.35rem;
+      font-weight: 400;
+      margin-bottom: 0.7rem;
+    }
+    .stitch-card p { font-size: 0.9rem; color: var(--muted); }
+    .stitch-card ol {
+      margin-top: 0.9rem;
+      padding-left: 1.2rem;
+      font-size: 0.88rem;
+      color: var(--espresso);
+    }
+    .stitch-card ol li { margin-bottom: 0.4rem; }
+
+    /* ── TIPP BOX ── */
+    .tipp-section { background: var(--espresso); }
+    .tipp-section .label { color: var(--salbei); }
+    .tipp-section .label::before { background: var(--salbei); }
+    .tipp-section h2 { color: var(--creme); }
+    .tipp-section h2 em { color: var(--salbei); }
+    .tipp-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+    .tipp-item {
+      background: var(--espresso);
+      padding: 2rem 1.6rem;
+    }
+    .tipp-item h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem;
+      font-weight: 400;
+      color: var(--creme);
+      margin-bottom: 0.6rem;
+    }
+    .tipp-item p { font-size: 0.85rem; color: var(--beige); }
+
+    /* ── NEXT STEP CTA ── */
+    .next-section {
+      background: var(--beige);
+      text-align: center;
+      padding: 5rem 10vw;
+    }
+    .next-section .label { justify-content: center; }
+    .next-section .label::before { display: none; }
+    .next-section p { color: var(--braun); max-width: 44ch; margin: 0 auto 2rem; font-size: 0.95rem; }
+    .btn-primary {
+      display: inline-block;
+      background: var(--espresso);
+      color: var(--white);
+      padding: 0.9rem 2rem;
+      font-size: 0.82rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border-radius: 2px;
+      transition: background 0.2s;
+    }
+    .btn-primary:hover { background: var(--braun); }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--espresso);
+      color: var(--beige);
+      padding: 4rem 10vw 2rem;
+    }
+    .footer-top {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 4rem;
+      padding-bottom: 3rem;
+      border-bottom: 1px solid rgba(214,197,181,0.15);
+      margin-bottom: 2rem;
+    }
+    .footer-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem;
+      font-weight: 400;
+      color: var(--creme);
+      display: block;
+      margin-bottom: 1rem;
+    }
+    .footer-logo span { color: var(--salbei); }
+    footer p { font-size: 0.83rem; color: rgba(214,197,181,0.6); line-height: 1.8; max-width: 32ch; }
+    footer h4 {
+      font-size: 0.7rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--salbei);
+      margin-bottom: 1.2rem;
+    }
+    footer ul { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
+    footer ul a { font-size: 0.84rem; color: rgba(214,197,181,0.7); text-decoration: none; transition: color 0.2s; }
+    footer ul a:hover { color: var(--creme); }
+    .footer-bottom {
+      text-align: center;
+      font-size: 0.72rem;
+      color: rgba(214,197,181,0.35);
+      letter-spacing: 0.06em;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 800px) {
+      .nav-links { display: none; }
+      .material-grid { grid-template-columns: 1fr; }
+      .stitch-grid { grid-template-columns: 1fr; }
+      .tipp-grid { grid-template-columns: 1fr; }
+      .footer-top { grid-template-columns: 1fr; gap: 2rem; }
+      .step-row { grid-template-columns: 40px 1fr; }
+    }
+  
+  /* ── Sprachumschalter DE | EN ── */
+  .nav-right{display:flex;align-items:center;gap:1.4rem;}
+  .lang-switch{display:flex;align-items:center;gap:.45rem;font-size:.78rem;letter-spacing:.1em;color:#9A8880;}
+  .lang-switch a{color:inherit;text-decoration:none;border-bottom:1px solid transparent;transition:color .2s,border-color .2s;}
+  .lang-switch a:hover{color:#4A3B32;border-color:#A7B39A;}
+  .lang-switch [aria-current]{color:#4A3B32;font-weight:500;}
+  header .lang-switch{justify-content:flex-end;margin-bottom:.4rem;}
+  nav{gap:1rem;}
+  @media(max-width:480px){.nav-right{gap:.8rem;}.nav-right .nav-cta{padding:.5rem .85rem;font-size:.7rem;}}
+  .nav-links a[aria-current="page"]{color:#A7B39A;}
+  .nav-links a,.nav-cta,.lang-switch{white-space:nowrap;}
+  @media(max-width:1180px){nav{padding-left:4vw;padding-right:4vw;}.nav-links{gap:1.3rem;}.nav-links a{font-size:.75rem;letter-spacing:.07em;}}
+  @media(max-width:980px){.nav-links{display:none;}}
+
+  /* ── Abkürzungs-Seite ── */
+  .table-wrap{overflow-x:auto;margin:1rem 0 2.2rem;background:var(--white);border:1px solid var(--beige);}
+  .ref-table{width:100%;min-width:540px;border-collapse:collapse;font-size:.9rem;}
+  .ref-table th{background:var(--creme);text-align:left;font-weight:500;font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--braun);padding:.8rem 1rem;border-bottom:1px solid var(--beige);;white-space:nowrap;}
+  .ref-table td{padding:.7rem 1rem;border-bottom:1px solid #EFE7DE;vertical-align:top;line-height:1.6;}
+  .ref-table tr:last-child td{border-bottom:0;}
+  .ref-table td b{font-weight:500;color:var(--espresso);white-space:nowrap;}
+  .ref-table .sym{font-family:'Cormorant Garamond',serif;font-size:1.6rem;line-height:1.2;color:var(--braun);text-align:center;white-space:nowrap;}
+  .ref-table .alt{font-size:.78rem;color:var(--muted);white-space:nowrap;}
+  .example-line{font-family:'Cormorant Garamond',serif;font-size:clamp(1.3rem,3vw,1.7rem);background:var(--white);border:1px solid var(--beige);border-left:3px solid var(--salbei);padding:1rem 1.4rem;margin:1rem 0 2.2rem;}
+  .example-line .ex-label{color:var(--braun);margin-right:.6rem;}
+  .example-line .ex-count{color:var(--salbei);}
+  #schreibweisen .step-num,#beispiel .step-num{width:auto;min-width:7.5rem;white-space:nowrap;font-size:1.15rem;font-weight:400;padding-top:.2rem;}
+  @media(max-width:600px){#schreibweisen .step-num,#beispiel .step-num{min-width:0;}}
+</style>
+<link rel="alternate" hreflang="de" href="https://prettycrochetstudio.com/abkuerzungen.html"/>
+<link rel="alternate" hreflang="en" href="https://prettycrochetstudio.com/en/abkuerzungen.html"/>
+<link rel="alternate" hreflang="x-default" href="https://prettycrochetstudio.com/abkuerzungen.html"/>
+<style id="site-header">
+  /* Einheitliche Kopfzeile auf allen Seiten – hier zentral anpassen */
+  nav{position:fixed;top:0;left:0;right:0;z-index:200;box-sizing:border-box;display:flex;align-items:center;justify-content:space-between;gap:1rem;margin:0;padding:1.1rem 6vw;background:rgba(250,246,241,0.92);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid #D6C5B5;font-family:'Jost',sans-serif;font-size:16px;font-weight:300;line-height:1.75;}
+  nav .logo-wrap{display:flex;align-items:center;gap:.75rem;text-decoration:none;}
+  nav .logo-text{font-family:'Cormorant Garamond',serif;font-size:1.45rem;font-weight:600;font-style:normal;color:#4A3B32;letter-spacing:.02em;line-height:1.75;}
+  nav .logo-text span{color:#A7B39A;}
+  nav .nav-links{display:flex;gap:2.2rem;list-style:none;margin:0;padding:0;}
+  nav .nav-links li{margin:0;padding:0;}
+  nav .nav-links a{font-family:'Jost',sans-serif;font-size:.82rem;font-weight:400;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;color:#4A3B32;line-height:1.75;white-space:nowrap;border:0;transition:color .2s;}
+  nav .nav-links a:hover,nav .nav-links a[aria-current="page"]{color:#A7B39A;}
+  nav .nav-right{display:flex;align-items:center;gap:1.4rem;}
+  nav .lang-switch{display:flex;align-items:center;gap:.45rem;margin:0;font-family:'Jost',sans-serif;font-size:.78rem;font-weight:300;letter-spacing:.1em;line-height:1.75;color:#9A8880;white-space:nowrap;}
+  nav .lang-switch a{color:inherit;text-decoration:none;border-bottom:1px solid transparent;transition:color .2s,border-color .2s;}
+  nav .lang-switch a:hover{color:#4A3B32;border-color:#A7B39A;}
+  nav .lang-switch [aria-current]{color:#4A3B32;font-weight:500;}
+  nav .nav-cta{display:inline-block;font-family:'Jost',sans-serif;font-size:.8rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;line-height:1.75;color:#FFFFFF;background:#4A3B32;padding:.6rem 1.4rem;border:0;border-radius:2px;white-space:nowrap;transition:background .2s;}
+  nav .nav-cta:hover{background:#8B6F5B;color:#FFFFFF;}
+  @media(max-width:1180px){nav{padding-left:4vw;padding-right:4vw;}nav .nav-links{gap:1.3rem;}nav .nav-links a{font-size:.75rem;letter-spacing:.07em;}}
+  @media(max-width:980px){nav .nav-links{display:none;}}
+  @media(max-width:480px){nav .nav-right{gap:.8rem;}nav .nav-cta{padding:.5rem .85rem;font-size:.7rem;}}
+</style>
+<style id="site-footer">
+  /* Einheitliche Fußzeile auf allen Seiten – hier zentral anpassen */
+  footer:not(.author){box-sizing:border-box;margin:0;background:#4A3B32;color:#D6C5B5;padding:4rem 10vw 2rem;font-family:'Jost',sans-serif;font-size:16px;font-weight:300;line-height:1.75;}
+  footer:not(.author) .footer-top{display:grid;grid-template-columns:2fr 1fr 1fr;gap:4rem;padding-bottom:3rem;border-bottom:1px solid rgba(214,197,181,0.15);margin-bottom:2rem;}
+  footer:not(.author) .footer-logo{display:block;margin:0 0 1rem;font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:400;line-height:1.75;color:#FAF6F1;}
+  footer:not(.author) .footer-logo span{color:#A7B39A;}
+  footer:not(.author) p{margin:0;max-width:32ch;font-size:.83rem;font-weight:300;line-height:1.8;color:rgba(214,197,181,0.6);}
+  footer:not(.author) h4{margin:0 0 1.2rem;font-family:'Jost',sans-serif;font-size:.7rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;line-height:1.75;color:#A7B39A;}
+  footer:not(.author) ul{list-style:none;display:flex;flex-direction:column;gap:.6rem;margin:0;padding:0;}
+  footer:not(.author) li{margin:0;padding:0;}
+  footer:not(.author) ul a{font-family:'Jost',sans-serif;font-size:.84rem;font-weight:300;line-height:1.75;color:rgba(214,197,181,0.7);text-decoration:none;transition:color .2s;}
+  footer:not(.author) ul a:hover{color:#FAF6F1;}
+  footer:not(.author) .footer-bottom{text-align:center;font-size:.72rem;font-weight:300;letter-spacing:.06em;line-height:1.75;color:rgba(214,197,181,0.35);}
+  @media(max-width:800px){footer:not(.author) .footer-top{grid-template-columns:1fr;gap:2rem;}}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav aria-label="Main navigation">
+  <a href="index.html" class="logo-wrap" aria-label="PrettyCrochet – home">
+    <span class="logo-text">Pretty<span>Crochet</span></span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="haekeln-basics.html" aria-current="page" class="active">Crochet Basics</a></li>
+    <li><a href="anleitungen.html">Patterns</a></li>
+    <li><a href="werkzeuge/muster-generator.html">Pattern Generator</a></li>
+    <li><a href="blog.html">Blog</a></li>
+    <li><a href="ueber-mich.html">About me</a></li>
+  </ul>
+  <div class="nav-right"><div class="lang-switch" aria-label="Choose language"><a href="../abkuerzungen.html" hreflang="de" lang="de">DE</a><span aria-hidden="true">|</span><span aria-current="true">EN</span></div><a href="index.html#newsletter" class="nav-cta">Newsletter</a></div>
+</nav>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <p class="breadcrumb"><a href="index.html">Home</a> · <a href="haekeln-basics.html">Crochet Basics</a> · Abbreviations</p>
+  <div class="label">Reference</div>
+  <h1>Crochet abbreviations:<br>How to read my <em>patterns</em></h1>
+  <p class="sub">All abbreviations at a glance – with chart symbols, UK terms and the German equivalents – and a step-by-step explanation of how my patterns are structured.</p>
+</section>
+
+<!-- SPRUNGMARKEN -->
+<div class="jump-nav">
+  <a href="#abkuerzungen">Abbreviations</a>
+  <a href="#schreibweisen">Notation</a>
+  <a href="#beispiel">Example</a>
+  <a href="#aufbau">Pattern structure</a>
+  <a href="#englisch">US vs. UK terms</a>
+  <a href="#tipps">Tips</a>
+</div>
+
+<!-- ABKÜRZUNGEN -->
+<section class="stitch-section" id="abkuerzungen">
+  <div class="label">Overview</div>
+  <h2>All <em>abbreviations</em></h2>
+  <p class="substep-intro">These are the abbreviations used in my patterns (US terms). The symbol shows how the stitch appears in a crochet chart. The German column helps if you ever want to follow a German pattern.</p>
+
+  <h3 class="substep-title">Stitches</h3>
+  <div class="table-wrap">
+  <table class="ref-table">
+    <thead><tr><th>Abbreviation</th><th>Meaning</th><th>Symbol</th><th>UK term</th><th>German</th></tr></thead>
+    <tbody>
+      <tr><td><b>ch</b></td><td>Chain</td><td class="sym">○</td><td>ch</td><td>Lm</td></tr>
+      <tr><td><b>fch</b></td><td>Foundation chain</td><td class="sym">○○○</td><td>foundation chain</td><td>LMK</td></tr>
+      <tr><td><b>sl st</b></td><td>Slip stitch</td><td class="sym">•</td><td>ss / sl st</td><td>Km</td></tr>
+      <tr><td><b>sc</b></td><td>Single crochet</td><td class="sym">×</td><td>dc</td><td>fM</td></tr>
+      <tr><td><b>hdc</b></td><td>Half double crochet</td><td class="sym">T</td><td>htr</td><td>hStb</td></tr>
+      <tr><td><b>dc</b></td><td>Double crochet</td><td class="sym">†</td><td>tr</td><td>Stb</td></tr>
+      <tr><td><b>tr</b></td><td>Treble crochet</td><td class="sym">‡</td><td>dtr</td><td>dStb</td></tr>
+      <tr><td><b>MR</b></td><td>Magic ring</td><td class="sym">⊙</td><td>MR</td><td>MR</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <h3 class="substep-title">Increases, decreases &amp; where to insert</h3>
+  <div class="table-wrap">
+  <table class="ref-table">
+    <thead><tr><th>Abbreviation</th><th>Meaning</th><th>Symbol</th><th>UK term</th><th>German</th></tr></thead>
+    <tbody>
+      <tr><td><b>inc</b></td><td>Increase: 2 sc in the same stitch</td><td class="sym">×²</td><td>inc</td><td>Zun</td></tr>
+      <tr><td><b>dec</b> <span class="alt">(sc2tog)</span></td><td>Decrease: work 2 stitches together (invisible decrease for amigurumi)</td><td class="sym">∧</td><td>dec / dc2tog</td><td>Abn</td></tr>
+      <tr><td><b>BLO</b></td><td>Back loop only</td><td class="sym">—</td><td>BLO</td><td>hMg</td></tr>
+      <tr><td><b>FLO</b></td><td>Front loop only</td><td class="sym">—</td><td>FLO</td><td>vMg</td></tr>
+      <tr><td><b>FPdc</b></td><td>Front post double crochet</td><td class="sym">ƒ</td><td>FPtr</td><td>vRStb</td></tr>
+      <tr><td><b>BPdc</b></td><td>Back post double crochet</td><td class="sym">ʃ</td><td>BPtr</td><td>hRStb</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <h3 class="substep-title">General abbreviations</h3>
+  <div class="table-wrap">
+  <table class="ref-table">
+    <thead><tr><th>Abbreviation</th><th>Meaning</th><th>German</th></tr></thead>
+    <tbody>
+      <tr><td><b>st(s)</b></td><td>Stitch(es)</td><td>M</td></tr>
+      <tr><td><b>R / Rnd / Row</b></td><td>Row or round – depending on whether the piece is worked in rows or rounds</td><td>R</td></tr>
+      <tr><td><b>turning ch</b></td><td>Turning chain(s) at the start of a row</td><td>Wende-Lm</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p class="pattern-note-basic">I explain how to work each stitch in detail in the <a href="haekeln-basics.html#maschen" style="color:var(--braun)">Crochet Basics</a>.</p>
+</section>
+
+<!-- SCHREIBWEISEN -->
+<section class="steps-section" id="schreibweisen">
+  <div class="label">Learn to read</div>
+  <h2>The most important <em>notation</em></h2>
+  <p class="substep-intro">Besides the abbreviations, a few symbols and patterns come up in every pattern. Once you know them, you can read any line.</p>
+  <div class="steps-list">
+    <div class="step-row">
+      <span class="step-num">6 sc</span>
+      <div class="step-content">
+        <h3>Number before the stitch</h3>
+        <p>The number tells you how many stitches to work in a row: “6 sc” means 6 single crochets, each into the next stitch. If it says “in MR”, you work all 6 into the magic ring.</p>
+      </div>
+    </div>
+    <div class="step-row">
+      <span class="step-num">[ ] x 6</span>
+      <div class="step-content">
+        <h3>Square brackets with a number: repeat</h3>
+        <p>Work everything inside the brackets as many times as the number says. “[sc, inc] x 6” means: 1 single crochet, then 1 increase – and all of that 6 times.</p>
+      </div>
+    </div>
+    <div class="step-row">
+      <span class="step-num">[ ]</span>
+      <div class="step-content">
+        <h3>Square brackets after “in the … st”: all in the same stitch</h3>
+        <p>If the brackets have no number but follow an insertion point, you work their entire content into <em>one</em> stitch. “[1 hdc, 3 dc, 1 hdc] in the following st” creates a little petal. I use this notation, for example, in the flowers &amp; leaves pattern.</p>
+      </div>
+    </div>
+    <div class="step-row">
+      <span class="step-num">* … *</span>
+      <div class="step-content">
+        <h3>Asterisks: repeat a section</h3>
+        <p>The part between the asterisks (or set in italics) is repeated – how often is stated right after it, for example “repeat 4 more times”.</p>
+      </div>
+    </div>
+    <div class="step-row">
+      <span class="step-num">(18 sts)</span>
+      <div class="step-content">
+        <h3>Round brackets at the end: stitch count</h3>
+        <p>The number in round brackets at the end of a line tells you how many stitches you should have in total after that row or round. Count quickly – that way you'll spot mistakes right away.</p>
+      </div>
+    </div>
+    <div class="step-row">
+      <span class="step-num">Rnd 6–11</span>
+      <div class="step-content">
+        <h3>Ranges of rows or rounds</h3>
+        <p>“Rnd 6–11” means the instruction applies to rounds 6 through 11, so you work it 6 times in a row.</p>
+      </div>
+    </div>
+    <div class="step-row">
+      <span class="step-num">16 / 21 / 31</span>
+      <div class="step-content">
+        <h3>Several sizes</h3>
+        <p>If a pattern comes in several sizes, the numbers are separated by slashes – always in the same order, for example small / medium / large. Tip: highlight the numbers for your size before you start.</p>
+      </div>
+    </div>
+    <div class="step-row">
+      <span class="step-num">2nd ch</span>
+      <div class="step-content">
+        <h3>“in the 2nd ch from the hook”</h3>
+        <p>Count the chains backwards from the hook: the loop on the hook doesn't count, you skip the first chain next to it and insert into the second.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BEISPIEL -->
+<section class="material-section" id="beispiel">
+  <div class="label">Example</div>
+  <h2>One line <em>step by step</em></h2>
+  <p class="substep-intro">This is what a typical line from my <a href="anleitungen/haekel-baer.html" style="color:var(--braun)">crochet bear</a> pattern looks like:</p>
+  <div class="example-line"><span class="ex-label">Rnd 3</span> [sc, inc] x 6 <span class="ex-count">(18 sts)</span></div>
+  <div class="steps-list">
+    <div class="step-row">
+      <span class="step-num">Rnd 3</span>
+      <div class="step-content"><h3>Which round?</h3><p>This is round 3. At the end of round 2 you had 12 stitches.</p></div>
+    </div>
+    <div class="step-row">
+      <span class="step-num">sc, inc</span>
+      <div class="step-content"><h3>What to crochet?</h3><p>1 single crochet in the next stitch, then 2 single crochets together in the following stitch (increase).</p></div>
+    </div>
+    <div class="step-row">
+      <span class="step-num">x 6</span>
+      <div class="step-content"><h3>How often?</h3><p>Repeat this sequence 6 times – that uses exactly the 12 stitches of the previous round.</p></div>
+    </div>
+    <div class="step-row">
+      <span class="step-num">(18 sts)</span>
+      <div class="step-content"><h3>Check</h3><p>Each repeat creates 3 new stitches, so 6 × 3 = 18 stitches. If your count matches, move on to round 4.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- AUFBAU -->
+<section class="steps-section" id="aufbau">
+  <div class="label">Getting oriented</div>
+  <h2>How my <em>patterns are structured</em></h2>
+  <p class="substep-intro">All patterns on PrettyCrochet follow the same structure, so you'll find your way around every new pattern right away.</p>
+  <div class="steps-list">
+    <div class="step-row"><span class="step-num">01</span><div class="step-content"><h3>Overview</h3><p>At the top you'll find the difficulty level, time needed, size and hook size – so you can see at a glance whether the project suits you.</p></div></div>
+    <div class="step-row"><span class="step-num">02</span><div class="step-content"><h3>Materials &amp; abbreviations</h3><p>A list of everything you need, plus the abbreviations used in that specific pattern.</p></div></div>
+    <div class="step-row"><span class="step-num">03</span><div class="step-content"><h3>The pattern in parts</h3><p>Larger projects are divided into pieces, such as head, body and arms. Each piece starts with a heading and shows on the right how many of it you need.</p></div></div>
+    <div class="step-row"><span class="step-num">04</span><div class="step-content"><h3>Note boxes</h3><p>The light boxes with a colored line at the side contain important in-between steps – for example when to stuff or insert the safety eyes. Read them before you continue.</p></div></div>
+    <div class="step-row"><span class="step-num">05</span><div class="step-content"><h3>Assembly &amp; tips</h3><p>At the end I explain how the pieces come together and share tips to make your project a success.</p></div></div>
+  </div>
+</section>
+
+<!-- ENGLISCH -->
+<section class="material-section" id="englisch">
+  <div class="label">US vs. UK</div>
+  <h2>Don't mix up <em>US and UK terms</em></h2>
+  <p class="substep-intro">Crochet patterns in English use two systems – with the same words for different stitches. The most common mix-up is “double crochet”:</p>
+  <div class="table-wrap">
+  <table class="ref-table">
+    <thead><tr><th>US term</th><th>UK term</th><th>German</th></tr></thead>
+    <tbody>
+      <tr><td>single crochet (sc)</td><td>double crochet (dc)</td><td>Feste Masche (fM)</td></tr>
+      <tr><td>half double crochet (hdc)</td><td>half treble (htr)</td><td>Halbes Stäbchen (hStb)</td></tr>
+      <tr><td>double crochet (dc)</td><td>treble (tr)</td><td>Stäbchen (Stb)</td></tr>
+      <tr><td>treble (tr)</td><td>double treble (dtr)</td><td>Doppelstäbchen (dStb)</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p class="pattern-note-basic">My English patterns use US terms. For other patterns, look for the abbreviation “sc”: if it appears, the pattern is written in US terms – because the UK system has no “sc”.</p>
+</section>
+
+<!-- TIPPS -->
+<section class="tipp-section" id="tipps">
+  <div class="label">For best results</div>
+  <h2>My <em>tips</em> for reading patterns</h2>
+  <div class="tipp-grid">
+    <div class="tipp-item">
+      <h3>Read it all once</h3>
+      <p>Read the whole pattern once before you start – that way you know what to expect and no step will surprise you.</p>
+    </div>
+    <div class="tipp-item">
+      <h3>Use stitch markers</h3>
+      <p>Mark the start of every round. Especially with spiral rounds, it's easy to lose track otherwise.</p>
+    </div>
+    <div class="tipp-item">
+      <h3>Tick off instead of remembering</h3>
+      <p>Print the pattern or note down the rounds and tick off each one you've finished – especially for ranges like “Rnd 6–11”.</p>
+    </div>
+  </div>
+</section>
+
+<!-- NÄCHSTER SCHRITT -->
+<section class="next-section">
+  <div class="label">Ready?</div>
+  <h2>Start <em>crocheting</em></h2>
+  <p>With this knowledge you can read every one of my patterns. Pick a project – the crochet bear or the pumpkins are especially good for getting started.</p>
+  <a href="anleitungen.html" class="btn-primary">Go to all patterns</a>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div>
+      <span class="footer-logo">Pretty<span>Crochet</span></span>
+      <p>A blog about the love of crochet – with honest recommendations, free patterns and a community for everyone who creates things with yarn and hook.</p>
+    </div>
+    <div>
+      <h4>Navigation</h4>
+      <ul>
+        <li><a href="haekeln-basics.html">Crochet Basics</a></li>
+        <li><a href="anleitungen.html">Patterns</a></li>
+        <li><a href="werkzeuge/muster-generator.html">Pattern Generator</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="ueber-mich.html">About me</a></li>
+        <li><a href="mailto:prettycrochetstudio@gmail.com">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Legal</h4>
+      <ul>
+        <li><a href="#">Legal notice</a></li>
+        <li><a href="datenschutz.html">Privacy policy</a></li>
+        <li><a href="#">Affiliate disclosure</a></li>
+        <li><a href="#">Cookie settings</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">© 2026 PrettyCrochet · Natural. Timeless. Handmade.</div>
+</footer>
+
+</body>
+</html>
