@@ -6,6 +6,10 @@
   <title>PrettyCrochet – Häkelanleitungen, Häkeln lernen &amp; Inspiration</title>
   <meta name="description" content="Kostenlose Häkelanleitungen, Häkeln lernen für Anfänger, Amigurumi, Wohndeko und Taschen – dazu Trends, Garntipps und ehrliche Empfehlungen von PrettyCrochet."/>
   <link rel="stylesheet" href="assets/fonts/fonts.css"/>
+  <link rel="icon" href="/assets/icons/favicon.ico" sizes="48x48"/>
+  <link rel="icon" href="/assets/icons/favicon.svg" type="image/svg+xml"/>
+  <link rel="icon" href="/assets/icons/favicon-192x192.png" type="image/png" sizes="192x192"/>
+  <link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png"/>
   <style>
     /* ── Startseite (Corporate Design 2026) ── */
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
@@ -156,19 +160,11 @@
 
 <header class="site-header">
   <nav class="site-nav" aria-label="Hauptnavigation">
-    <a class="brand" href="index.html" aria-label="PrettyCrochet – zur Startseite">Pretty<span>Crochet</span></a>
-    <ul class="nav-links">
-      <li><a href="anleitungen.html">Anleitungen</a></li>
-      <li><a href="haekeln-basics.html">Häkeln lernen</a></li>
-      <li><a href="werkzeuge/lernpfad.html">Lernpfad</a></li>
-      <li><a href="werkzeuge/muster-generator.html">Muster-Generator</a></li>
-      <li><a href="blog.html">Blog</a></li>
-      <li><a href="ueber-mich.html">Über mich</a></li>
-    </ul>
+    <a class="brand" href="index.html" aria-label="PrettyCrochet – zur Startseite"><img src="assets/logos/prettycrochet-lockup-espresso.svg" alt="" width="617" height="132"></a>
     <div class="nav-tools">
       <button type="button" class="icon-btn" data-search-open aria-label="Suche öffnen"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg></button>
       <div class="lang-switch" aria-label="Sprache wählen"><span aria-current="true">DE</span><span aria-hidden="true">|</span><a href="en/index.html" hreflang="en" lang="en">EN</a></div>
-      <button type="button" class="icon-btn menu-toggle" aria-expanded="false" aria-controls="mobile-menu" aria-label="Menü öffnen" data-label-open="Menü öffnen" data-label-close="Menü schließen"><svg class="i-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg><svg class="i-close" style="display:none" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+      <button type="button" class="menu-toggle" aria-expanded="false" aria-controls="mobile-menu" aria-label="Menü öffnen" data-label-open="Menü öffnen" data-label-close="Menü schließen"><span class="mt-label" data-text-open="Menü" data-text-close="Schließen">Menü</span><svg class="i-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg><svg class="i-close" style="display:none" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
     </div>
   </nav>
   <div class="mobile-menu" id="mobile-menu" hidden>
@@ -183,6 +179,7 @@
     </ul>
     <p class="mm-label">Schnell zu</p>
     <div class="mm-quick"><a href="#" data-search-query="Kürbis">Kürbis</a><a href="#" data-search-query="Magic Ring">Magic Ring</a><a href="#" data-search-query="Anfänger">Anfänger</a><a href="#" data-search-query="Amigurumi">Amigurumi</a></div>
+    <div class="lang-switch mm-lang" aria-label="Sprache wählen"><span aria-current="true">DE</span><span aria-hidden="true">|</span><a href="en/index.html" hreflang="en" lang="en">EN</a></div>
   </div>
 </header>
 <div class="search-overlay" id="search" role="dialog" aria-modal="true" aria-label="Suche öffnen" hidden>
@@ -212,14 +209,11 @@
         <a href="abkuerzungen.html">Abkürzungen</a>
       </div>
     </div>
-    <div class="hero-visual">
+    <figure class="hero-visual">
+      <img class="hero-photo" src="assets/allgemein/prettycrochet-hero-tasche.jpg" alt="Cremefarbene gehäkelte Tasche auf einem salbeigrünen Sockel, daneben Baumwollgarn und eine Holz-Häkelnadel im warmen Sonnenlicht" width="1080" height="720" fetchpriority="high">
       <span class="hero-seal" aria-hidden="true">Masche für<br>Masche</span>
-      <img src="assets/allgemein/prettycrochet-tasche.jpg" alt="Gehäkelte Tasche aus cremefarbenem Garn auf salbeigrünem Sockel" width="1400" height="933" fetchpriority="high">
-      <a class="hero-badge" href="anleitungen/kuerbis.html">
-        <img src="assets/blog/2026-09-22_Herbstblog-2026/2026-09-22_Herbstblog-2026_06.jpg" alt="" width="56" height="56" loading="lazy" style="object-position:80% 75%;">
-        <span><small>Neue Anleitung</small><strong>Kürbisse häkeln – in 3 Größen</strong></span>
-      </a>
-    </div>
+      <figcaption><span class="hero-kicker">Neue Anleitung</span><a href="anleitungen/kuerbis.html">Kürbisse häkeln – in 3 Größen <span aria-hidden="true">↗</span></a></figcaption>
+    </figure>
   </div>
 </section>
 
@@ -346,7 +340,7 @@
 <footer class="site-footer">
   <div class="sf-grid">
     <div class="sf-about">
-      <a class="sf-brand" href="index.html">Pretty<span>Crochet</span></a>
+      <a class="sf-brand" href="index.html"><img src="assets/logos/prettycrochet-lockup-cream.svg" alt="PrettyCrochet" width="617" height="132" loading="lazy"></a>
       <p class="sf-claim">Aus Garn wird deins.</p>
       <p>Kostenlose Häkelanleitungen, ein interaktiver Lernpfad und Werkzeuge zum Selbstentwerfen – für alle, die mit Garn und Nadel Lieblingsstücke machen.</p>
     </div>

@@ -18,6 +18,8 @@
     menu.hidden = !open;
     toggle.setAttribute("aria-expanded", open ? "true" : "false");
     toggle.setAttribute("aria-label", open ? toggle.dataset.labelClose : toggle.dataset.labelOpen);
+    var lab = toggle.querySelector(".mt-label");
+    if (lab) lab.textContent = open ? lab.dataset.textClose : lab.dataset.textOpen;
     toggle.querySelector(".i-open").style.display = open ? "none" : "";
     toggle.querySelector(".i-close").style.display = open ? "" : "none";
     document.body.classList.toggle("menu-open", open);
@@ -25,7 +27,10 @@
   if (toggle && menu) {
     toggle.addEventListener("click", function () { setMenu(menu.hidden); });
     menu.addEventListener("click", function (e) { if (e.target.closest("a")) setMenu(false); });
-    window.addEventListener("resize", function () { if (window.innerWidth > 1140) setMenu(false); });
+    // Klick neben das Menü-Band schließt es
+    document.addEventListener("click", function (e) {
+      if (!menu.hidden && !e.target.closest(".site-header")) setMenu(false);
+    });
   }
 
   /* ── Aufklappbare Abschnitte ── */
