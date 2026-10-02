@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Maschenzähler: Reihen und Maschen einfach mitzählen | PrettyCrochet</title>
+  <meta name="description" content="Der kostenlose Maschenzähler für Häkelprojekte: Tippe an, in welcher Reihe oder Runde du bist und wie viele Maschen du gehäkelt hast – mit Rückgängig, Maschenziel und automatisch gespeichertem Stand."/>
+
+<link rel="stylesheet" href="../assets/fonts/fonts.css"/>
+  <link rel="icon" href="/assets/icons/favicon.ico" sizes="48x48"/>
+  <link rel="icon" href="/assets/icons/favicon.svg" type="image/svg+xml"/>
+  <link rel="icon" href="/assets/icons/favicon-192x192.png" type="image/png" sizes="192x192"/>
+  <link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png"/>
+<style>
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+  body{background:var(--pc-cream);color:var(--pc-espresso);font-family:var(--pc-body);line-height:1.6;}
+  .page-hero .label{justify-content:flex-start;}
+  .ct-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,22rem);gap:1.5rem;align-items:start;}
+  .ct-main{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:1rem;align-items:stretch;}
+  .ct-panel{background:var(--pc-white);border:1px solid var(--pc-line);border-radius:var(--pc-r-panel);padding:clamp(1.1rem,3vw,1.75rem);}
+  .ct-kicker{font-size:.8rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--pc-pine);margin-bottom:.25rem;}
+  .ct-big{font-family:var(--pc-display);font-variation-settings:'SOFT' 20,'WONK' 0,'opsz' 144;font-weight:500;font-size:clamp(4.5rem,15vw,8.5rem);line-height:1;letter-spacing:-.03em;font-variant-numeric:tabular-nums;color:var(--pc-espresso);margin:.1em 0 .15em;transition:transform .12s;}
+  .ct-big.pulse{transform:scale(1.04);}
+  .ct-panel.ct-rows .ct-big{font-size:clamp(3.5rem,10vw,6rem);}
+  .ct-btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;min-height:var(--pc-target);min-width:var(--pc-target);padding:.6rem 1.1rem;border:1px solid var(--pc-pine);border-radius:var(--pc-r-ctrl);background:var(--pc-cream);color:var(--pc-pine);font:500 1rem/1.3 var(--pc-body);text-align:center;cursor:pointer;transition:background-color .15s,color .15s;}
+  .ct-btn:hover:not(:disabled){background:var(--pc-sage-tint);}
+  .ct-btn:disabled{color:var(--pc-muted);border-color:var(--pc-border-decorative);cursor:default;}
+  .ct-btn.primary{background:var(--pc-pine);color:var(--pc-cream);}
+  .ct-btn.primary:hover:not(:disabled){background:var(--pc-espresso);}
+  .ct-add{width:100%;min-height:5.5rem;font-size:1.5rem;font-weight:600;margin:.4rem 0 .6rem;}
+  .ct-add:active{transform:translateY(2px);}
+  .ct-pair{display:grid;grid-template-columns:1fr 1fr;gap:.5rem;}
+  .ct-hint{font-size:.875rem;color:var(--pc-muted);margin-top:.5rem;min-height:1.4em;}
+  .ct-bar{height:10px;border-radius:99px;background:var(--pc-cream-2);overflow:hidden;margin:.5rem 0 .35rem;}
+  .ct-bar span{display:block;height:100%;width:0;background:var(--pc-pine);border-radius:99px;transition:width .18s;}
+  .ct-bar.done span{background:var(--pc-apricot);}
+  .ct-tg{font-size:.95rem;min-height:1.6em;}
+  .ct-tg.over{color:var(--pc-error,#963D35);font-weight:600;}
+  .ct-tg.done{font-weight:600;}
+  .ct-next{width:100%;margin:.4rem 0 .6rem;min-height:4rem;}
+  .ct-next.is-ready{background:var(--pc-apricot);border-color:var(--pc-apricot);color:var(--pc-espresso);font-weight:700;}
+  .ct-side{display:grid;gap:1rem;}
+  .ct-panel h3{font-family:var(--pc-display);font-size:1.25rem;font-weight:500;margin-bottom:1rem;}
+  .ct-field{margin-bottom:1rem;}
+  .ct-field label,.ct-field legend{display:block;font:600 .95rem/1.4 var(--pc-body);margin-bottom:.4rem;padding:0;}
+  fieldset.ct-field{border:0;}
+  .ct-field input[type=text],.ct-field input[type=number]{width:100%;font:400 1rem var(--pc-body);padding:.6rem .8rem;background:var(--pc-white);color:var(--pc-espresso);}
+  .ct-help{font-size:.875rem;color:var(--pc-muted);margin-top:.35rem;}
+  .ct-seg{display:grid;grid-template-columns:1fr 1fr;gap:.5rem;}
+  .ct-seg label{position:relative;margin:0;}
+  .ct-seg input{position:absolute;opacity:0;inset:0;width:100%;height:100%;margin:0;cursor:pointer;}
+  .ct-seg span{display:flex;align-items:center;justify-content:center;min-height:var(--pc-target);border:1px solid var(--pc-pine);border-radius:var(--pc-r-ctrl);background:var(--pc-cream);color:var(--pc-pine);font-weight:500;}
+  .ct-seg input:checked + span{background:var(--pc-sage);color:var(--pc-espresso);box-shadow:inset 0 0 0 1px var(--pc-pine);font-weight:700;}
+  .ct-seg input:focus-visible + span{outline:2px solid var(--pc-espresso);outline-offset:3px;}
+  .ct-check{display:flex;gap:.7rem;align-items:flex-start;}
+  .ct-check input{width:24px;height:24px;margin-top:.15rem;accent-color:var(--pc-pine);flex:none;}
+  .ct-check label{margin:0;font-weight:600;}
+  .ct-hist ol{margin:.25rem 0 0;padding-left:1.4em;max-height:18rem;overflow:auto;}
+  .ct-hist li{padding:.2rem 0;font-variant-numeric:tabular-nums;}
+  .ct-hist .ct-total{margin-top:.8rem;font-weight:700;}
+  .ct-save{font-size:.875rem;color:var(--pc-muted);}
+  .ct-save.err{color:var(--pc-error,#963D35);font-weight:600;}
+  .ct-note{font-size:.875rem;color:var(--pc-muted);}
+  dialog.ct-dialog{border:0;border-radius:var(--pc-r-sheet);padding:1.75rem;max-width:min(28rem,calc(100% - 2rem));background:var(--pc-cream);color:var(--pc-espresso);box-shadow:0 24px 60px rgba(48,42,38,.3);}
+  dialog.ct-dialog::backdrop{background:rgba(48,42,38,.45);}
+  dialog.ct-dialog h2{font-family:var(--pc-display);font-size:1.5rem;font-weight:500;margin-bottom:.6rem;}
+  dialog.ct-dialog .ct-pair{margin-top:1.25rem;}
+  @media(max-width:940px){.ct-grid{grid-template-columns:1fr;}}
+  @media(max-width:620px){.ct-main{grid-template-columns:1fr;}}
+</style>
+
+<link rel="alternate" hreflang="de" href="https://prettycrochetstudio.com/werkzeuge/maschenzaehler.html"/>
+<link rel="alternate" hreflang="en" href="https://prettycrochetstudio.com/en/werkzeuge/maschenzaehler.html"/>
+<link rel="alternate" hreflang="x-default" href="https://prettycrochetstudio.com/werkzeuge/maschenzaehler.html"/>
+<link rel="stylesheet" href="../assets/css/brand.css"/>
+</head>
+<body>
+<a class="skip-link" href="#main">Zum Inhalt springen</a>
+
+<header class="site-header">
+  <nav class="site-nav" aria-label="Hauptnavigation">
+    <a class="brand" href="../index.html" aria-label="PrettyCrochet – zur Startseite"><img src="../assets/logos/prettycrochet-lockup-espresso.svg" alt="" width="617" height="132"></a>
+    <div class="nav-tools">
+      <button type="button" class="icon-btn" data-search-open aria-label="Suche öffnen"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg></button>
+      <div class="lang-switch" aria-label="Sprache wählen"><span aria-current="true">DE</span><span aria-hidden="true">|</span><a href="../en/werkzeuge/maschenzaehler.html" hreflang="en" lang="en">EN</a></div>
+      <button type="button" class="menu-toggle" aria-expanded="false" aria-controls="mobile-menu" aria-label="Menü öffnen" data-label-open="Menü öffnen" data-label-close="Menü schließen"><span class="mt-label" data-text-open="Menü" data-text-close="Schließen">Menü</span><svg class="i-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg><svg class="i-close" style="display:none" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+    </div>
+  </nav>
+  <div class="mobile-menu" id="mobile-menu" hidden>
+    <button type="button" class="btn primary mm-search" data-search-open><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>Anleitungen & Themen suchen</button>
+    <ul>
+      <li><a href="../anleitungen.html">Anleitungen</a></li>
+      <li><a href="../haekeln-basics.html">Häkeln lernen</a></li>
+      <li><a href="lernpfad.html">Lernpfad</a></li>
+      <li><a href="muster-generator.html">Muster-Generator</a></li>
+      <li><a href="maschenzaehler.html" aria-current="page">Maschenzähler</a></li>
+      <li><a href="../blog.html">Blog</a></li>
+      <li><a href="../ueber-mich.html">Über mich</a></li>
+    </ul>
+    <p class="mm-label">Schnell zu</p>
+    <div class="mm-quick"><a href="#" data-search-query="Kürbis">Kürbis</a><a href="#" data-search-query="Magic Ring">Magic Ring</a><a href="#" data-search-query="Anfänger">Anfänger</a><a href="#" data-search-query="Amigurumi">Amigurumi</a></div>
+    <div class="lang-switch mm-lang" aria-label="Sprache wählen"><span aria-current="true">DE</span><span aria-hidden="true">|</span><a href="../en/werkzeuge/maschenzaehler.html" hreflang="en" lang="en">EN</a></div>
+  </div>
+</header>
+<div class="search-overlay" id="search" role="dialog" aria-modal="true" aria-label="Suche öffnen" hidden>
+  <div class="search-panel">
+    <div class="search-bar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><input type="search" placeholder="Anleitung, Technik oder Thema suchen …" aria-label="Anleitung, Technik oder Thema suchen …" autocomplete="off"/><button type="button" class="search-close">Schließen</button></div>
+    <div class="search-results" aria-live="polite"></div>
+  </div>
+</div>
+
+<main id="main" tabindex="-1">
+<section class="page-hero">
+  <p class="breadcrumb"><a href="../index.html">Start</a> · <a href="../anleitungen.html">Anleitungen</a> · Maschenzähler</p>
+  <div class="label">Werkzeug</div>
+  <h1>Der <em>Maschenzähler</em></h1>
+  <p class="sub">Tippe einfach an, in welcher Reihe du bist und wie viele Maschen du schon gehäkelt hast. Dein Stand bleibt auf diesem Gerät gespeichert – ohne Anmeldung, ohne Konto.</p>
+</section>
+
+<section class="ct-section" aria-labelledby="ct-title">
+  <h2 id="ct-title" class="visually-hidden">Zähler</h2>
+  <div class="ct-grid">
+    <div class="ct-main">
+      <div class="ct-panel ct-stitches">
+        <p class="ct-kicker" id="ct-st-label"></p>
+        <p class="ct-big" id="ct-st-num" aria-hidden="true">0</p>
+        <div class="ct-bar" id="ct-bar" aria-hidden="true"><span></span></div>
+        <p class="ct-tg" id="ct-tg"></p>
+        <button type="button" class="ct-btn primary ct-add" id="ct-add">Masche +1</button>
+        <div class="ct-pair">
+          <button type="button" class="ct-btn" id="ct-sub">Masche −1</button>
+          <button type="button" class="ct-btn" id="ct-undo" aria-describedby="ct-undo-hint">Rückgängig</button>
+        </div>
+        <p class="ct-hint" id="ct-undo-hint"></p>
+      </div>
+      <div class="ct-panel ct-rows">
+        <p class="ct-kicker" id="ct-row-label"></p>
+        <p class="ct-big" id="ct-row-num" aria-hidden="true">1</p>
+        <button type="button" class="ct-btn ct-next" id="ct-next"></button>
+        <div class="ct-pair">
+          <button type="button" class="ct-btn" id="ct-rsub"></button>
+          <button type="button" class="ct-btn" id="ct-radd"></button>
+        </div>
+      </div>
+    </div>
+
+    <aside class="ct-side" aria-label="Einstellungen">
+      <div class="ct-panel">
+        <h3>Einstellungen</h3>
+        <fieldset class="ct-field">
+          <legend>Zählweise</legend>
+          <div class="ct-seg">
+            <label><input type="radio" name="ct-mode" value="row" checked><span>Reihen</span></label>
+            <label><input type="radio" name="ct-mode" value="round"><span>Runden</span></label>
+          </div>
+        </fieldset>
+        <div class="ct-field">
+          <label for="ct-target" id="ct-target-lbl"></label>
+          <input type="number" id="ct-target" min="1" max="9999" inputmode="numeric" aria-describedby="ct-target-help">
+          <p class="ct-help" id="ct-target-help"></p>
+        </div>
+        <div class="ct-field">
+          <label for="ct-name">Projektname (optional)</label>
+          <input type="text" id="ct-name" maxlength="60" placeholder="z. B. Kürbis, groß" autocomplete="off">
+        </div>
+        <div class="ct-field ct-check" id="ct-wake-field">
+          <input type="checkbox" id="ct-wake" aria-describedby="ct-wake-help">
+          <div><label for="ct-wake">Bildschirm anlassen</label><p class="ct-help" id="ct-wake-help">Verhindert, dass das Display beim Häkeln ausgeht (wenn dein Gerät das unterstützt).</p></div>
+        </div>
+      </div>
+
+      <div class="ct-hist acc">
+        <details class="acc-item"><summary><h3 class="acc-title" id="ct-hist-title">Verlauf</h3><span class="acc-plus" aria-hidden="true"></span></summary>
+          <div class="acc-body"><p class="ct-help" id="ct-hist-empty"></p><ol id="ct-hist-list"></ol><p class="ct-total" id="ct-total"></p></div>
+        </details>
+      </div>
+
+      <button type="button" class="ct-btn" id="ct-reset"></button>
+      <p class="ct-save" id="ct-save" role="status"></p>
+      <p class="ct-note">Dein Stand wird nur in deinem Browser gespeichert – es werden keine Daten übertragen.</p>
+      <p class="ct-note" id="ct-keys"></p>
+    </aside>
+  </div>
+  <p class="visually-hidden" id="ct-status" role="status" aria-live="polite"></p>
+</section>
+
+<dialog class="ct-dialog" id="ct-dialog" aria-labelledby="ct-dlg-t">
+  <h2 id="ct-dlg-t">Zähler zurücksetzen?</h2>
+  <p id="ct-dlg-p"></p>
+  <div class="ct-pair">
+    <button type="button" class="ct-btn" id="ct-dlg-no">Abbrechen</button>
+    <button type="button" class="ct-btn primary" id="ct-dlg-ok">Zurücksetzen</button>
+  </div>
+</dialog>
+<script>
+(function(){
+  "use strict";
+  var L={"title_hidden": "Zähler", "mode": "Zählweise", "rows": "Reihen", "rounds": "Runden", "row_w": "Reihe", "round_w": "Runde", "st_in": "Maschen in {w} {n}", "add": "Masche +1", "sub": "Masche −1", "undo": "Rückgängig", "undo_none": "Noch nichts zum Rückgängigmachen.", "cur": "Aktuelle {w}", "next": "Nächste {w} beginnen", "rsub": "{w} −1", "radd": "{w} +1", "target_lbl": "Maschen pro {w} (optional)", "target_help": "Mit Ziel zeigt der Zähler an, wann die {w} fertig ist.", "tg_none": "Kein Ziel gesetzt.", "tg_prog": "{s} von {t} Maschen", "tg_done": "Ziel erreicht: {t} Maschen. Weiter mit der nächsten {w}.", "tg_over": "{x} Maschen mehr als geplant ({t}). Prüfe die {w}.", "tg_over1": "1 Masche mehr als geplant ({t}). Prüfe die {w}.", "name_lbl": "Projektname (optional)", "name_ph": "z. B. Kürbis, groß", "wake": "Bildschirm anlassen", "wake_help": "Verhindert, dass das Display beim Häkeln ausgeht (wenn dein Gerät das unterstützt).", "settings": "Einstellungen", "history": "Verlauf", "hist_empty": "Noch keine fertige {w}. Sobald du „Nächste {w} beginnen“ antippst, erscheint sie hier.", "hist_item": "{w} {n}: {s} Maschen", "total": "Maschen insgesamt: {t}", "reset": "Alles zurücksetzen", "dlg_t": "Zähler zurücksetzen?", "dlg_p": "{w} und Maschen springen auf den Anfang, der Verlauf wird geleert. Du kannst das direkt danach mit „Rückgängig“ zurücknehmen.", "dlg_ok": "Zurücksetzen", "dlg_no": "Abbrechen", "saved": "Gespeichert auf diesem Gerät", "save_err": "Speichern nicht möglich. Dein Stand geht verloren, wenn du die Seite schließt.", "priv": "Dein Stand wird nur in deinem Browser gespeichert – es werden keine Daten übertragen.", "keys": "Tastenkürzel: + Masche, − Masche zurück, N nächste {w}, U rückgängig.", "ann": "{w} {n}, {s} Maschen", "ann_next": "Neue {w}: {n}", "ann_undo": "Rückgängig gemacht. {w} {n}, {s} Maschen", "ann_reset": "Zähler zurückgesetzt.", "unit_stitches": "Maschen"}, KEY="prettycrochet_counter_v1";
+  var $=function(id){return document.getElementById(id);};
+  var state={mode:"row",row:1,stitches:0,target:null,name:"",done:[],wake:false}, undo=[];
+  function fmt(t,o){return t.replace(/\{(\w+)\}/g,function(_,k){return o[k]!==undefined?o[k]:"";});}
+  function w(){return state.mode==="round"?L.round_w:L.row_w;}
+  function W(){var x=w();return x.charAt(0).toUpperCase()+x.slice(1);} /* Großschreibung für Satzanfang (DE: Nomen) */
+  function save(){var el=$("ct-save");try{localStorage.setItem(KEY,JSON.stringify(state));el.textContent=L.saved;el.className="ct-save";}catch(e){el.textContent=L.save_err;el.className="ct-save err";}}
+  function load(){try{var j=JSON.parse(localStorage.getItem(KEY)||"null");if(j&&typeof j==="object"){state.mode=j.mode==="round"?"round":"row";state.row=Math.max(1,j.row|0||1);state.stitches=Math.max(0,j.stitches|0);state.target=j.target>0?j.target|0:null;state.name=String(j.name||"").slice(0,60);state.done=Array.isArray(j.done)?j.done.filter(function(d){return d&&d.n>0;}).slice(-500):[];state.wake=!!j.wake;}}catch(e){}}
+  function snap(){undo.push(JSON.stringify({row:state.row,stitches:state.stitches,done:state.done}));if(undo.length>200)undo.shift();}
+  function announce(t){$("ct-status").textContent="";setTimeout(function(){$("ct-status").textContent=t;},30);}
+  function pulse(id){var e=$(id);e.classList.add("pulse");setTimeout(function(){e.classList.remove("pulse");},120);}
+  function render(){
+    var wd=W();
+    $("ct-st-label").textContent=fmt(L.st_in,{w:w(),n:state.row});
+    $("ct-st-num").textContent=state.stitches;
+    $("ct-row-label").textContent=fmt(L.cur,{w:w()});
+    $("ct-row-num").textContent=state.row;
+    $("ct-next").textContent=fmt(L.next,{w:w()});
+    $("ct-rsub").textContent=fmt(L.rsub,{w:wd}); $("ct-radd").textContent=fmt(L.radd,{w:wd});
+    $("ct-rsub").disabled=state.row<=1; $("ct-sub").disabled=state.stitches<=0;
+    $("ct-undo").disabled=!undo.length; $("ct-undo-hint").textContent=undo.length?"":L.undo_none;
+    $("ct-target-lbl").textContent=fmt(L.target_lbl,{w:w()}); $("ct-target-help").textContent=fmt(L.target_help,{w:w()});
+    $("ct-hist-title").textContent=L.history; $("ct-reset").textContent=L.reset;
+    $("ct-keys").textContent=fmt(L.keys,{w:w()});
+    document.querySelector('input[name="ct-mode"][value="'+state.mode+'"]').checked=true;
+    if(document.activeElement!==$("ct-target"))$("ct-target").value=state.target||"";
+    if(document.activeElement!==$("ct-name"))$("ct-name").value=state.name;
+    $("ct-wake").checked=state.wake;
+    var bar=$("ct-bar"),tg=$("ct-tg"),nx=$("ct-next");
+    tg.className="ct-tg";bar.className="ct-bar";nx.classList.remove("is-ready");
+    if(state.target){
+      var pct=Math.min(100,Math.round(state.stitches/state.target*100));bar.firstElementChild.style.width=pct+"%";
+      if(state.stitches===state.target){tg.textContent="✓ "+fmt(L.tg_done,{t:state.target,w:w()});tg.className="ct-tg done";bar.className="ct-bar done";nx.classList.add("is-ready");}
+      else if(state.stitches>state.target){tg.textContent="⚠ "+fmt(state.stitches-state.target===1?L.tg_over1:L.tg_over,{x:state.stitches-state.target,t:state.target,w:w()});tg.className="ct-tg over";bar.className="ct-bar done";}
+      else tg.textContent=fmt(L.tg_prog,{s:state.stitches,t:state.target});
+    }else{bar.firstElementChild.style.width="0";tg.textContent=L.tg_none;}
+    var ol=$("ct-hist-list");ol.innerHTML="";
+    state.done.slice().reverse().forEach(function(d){var li=document.createElement("li");li.textContent=fmt(L.hist_item,{w:W(),n:d.n,s:d.s});ol.appendChild(li);});
+    $("ct-hist-empty").hidden=state.done.length>0; $("ct-hist-empty").textContent=fmt(L.hist_empty,{w:w()});
+    var total=state.stitches;state.done.forEach(function(d){total+=d.s;});
+    $("ct-total").textContent=fmt(L.total,{t:total});
+    $("ct-dlg-p").textContent=fmt(L.dlg_p,{w:W()});
+  }
+  function say(){announce(fmt(L.ann,{w:W(),n:state.row,s:state.stitches}));}
+  function add(){snap();state.stitches++;if(navigator.vibrate)try{navigator.vibrate(8);}catch(e){}save();render();pulse("ct-st-num");say();}
+  function sub(){if(state.stitches<=0)return;snap();state.stitches--;save();render();pulse("ct-st-num");say();}
+  function nextRow(){snap();if(state.stitches>0)state.done.push({n:state.row,s:state.stitches});state.row++;state.stitches=0;save();render();pulse("ct-row-num");announce(fmt(L.ann_next,{w:W(),n:state.row}));}
+  function rowDelta(d){if(d<0&&state.row<=1)return;snap();state.row+=d;save();render();pulse("ct-row-num");say();}
+  function doUndo(){if(!undo.length)return;var p=JSON.parse(undo.pop());state.row=p.row;state.stitches=p.stitches;state.done=p.done;save();render();announce(fmt(L.ann_undo,{w:W(),n:state.row,s:state.stitches}));}
+  function doReset(){snap();state.row=1;state.stitches=0;state.done=[];save();render();announce(L.ann_reset);}
+  /* Bildschirm anlassen */
+  var lock=null;
+  async function wakeOn(){try{if("wakeLock" in navigator&&state.wake&&document.visibilityState==="visible")lock=await navigator.wakeLock.request("screen");}catch(e){}}
+  function wakeOff(){try{if(lock){lock.release();lock=null;}}catch(e){}}
+  if(!("wakeLock" in navigator))$("ct-wake-field").hidden=true;
+  document.addEventListener("visibilitychange",function(){if(document.visibilityState==="visible")wakeOn();});
+
+  $("ct-add").addEventListener("click",add); $("ct-sub").addEventListener("click",sub); $("ct-undo").addEventListener("click",doUndo);
+  $("ct-next").addEventListener("click",nextRow); $("ct-rsub").addEventListener("click",function(){rowDelta(-1);}); $("ct-radd").addEventListener("click",function(){rowDelta(1);});
+  document.querySelectorAll('input[name="ct-mode"]').forEach(function(r){r.addEventListener("change",function(){state.mode=r.value;save();render();});});
+  $("ct-target").addEventListener("input",function(){var v=parseInt(this.value,10);state.target=v>0&&v<10000?v:null;save();render();});
+  $("ct-name").addEventListener("input",function(){state.name=this.value.slice(0,60);save();});
+  $("ct-wake").addEventListener("change",function(){state.wake=this.checked;save();if(state.wake)wakeOn();else wakeOff();});
+  var dlg=$("ct-dialog");
+  $("ct-reset").addEventListener("click",function(){if(dlg.showModal)dlg.showModal();else if(window.confirm(fmt(L.dlg_p,{w:W()}))){doReset();}});
+  $("ct-dlg-ok").addEventListener("click",function(){dlg.close();doReset();}); $("ct-dlg-no").addEventListener("click",function(){dlg.close();});
+  document.addEventListener("keydown",function(e){
+    if(e.ctrlKey||e.metaKey||e.altKey||dlg.open)return;
+    var t=(e.target.tagName||"").toLowerCase(); if(t==="input"||t==="textarea"||t==="select")return;
+    if(e.key==="+"||e.key==="="){e.preventDefault();add();}
+    else if(e.key==="-"||e.key==="\u2212"){e.preventDefault();sub();}
+    else if(e.key==="n"||e.key==="N"){e.preventDefault();nextRow();}
+    else if(e.key==="u"||e.key==="U"){e.preventDefault();doUndo();}
+  });
+  load(); render(); save(); if(state.wake)wakeOn();
+})();
+</script>
+</main>
+
+<footer class="site-footer">
+  <div class="sf-grid">
+    <div class="sf-about">
+      <a class="sf-brand" href="../index.html"><img src="../assets/logos/prettycrochet-lockup-cream.svg" alt="PrettyCrochet" width="617" height="132" loading="lazy"></a>
+      <p class="sf-claim">Aus Garn wird deins.</p>
+      <p>Kostenlose Häkelanleitungen, ein interaktiver Lernpfad und Werkzeuge zum Selbstentwerfen – für alle, die mit Garn und Nadel Lieblingsstücke machen.</p>
+    </div>
+    <div><h2>Häkeln lernen</h2><ul>
+        <li><a href="lernpfad.html">Lernpfad (7 Lektionen)</a></li>
+        <li><a href="../haekeln-basics.html">Häkel-Basics</a></li>
+        <li><a href="../abkuerzungen.html">Abkürzungen &amp; Häkelschrift</a></li>
+      </ul></div>
+    <div><h2>Anleitungen</h2><ul>
+        <li><a href="../anleitungen/kuerbis.html">Kürbis häkeln</a></li>
+        <li><a href="../anleitungen/haekel-baer.html">Kleiner Häkel-Bär</a></li>
+        <li><a href="../anleitungen/haekeltasche.html">Sommer-Häkeltasche</a></li>
+        <li><a href="../anleitungen/blueten-blaetter.html">Blüten &amp; Blätter</a></li>
+        <li><a href="../anleitungen.html">Alle Anleitungen →</a></li>
+      </ul></div>
+    <div><h2>Entdecken</h2><ul>
+        <li><a href="muster-generator.html">Muster-Generator</a></li>
+        <li><a href="maschenzaehler.html">Maschenzähler</a></li>
+        <li><a href="../blog.html">Blog</a></li>
+        <li><a href="../amigurumi.html">Amigurumi</a></li>
+        <li><a href="../wohndeko.html">Wohndeko</a></li>
+        <li><a href="../ueber-mich.html">Über mich</a></li>
+      </ul></div>
+  </div>
+  <div class="sf-bottom">
+    <span>© 2026 PrettyCrochet</span>
+    <div class="sf-legal"><a href="mailto:prettycrochetstudio@gmail.com">Kontakt</a><a href="#">Impressum</a><a href="../datenschutz.html">Datenschutz</a></div>
+  </div>
+</footer>
+
+<script src="../assets/js/search-index.js" defer></script>
+<script src="../assets/js/site.js" data-root="../" data-lang="de" defer></script>
+</body>
+</html>
