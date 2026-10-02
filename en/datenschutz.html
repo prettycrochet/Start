@@ -8,13 +8,13 @@
   <link rel="stylesheet" href="../assets/fonts/fonts.css"/>
   <style>
     :root {
-      --creme:   #FAF6F1;
-      --salbei:  #A7B39A;
-      --beige:   #D6C5B5;
-      --braun:   #8B6F5B;
-      --espresso:#4A3B32;
+      --creme:   #F7F3EC;
+      --salbei:  #ABB9A2;
+      --beige:   #E4DED3;
+      --braun:   #3E5748;
+      --espresso:#302A26;
       --white:   #FFFFFF;
-      --muted:   #9A8880;
+      --muted:   #6B625C;
     }
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -23,7 +23,7 @@
     body {
       background: var(--creme);
       color: var(--espresso);
-      font-family: 'Jost', sans-serif;
+      font-family: 'Manrope', sans-serif;
       font-weight: 300;
       line-height: 1.75;
     }
@@ -37,13 +37,13 @@
       align-items: center;
       justify-content: space-between;
       padding: 1.1rem 6vw;
-      background: rgba(250,246,241,0.92);
+      background: rgba(247,243,236,0.92);
       backdrop-filter: blur(10px);
       border-bottom: 1px solid var(--beige);
     }
     .logo-wrap { display: flex; align-items: center; gap: 0.75rem; text-decoration: none; }
     .logo-text {
-      font-family: 'Cormorant Garamond', serif;
+      font-family: 'Fraunces', serif;
       font-size: 1.45rem;
       font-weight: 600;
       color: var(--espresso);
@@ -89,11 +89,11 @@
       color: var(--braun);
       margin-bottom: 1.4rem;
     }
-    .breadcrumb a { color: var(--braun); text-decoration: none; border-bottom: 1px solid rgba(139,111,91,0.35); }
+    .breadcrumb a { color: var(--braun); text-decoration: none; border-bottom: 1px solid rgba(62,87,72,0.35); }
     .breadcrumb a:hover { border-color: var(--braun); }
 
     .about-hero h1 {
-      font-family: 'Cormorant Garamond', serif;
+      font-family: 'Fraunces', serif;
       font-size: clamp(2.3rem, 4.8vw, 3.8rem);
       font-weight: 300;
       line-height: 1.12;
@@ -108,7 +108,7 @@
       line-height: 1.85;
     }
     .signature {
-      font-family: 'Cormorant Garamond', serif;
+      font-family: 'Fraunces', serif;
       font-style: italic;
       font-size: 1.5rem;
       color: var(--espresso);
@@ -128,7 +128,7 @@
     .label::before { content:''; display:inline-block; width:24px; height:1px; background:var(--salbei); }
 
     h2 {
-      font-family: 'Cormorant Garamond', serif;
+      font-family: 'Fraunces', serif;
       font-size: clamp(1.8rem, 3vw, 2.6rem);
       font-weight: 300;
       line-height: 1.2;
@@ -144,7 +144,7 @@
     .story-text { max-width: 68ch; font-size: 1rem; }
     .story-text p { margin-bottom: 1.3rem; }
     .pull-quote {
-      font-family: 'Cormorant Garamond', serif;
+      font-family: 'Fraunces', serif;
       font-style: italic;
       font-size: 1.5rem;
       line-height: 1.5;
@@ -173,7 +173,7 @@
     }
     .value-icon { font-size: 1.7rem; }
     .value-item h3 {
-      font-family: 'Cormorant Garamond', serif;
+      font-family: 'Fraunces', serif;
       font-size: 1.18rem;
       font-weight: 400;
     }
@@ -192,13 +192,13 @@
     .journey-row:first-child { padding-top: 0; }
     .journey-row:last-child { border-bottom: none; }
     .journey-year {
-      font-family: 'Cormorant Garamond', serif;
+      font-family: 'Fraunces', serif;
       font-size: 1.5rem;
       font-weight: 300;
       color: var(--salbei);
     }
     .journey-content h4 {
-      font-family: 'Cormorant Garamond', serif;
+      font-family: 'Fraunces', serif;
       font-size: 1.15rem;
       font-weight: 400;
       margin-bottom: 0.3rem;
@@ -271,7 +271,7 @@
       text-transform: uppercase;
       text-decoration: none;
       color: var(--braun);
-      border-bottom: 1px solid rgba(139,111,91,0.4);
+      border-bottom: 1px solid rgba(62,87,72,0.4);
       padding-bottom: 3px;
       align-self: center;
       transition: border-color 0.2s;
@@ -289,11 +289,11 @@
       grid-template-columns: 2fr 1fr 1fr;
       gap: 4rem;
       padding-bottom: 3rem;
-      border-bottom: 1px solid rgba(214,197,181,0.15);
+      border-bottom: 1px solid rgba(228,222,211,0.15);
       margin-bottom: 2rem;
     }
     .footer-logo {
-      font-family: 'Cormorant Garamond', serif;
+      font-family: 'Fraunces', serif;
       font-size: 1.5rem;
       font-weight: 400;
       color: var(--creme);
@@ -301,7 +301,7 @@
       margin-bottom: 1rem;
     }
     .footer-logo span { color: var(--salbei); }
-    footer p { font-size: 0.83rem; color: rgba(214,197,181,0.6); line-height: 1.8; max-width: 32ch; }
+    footer p { font-size: 0.83rem; color: rgba(228,222,211,0.6); line-height: 1.8; max-width: 32ch; }
     footer h4 {
       font-size: 0.7rem;
       letter-spacing: 0.18em;
@@ -310,12 +310,12 @@
       margin-bottom: 1.2rem;
     }
     footer ul { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
-    footer ul a { font-size: 0.84rem; color: rgba(214,197,181,0.7); text-decoration: none; transition: color 0.2s; }
+    footer ul a { font-size: 0.84rem; color: rgba(228,222,211,0.7); text-decoration: none; transition: color 0.2s; }
     footer ul a:hover { color: var(--creme); }
     .footer-bottom {
       text-align: center;
       font-size: 0.72rem;
-      color: rgba(214,197,181,0.35);
+      color: rgba(228,222,211,0.35);
       letter-spacing: 0.06em;
     }
 
@@ -332,14 +332,14 @@
   
   /* ── Sprachumschalter DE | EN ── */
   .nav-right{display:flex;align-items:center;gap:1.4rem;}
-  .lang-switch{display:flex;align-items:center;gap:.45rem;font-size:.78rem;letter-spacing:.1em;color:#9A8880;}
+  .lang-switch{display:flex;align-items:center;gap:.45rem;font-size:.78rem;letter-spacing:.1em;color:#6B625C;}
   .lang-switch a{color:inherit;text-decoration:none;border-bottom:1px solid transparent;transition:color .2s,border-color .2s;}
-  .lang-switch a:hover{color:#4A3B32;border-color:#A7B39A;}
-  .lang-switch [aria-current]{color:#4A3B32;font-weight:500;}
+  .lang-switch a:hover{color:#302A26;border-color:#ABB9A2;}
+  .lang-switch [aria-current]{color:#302A26;font-weight:500;}
   header .lang-switch{justify-content:flex-end;margin-bottom:.4rem;}
   nav{gap:1rem;}
   @media(max-width:480px){.nav-right{gap:.8rem;}.nav-right .nav-cta{padding:.5rem .85rem;font-size:.7rem;}}
-  .nav-links a[aria-current="page"]{color:#A7B39A;}
+  .nav-links a[aria-current="page"]{color:#ABB9A2;}
   .nav-links a,.nav-cta,.lang-switch{white-space:nowrap;}
   @media(max-width:1180px){nav{padding-left:4vw;padding-right:4vw;}.nav-links{gap:1.3rem;}.nav-links a{font-size:.75rem;letter-spacing:.07em;}}
   @media(max-width:980px){.nav-links{display:none;}}
@@ -347,9 +347,9 @@
   /* ── Rechtstexte ── */
   .legal{max-width:760px;margin:0 auto;padding:9rem 6vw 5rem;}
   .legal .breadcrumb{font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;color:var(--braun);margin-bottom:1.5rem;}
-  .legal .breadcrumb a{color:var(--braun);text-decoration:none;border-bottom:1px solid rgba(139,111,91,.35);}
-  .legal h1{font-family:'Cormorant Garamond',serif;font-size:clamp(2.2rem,4.5vw,3.2rem);font-weight:300;line-height:1.15;color:var(--espresso);margin-bottom:.6rem;}
-  .legal h2{font-family:'Cormorant Garamond',serif;font-size:1.55rem;font-weight:400;line-height:1.25;color:var(--espresso);margin:2.6rem 0 .8rem;}
+  .legal .breadcrumb a{color:var(--braun);text-decoration:none;border-bottom:1px solid rgba(62,87,72,.35);}
+  .legal h1{font-family:'Fraunces',serif;font-size:clamp(2.2rem,4.5vw,3.2rem);font-weight:300;line-height:1.15;color:var(--espresso);margin-bottom:.6rem;}
+  .legal h2{font-family:'Fraunces',serif;font-size:1.55rem;font-weight:400;line-height:1.25;color:var(--espresso);margin:2.6rem 0 .8rem;}
   .legal p,.legal li{font-size:.98rem;line-height:1.8;color:var(--espresso);}
   .legal p{margin-bottom:1rem;}
   .legal ul{margin:0 0 1rem 1.2rem;}
@@ -359,70 +359,60 @@
   .legal .legal-box{background:#EEF1EA;border-left:3px solid var(--salbei);padding:1.4rem 1.6rem .6rem;margin:1.5rem 0 1rem;}
   .legal .legal-box h2{margin-top:0;font-size:1.3rem;}
   .legal .address{line-height:1.9;}
-  .legal .platzhalter{background:#F2D9D2;padding:.05rem .35rem;border-radius:3px;}
+  .legal .platzhalter{background:#F6DDD0;padding:.05rem .35rem;border-radius:3px;}
 </style>
 <link rel="alternate" hreflang="de" href="https://prettycrochetstudio.com/datenschutz.html"/>
 <link rel="alternate" hreflang="en" href="https://prettycrochetstudio.com/en/datenschutz.html"/>
 <link rel="alternate" hreflang="x-default" href="https://prettycrochetstudio.com/datenschutz.html"/>
-<style id="site-header">
-  /* Einheitliche Kopfzeile auf allen Seiten – hier zentral anpassen */
-  nav{position:fixed;top:0;left:0;right:0;z-index:200;box-sizing:border-box;display:flex;align-items:center;justify-content:space-between;gap:1rem;margin:0;padding:1.1rem 6vw;background:rgba(250,246,241,0.92);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid #D6C5B5;font-family:'Jost',sans-serif;font-size:16px;font-weight:300;line-height:1.75;}
-  nav .logo-wrap{display:flex;align-items:center;gap:.75rem;text-decoration:none;}
-  nav .logo-text{font-family:'Cormorant Garamond',serif;font-size:1.45rem;font-weight:600;font-style:normal;color:#4A3B32;letter-spacing:.02em;line-height:1.75;}
-  nav .logo-text span{color:#A7B39A;}
-  nav .nav-links{display:flex;gap:2.2rem;list-style:none;margin:0;padding:0;}
-  nav .nav-links li{margin:0;padding:0;}
-  nav .nav-links a{font-family:'Jost',sans-serif;font-size:.82rem;font-weight:400;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;color:#4A3B32;line-height:1.75;white-space:nowrap;border:0;transition:color .2s;}
-  nav .nav-links a:hover,nav .nav-links a[aria-current="page"]{color:#A7B39A;}
-  nav .nav-right{display:flex;align-items:center;gap:1.4rem;}
-  nav .lang-switch{display:flex;align-items:center;gap:.45rem;margin:0;font-family:'Jost',sans-serif;font-size:.78rem;font-weight:300;letter-spacing:.1em;line-height:1.75;color:#9A8880;white-space:nowrap;}
-  nav .lang-switch a{color:inherit;text-decoration:none;border-bottom:1px solid transparent;transition:color .2s,border-color .2s;}
-  nav .lang-switch a:hover{color:#4A3B32;border-color:#A7B39A;}
-  nav .lang-switch [aria-current]{color:#4A3B32;font-weight:500;}
-  nav .nav-cta{display:inline-block;font-family:'Jost',sans-serif;font-size:.8rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;line-height:1.75;color:#FFFFFF;background:#4A3B32;padding:.6rem 1.4rem;border:0;border-radius:2px;white-space:nowrap;transition:background .2s;}
-  nav .nav-cta:hover{background:#8B6F5B;color:#FFFFFF;}
-  @media(max-width:1180px){nav{padding-left:4vw;padding-right:4vw;}nav .nav-links{gap:1.3rem;}nav .nav-links a{font-size:.75rem;letter-spacing:.07em;}}
-  @media(max-width:980px){nav .nav-links{display:none;}}
-  @media(max-width:480px){nav .nav-right{gap:.8rem;}nav .nav-cta{padding:.5rem .85rem;font-size:.7rem;}}
-</style>
-<style id="site-footer">
-  /* Einheitliche Fußzeile auf allen Seiten – hier zentral anpassen */
-  footer:not(.author){box-sizing:border-box;margin:0;background:#4A3B32;color:#D6C5B5;padding:4rem 10vw 2rem;font-family:'Jost',sans-serif;font-size:16px;font-weight:300;line-height:1.75;}
-  footer:not(.author) .footer-top{display:grid;grid-template-columns:2fr 1fr 1fr;gap:4rem;padding-bottom:3rem;border-bottom:1px solid rgba(214,197,181,0.15);margin-bottom:2rem;}
-  footer:not(.author) .footer-logo{display:block;margin:0 0 1rem;font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:400;line-height:1.75;color:#FAF6F1;}
-  footer:not(.author) .footer-logo span{color:#A7B39A;}
-  footer:not(.author) p{margin:0;max-width:32ch;font-size:.83rem;font-weight:300;line-height:1.8;color:rgba(214,197,181,0.6);}
-  footer:not(.author) h4{margin:0 0 1.2rem;font-family:'Jost',sans-serif;font-size:.7rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;line-height:1.75;color:#A7B39A;}
-  footer:not(.author) ul{list-style:none;display:flex;flex-direction:column;gap:.6rem;margin:0;padding:0;}
-  footer:not(.author) li{margin:0;padding:0;}
-  footer:not(.author) ul a{font-family:'Jost',sans-serif;font-size:.84rem;font-weight:300;line-height:1.75;color:rgba(214,197,181,0.7);text-decoration:none;transition:color .2s;}
-  footer:not(.author) ul a:hover{color:#FAF6F1;}
-  footer:not(.author) .footer-bottom{text-align:center;font-size:.72rem;font-weight:300;letter-spacing:.06em;line-height:1.75;color:rgba(214,197,181,0.35);}
-  @media(max-width:800px){footer:not(.author) .footer-top{grid-template-columns:1fr;gap:2rem;}}
-</style>
+<link rel="stylesheet" href="../assets/css/brand.css"/>
 </head>
 <body>
+<a class="skip-link" href="#main">Skip to content</a>
 
-<!-- NAV -->
-<nav aria-label="Main navigation">
-  <a href="index.html" class="logo-wrap" aria-label="PrettyCrochet – home">
-    <span class="logo-text">Pretty<span>Crochet</span></span>
-  </a>
-  <ul class="nav-links">
-    <li><a href="haekeln-basics.html">Crochet Basics</a></li>
-    <li><a href="anleitungen.html">Patterns</a></li>
-    <li><a href="werkzeuge/muster-generator.html">Pattern Generator</a></li>
-    <li><a href="blog.html">Blog</a></li>
-    <li><a href="ueber-mich.html">About me</a></li>
-  </ul>
-  <div class="nav-right"><div class="lang-switch" aria-label="Choose language"><a href="../datenschutz.html" hreflang="de" lang="de">DE</a><span aria-hidden="true">|</span><span aria-current="true">EN</span></div><a href="index.html#newsletter" class="nav-cta">Newsletter</a></div>
-</nav>
+<header class="site-header">
+  <nav class="site-nav" aria-label="Main navigation">
+    <a class="brand" href="index.html" aria-label="PrettyCrochet – home">Pretty<span>Crochet</span></a>
+    <ul class="nav-links">
+      <li><a href="anleitungen.html">Patterns</a></li>
+      <li><a href="haekeln-basics.html">Learn to crochet</a></li>
+      <li><a href="werkzeuge/lernpfad.html">Learning path</a></li>
+      <li><a href="werkzeuge/muster-generator.html">Pattern generator</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="ueber-mich.html">About</a></li>
+    </ul>
+    <div class="nav-tools">
+      <button type="button" class="icon-btn" data-search-open aria-label="Open search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg></button>
+      <div class="lang-switch" aria-label="Choose language"><a href="../datenschutz.html" hreflang="de" lang="de">DE</a><span aria-hidden="true">|</span><span aria-current="true">EN</span></div>
+      <button type="button" class="icon-btn menu-toggle" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu" data-label-open="Open menu" data-label-close="Close menu"><svg class="i-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg><svg class="i-close" style="display:none" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+    </div>
+  </nav>
+  <div class="mobile-menu" id="mobile-menu" hidden>
+    <button type="button" class="btn primary mm-search" data-search-open><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>Search patterns & topics</button>
+    <ul>
+      <li><a href="anleitungen.html">Patterns</a></li>
+      <li><a href="haekeln-basics.html">Learn to crochet</a></li>
+      <li><a href="werkzeuge/lernpfad.html">Learning path</a></li>
+      <li><a href="werkzeuge/muster-generator.html">Pattern generator</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="ueber-mich.html">About</a></li>
+    </ul>
+    <p class="mm-label">Jump to</p>
+    <div class="mm-quick"><a href="#" data-search-query="pumpkin">Pumpkin</a><a href="#" data-search-query="magic ring">Magic ring</a><a href="#" data-search-query="beginner">Beginner</a><a href="#" data-search-query="amigurumi">Amigurumi</a></div>
+  </div>
+</header>
+<div class="search-overlay" id="search" role="dialog" aria-modal="true" aria-label="Open search" hidden>
+  <div class="search-panel">
+    <div class="search-bar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><input type="search" placeholder="Search patterns, techniques or topics …" aria-label="Search patterns, techniques or topics …" autocomplete="off"/><button type="button" class="search-close">Close</button></div>
+    <div class="search-results" aria-live="polite"></div>
+  </div>
+</div>
 
-<main class="legal">
+<main id="main" tabindex="-1" class="legal">
 <!-- ANPASSEN: Alle markierten Platzhalter [in eckigen Klammern] vor dem Hochladen ersetzen. -->
-  <p class="breadcrumb"><a href="index.html">Home</a> · Privacy policy</p>
+  <div class="legal-hero">  <p class="breadcrumb"><a href="index.html">Home</a> · Privacy policy</p>
   <h1>Privacy policy</h1>
   <p class="legal-meta">Last updated: September 25, 2026 · This is a translation for your convenience; in case of doubt, the <a href="../datenschutz.html" lang="de">German version</a> applies.</p>
+  </div>
 
   <section class="legal-box">
     <h2>The key points</h2>
@@ -434,18 +424,16 @@
     </ul>
   </section>
 
-  <h2 id="controller">1. Controller</h2>
-  <p>The controller responsible for data processing on this website is:</p>
+  <div class="acc legal-acc">
+<details class="acc-item" id="controller"><summary><h2 class="acc-title">1. Controller</h2><span class="acc-plus" aria-hidden="true"></span></summary><div class="acc-body"><p>The controller responsible for data processing on this website is:</p>
   <p class="address">
     <span class="platzhalter">[First name Last name]</span><br>
     <span class="platzhalter">[Street and number]</span><br>
     <span class="platzhalter">[Postcode City]</span><br>
     Germany<br>
     Email: <a href="mailto:prettycrochetstudio@gmail.com">prettycrochetstudio@gmail.com</a>
-  </p>
-
-  <h2 id="hosting">2. Hosting and server logs</h2>
-  <p>This website is provided via <strong>GitHub Pages</strong>, a service of GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA.</p>
+  </p></div></details>
+<details class="acc-item" id="hosting"><summary><h2 class="acc-title">2. Hosting and server logs</h2><span class="acc-plus" aria-hidden="true"></span></summary><div class="acc-body"><p>This website is provided via <strong>GitHub Pages</strong>, a service of GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA.</p>
   <p>When you open a page, GitHub automatically processes technical data transmitted by your browser, in particular:</p>
   <ul>
     <li>IP address</li>
@@ -455,35 +443,18 @@
     <li>browser type, operating system and language settings</li>
   </ul>
   <p>This data is required to deliver the website, keep it secure and prevent misuse. The legal basis is Art. 6(1)(f) GDPR; my legitimate interest lies in providing the website securely and reliably. I have no access to these logs myself.</p>
-  <p>Data may be transferred to the USA in the process. GitHub is certified under the EU-US Data Privacy Framework, for which an adequacy decision of the European Commission exists (Art. 45 GDPR). You can find more information in <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" rel="noopener">GitHub's privacy statement</a>.</p>
-
-  <h2 id="domain">3. Domain and DNS</h2>
-  <p>The domain prettycrochetstudio.com is registered with IONOS SE, Elgendorfer Str. 57, 56410 Montabaur, Germany. IONOS provides the name resolution (DNS) that allows your browser to find the website. No content of this website is delivered via IONOS. The legal basis is Art. 6(1)(f) GDPR.</p>
-
-  <h2 id="encryption">4. SSL/TLS encryption</h2>
-  <p>This website uses SSL/TLS encryption. You can recognize an encrypted connection by the padlock icon and “https://” in your browser's address bar.</p>
-
-  <h2 id="cookies">5. Cookies, tracking and fonts</h2>
-  <p>This website does not set cookies and does not use any analytics, tracking or advertising services. No content from external servers is embedded. The fonts used (Cormorant Garamond and Jost) are stored locally on this website; no connection to servers of Google or other providers is made when you load a page.</p>
-
-  <h2 id="contact">6. Contact by email</h2>
-  <p>If you send me an email, I process your email address and the content of your message in order to answer your request. The legal basis is Art. 6(1)(b) GDPR if your request relates to a contract, and otherwise Art. 6(1)(f) GDPR; my legitimate interest lies in answering your request.</p>
-  <p>For email I use the Gmail service of Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Ireland. Your message is stored there. I delete it as soon as it is no longer needed to handle your request and no statutory retention obligations apply.</p>
-
-  <h2 id="pattern-generator">7. Pattern generator (storage in your browser)</h2>
-  <p>The <a href="werkzeuge/muster-generator.html">pattern generator</a> saves your drafts in your browser's local storage so they are still there on your next visit. This data stays exclusively on your device and is not transmitted to me or any third party. Storing it is strictly necessary for the function you requested (Section 25(2) No. 2 of the German TDDDG). You can delete the data at any time via “Clear part” or in your browser settings.</p>
-
-  <h2 id="newsletter">8. Newsletter</h2>
-  <p>The newsletter sign-up on this website is not active yet. An email address entered in the sign-up field is neither transmitted nor stored. As soon as the newsletter launches, this privacy policy will be updated accordingly.</p>
-
-  <h2 id="affiliate">9. Affiliate links</h2>
-  <p>Some links on this website may be affiliate links. If you click such a link and buy something from the partner, I receive a small commission – at no extra cost to you. Only when you click do you leave this website; the partner may then use cookies or similar technologies to attribute the purchase to the link. The partner is responsible for this; I do not receive any personal data about you. I currently take part in the following affiliate programs: <span class="platzhalter">[e.g. Amazon Associates – or: none at the moment]</span>.</p>
-
-  <h2 id="links">10. Links to other websites</h2>
-  <p>This website contains links to other websites, for example in the sources of the blog posts. When you click such a link, you leave this website. The operators of the linked websites are responsible for any data processing there.</p>
-
-  <h2 id="rights">11. Your rights</h2>
-  <p>Within the limits of the law, you have the right at any time to:</p>
+  <p>Data may be transferred to the USA in the process. GitHub is certified under the EU-US Data Privacy Framework, for which an adequacy decision of the European Commission exists (Art. 45 GDPR). You can find more information in <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" rel="noopener">GitHub's privacy statement</a>.</p></div></details>
+<details class="acc-item" id="domain"><summary><h2 class="acc-title">3. Domain and DNS</h2><span class="acc-plus" aria-hidden="true"></span></summary><div class="acc-body"><p>The domain prettycrochetstudio.com is registered with IONOS SE, Elgendorfer Str. 57, 56410 Montabaur, Germany. IONOS provides the name resolution (DNS) that allows your browser to find the website. No content of this website is delivered via IONOS. The legal basis is Art. 6(1)(f) GDPR.</p></div></details>
+<details class="acc-item" id="encryption"><summary><h2 class="acc-title">4. SSL/TLS encryption</h2><span class="acc-plus" aria-hidden="true"></span></summary><div class="acc-body"><p>This website uses SSL/TLS encryption. You can recognize an encrypted connection by the padlock icon and “https://” in your browser's address bar.</p></div></details>
+<details class="acc-item" id="cookies"><summary><h2 class="acc-title">5. Cookies, tracking and fonts</h2><span class="acc-plus" aria-hidden="true"></span></summary><div class="acc-body"><p>This website does not set cookies and does not use any analytics, tracking or advertising services. No content from external servers is embedded. The fonts used (Fraunces and Manrope) are stored locally on this website; no connection to servers of Google or other providers is made when you load a page.</p></div></details>
+<details class="acc-item" id="contact"><summary><h2 class="acc-title">6. Contact by email</h2><span class="acc-plus" aria-hidden="true"></span></summary><div class="acc-body"><p>If you send me an email, I process your email address and the content of your message in order to answer your request. The legal basis is Art. 6(1)(b) GDPR if your request relates to a contract, and otherwise Art. 6(1)(f) GDPR; my legitimate interest lies in answering your request.</p>
+  <p>For email I use the Gmail service of Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Ireland. Your message is stored there. I delete it as soon as it is no longer needed to handle your request and no statutory retention obligations apply.</p></div></details>
+<details class="acc-item" id="pattern-generator"><summary><h2 class="acc-title">7. Pattern generator and learning path (storage in your browser)</h2><span class="acc-plus" aria-hidden="true"></span></summary><div class="acc-body"><p>The <a href="werkzeuge/muster-generator.html">pattern generator</a> saves your drafts in your browser's local storage so they are still there on your next visit. This data stays exclusively on your device and is not transmitted to me or any third party. Storing it is strictly necessary for the function you requested (Section 25(2) No. 2 of the German TDDDG). You can delete the data at any time via “Clear part” or in your browser settings.</p>
+  <p>In the same way, the <a href="werkzeuge/lernpfad.html">learning path</a> saves your progress (which lessons you have completed) only in your browser's local storage. This data never leaves your device either; you can delete it via “Reset progress” or in your browser settings.</p></div></details>
+<details class="acc-item" id="newsletter"><summary><h2 class="acc-title">8. Newsletter</h2><span class="acc-plus" aria-hidden="true"></span></summary><div class="acc-body"><p>The newsletter sign-up on this website is not active yet. An email address entered in the sign-up field is neither transmitted nor stored. As soon as the newsletter launches, this privacy policy will be updated accordingly.</p></div></details>
+<details class="acc-item" id="affiliate"><summary><h2 class="acc-title">9. Affiliate links</h2><span class="acc-plus" aria-hidden="true"></span></summary><div class="acc-body"><p>Some links on this website may be affiliate links. If you click such a link and buy something from the partner, I receive a small commission – at no extra cost to you. Only when you click do you leave this website; the partner may then use cookies or similar technologies to attribute the purchase to the link. The partner is responsible for this; I do not receive any personal data about you. I currently take part in the following affiliate programs: <span class="platzhalter">[e.g. Amazon Associates – or: none at the moment]</span>.</p></div></details>
+<details class="acc-item" id="links"><summary><h2 class="acc-title">10. Links to other websites</h2><span class="acc-plus" aria-hidden="true"></span></summary><div class="acc-body"><p>This website contains links to other websites, for example in the sources of the blog posts. When you click such a link, you leave this website. The operators of the linked websites are responsible for any data processing there.</p></div></details>
+<details class="acc-item" id="rights"><summary><h2 class="acc-title">11. Your rights</h2><span class="acc-plus" aria-hidden="true"></span></summary><div class="acc-body"><p>Within the limits of the law, you have the right at any time to:</p>
   <ul>
     <li>access the data stored about you (Art. 15 GDPR)</li>
     <li>rectification of inaccurate data (Art. 16 GDPR)</li>
@@ -492,42 +463,46 @@
     <li>data portability (Art. 20 GDPR)</li>
     <li>object to processing based on Art. 6(1)(f) GDPR (Art. 21 GDPR)</li>
   </ul>
-  <p>Just contact me by email. You also have the right to lodge a complaint with a data protection supervisory authority (Art. 77 GDPR), for example the authority responsible for my place of residence: <span class="platzhalter">[name of the data protection authority of your federal state]</span>.</p>
-
-  <h2 id="changes">12. Changes to this privacy policy</h2>
-  <p>I update this privacy policy when the website or the legal requirements change – for example when the newsletter launches. The version published here always applies.</p>
+  <p>Just contact me by email. You also have the right to lodge a complaint with a data protection supervisory authority (Art. 77 GDPR), for example the authority responsible for my place of residence: <span class="platzhalter">[name of the data protection authority of your federal state]</span>.</p></div></details>
+<details class="acc-item" id="changes"><summary><h2 class="acc-title">12. Changes to this privacy policy</h2><span class="acc-plus" aria-hidden="true"></span></summary><div class="acc-body"><p>I update this privacy policy when the website or the legal requirements change – for example when the newsletter launches. The version published here always applies.</p></div></details>
+  </div>
 </main>
 
 <!-- FOOTER -->
-<footer>
-  <div class="footer-top">
-    <div>
-      <span class="footer-logo">Pretty<span>Crochet</span></span>
-      <p>A blog about the love of crochet – with honest recommendations, free patterns and a community for everyone who creates things with yarn and hook.</p>
+<footer class="site-footer">
+  <div class="sf-grid">
+    <div class="sf-about">
+      <a class="sf-brand" href="index.html">Pretty<span>Crochet</span></a>
+      <p class="sf-claim">Yarn becomes yours.</p>
+      <p>Free crochet patterns, an interactive learning path and tools to design your own – for everyone who makes favorite pieces with yarn and hook.</p>
     </div>
-    <div>
-      <h4>Navigation</h4>
-      <ul>
-        <li><a href="haekeln-basics.html">Crochet Basics</a></li>
-        <li><a href="anleitungen.html">Patterns</a></li>
-        <li><a href="werkzeuge/muster-generator.html">Pattern Generator</a></li>
+    <div><h2>Learn to crochet</h2><ul>
+        <li><a href="werkzeuge/lernpfad.html">Learning path (7 lessons)</a></li>
+        <li><a href="haekeln-basics.html">Crochet basics</a></li>
+        <li><a href="abkuerzungen.html">Abbreviations &amp; charts</a></li>
+      </ul></div>
+    <div><h2>Patterns</h2><ul>
+        <li><a href="anleitungen/kuerbis.html">Crochet a pumpkin</a></li>
+        <li><a href="anleitungen/haekel-baer.html">Little crochet bear</a></li>
+        <li><a href="anleitungen/haekeltasche.html">Summer crochet bag</a></li>
+        <li><a href="anleitungen/blueten-blaetter.html">Flowers &amp; leaves</a></li>
+        <li><a href="anleitungen.html">All patterns →</a></li>
+      </ul></div>
+    <div><h2>Explore</h2><ul>
+        <li><a href="werkzeuge/muster-generator.html">Pattern generator</a></li>
         <li><a href="blog.html">Blog</a></li>
-        <li><a href="ueber-mich.html">About me</a></li>
-        <li><a href="mailto:prettycrochetstudio@gmail.com">Contact</a></li>
-      </ul>
-    </div>
-    <div>
-      <h4>Legal</h4>
-      <ul>
-        <li><a href="#">Legal notice</a></li>
-        <li><a href="datenschutz.html">Privacy policy</a></li>
-        <li><a href="#">Affiliate disclosure</a></li>
-        <li><a href="#">Cookie settings</a></li>
-      </ul>
-    </div>
+        <li><a href="amigurumi.html">Amigurumi</a></li>
+        <li><a href="wohndeko.html">Home decor</a></li>
+        <li><a href="ueber-mich.html">About</a></li>
+      </ul></div>
   </div>
-  <div class="footer-bottom">© 2026 PrettyCrochet · Natural. Timeless. Handmade.</div>
+  <div class="sf-bottom">
+    <span>© 2026 PrettyCrochet</span>
+    <div class="sf-legal"><a href="mailto:prettycrochetstudio@gmail.com">Contact</a><a href="#">Legal notice</a><a href="datenschutz.html">Privacy policy</a></div>
+  </div>
 </footer>
 
+<script src="../assets/js/search-index.js" defer></script>
+<script src="../assets/js/site.js" data-root="../" data-lang="en" defer></script>
 </body>
 </html>

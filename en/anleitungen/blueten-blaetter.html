@@ -8,13 +8,13 @@
   <link rel="stylesheet" href="../../assets/fonts/fonts.css"/>
   <style>
     :root {
-      --creme:   #FAF6F1;
-      --salbei:  #A7B39A;
-      --beige:   #D6C5B5;
-      --braun:   #8B6F5B;
-      --espresso:#4A3B32;
+      --creme:   #F7F3EC;
+      --salbei:  #ABB9A2;
+      --beige:   #E4DED3;
+      --braun:   #3E5748;
+      --espresso:#302A26;
       --white:   #FFFFFF;
-      --muted:   #9A8880;
+      --muted:   #6B625C;
     }
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -23,7 +23,7 @@
     body {
       background: var(--creme);
       color: var(--espresso);
-      font-family: 'Jost', sans-serif;
+      font-family: 'Manrope', sans-serif;
       font-weight: 300;
       line-height: 1.75;
     }
@@ -33,13 +33,13 @@
       position: fixed; top: 0; left: 0; right: 0; z-index: 200;
       display: flex; align-items: center; justify-content: space-between;
       padding: 1.1rem 6vw;
-      background: rgba(250,246,241,0.92);
+      background: rgba(247,243,236,0.92);
       backdrop-filter: blur(10px);
       border-bottom: 1px solid var(--beige);
     }
     .logo-wrap { display: flex; align-items: center; gap: 0.75rem; text-decoration: none; }
     .logo-text {
-      font-family: 'Cormorant Garamond', serif;
+      font-family: 'Fraunces', serif;
       font-size: 1.45rem; font-weight: 600;
       color: var(--espresso); letter-spacing: 0.02em;
     }
@@ -65,12 +65,12 @@
       font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase;
       color: var(--braun); margin-bottom: 1.5rem;
     }
-    .breadcrumb a { color: var(--braun); text-decoration: none; border-bottom: 1px solid rgba(139,111,91,0.35); }
+    .breadcrumb a { color: var(--braun); text-decoration: none; border-bottom: 1px solid rgba(62,87,72,0.35); }
     .breadcrumb a:hover { border-color: var(--braun); }
     .page-hero .label { justify-content: center; }
     .page-hero .label::before { display: none; }
     .page-hero h1 {
-      font-family: 'Cormorant Garamond', serif;
+      font-family: 'Fraunces', serif;
       font-size: clamp(2.2rem, 4.6vw, 3.6rem);
       font-weight: 300; line-height: 1.15;
       color: var(--espresso); margin-bottom: 1.2rem;
@@ -85,7 +85,7 @@
       font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase;
       color: var(--braun); opacity: 0.75;
     }
-    .meta-item .meta-value { font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; color: var(--espresso); }
+    .meta-item .meta-value { font-family: 'Fraunces', serif; font-size: 1.15rem; color: var(--espresso); }
 
     .label {
       font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase;
@@ -95,7 +95,7 @@
     .label::before { content:''; display:inline-block; width:24px; height:1px; background:var(--salbei); }
 
     h2 {
-      font-family: 'Cormorant Garamond', serif;
+      font-family: 'Fraunces', serif;
       font-size: clamp(1.8rem, 3vw, 2.6rem);
       font-weight: 300; line-height: 1.2;
       color: var(--espresso); margin-bottom: 1.5rem;
@@ -114,7 +114,7 @@
     .prep-section { background: var(--creme); }
     .prep-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 3rem; }
     .prep-block h3 {
-      font-family: 'Cormorant Garamond', serif;
+      font-family: 'Fraunces', serif;
       font-size: 1.25rem; font-weight: 400;
       margin-bottom: 1.2rem; color: var(--braun);
     }
@@ -129,7 +129,7 @@
     .abbr-table tr { border-bottom: 1px solid var(--beige); }
     .abbr-table td { padding: 0.6rem 0.4rem; }
     .abbr-table td:first-child {
-      font-family: 'Cormorant Garamond', serif;
+      font-family: 'Fraunces', serif;
       font-weight: 600; color: var(--braun); width: 62px;
     }
 
@@ -158,7 +158,7 @@
     }
     .pattern-part-icon { font-size: 1.6rem; }
     .pattern-part h3 {
-      font-family: 'Cormorant Garamond', serif;
+      font-family: 'Fraunces', serif;
       font-size: 1.5rem; font-weight: 400; color: var(--espresso);
     }
     .pattern-part-count { font-size: 0.78rem; color: var(--muted); letter-spacing: 0.04em; margin-left: auto; }
@@ -170,7 +170,7 @@
       border-bottom: 1px dashed var(--beige);
     }
     .round-list li:last-child { border-bottom: none; }
-    .round-label { font-family: 'Cormorant Garamond', serif; font-weight: 600; color: var(--braun); }
+    .round-label { font-family: 'Fraunces', serif; font-weight: 600; color: var(--braun); }
     .round-stitches { font-size: 0.78rem; color: var(--salbei); margin-left: 0.4rem; }
     .pattern-note {
       margin-top: 1.1rem; font-size: 0.86rem; color: var(--muted);
@@ -192,7 +192,7 @@
     .use-item { background: var(--espresso); padding: 1.9rem 1.5rem; }
     .use-icon { font-size: 1.6rem; display: block; margin-bottom: 0.7rem; }
     .use-item h3 {
-      font-family: 'Cormorant Garamond', serif;
+      font-family: 'Fraunces', serif;
       font-size: 1.08rem; font-weight: 400; color: var(--creme); margin-bottom: 0.5rem;
     }
     .use-item p { font-size: 0.83rem; color: var(--beige); }
@@ -205,7 +205,7 @@
       padding: 1.8rem; border-left: 3px solid var(--salbei);
     }
     .tipp-card h3 {
-      font-family: 'Cormorant Garamond', serif;
+      font-family: 'Fraunces', serif;
       font-size: 1.12rem; font-weight: 400; margin-bottom: 0.5rem;
     }
     .tipp-card p { font-size: 0.86rem; color: var(--muted); }
@@ -227,23 +227,23 @@
     footer { background: var(--espresso); color: var(--beige); padding: 4rem 10vw 2rem; }
     .footer-top {
       display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 4rem;
-      padding-bottom: 3rem; border-bottom: 1px solid rgba(214,197,181,0.15); margin-bottom: 2rem;
+      padding-bottom: 3rem; border-bottom: 1px solid rgba(228,222,211,0.15); margin-bottom: 2rem;
     }
     .footer-logo {
-      font-family: 'Cormorant Garamond', serif;
+      font-family: 'Fraunces', serif;
       font-size: 1.5rem; font-weight: 400; color: var(--creme);
       display: block; margin-bottom: 1rem;
     }
     .footer-logo span { color: var(--salbei); }
-    footer p { font-size: 0.83rem; color: rgba(214,197,181,0.6); line-height: 1.8; max-width: 32ch; }
+    footer p { font-size: 0.83rem; color: rgba(228,222,211,0.6); line-height: 1.8; max-width: 32ch; }
     footer h4 {
       font-size: 0.7rem; letter-spacing: 0.18em; text-transform: uppercase;
       color: var(--salbei); margin-bottom: 1.2rem;
     }
     footer ul { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
-    footer ul a { font-size: 0.84rem; color: rgba(214,197,181,0.7); text-decoration: none; transition: color 0.2s; }
+    footer ul a { font-size: 0.84rem; color: rgba(228,222,211,0.7); text-decoration: none; transition: color 0.2s; }
     footer ul a:hover { color: var(--creme); }
-    .footer-bottom { text-align: center; font-size: 0.72rem; color: rgba(214,197,181,0.35); letter-spacing: 0.06em; }
+    .footer-bottom { text-align: center; font-size: 0.72rem; color: rgba(228,222,211,0.35); letter-spacing: 0.06em; }
 
     /* ── RESPONSIVE ── */
     @media (max-width: 900px) {
@@ -261,14 +261,14 @@
   
   /* ── Sprachumschalter DE | EN ── */
   .nav-right{display:flex;align-items:center;gap:1.4rem;}
-  .lang-switch{display:flex;align-items:center;gap:.45rem;font-size:.78rem;letter-spacing:.1em;color:#9A8880;}
+  .lang-switch{display:flex;align-items:center;gap:.45rem;font-size:.78rem;letter-spacing:.1em;color:#6B625C;}
   .lang-switch a{color:inherit;text-decoration:none;border-bottom:1px solid transparent;transition:color .2s,border-color .2s;}
-  .lang-switch a:hover{color:#4A3B32;border-color:#A7B39A;}
-  .lang-switch [aria-current]{color:#4A3B32;font-weight:500;}
+  .lang-switch a:hover{color:#302A26;border-color:#ABB9A2;}
+  .lang-switch [aria-current]{color:#302A26;font-weight:500;}
   header .lang-switch{justify-content:flex-end;margin-bottom:.4rem;}
   nav{gap:1rem;}
   @media(max-width:480px){.nav-right{gap:.8rem;}.nav-right .nav-cta{padding:.5rem .85rem;font-size:.7rem;}}
-  .nav-links a[aria-current="page"]{color:#A7B39A;}
+  .nav-links a[aria-current="page"]{color:#ABB9A2;}
   .nav-links a,.nav-cta,.lang-switch{white-space:nowrap;}
   @media(max-width:1180px){nav{padding-left:4vw;padding-right:4vw;}.nav-links{gap:1.3rem;}.nav-links a{font-size:.75rem;letter-spacing:.07em;}}
   @media(max-width:980px){.nav-links{display:none;}}
@@ -276,60 +276,50 @@
 <link rel="alternate" hreflang="de" href="https://prettycrochetstudio.com/anleitungen/blueten-blaetter.html"/>
 <link rel="alternate" hreflang="en" href="https://prettycrochetstudio.com/en/anleitungen/blueten-blaetter.html"/>
 <link rel="alternate" hreflang="x-default" href="https://prettycrochetstudio.com/anleitungen/blueten-blaetter.html"/>
-<style id="site-header">
-  /* Einheitliche Kopfzeile auf allen Seiten – hier zentral anpassen */
-  nav{position:fixed;top:0;left:0;right:0;z-index:200;box-sizing:border-box;display:flex;align-items:center;justify-content:space-between;gap:1rem;margin:0;padding:1.1rem 6vw;background:rgba(250,246,241,0.92);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid #D6C5B5;font-family:'Jost',sans-serif;font-size:16px;font-weight:300;line-height:1.75;}
-  nav .logo-wrap{display:flex;align-items:center;gap:.75rem;text-decoration:none;}
-  nav .logo-text{font-family:'Cormorant Garamond',serif;font-size:1.45rem;font-weight:600;font-style:normal;color:#4A3B32;letter-spacing:.02em;line-height:1.75;}
-  nav .logo-text span{color:#A7B39A;}
-  nav .nav-links{display:flex;gap:2.2rem;list-style:none;margin:0;padding:0;}
-  nav .nav-links li{margin:0;padding:0;}
-  nav .nav-links a{font-family:'Jost',sans-serif;font-size:.82rem;font-weight:400;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;color:#4A3B32;line-height:1.75;white-space:nowrap;border:0;transition:color .2s;}
-  nav .nav-links a:hover,nav .nav-links a[aria-current="page"]{color:#A7B39A;}
-  nav .nav-right{display:flex;align-items:center;gap:1.4rem;}
-  nav .lang-switch{display:flex;align-items:center;gap:.45rem;margin:0;font-family:'Jost',sans-serif;font-size:.78rem;font-weight:300;letter-spacing:.1em;line-height:1.75;color:#9A8880;white-space:nowrap;}
-  nav .lang-switch a{color:inherit;text-decoration:none;border-bottom:1px solid transparent;transition:color .2s,border-color .2s;}
-  nav .lang-switch a:hover{color:#4A3B32;border-color:#A7B39A;}
-  nav .lang-switch [aria-current]{color:#4A3B32;font-weight:500;}
-  nav .nav-cta{display:inline-block;font-family:'Jost',sans-serif;font-size:.8rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;line-height:1.75;color:#FFFFFF;background:#4A3B32;padding:.6rem 1.4rem;border:0;border-radius:2px;white-space:nowrap;transition:background .2s;}
-  nav .nav-cta:hover{background:#8B6F5B;color:#FFFFFF;}
-  @media(max-width:1180px){nav{padding-left:4vw;padding-right:4vw;}nav .nav-links{gap:1.3rem;}nav .nav-links a{font-size:.75rem;letter-spacing:.07em;}}
-  @media(max-width:980px){nav .nav-links{display:none;}}
-  @media(max-width:480px){nav .nav-right{gap:.8rem;}nav .nav-cta{padding:.5rem .85rem;font-size:.7rem;}}
-</style>
-<style id="site-footer">
-  /* Einheitliche Fußzeile auf allen Seiten – hier zentral anpassen */
-  footer:not(.author){box-sizing:border-box;margin:0;background:#4A3B32;color:#D6C5B5;padding:4rem 10vw 2rem;font-family:'Jost',sans-serif;font-size:16px;font-weight:300;line-height:1.75;}
-  footer:not(.author) .footer-top{display:grid;grid-template-columns:2fr 1fr 1fr;gap:4rem;padding-bottom:3rem;border-bottom:1px solid rgba(214,197,181,0.15);margin-bottom:2rem;}
-  footer:not(.author) .footer-logo{display:block;margin:0 0 1rem;font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:400;line-height:1.75;color:#FAF6F1;}
-  footer:not(.author) .footer-logo span{color:#A7B39A;}
-  footer:not(.author) p{margin:0;max-width:32ch;font-size:.83rem;font-weight:300;line-height:1.8;color:rgba(214,197,181,0.6);}
-  footer:not(.author) h4{margin:0 0 1.2rem;font-family:'Jost',sans-serif;font-size:.7rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;line-height:1.75;color:#A7B39A;}
-  footer:not(.author) ul{list-style:none;display:flex;flex-direction:column;gap:.6rem;margin:0;padding:0;}
-  footer:not(.author) li{margin:0;padding:0;}
-  footer:not(.author) ul a{font-family:'Jost',sans-serif;font-size:.84rem;font-weight:300;line-height:1.75;color:rgba(214,197,181,0.7);text-decoration:none;transition:color .2s;}
-  footer:not(.author) ul a:hover{color:#FAF6F1;}
-  footer:not(.author) .footer-bottom{text-align:center;font-size:.72rem;font-weight:300;letter-spacing:.06em;line-height:1.75;color:rgba(214,197,181,0.35);}
-  @media(max-width:800px){footer:not(.author) .footer-top{grid-template-columns:1fr;gap:2rem;}}
-</style>
+<link rel="stylesheet" href="../../assets/css/brand.css"/>
 </head>
 <body>
+<a class="skip-link" href="#main">Skip to content</a>
 
-<!-- NAV -->
-<nav aria-label="Main navigation">
-  <a href="../index.html" class="logo-wrap" aria-label="PrettyCrochet – home">
-    <span class="logo-text">Pretty<span>Crochet</span></span>
-  </a>
-  <ul class="nav-links">
-    <li><a href="../haekeln-basics.html">Crochet Basics</a></li>
-    <li><a href="../anleitungen.html" aria-current="page" class="active">Patterns</a></li>
-    <li><a href="../werkzeuge/muster-generator.html">Pattern Generator</a></li>
-    <li><a href="../blog.html">Blog</a></li>
-    <li><a href="../ueber-mich.html">About me</a></li>
-  </ul>
-  <div class="nav-right"><div class="lang-switch" aria-label="Choose language"><a href="../../anleitungen/blueten-blaetter.html" hreflang="de" lang="de">DE</a><span aria-hidden="true">|</span><span aria-current="true">EN</span></div><a href="../index.html#newsletter" class="nav-cta">Newsletter</a></div>
-</nav>
+<header class="site-header">
+  <nav class="site-nav" aria-label="Main navigation">
+    <a class="brand" href="../index.html" aria-label="PrettyCrochet – home">Pretty<span>Crochet</span></a>
+    <ul class="nav-links">
+      <li><a href="../anleitungen.html" aria-current="page">Patterns</a></li>
+      <li><a href="../haekeln-basics.html">Learn to crochet</a></li>
+      <li><a href="../werkzeuge/lernpfad.html">Learning path</a></li>
+      <li><a href="../werkzeuge/muster-generator.html">Pattern generator</a></li>
+      <li><a href="../blog.html">Blog</a></li>
+      <li><a href="../ueber-mich.html">About</a></li>
+    </ul>
+    <div class="nav-tools">
+      <button type="button" class="icon-btn" data-search-open aria-label="Open search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg></button>
+      <div class="lang-switch" aria-label="Choose language"><a href="../../anleitungen/blueten-blaetter.html" hreflang="de" lang="de">DE</a><span aria-hidden="true">|</span><span aria-current="true">EN</span></div>
+      <button type="button" class="icon-btn menu-toggle" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu" data-label-open="Open menu" data-label-close="Close menu"><svg class="i-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg><svg class="i-close" style="display:none" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+    </div>
+  </nav>
+  <div class="mobile-menu" id="mobile-menu" hidden>
+    <button type="button" class="btn primary mm-search" data-search-open><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>Search patterns & topics</button>
+    <ul>
+      <li><a href="../anleitungen.html" aria-current="page">Patterns</a></li>
+      <li><a href="../haekeln-basics.html">Learn to crochet</a></li>
+      <li><a href="../werkzeuge/lernpfad.html">Learning path</a></li>
+      <li><a href="../werkzeuge/muster-generator.html">Pattern generator</a></li>
+      <li><a href="../blog.html">Blog</a></li>
+      <li><a href="../ueber-mich.html">About</a></li>
+    </ul>
+    <p class="mm-label">Jump to</p>
+    <div class="mm-quick"><a href="#" data-search-query="pumpkin">Pumpkin</a><a href="#" data-search-query="magic ring">Magic ring</a><a href="#" data-search-query="beginner">Beginner</a><a href="#" data-search-query="amigurumi">Amigurumi</a></div>
+  </div>
+</header>
+<div class="search-overlay" id="search" role="dialog" aria-modal="true" aria-label="Open search" hidden>
+  <div class="search-panel">
+    <div class="search-bar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><input type="search" placeholder="Search patterns, techniques or topics …" aria-label="Search patterns, techniques or topics …" autocomplete="off"/><button type="button" class="search-close">Close</button></div>
+    <div class="search-results" aria-live="polite"></div>
+  </div>
+</div>
 
+<main id="main" tabindex="-1">
 <!-- PAGE HERO -->
 <section class="page-hero">
   <p class="breadcrumb"><a href="../index.html">Home</a> · <a href="../wohndeko.html">Home decor</a> · Flowers & Leaves</p>
@@ -338,22 +328,22 @@
   <p class="sub">Small designs for in between: three flower shapes, two leaf variations and a spiral. Perfect for using up scraps, decorating bags or filling a wreath.</p>
   <div class="meta-row">
     <div class="meta-item">
-      <span class="meta-icon">⭐</span>
+      <span class="meta-icon" aria-hidden="true">⭐</span>
       <span class="meta-label">Level</span>
       <span class="meta-value">Beginner+</span>
     </div>
     <div class="meta-item">
-      <span class="meta-icon">⏱️</span>
+      <span class="meta-icon" aria-hidden="true">⏱️</span>
       <span class="meta-label">Per piece</span>
       <span class="meta-value">10–25 min</span>
     </div>
     <div class="meta-item">
-      <span class="meta-icon">🌸</span>
+      <span class="meta-icon" aria-hidden="true">🌸</span>
       <span class="meta-label">Designs</span>
       <span class="meta-value">6 variations</span>
     </div>
     <div class="meta-item">
-      <span class="meta-icon">🪝</span>
+      <span class="meta-icon" aria-hidden="true">🪝</span>
       <span class="meta-label">Hook</span>
       <span class="meta-value">3.0 mm</span>
     </div>
@@ -435,12 +425,11 @@
 <section class="pattern-section" id="bluete1">
   <div class="label">Design 01</div>
   <h2>Flower 1: <em>The simple five-petal flower</em></h2>
-  <div class="pattern-part">
-    <div class="pattern-part-header">
-      <span class="pattern-part-icon">🌼</span>
-      <h3>Single-layer flower</h3>
-      <span class="pattern-part-count">2 rounds · approx. 5 cm</span>
-    </div>
+  <details class="pattern-part" open>
+    <summary class="pattern-part-header"><span class="pattern-part-icon" aria-hidden="true">🌼</span>
+      <h3 class="acc-title">Single-layer flower</h3>
+      <span class="pattern-part-count">2 rounds · approx. 5 cm</span><span class="acc-plus" aria-hidden="true"></span></summary>
+    <div class="pattern-part-body">
     <p class="pattern-lead">The beginner design: a flat flower with five round petals, made in one go. Ideal as an appliqué on bags or hats.</p>
     <ul class="round-list">
       <li><span class="round-label">Rnd 1</span><span>Work 15 sc into the MR, join with 1 sl st into the first sc. <span class="round-stitches">(15 sts)</span></span></li>
@@ -448,19 +437,19 @@
       <li><span class="round-label">Finish</span><span>Join with 1 sl st into the first sc, cut the yarn and weave in the ends.</span></li>
     </ul>
     <p class="pattern-note">For the flower center you can sew on a small button or bead. Or crochet the first round in a second color – then the center shines all on its own.</p>
-  </div>
+    </div>
+  </details>
 </section>
 
 <!-- BLÜTE 2 -->
 <section class="pattern-section" id="bluete2">
   <div class="label">Design 02</div>
   <h2>Flower 2: <em>The double-layer flower</em></h2>
-  <div class="pattern-part">
-    <div class="pattern-part-header">
-      <span class="pattern-part-icon">🌺</span>
-      <h3>Flower with two layers of petals</h3>
-      <span class="pattern-part-count">5 rounds · approx. 8 cm</span>
-    </div>
+  <details class="pattern-part" open>
+    <summary class="pattern-part-header"><span class="pattern-part-icon" aria-hidden="true">🌺</span>
+      <h3 class="acc-title">Flower with two layers of petals</h3>
+      <span class="pattern-part-count">5 rounds · approx. 8 cm</span><span class="acc-plus" aria-hidden="true"></span></summary>
+    <div class="pattern-part-body">
     <p class="pattern-lead">Here a second, larger layer of petals sits behind the first – making the flower three-dimensional instead of flat. The trick: the bottom layer is worked into chain loops that you attach behind your work.</p>
     <ul class="round-list">
       <li><span class="round-label">Rnd 1</span><span>12 sc into the MR, join with 1 sl st. <span class="round-stitches">(12 sts)</span></span></li>
@@ -471,19 +460,19 @@
       <li><span class="round-label">Finish</span><span>Join with 1 sl st, cut the yarn and weave in the ends.</span></li>
     </ul>
     <p class="pattern-note">For a color gradient, change colors after round 3 – a darker shade for the bottom layer makes the flower look much deeper.</p>
-  </div>
+    </div>
+  </details>
 </section>
 
 <!-- BLÜTE 3 -->
 <section class="pattern-section" id="bluete3">
   <div class="label">Design 03</div>
   <h2>Flower 3: <em>The spiral rose</em></h2>
-  <div class="pattern-part">
-    <div class="pattern-part-header">
-      <span class="pattern-part-icon">🌹</span>
-      <h3>Rolled rose</h3>
-      <span class="pattern-part-count">1 row · approx. 6 cm</span>
-    </div>
+  <details class="pattern-part" open>
+    <summary class="pattern-part-header"><span class="pattern-part-icon" aria-hidden="true">🌹</span>
+      <h3 class="acc-title">Rolled rose</h3>
+      <span class="pattern-part-count">1 row · approx. 6 cm</span><span class="acc-plus" aria-hidden="true"></span></summary>
+    <div class="pattern-part-body">
     <p class="pattern-lead">This flower isn't crocheted in rounds but as a long strip that you roll up into a rose afterwards. It looks elaborate, but it's the quickest flower on this page.</p>
     <ul class="round-list">
       <li><span class="round-label">Chain</span><span>Ch 30.</span></li>
@@ -492,19 +481,19 @@
       <li><span class="round-label">Secure</span><span>Use the long tail to stitch through all layers at the bottom and secure the roll with a few stitches.</span></li>
     </ul>
     <p class="pattern-note">The more double crochets you work into each chain, the fuller the rose. With 3 dc per ch you get a lush bloom, with just 1 dc a slender bud.</p>
-  </div>
+    </div>
+  </details>
 </section>
 
 <!-- BLATT 1 -->
 <section class="pattern-section" id="blatt1">
   <div class="label">Design 04</div>
   <h2>Leaf 1: <em>The simple leaf</em></h2>
-  <div class="pattern-part">
-    <div class="pattern-part-header">
-      <span class="pattern-part-icon">🍃</span>
-      <h3>Single-layer leaf</h3>
-      <span class="pattern-part-count">1 round · approx. 4 cm</span>
-    </div>
+  <details class="pattern-part" open>
+    <summary class="pattern-part-header"><span class="pattern-part-icon" aria-hidden="true">🍃</span>
+      <h3 class="acc-title">Single-layer leaf</h3>
+      <span class="pattern-part-count">1 round · approx. 4 cm</span><span class="acc-plus" aria-hidden="true"></span></summary>
+    <div class="pattern-part-body">
     <p class="pattern-lead">A slim leaf worked all around a foundation chain. The tip forms all by itself when you work several stitches into the same chain at the end.</p>
     <ul class="round-list">
       <li><span class="round-label">Chain</span><span>Ch 10.</span></li>
@@ -514,19 +503,19 @@
       <li><span class="round-label">Finish</span><span>Join with 1 sl st into the first sc, cut the yarn.</span></li>
     </ul>
     <p class="pattern-note">Want a wider leaf? Replace the 5 dc with 3 dc and 2 tr – this makes the middle noticeably fuller.</p>
-  </div>
+    </div>
+  </details>
 </section>
 
 <!-- BLATT 2 -->
 <section class="pattern-section" id="blatt2">
   <div class="label">Design 05</div>
   <h2>Leaf 2: <em>The leaf with stem</em></h2>
-  <div class="pattern-part">
-    <div class="pattern-part-header">
-      <span class="pattern-part-icon">🌿</span>
-      <h3>Leaf with crocheted stem</h3>
-      <span class="pattern-part-count">1 round + stem · approx. 7 cm</span>
-    </div>
+  <details class="pattern-part" open>
+    <summary class="pattern-part-header"><span class="pattern-part-icon" aria-hidden="true">🌿</span>
+      <h3 class="acc-title">Leaf with crocheted stem</h3>
+      <span class="pattern-part-count">1 round + stem · approx. 7 cm</span><span class="acc-plus" aria-hidden="true"></span></summary>
+    <div class="pattern-part-body">
     <p class="pattern-lead">The same basic shape as leaf 1, just bigger and with a stem crocheted right on. This lets you attach the leaf to a wreath or branch later without a visible seam.</p>
     <ul class="round-list">
       <li><span class="round-label">Chain</span><span>Ch 14.</span></li>
@@ -537,19 +526,19 @@
       <li><span class="round-label">Finish</span><span>End with 1 sl st at the base of the leaf, cut the yarn and weave in the ends.</span></li>
     </ul>
     <p class="pattern-note">For a pair of leaves, simply crochet the second leaf onto the stem of the first instead of cutting the yarn – this creates a natural-looking little branch.</p>
-  </div>
+    </div>
+  </details>
 </section>
 
 <!-- SPIRALE -->
 <section class="pattern-section" id="spirale">
   <div class="label">Design 06</div>
   <h2>Bonus: <em>The corkscrew vine</em></h2>
-  <div class="pattern-part">
-    <div class="pattern-part-header">
-      <span class="pattern-part-icon">🌀</span>
-      <h3>Twisted vine</h3>
-      <span class="pattern-part-count">1 row · any length</span>
-    </div>
+  <details class="pattern-part" open>
+    <summary class="pattern-part-header"><span class="pattern-part-icon" aria-hidden="true">🌀</span>
+      <h3 class="acc-title">Twisted vine</h3>
+      <span class="pattern-part-count">1 row · any length</span><span class="acc-plus" aria-hidden="true"></span></summary>
+    <div class="pattern-part-body">
     <p class="pattern-lead">The vine curls into a spiral all by itself as you crochet – because you work several stitches into each chain, so the fabric needs more length than the chain provides.</p>
     <ul class="round-list">
       <li><span class="round-label">Chain</span><span>Ch 25 (or more for a longer vine).</span></li>
@@ -557,7 +546,8 @@
       <li><span class="round-label">Finish</span><span>Cut the yarn and weave in the ends, then shape the spiral with your fingers.</span></li>
     </ul>
     <p class="pattern-note">Want more twist? Work 4 sc instead of 3 into each chain – the vine will curl much tighter. With 2 sc it stays almost straight and works better as a cord.</p>
-  </div>
+    </div>
+  </details>
 </section>
 
 <!-- VERWENDUNG -->
@@ -566,22 +556,22 @@
   <h2>What you can <em>make with them</em></h2>
   <div class="use-grid">
     <div class="use-item">
-      <span class="use-icon">🖼️</span>
+      <span class="use-icon" aria-hidden="true">🖼️</span>
       <h3>Wall wreath</h3>
       <p>Arrange flowers, leaves and vines on a metal ring and sew them on – lay out first, then secure.</p>
     </div>
     <div class="use-item">
-      <span class="use-icon">👜</span>
+      <span class="use-icon" aria-hidden="true">👜</span>
       <h3>Bag appliqué</h3>
       <p>Sewing a single flower onto a crocheted bag turns a simple piece into a one-of-a-kind.</p>
     </div>
     <div class="use-item">
-      <span class="use-icon">🎁</span>
+      <span class="use-icon" aria-hidden="true">🎁</span>
       <h3>Gift tag</h3>
       <p>Tie a small flower to the bow with a piece of yarn – prettier than any store-bought card.</p>
     </div>
     <div class="use-item">
-      <span class="use-icon">🪴</span>
+      <span class="use-icon" aria-hidden="true">🪴</span>
       <h3>Bouquet</h3>
       <p>Thread flowers onto floral wire, wrap with floral tape and tie them into a bouquet that never wilts.</p>
     </div>
@@ -589,23 +579,16 @@
 </section>
 
 <!-- TIPPS -->
-<section class="tipp-section">
+<section class="tipp-section acc-section">
+  <div class="acc-intro">
   <div class="label">For best results</div>
   <h2>My <em>tips</em></h2>
-  <div class="tipp-grid">
-    <div class="tipp-card">
-      <h3>Crochet on the tighter side</h3>
-      <p>Loose stitches make flowers look limp. Use a hook one size smaller than the yarn label suggests, and the petals will keep their shape.</p>
-    </div>
-    <div class="tipp-card">
-      <h3>Lay out first, then sew</h3>
-      <p>For wreaths and appliqués, lay everything out first and take a photo. The second arrangement often looks better than the first.</p>
-    </div>
-    <div class="tipp-card">
-      <h3>Odd numbers look more natural</h3>
-      <p>Three or five flowers per group look livelier than four. The same goes for leaves – asymmetrical is better than perfectly spaced.</p>
-    </div>
   </div>
+  <div class="acc">
+<details class="acc-item"><summary><span class="acc-num" aria-hidden="true">01</span><h3 class="acc-title">Crochet on the tighter side</h3><span class="acc-plus" aria-hidden="true"></span></summary><div class="acc-body"><p>Loose stitches make flowers look limp. Use a hook one size smaller than the yarn label suggests, and the petals will keep their shape.</p></div></details>
+<details class="acc-item"><summary><span class="acc-num" aria-hidden="true">02</span><h3 class="acc-title">Lay out first, then sew</h3><span class="acc-plus" aria-hidden="true"></span></summary><div class="acc-body"><p>For wreaths and appliqués, lay everything out first and take a photo. The second arrangement often looks better than the first.</p></div></details>
+<details class="acc-item"><summary><span class="acc-num" aria-hidden="true">03</span><h3 class="acc-title">Odd numbers look more natural</h3><span class="acc-plus" aria-hidden="true"></span></summary><div class="acc-body"><p>Three or five flowers per group look livelier than four. The same goes for leaves – asymmetrical is better than perfectly spaced.</p></div></details>
+</div>
 </section>
 
 <!-- CTA -->
@@ -615,37 +598,43 @@
   <p>In the home decor overview you'll find more projects for your home – from baskets to pillow covers.</p>
   <a href="../wohndeko.html" class="btn-primary">Go to home decor overview</a>
 </section>
+</main>
 
 <!-- FOOTER -->
-<footer>
-  <div class="footer-top">
-    <div>
-      <span class="footer-logo">Pretty<span>Crochet</span></span>
-      <p>A blog about the love of crochet – with honest recommendations, free patterns and a community for everyone who creates things with yarn and hook.</p>
+<footer class="site-footer">
+  <div class="sf-grid">
+    <div class="sf-about">
+      <a class="sf-brand" href="../index.html">Pretty<span>Crochet</span></a>
+      <p class="sf-claim">Yarn becomes yours.</p>
+      <p>Free crochet patterns, an interactive learning path and tools to design your own – for everyone who makes favorite pieces with yarn and hook.</p>
     </div>
-    <div>
-      <h4>Navigation</h4>
-      <ul>
-        <li><a href="../haekeln-basics.html">Crochet Basics</a></li>
-        <li><a href="../anleitungen.html">Patterns</a></li>
-        <li><a href="../werkzeuge/muster-generator.html">Pattern Generator</a></li>
+    <div><h2>Learn to crochet</h2><ul>
+        <li><a href="../werkzeuge/lernpfad.html">Learning path (7 lessons)</a></li>
+        <li><a href="../haekeln-basics.html">Crochet basics</a></li>
+        <li><a href="../abkuerzungen.html">Abbreviations &amp; charts</a></li>
+      </ul></div>
+    <div><h2>Patterns</h2><ul>
+        <li><a href="kuerbis.html">Crochet a pumpkin</a></li>
+        <li><a href="haekel-baer.html">Little crochet bear</a></li>
+        <li><a href="haekeltasche.html">Summer crochet bag</a></li>
+        <li><a href="blueten-blaetter.html">Flowers &amp; leaves</a></li>
+        <li><a href="../anleitungen.html">All patterns →</a></li>
+      </ul></div>
+    <div><h2>Explore</h2><ul>
+        <li><a href="../werkzeuge/muster-generator.html">Pattern generator</a></li>
         <li><a href="../blog.html">Blog</a></li>
-        <li><a href="../ueber-mich.html">About me</a></li>
-        <li><a href="mailto:prettycrochetstudio@gmail.com">Contact</a></li>
-      </ul>
-    </div>
-    <div>
-      <h4>Legal</h4>
-      <ul>
-        <li><a href="#">Legal notice</a></li>
-        <li><a href="../datenschutz.html">Privacy policy</a></li>
-        <li><a href="#">Affiliate disclosure</a></li>
-        <li><a href="#">Cookie settings</a></li>
-      </ul>
-    </div>
+        <li><a href="../amigurumi.html">Amigurumi</a></li>
+        <li><a href="../wohndeko.html">Home decor</a></li>
+        <li><a href="../ueber-mich.html">About</a></li>
+      </ul></div>
   </div>
-  <div class="footer-bottom">© 2026 PrettyCrochet · Natural. Timeless. Handmade.</div>
+  <div class="sf-bottom">
+    <span>© 2026 PrettyCrochet</span>
+    <div class="sf-legal"><a href="mailto:prettycrochetstudio@gmail.com">Contact</a><a href="#">Legal notice</a><a href="../datenschutz.html">Privacy policy</a></div>
+  </div>
 </footer>
 
+<script src="../../assets/js/search-index.js" defer></script>
+<script src="../../assets/js/site.js" data-root="../../" data-lang="en" defer></script>
 </body>
 </html>

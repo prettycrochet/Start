@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Häkeln lernen: Der interaktive Lernpfad in 7 Lektionen | PrettyCrochet</title>
+  <meta name="description" content="Häkeln lernen Schritt für Schritt: 7 kurze Lektionen mit Übungsaufgaben und Mini-Quiz – jede bestandene Lektion schaltet die nächste frei. Kostenlos und ohne Anmeldung."/>
+<link rel="stylesheet" href="../assets/fonts/fonts.css"/>
+<style>
+  :root{--creme:#F7F3EC;--salbei:#ABB9A2;--beige:#E4DED3;--braun:#3E5748;--espresso:#302A26;--white:#FFFFFF;--muted:#6B625C;}
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--creme);color:var(--espresso);font-family:'Manrope',sans-serif;font-weight:300;line-height:1.7;}
+
+  nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:1.1rem 6vw;background:rgba(247,243,236,0.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--beige);}
+  .logo-wrap{display:flex;align-items:center;gap:0.75rem;text-decoration:none;}
+  .logo-text{font-family:'Fraunces',serif;font-size:1.45rem;font-weight:600;color:var(--espresso);letter-spacing:0.02em;}
+  .logo-text span{color:var(--salbei);}
+  .nav-links{display:flex;gap:2.2rem;list-style:none;}
+  .nav-links a{font-size:0.82rem;letter-spacing:0.1em;text-transform:uppercase;text-decoration:none;color:var(--espresso);transition:color 0.2s;}
+  .nav-links a:hover,.nav-links a.active{color:var(--salbei);}
+  .nav-cta{font-size:0.8rem;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;color:var(--white);background:var(--espresso);padding:0.6rem 1.4rem;border-radius:2px;}
+  .nav-cta:hover{background:var(--braun);}
+
+  .page-hero{padding:11rem 10vw 3rem;background:var(--beige);text-align:center;}
+  .breadcrumb{font-size:0.75rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--braun);margin-bottom:1.5rem;}
+  .breadcrumb a{color:var(--braun);text-decoration:none;border-bottom:1px solid rgba(62,87,72,0.35);}
+  .page-hero .label{justify-content:center;}
+  .page-hero .label::before{display:none;}
+  .page-hero h1{font-family:'Fraunces',serif;font-size:clamp(2.1rem,4.4vw,3.4rem);font-weight:300;line-height:1.15;margin-bottom:1rem;}
+  .page-hero h1 em{font-style:italic;color:var(--braun);}
+  .page-hero p.sub{max-width:58ch;margin:0 auto;color:var(--braun);font-size:0.98rem;}
+
+  .label{font-size:0.7rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--salbei);margin-bottom:0.6rem;display:flex;align-items:center;gap:0.7rem;}
+  .label::before{content:'';display:inline-block;width:24px;height:1px;background:var(--salbei);}
+
+  .app-section{padding:3rem 5vw 6rem;background:var(--white);}
+  .app-grid{display:grid;grid-template-columns:330px 1fr;gap:1.8rem;max-width:1400px;margin:0 auto;align-items:start;}
+
+  .panel{background:var(--creme);border:1px solid var(--beige);padding:1.4rem 1.5rem;margin-bottom:1.4rem;}
+  .panel h3{font-family:'Fraunces',serif;font-size:1.2rem;font-weight:400;color:var(--braun);margin-bottom:1rem;}
+
+  .field-label{font-size:0.68rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);display:block;margin:0.8rem 0 0.4rem;}
+  .field-label:first-child{margin-top:0;}
+  input[type="text"],input[type="number"],input[type="search"],select{width:100%;font-family:'Manrope',sans-serif;font-size:0.9rem;color:var(--espresso);background:var(--white);border:1px solid var(--beige);padding:0.6rem 0.8rem;border-radius:2px;outline:none;}
+  input:focus,select:focus{border-color:var(--salbei);}
+  input[type="color"]{width:44px;height:38px;padding:2px;border:1px solid var(--beige);border-radius:2px;background:var(--white);cursor:pointer;}
+
+  .btn{font-family:'Manrope',sans-serif;font-size:0.76rem;font-weight:500;letter-spacing:0.06em;text-transform:uppercase;border:1px solid var(--espresso);background:var(--white);color:var(--espresso);padding:0.65rem 1rem;border-radius:2px;cursor:pointer;transition:background 0.2s,color 0.2s;width:100%;}
+  .btn:hover{background:var(--espresso);color:var(--white);}
+  .btn.primary{background:var(--espresso);color:var(--white);}
+  .btn.primary:hover{background:var(--braun);border-color:var(--braun);}
+  .btn.sage{background:var(--salbei);color:var(--white);border-color:var(--salbei);}
+  .btn.sage:hover{background:var(--braun);border-color:var(--braun);}
+  .btn.ghost{background:transparent;}
+  .btn.danger{border-color:#B3554A;color:#B3554A;}
+  .btn.danger:hover{background:#B3554A;color:var(--white);}
+  .btn-row{display:grid;grid-template-columns:1fr 1fr;gap:0.6rem;margin-top:0.8rem;}
+  .btn-row.stack{grid-template-columns:1fr;}
+
+  .part-list{display:flex;flex-direction:column;gap:0.5rem;margin-bottom:0.9rem;}
+  .part-item{display:flex;align-items:center;gap:0.6rem;background:var(--white);border:1px solid var(--beige);border-radius:2px;padding:0.6rem 0.7rem;cursor:pointer;transition:border-color 0.2s;}
+  .part-item:hover{border-color:var(--salbei);}
+  .part-item.active{background:rgba(171,185,162,0.18);border-color:var(--salbei);}
+  .part-item .p-name{font-family:'Fraunces',serif;font-size:1rem;font-weight:600;flex:1;}
+  .part-item .p-meta{font-size:0.68rem;color:var(--muted);}
+
+  .stitch-lib{max-height:340px;overflow-y:auto;display:grid;grid-template-columns:1fr 1fr;gap:0.5rem;margin-top:0.8rem;}
+  .stitch-btn{text-align:left;background:var(--white);border:1px solid var(--beige);border-radius:2px;padding:0.55rem 0.65rem;cursor:pointer;transition:border-color 0.2s,background 0.2s;}
+  .stitch-btn:hover{border-color:var(--salbei);}
+  .stitch-btn.active{background:rgba(171,185,162,0.18);border-color:var(--salbei);}
+  .stitch-btn .s-code{font-family:'Fraunces',serif;font-size:1.05rem;font-weight:600;}
+  .stitch-btn .s-name{font-size:0.68rem;color:var(--muted);}
+
+  .quick-grid{display:grid;grid-template-columns:1fr 1fr;gap:0.6rem;margin-top:0.9rem;}
+  .quick-btn{font-size:0.74rem;padding:0.65rem 0.4rem;}
+
+  .out-card{background:var(--creme);border:1px solid var(--beige);padding:1.6rem 1.8rem;margin-bottom:1.4rem;}
+  .out-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem;gap:1rem;flex-wrap:wrap;}
+  .out-head h2{font-family:'Fraunces',serif;font-size:1.4rem;font-weight:400;}
+  .out-head .btn{width:auto;}
+  .empty-note{color:var(--muted);font-size:0.88rem;padding:1rem 0;}
+
+  .chart-scroll{overflow:auto;background:var(--white);border:1px solid var(--beige);padding:1rem;max-height:520px;}
+  .chart-scroll svg{display:block;}
+  .chart-part-title{font-family:'Fraunces',serif;font-size:1.05rem;color:var(--braun);margin:1rem 0 0.5rem;}
+  .chart-part-title:first-child{margin-top:0;}
+
+  .stat-row{display:flex;gap:1.6rem;flex-wrap:wrap;margin-bottom:1rem;}
+  .stat{display:flex;flex-direction:column;}
+  .stat b{font-family:'Fraunces',serif;font-size:1.4rem;font-weight:400;}
+  .stat span{font-size:0.68rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);}
+
+  .row-block{border:1px solid var(--beige);background:var(--white);border-radius:2px;padding:1rem 1.2rem;margin-bottom:0.8rem;}
+  .row-block-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:0.6rem;}
+  .row-block-head h4{font-family:'Fraunces',serif;font-size:1.05rem;font-weight:600;color:var(--braun);}
+  .row-block-head span{font-size:0.72rem;color:var(--muted);}
+  .chips{display:flex;flex-wrap:wrap;gap:0.5rem;}
+  .chip{background:var(--creme);border:1px solid var(--beige);border-radius:999px;padding:0.4rem 0.8rem;font-size:0.78rem;}
+
+  .key-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:0.8rem;}
+  .key-item{display:flex;align-items:center;gap:0.7rem;}
+  .key-symbol{width:42px;height:34px;border:1px solid var(--beige);border-radius:2px;display:flex;align-items:center;justify-content:center;font-family:'Fraunces',serif;font-size:1rem;background:var(--white);flex-shrink:0;}
+  .key-item div b{font-size:0.82rem;}
+  .key-item div span{display:block;font-size:0.7rem;color:var(--muted);}
+
+  .data-preview{font-family:monospace;font-size:0.7rem;background:var(--espresso);color:var(--beige);padding:1rem;border-radius:2px;overflow:auto;white-space:pre;max-height:240px;}
+  .notice{background:var(--white);border-left:3px solid var(--salbei);padding:0.9rem 1.1rem;font-size:0.82rem;color:var(--muted);margin-top:1rem;}
+
+  @media(max-width:900px){.nav-links{display:none;}.app-grid{grid-template-columns:1fr;}}
+
+  footer{background:var(--espresso);color:var(--beige);padding:4rem 10vw 2rem;}
+  .footer-top{display:grid;grid-template-columns:2fr 1fr 1fr;gap:4rem;padding-bottom:3rem;border-bottom:1px solid rgba(228,222,211,0.15);margin-bottom:2rem;}
+  .footer-logo{font-family:'Fraunces',serif;font-size:1.5rem;color:var(--creme);display:block;margin-bottom:1rem;}
+  .footer-logo span{color:var(--salbei);}
+  footer p{font-size:0.83rem;color:rgba(228,222,211,0.6);line-height:1.8;max-width:32ch;}
+  footer h4{font-size:0.7rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--salbei);margin-bottom:1.2rem;}
+  footer ul{list-style:none;display:flex;flex-direction:column;gap:0.6rem;}
+  footer ul a{font-size:0.84rem;color:rgba(228,222,211,0.7);text-decoration:none;}
+  footer ul a:hover{color:var(--creme);}
+  .footer-bottom{text-align:center;font-size:0.72rem;color:rgba(228,222,211,0.35);}
+  @media(max-width:800px){.footer-top{grid-template-columns:1fr;gap:2rem;}}
+
+  /* ── Sprachumschalter DE | EN ── */
+  .nav-right{display:flex;align-items:center;gap:1.4rem;}
+  .lang-switch{display:flex;align-items:center;gap:.45rem;font-size:.78rem;letter-spacing:.1em;color:#6B625C;}
+  .lang-switch a{color:inherit;text-decoration:none;border-bottom:1px solid transparent;transition:color .2s,border-color .2s;}
+  .lang-switch a:hover{color:#302A26;border-color:#ABB9A2;}
+  .lang-switch [aria-current]{color:#302A26;font-weight:500;}
+  header .lang-switch{justify-content:flex-end;margin-bottom:.4rem;}
+  nav{gap:1rem;}
+  @media(max-width:480px){.nav-right{gap:.8rem;}.nav-right .nav-cta{padding:.5rem .85rem;font-size:.7rem;}}
+  .nav-links a[aria-current="page"]{color:#ABB9A2;}
+  .nav-links a,.nav-cta,.lang-switch{white-space:nowrap;}
+  @media(max-width:1180px){nav{padding-left:4vw;padding-right:4vw;}.nav-links{gap:1.3rem;}.nav-links a{font-size:.75rem;letter-spacing:.07em;}}
+  @media(max-width:980px){.nav-links{display:none;}}
+
+  /* ── Lernpfad ── */
+  .lp-section{padding:3rem 5vw 6rem;background:var(--white);}
+  .lp-progress-card{max-width:1200px;margin:0 auto 1.6rem;display:flex;align-items:center;gap:2rem;flex-wrap:wrap;background:var(--creme);border:1px solid var(--beige);padding:1.3rem 1.6rem;}
+  .lp-progress-label{font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--salbei);}
+  .lp-progress-text{font-family:'Fraunces',serif;font-size:1.35rem;}
+  .lp-progress-track{flex:1;min-width:200px;height:10px;background:var(--white);border:1px solid var(--beige);border-radius:999px;overflow:hidden;}
+  .lp-progress-bar{height:100%;width:0;background:var(--salbei);transition:width .4s;}
+  .lp-flash{max-width:1200px;margin:0 auto 1.2rem;background:#F2E6DA;border-left:3px solid var(--braun);padding:.8rem 1.1rem;font-size:.9rem;}
+  .lp-grid{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:300px 1fr;gap:2rem;align-items:start;}
+  .lp-aside{position:sticky;top:96px;}
+  .lp-aside-title{font-family:'Fraunces',serif;font-size:1.3rem;font-weight:400;color:var(--braun);margin-bottom:.8rem;}
+  .lp-list{display:flex;flex-direction:column;gap:.45rem;}
+  .lp-item{display:flex;align-items:center;gap:.8rem;width:100%;text-align:left;background:var(--creme);border:1px solid var(--beige);padding:.7rem .8rem;cursor:pointer;font-family:'Manrope',sans-serif;color:var(--espresso);transition:border-color .2s,background .2s;}
+  .lp-item:hover{border-color:var(--salbei);}
+  .lp-item.is-active{background:rgba(171,185,162,.2);border-color:var(--salbei);}
+  .lp-item.is-locked{opacity:.55;cursor:not-allowed;}
+  .lp-item-num{flex-shrink:0;width:32px;height:32px;border-radius:50%;display:grid;place-items:center;background:var(--white);border:1px solid var(--beige);font-family:'Fraunces',serif;font-size:1rem;}
+  .lp-item.is-done .lp-item-num{background:var(--salbei);border-color:var(--salbei);color:var(--white);}
+  .lp-item-text{display:flex;flex-direction:column;min-width:0;}
+  .lp-item-title{font-size:.9rem;font-weight:400;line-height:1.3;}
+  .lp-item-meta{font-size:.7rem;color:var(--muted);letter-spacing:.04em;}
+  .lp-note{font-size:.76rem;color:var(--muted);margin:1rem 0 .6rem;line-height:1.5;}
+  .lp-reset{font-size:.7rem;}
+  .lp-lesson{background:var(--creme);border:1px solid var(--beige);padding:2.2rem 2.4rem;min-height:400px;}
+  .lp-lesson h2{font-family:'Fraunces',serif;font-size:clamp(1.8rem,3.2vw,2.4rem);font-weight:300;line-height:1.15;margin:.2rem 0 .8rem;}
+  .lp-lesson h3{font-family:'Fraunces',serif;font-size:1.2rem;font-weight:400;color:var(--espresso);margin-bottom:.35rem;}
+  .lp-intro{color:var(--braun);margin-bottom:1.6rem;max-width:64ch;}
+  .lp-goals{background:var(--white);border:1px solid var(--beige);padding:1.1rem 1.4rem;margin-bottom:1.8rem;}
+  .lp-goals ul{list-style:none;}
+  .lp-goals li{padding-left:1.5rem;position:relative;font-size:.92rem;margin:.25rem 0;}
+  .lp-goals li::before{content:'✓';position:absolute;left:0;color:var(--salbei);}
+  .lp-steps{list-style:none;counter-reset:s;margin-bottom:1.4rem;}
+  .lp-steps li{counter-increment:s;position:relative;padding:0 0 1.1rem 3rem;border-bottom:1px solid var(--beige);margin-bottom:1.1rem;}
+  .lp-steps li:last-child{border-bottom:0;margin-bottom:0;}
+  .lp-steps li::before{content:counter(s,decimal-leading-zero);position:absolute;left:0;top:-.1rem;font-family:'Fraunces',serif;font-size:1.6rem;color:var(--salbei);}
+  .lp-steps p{font-size:.93rem;}
+  .lp-more{font-size:.88rem;margin-bottom:1.6rem;}
+  .lp-lesson a{color:var(--braun);}
+  .lp-practice{background:var(--white);border-left:3px solid var(--braun);padding:1.1rem 1.4rem;margin-bottom:2.2rem;}
+  .lp-practice p{font-size:.93rem;}
+  .lp-quiz{border-top:1px solid var(--beige);padding-top:1.8rem;}
+  .lp-quiz-hint{font-size:.85rem;color:var(--muted);margin-bottom:1.2rem;}
+  .lp-q{border:1px solid var(--beige);background:var(--white);padding:1.1rem 1.3rem;margin-bottom:1rem;}
+  .lp-q legend{font-weight:400;padding:0 .4rem;margin-left:-.4rem;font-size:.95rem;}
+  .lp-q.is-right{border-color:var(--salbei);}
+  .lp-q.is-wrong{border-color:#C98B7E;}
+  .lp-opt{display:flex;align-items:flex-start;gap:.7rem;padding:.55rem .6rem;margin:.2rem 0;cursor:pointer;border:1px solid transparent;font-size:.92rem;line-height:1.5;}
+  .lp-opt:hover{background:var(--creme);}
+  .lp-opt input{margin-top:.35rem;accent-color:var(--braun);flex-shrink:0;}
+  .lp-opt.is-right{background:rgba(171,185,162,.22);border-color:var(--salbei);}
+  .lp-opt.is-wrong{background:#F6E4DF;border-color:#C98B7E;}
+  .lp-feedback{font-size:.86rem;margin-top:.6rem;color:var(--espresso);}
+  .lp-actions{margin:1.2rem 0;}
+  .lp-actions .btn,.lp-msg .btn{width:auto;padding:.75rem 1.4rem;}
+  .lp-msg{padding:1.1rem 1.3rem;display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;}
+  .lp-msg.is-success{background:rgba(171,185,162,.22);border:1px solid var(--salbei);}
+  .lp-msg.is-retry{background:#F6E4DF;border:1px solid #C98B7E;}
+  .lp-msg.is-info{background:var(--white);border:1px solid var(--beige);display:block;}
+  .lp-finish-icon{font-size:3rem;margin-bottom:.4rem;}
+  .lp-next-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:1rem;margin-top:1.4rem;}
+  .lp-next-card{display:flex;flex-direction:column;gap:.3rem;background:var(--white);border:1px solid var(--beige);padding:1.2rem;text-decoration:none;color:var(--espresso) !important;transition:border-color .2s;}
+  .lp-next-card:hover{border-color:var(--salbei);}
+  .lp-next-card strong{font-family:'Fraunces',serif;font-size:1.2rem;font-weight:400;}
+  .lp-next-card span:last-child{font-size:.85rem;color:var(--muted);}
+  .lp-next-icon{font-size:1.8rem;}
+  @media(max-width:900px){.lp-grid{grid-template-columns:1fr;}.lp-aside{position:static;}.lp-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));}}
+  @media(max-width:560px){.lp-lesson{padding:1.4rem 1.1rem;}.lp-section{padding:2rem 16px 4rem;}.lp-steps li{padding-left:2.4rem;}}
+</style>
+<link rel="alternate" hreflang="de" href="https://prettycrochetstudio.com/werkzeuge/lernpfad.html"/>
+<link rel="alternate" hreflang="en" href="https://prettycrochetstudio.com/en/werkzeuge/lernpfad.html"/>
+<link rel="alternate" hreflang="x-default" href="https://prettycrochetstudio.com/werkzeuge/lernpfad.html"/>
+<link rel="stylesheet" href="../assets/css/brand.css"/>
+</head>
+<body>
+<a class="skip-link" href="#main">Zum Inhalt springen</a>
+
+<header class="site-header">
+  <nav class="site-nav" aria-label="Hauptnavigation">
+    <a class="brand" href="../index.html" aria-label="PrettyCrochet – zur Startseite">Pretty<span>Crochet</span></a>
+    <ul class="nav-links">
+      <li><a href="../anleitungen.html">Anleitungen</a></li>
+      <li><a href="../haekeln-basics.html">Häkeln lernen</a></li>
+      <li><a href="lernpfad.html" aria-current="page">Lernpfad</a></li>
+      <li><a href="muster-generator.html">Muster-Generator</a></li>
+      <li><a href="../blog.html">Blog</a></li>
+      <li><a href="../ueber-mich.html">Über mich</a></li>
+    </ul>
+    <div class="nav-tools">
+      <button type="button" class="icon-btn" data-search-open aria-label="Suche öffnen"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg></button>
+      <div class="lang-switch" aria-label="Sprache wählen"><span aria-current="true">DE</span><span aria-hidden="true">|</span><a href="../en/werkzeuge/lernpfad.html" hreflang="en" lang="en">EN</a></div>
+      <button type="button" class="icon-btn menu-toggle" aria-expanded="false" aria-controls="mobile-menu" aria-label="Menü öffnen" data-label-open="Menü öffnen" data-label-close="Menü schließen"><svg class="i-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg><svg class="i-close" style="display:none" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+    </div>
+  </nav>
+  <div class="mobile-menu" id="mobile-menu" hidden>
+    <button type="button" class="btn primary mm-search" data-search-open><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>Anleitungen & Themen suchen</button>
+    <ul>
+      <li><a href="../anleitungen.html">Anleitungen</a></li>
+      <li><a href="../haekeln-basics.html">Häkeln lernen</a></li>
+      <li><a href="lernpfad.html" aria-current="page">Lernpfad</a></li>
+      <li><a href="muster-generator.html">Muster-Generator</a></li>
+      <li><a href="../blog.html">Blog</a></li>
+      <li><a href="../ueber-mich.html">Über mich</a></li>
+    </ul>
+    <p class="mm-label">Schnell zu</p>
+    <div class="mm-quick"><a href="#" data-search-query="Kürbis">Kürbis</a><a href="#" data-search-query="Magic Ring">Magic Ring</a><a href="#" data-search-query="Anfänger">Anfänger</a><a href="#" data-search-query="Amigurumi">Amigurumi</a></div>
+  </div>
+</header>
+<div class="search-overlay" id="search" role="dialog" aria-modal="true" aria-label="Suche öffnen" hidden>
+  <div class="search-panel">
+    <div class="search-bar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><input type="search" placeholder="Anleitung, Technik oder Thema suchen …" aria-label="Anleitung, Technik oder Thema suchen …" autocomplete="off"/><button type="button" class="search-close">Schließen</button></div>
+    <div class="search-results" aria-live="polite"></div>
+  </div>
+</div>
+
+<main id="main" tabindex="-1">
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <p class="breadcrumb"><a href="../index.html">Start</a> · <a href="../haekeln-basics.html">Häkel Basics</a> · Lernpfad</p>
+  <div class="label">Interaktiv</div>
+  <h1>Der interaktive <em>Lernpfad</em></h1>
+  <p class="sub">In sieben kurzen Lektionen von der ersten Luftmasche bis zur ersten Anleitung. Jede Lektion endet mit einer Übung und einem Mini-Quiz – wer besteht, schaltet die nächste frei. Kostenlos und ohne Anmeldung.</p>
+</section>
+
+<section class="lp-section" id="lp-app">
+  <div class="lp-progress-card">
+    <div>
+      <p class="lp-progress-label">Dein Fortschritt</p>
+      <p class="lp-progress-text" id="lp-progress-text"></p>
+    </div>
+    <div class="lp-progress-track" role="progressbar" aria-label="Fortschritt im Lernpfad" aria-valuemin="0">
+      <div class="lp-progress-bar" id="lp-progress-bar"></div>
+    </div>
+  </div>
+  <p class="lp-flash" id="lp-flash" role="status" hidden></p>
+
+  <div class="lp-grid">
+    <aside class="lp-aside">
+      <h2 class="lp-aside-title">Lektionen</h2>
+      <div id="lp-list" class="lp-list" role="group" aria-label="Lektionen des Lernpfads"></div>
+      <p class="lp-note">Dein Fortschritt wird nur in diesem Browser gespeichert – es werden keine Daten übertragen.</p>
+      <button type="button" class="btn ghost lp-reset" id="lp-reset">Fortschritt zurücksetzen</button>
+    </aside>
+    <article class="lp-lesson" id="lp-lesson" aria-live="polite"></article>
+  </div>
+</section>
+
+<script>
+window.LERNPFAD = {
+  storageKey: "prettycrochet_lernpfad_v1_de",
+  text: {
+    progress: "{done} von {total} Lektionen abgeschlossen",
+    statusDone: "erledigt", statusOpen: "offen", statusLocked: "gesperrt",
+    lessonLabel: "Lektion {n}", lessonOf: "Lektion {n} von {total}",
+    lockedMsg: "Diese Lektion ist noch gesperrt. Schließe zuerst Lektion {n} ab.",
+    goals: "Das lernst du", practice: "Deine Übung",
+    quizTitle: "Mini-Quiz",
+    quizHint: "Beantworte alle drei Fragen richtig, um die nächste Lektion freizuschalten.",
+    quizDoneHint: "Diese Lektion hast du schon bestanden – du kannst das Quiz trotzdem noch einmal machen.",
+    check: "Antworten prüfen",
+    right: "Richtig!", wrong: "Nicht ganz.",
+    answerAll: "Bitte beantworte noch {n} Frage(n).",
+    passedTitle: "Bestanden!", passedText: "Lektion {n} ist abgeschlossen.",
+    next: "Weiter zu Lektion {n} →", finishBtn: "Lernpfad abschließen →",
+    retryText: "{right} von {total} richtig. Lies dir die Erklärungen durch und versuch es noch einmal.",
+    retry: "Noch einmal versuchen",
+    finishTitle: "Geschafft – du kannst häkeln!",
+    finishText: "Du hast alle sieben Lektionen abgeschlossen. Jetzt bist du bereit für dein erstes richtiges Projekt. Diese Anleitungen eignen sich besonders gut für den Anfang:",
+    notYetTitle: "Fast geschafft",
+    notYetText: "Es fehlen noch Lektionen. Wähle links eine offene Lektion aus.",
+    resetConfirm: "Möchtest du deinen Fortschritt wirklich zurücksetzen? Alle Lektionen werden wieder gesperrt."
+  },
+  projects: [
+    { icon: "🎃", title: "Kürbis häkeln", text: "Nur Reihen, keine Zunahmen – in einem Abend fertig.", href: "../anleitungen/kuerbis.html" },
+    { icon: "🧸", title: "Kleiner Häkel-Bär", text: "Dein erstes Amigurumi, Runde für Runde erklärt.", href: "../anleitungen/haekel-baer.html" },
+    { icon: "🌸", title: "Blüten & Blätter", text: "Kleine Modelle für Kränze und Applikationen.", href: "../anleitungen/blueten-blaetter.html" }
+  ],
+  lessons: [
+    {
+      title: "Das richtige Material", duration: "5 Min.",
+      intro: "Bevor du loslegst, brauchst du nur wenig – aber das Richtige. Mit gut gewähltem Material fällt der Start deutlich leichter.",
+      goals: ["Welche Häkelnadel und welches Garn sich für den Anfang eignen", "Was auf der Banderole steht", "Welches Zubehör du wirklich brauchst"],
+      steps: [
+        { title: "Die Häkelnadel", text: "Für den Anfang eignet sich eine mittlere Nadelstärke von 4–5 mm. Ein ergonomischer Griff ist angenehm, wenn du länger häkelst." },
+        { title: "Das Garn", text: "Nimm glattes, helles Garn in mittlerer Stärke, zum Beispiel Baumwolle oder einen Baumwollmix. Darin erkennst du jede Masche. Flauschiges oder sehr dunkles Garn macht den Start unnötig schwer." },
+        { title: "Die Banderole lesen", text: "Die Banderole ist die Papierschlaufe um das Knäuel. Dort stehen die empfohlene Nadelstärke, die Lauflänge (zum Beispiel 100 m auf 50 g) und die Pflegehinweise." },
+        { title: "Das Zubehör", text: "Eine kleine Schere, eine Vernähnadel mit großem Öhr für die Fadenenden und ein paar Maschenmarkierer – mehr brauchst du nicht." }
+      ],
+      more: 'Mehr dazu findest du in den <a href="../haekeln-basics.html#material">Häkel-Basics</a>.',
+      practice: "Such dir ein Garn aus und lies auf der Banderole die empfohlene Nadelstärke ab. Leg dir Nadel, Schere und Vernähnadel bereit.",
+      quiz: [
+        { q: "Welches Garn eignet sich für den Anfang am besten?", a: ["Flauschiges Mohair in Schwarz", "Glattes, helles Baumwollgarn", "Sehr dünnes Häkelgarn für 1-mm-Nadeln"], c: 1, e: "In glattem, hellem Garn siehst du jede einzelne Masche – das macht das Lernen viel einfacher." },
+        { q: "Wo findest du die passende Nadelstärke für ein Garn?", a: ["Auf der Banderole", "Auf der Häkelnadel", "Das spielt keine Rolle"], c: 0, e: "Die Banderole nennt die empfohlene Nadelstärke. Sie ist ein guter Startpunkt." },
+        { q: "Wofür brauchst du eine Vernähnadel?", a: ["Zum Häkeln von Luftmaschen", "Zum Vernähen der Fadenenden", "Zum Messen der Maschenprobe"], c: 1, e: "Mit der stumpfen Vernähnadel versteckst du am Ende die Fadenenden unsichtbar im Maschenbild." }
+      ]
+    },
+    {
+      title: "Nadel und Faden halten", duration: "5 Min.",
+      intro: "Eine entspannte Haltung ist die halbe Miete. Wenn Nadel und Faden gut in der Hand liegen, werden deine Maschen von allein gleichmäßiger.",
+      goals: ["Die Häkelnadel bequem halten", "Den Faden mit gleichmäßiger Spannung führen", "Eine Anfangsschlinge machen"],
+      steps: [
+        { title: "Die Nadel halten", text: "Halte die Nadel wie einen Stift zwischen Daumen und Zeigefinger – oder umfasse sie wie ein Messer. Beides ist richtig; nimm, was sich für dich entspannter anfühlt." },
+        { title: "Den Faden führen", text: "Leg den Arbeitsfaden über die Finger deiner anderen Hand. Der Zeigefinger hält den Faden leicht gespannt. So entsteht eine gleichmäßige Spannung – nicht zu locker, nicht zu straff." },
+        { title: "Die Anfangsschlinge", text: "Leg den Faden zu einer Schlaufe, hol den Arbeitsfaden mit der Nadel hindurch und zieh die Schlinge auf der Nadel zu. Sie sollte locker sitzen und gut gleiten." },
+        { title: "Locker bleiben", text: "Setz dich bequem hin und mach Pausen. Verkrampfte Hände sind der häufigste Grund, warum der Anfang frustriert." }
+      ],
+      more: 'Mit Bild erklärt in den <a href="../haekeln-basics.html#haltung">Häkel-Basics</a>.',
+      practice: "Mach fünfmal eine Anfangsschlinge und zieh sie wieder auf. Probier dabei beide Nadelhaltungen aus.",
+      quiz: [
+        { q: "Wie hältst du die Häkelnadel richtig?", a: ["Nur wie einen Stift", "Wie einen Stift oder wie ein Messer – was sich besser anfühlt", "Mit beiden Händen"], c: 1, e: "Es gibt keine einzig richtige Haltung. Entscheidend ist, dass deine Hand entspannt bleibt." },
+        { q: "Wozu dient die Hand, über die der Faden läuft?", a: ["Sie sorgt für eine gleichmäßige Fadenspannung", "Sie zählt die Maschen", "Sie hält die Nadel fest"], c: 0, e: "Die Fadenhand dosiert, wie viel Garn nachläuft – das macht die Maschen gleichmäßig." },
+        { q: "Wie sollte die Anfangsschlinge auf der Nadel sitzen?", a: ["So fest wie möglich", "Locker, sodass sie gut gleitet", "Sie wird gar nicht zugezogen"], c: 1, e: "Eine zu feste Schlinge lässt sich kaum bewegen. Sie soll anliegen, aber gut gleiten." }
+      ]
+    },
+    {
+      title: "Luftmaschen und Anschlag", duration: "10 Min.",
+      intro: "Fast jede Anleitung beginnt mit einer Kette aus Luftmaschen, dem Anschlag. Hier lernst du, sie zu häkeln und richtig zu zählen.",
+      goals: ["Eine Luftmasche häkeln", "Eine Luftmaschenkette in der gewünschten Länge anschlagen", "Luftmaschen richtig zählen"],
+      steps: [
+        { title: "Der Umschlag", text: "Leg den Arbeitsfaden einmal von hinten nach vorne über die Nadel. Das nennt man Umschlag." },
+        { title: "Durchziehen", text: "Zieh den Umschlag durch die Schlinge auf der Nadel. Fertig ist deine erste Luftmasche (Lm)." },
+        { title: "Die Kette", text: "Wiederhole Umschlag und Durchziehen, bis die Kette so lang ist, wie die Anleitung angibt." },
+        { title: "Richtig zählen", text: "Jede kleine V-Form in der Kette ist eine Luftmasche. Die Schlinge auf der Nadel zählt nicht mit." },
+        { title: "Eher locker", text: "Häkle den Anschlag etwas lockerer als den Rest. Dann kannst du in der ersten Reihe leichter einstechen." }
+      ],
+      more: 'Ausführlich in den <a href="../haekeln-basics.html#maschen">Häkel-Basics</a>.',
+      practice: "Häkle 20 Luftmaschen und zähl sie nach. Stimmt die Zahl? Dann zieh die Kette auf und häkle sie noch einmal – diesmal ein bisschen gleichmäßiger.",
+      quiz: [
+        { q: "Zählt die Schlinge auf der Nadel als Luftmasche?", a: ["Ja", "Nein"], c: 1, e: "Die Schlinge auf der Nadel ist die Arbeitsschlinge und wird nie mitgezählt." },
+        { q: "Woran erkennst du eine Luftmasche in der Kette?", a: ["An einer kleinen V-Form", "An einem Knoten", "An einem Loch"], c: 0, e: "Jede Luftmasche bildet ein kleines „V“ – so zählst du die Kette ganz einfach." },
+        { q: "Wie sollte die Anschlagkette gehäkelt werden?", a: ["Etwas lockerer als der Rest", "Besonders fest", "Doppelt"], c: 0, e: "Ein lockerer Anschlag erleichtert das Einstechen in der ersten Reihe und verhindert, dass sich die Kante zusammenzieht." }
+      ]
+    },
+    {
+      title: "Die feste Masche", duration: "15 Min.",
+      intro: "Die feste Masche (fM) ist die wichtigste Grundmasche – dicht, stabil und die Basis für Amigurumi, Körbe und vieles mehr.",
+      goals: ["Eine feste Masche häkeln", "Reihen häkeln und die Arbeit wenden", "Gerade Ränder behalten"],
+      steps: [
+        { title: "Einstechen", text: "Stich mit der Nadel in die Masche ein – normalerweise unter beide Schenkel des „V“." },
+        { title: "Faden holen", text: "Hol den Faden und zieh ihn durch die Masche. Jetzt liegen 2 Schlaufen auf der Nadel." },
+        { title: "Abmaschen", text: "Hol den Faden erneut und zieh ihn durch beide Schlaufen. Fertig ist die feste Masche." },
+        { title: "Die erste Reihe", text: "In der ersten Reihe beginnst du in der 2. Luftmasche ab der Nadel – die erste überspringst du." },
+        { title: "Wenden", text: "Am Reihenende häkelst du 1 Wendeluftmasche und drehst die Arbeit wie eine Buchseite. Bei festen Maschen zählt die Wendeluftmasche nicht als Masche." }
+      ],
+      more: 'Mehr zu Reihen und Wenden in den <a href="../haekeln-basics.html#reihen">Häkel-Basics</a>.',
+      practice: "Schlag 10 Luftmaschen an und häkle 8 Reihen feste Maschen mit je 9 Maschen. Zähl am Ende jeder Reihe nach.",
+      quiz: [
+        { q: "Wie viele Schlaufen liegen vor dem letzten Durchziehen einer festen Masche auf der Nadel?", a: ["1", "2", "3"], c: 1, e: "Nach dem ersten Faden-Holen liegen 2 Schlaufen auf der Nadel – durch beide ziehst du zum Schluss." },
+        { q: "In welche Luftmasche häkelst du die erste feste Masche der ersten Reihe?", a: ["In die 1. Luftmasche ab Nadel", "In die 2. Luftmasche ab Nadel", "In die letzte Luftmasche der Kette"], c: 1, e: "Die erste Luftmasche ab Nadel wird übersprungen – sie gibt der Reihe ihre Höhe." },
+        { q: "Deine Arbeit wird Reihe für Reihe schmaler. Woran liegt das meistens?", a: ["Die letzte Masche der Reihe wird vergessen", "Das Garn ist zu dick", "Die Nadel ist zu groß"], c: 0, e: "Die letzte Masche versteckt sich gern neben der Wendeluftmasche. Zähl nach jeder Reihe nach." }
+      ]
+    },
+    {
+      title: "Halbe Stäbchen und Stäbchen", duration: "15 Min.",
+      intro: "Stäbchen sind höher als feste Maschen. Damit wachsen Decken, Schals und Taschen schneller – und das Maschenbild wird luftiger.",
+      goals: ["Ein halbes Stäbchen und ein Stäbchen häkeln", "Die Maschenhöhen unterscheiden", "Die richtige Zahl an Wendeluftmaschen wählen"],
+      steps: [
+        { title: "Das halbe Stäbchen (hStb)", text: "Umschlag, in die Masche einstechen und Faden holen – jetzt liegen 3 Schlaufen auf der Nadel. Faden holen und durch alle 3 ziehen." },
+        { title: "Das Stäbchen (Stb)", text: "Umschlag, einstechen und Faden holen (3 Schlaufen). Faden holen und durch 2 Schlaufen ziehen, dann noch einmal Faden holen und durch die letzten 2 ziehen." },
+        { title: "Die Höhen", text: "Die feste Masche ist am niedrigsten, das halbe Stäbchen etwas höher, das Stäbchen am höchsten." },
+        { title: "Wendeluftmaschen", text: "Faustregel: 1 Luftmasche bei festen Maschen, 2 beim halben Stäbchen, 3 beim Stäbchen. Bei Stäbchen ersetzen die 3 Luftmaschen meist die erste Masche der Reihe." }
+      ],
+      more: 'Alle Grundmaschen im Überblick in den <a href="../haekeln-basics.html#maschen">Häkel-Basics</a>.',
+      practice: "Häkle ein Probestück: 4 Reihen halbe Stäbchen und darüber 4 Reihen Stäbchen. Vergleich die Höhe der Reihen.",
+      quiz: [
+        { q: "Womit beginnt ein Stäbchen?", a: ["Mit einem Umschlag", "Mit einer Kettmasche", "Mit dem Einstechen ohne Umschlag"], c: 0, e: "Stäbchen und halbe Stäbchen beginnen immer mit einem Umschlag – das macht sie höher als die feste Masche." },
+        { q: "Wie viele Wendeluftmaschen brauchst du meist bei Stäbchen?", a: ["1", "2", "3"], c: 2, e: "3 Luftmaschen entsprechen etwa der Höhe eines Stäbchens." },
+        { q: "Welche Masche ist am höchsten?", a: ["Feste Masche", "Halbes Stäbchen", "Stäbchen"], c: 2, e: "Das Stäbchen ist die höchste der drei Maschen – deshalb wachsen Stäbchen-Projekte so schnell." }
+      ]
+    },
+    {
+      title: "In Runden häkeln", duration: "15 Min.",
+      intro: "Amigurumi, Mützen, Körbe und Untersetzer entstehen in Runden. Hier lernst du den Magic Ring und wie Kreise flach bleiben.",
+      goals: ["Einen Magic Ring häkeln", "Zunehmen und abnehmen", "Einen flachen Kreis häkeln"],
+      steps: [
+        { title: "Der Magic Ring (MR)", text: "Leg den Faden zu einer Schlaufe, häkle die erste Runde in diese Schlaufe und zieh sie am losen Fadenende fest zu. So entsteht kein Loch in der Mitte." },
+        { title: "Spiralrunden", text: "Bei Amigurumi häkelst du meist ohne Rundenabschluss einfach weiter. Ein Maschenmarkierer zeigt dir, wo jede Runde beginnt." },
+        { title: "Zu- und Abnehmen", text: "Zunahme: 2 Maschen in dieselbe Masche. Abnahme: 2 Maschen zusammen abmaschen. So entstehen runde und dreidimensionale Formen." },
+        { title: "Flache Kreise", text: "Faustregel: Pro Runde kommen so viele Zunahmen dazu, wie du in der ersten Runde Maschen hattest – bei 6 Maschen also 6 Zunahmen pro Runde." }
+      ],
+      more: 'Mehr dazu in den <a href="../haekeln-basics.html#runden">Häkel-Basics</a>.',
+      practice: "Häkle einen flachen Kreis: R 1: 6 fM in den MR (6). R 2: [Zun] x 6 (12). R 3: [fM, Zun] x 6 (18). R 4: [2 fM, Zun] x 6 (24). Leg ihn flach hin – bleibt er glatt?",
+      quiz: [
+        { q: "Runde 1 hat 6 Maschen. Wie viele hat Runde 2, wenn du in jede Masche zunimmst?", a: ["6", "12", "18"], c: 1, e: "Jede Zunahme macht aus 1 Masche 2 – aus 6 Maschen werden also 12." },
+        { q: "Dein flacher Kreis wellt sich am Rand. Was ist die Ursache?", a: ["Zu viele Zunahmen", "Zu wenige Zunahmen", "Zu dünnes Garn"], c: 0, e: "Zu viele Zunahmen erzeugen mehr Umfang, als flach Platz hat – der Rand wellt sich. Zu wenige lassen den Kreis zur Schale werden." },
+        { q: "Wozu dient ein Maschenmarkierer beim Häkeln in Spiralrunden?", a: ["Er markiert den Rundenanfang", "Er ersetzt die Zunahme", "Er hält die Füllwatte fest"], c: 0, e: "Ohne Rundenabschluss siehst du sonst nicht, wo eine Runde endet und die nächste beginnt." }
+      ]
+    },
+    {
+      title: "Anleitungen lesen", duration: "10 Min.",
+      intro: "Zum Schluss lernst du die Sprache der Anleitungen. Mit ein paar Abkürzungen und Zeichen kannst du jede meiner Anleitungen lesen.",
+      goals: ["Die wichtigsten Abkürzungen kennen", "Wiederholungen und Maschenzahlen lesen", "Eine Anleitungszeile Schritt für Schritt verstehen"],
+      steps: [
+        { title: "Die wichtigsten Abkürzungen", text: "Lm = Luftmasche, fM = feste Masche, Stb = Stäbchen, Zun = Zunahme, Abn = Abnahme, MR = Magic Ring." },
+        { title: "Wiederholungen", text: "„[fM, Zun] x 6“ bedeutet: 1 feste Masche und 1 Zunahme – das Ganze 6-mal." },
+        { title: "Maschenzahl", text: "Die Zahl in runden Klammern am Zeilenende, zum Beispiel „(18 M)“, sagt dir, wie viele Maschen du danach haben solltest." },
+        { title: "Bereiche", text: "„R 6–11“ bedeutet: Die Anweisung gilt für die Runden 6 bis 11." }
+      ],
+      more: 'Alle Abkürzungen und Schreibweisen findest du in der <a href="../abkuerzungen.html">Übersicht zu Abkürzungen &amp; Häkelschrift</a>.',
+      practice: "Öffne die Anleitung für den kleinen Häkel-Bären und lies die Runden 1 bis 5 des Kopfes. Schreib dir auf, wie viele Maschen du nach jeder Runde hast.",
+      quiz: [
+        { q: "Was bedeutet „[fM, Zun] x 6“?", a: ["6 feste Maschen und danach 6 Zunahmen", "1 feste Masche und 1 Zunahme – das Ganze 6-mal", "6-mal in dieselbe Masche häkeln"], c: 1, e: "Alles in der eckigen Klammer wird so oft wiederholt, wie die Zahl dahinter angibt." },
+        { q: "Was sagt „(18 M)“ am Ende einer Runde?", a: ["Wie viele Maschen du danach haben solltest", "Wie viele Runden noch kommen", "Welche Nadelstärke du brauchst"], c: 0, e: "Die Maschenzahl ist deine Kontrolle – stimmt sie, kannst du beruhigt weiterhäkeln." },
+        { q: "Was bedeutet „R 6–11: fM in jede Masche“?", a: ["Nur Runde 6 und Runde 11 häkeln", "In den Runden 6 bis 11 jeweils 1 fM in jede Masche", "6 bis 11 Maschen häkeln"], c: 1, e: "Der Bereich fasst gleiche Runden zusammen – hier häkelst du 6 Runden hintereinander gleich." }
+      ]
+    }
+  ]
+};
+</script>
+<script src="../assets/js/lernpfad.js"></script>
+</main>
+
+<footer class="site-footer">
+  <div class="sf-grid">
+    <div class="sf-about">
+      <a class="sf-brand" href="../index.html">Pretty<span>Crochet</span></a>
+      <p class="sf-claim">Aus Garn wird deins.</p>
+      <p>Kostenlose Häkelanleitungen, ein interaktiver Lernpfad und Werkzeuge zum Selbstentwerfen – für alle, die mit Garn und Nadel Lieblingsstücke machen.</p>
+    </div>
+    <div><h2>Häkeln lernen</h2><ul>
+        <li><a href="lernpfad.html">Lernpfad (7 Lektionen)</a></li>
+        <li><a href="../haekeln-basics.html">Häkel-Basics</a></li>
+        <li><a href="../abkuerzungen.html">Abkürzungen &amp; Häkelschrift</a></li>
+      </ul></div>
+    <div><h2>Anleitungen</h2><ul>
+        <li><a href="../anleitungen/kuerbis.html">Kürbis häkeln</a></li>
+        <li><a href="../anleitungen/haekel-baer.html">Kleiner Häkel-Bär</a></li>
+        <li><a href="../anleitungen/haekeltasche.html">Sommer-Häkeltasche</a></li>
+        <li><a href="../anleitungen/blueten-blaetter.html">Blüten &amp; Blätter</a></li>
+        <li><a href="../anleitungen.html">Alle Anleitungen →</a></li>
+      </ul></div>
+    <div><h2>Entdecken</h2><ul>
+        <li><a href="muster-generator.html">Muster-Generator</a></li>
+        <li><a href="../blog.html">Blog</a></li>
+        <li><a href="../amigurumi.html">Amigurumi</a></li>
+        <li><a href="../wohndeko.html">Wohndeko</a></li>
+        <li><a href="../ueber-mich.html">Über mich</a></li>
+      </ul></div>
+  </div>
+  <div class="sf-bottom">
+    <span>© 2026 PrettyCrochet</span>
+    <div class="sf-legal"><a href="mailto:prettycrochetstudio@gmail.com">Kontakt</a><a href="#">Impressum</a><a href="../datenschutz.html">Datenschutz</a></div>
+  </div>
+</footer>
+
+<script src="../assets/js/search-index.js" defer></script>
+<script src="../assets/js/site.js" data-root="../" data-lang="de" defer></script>
+</body>
+</html>

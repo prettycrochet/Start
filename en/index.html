@@ -7,540 +7,111 @@
   <meta name="description" content="Free crochet patterns, beginner basics, honest product recommendations and everything you need for beautiful crochet projects."/>
   <link rel="stylesheet" href="../assets/fonts/fonts.css"/>
   <style>
-    :root {
-      --creme:   #FAF6F1;
-      --salbei:  #A7B39A;
-      --beige:   #D6C5B5;
-      --braun:   #8B6F5B;
-      --espresso:#4A3B32;
-      --white:   #FFFFFF;
-      --muted:   #9A8880;
-    }
+    /* ── Startseite (Corporate Design 2026) ── */
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    img{max-width:100%;display:block;}
+    body{background:var(--pc-cream);}
+    .wrap{max-width:1240px;margin:0 auto;padding:0 clamp(16px,4vw,48px);}
+    .sec{padding:clamp(3.5rem,8vw,6rem) 0;}
+    .eyebrow{display:inline-flex;align-items:center;gap:.7rem;font-size:.74rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--pc-pine);margin-bottom:1rem;}
+    .eyebrow::before{content:'';width:28px;height:2px;border-radius:2px;background:var(--pc-apricot);}
+    .sec-head{display:flex;align-items:flex-end;justify-content:space-between;gap:1.5rem;flex-wrap:wrap;margin-bottom:2.2rem;}
+    .sec-head h2{font-size:clamp(2rem,3.6vw,2.9rem);line-height:1.08;max-width:24ch;}
+    .more{display:inline-flex;align-items:center;gap:.4rem;min-height:44px;font-weight:700;color:var(--pc-pine);text-decoration:none;border-bottom:2px solid var(--pc-sage);}
+    .more:hover{border-color:var(--pc-pine);}
+    .loops{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='64' viewBox='0 0 100 108'%3E%3Cpath d='M 35 89 L 35 37 C 35 15 76 13 77 36 C 79 59 41 69 23 55 C 7 42 19 23 33 28' fill='none' stroke='%233E5748' stroke-width='8' stroke-linecap='round' stroke-linejoin='round' opacity='.55'/%3E%3C/svg%3E");background-size:52px 56px;}
 
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    /* Hero */
+    .hero{padding:calc(var(--pc-header-h) + clamp(2.5rem,6vw,4.5rem)) 0 clamp(3rem,6vw,5rem);}
+    .hero-grid{display:grid;grid-template-columns:1.05fr 1fr;gap:clamp(2rem,5vw,4.5rem);align-items:center;}
+    .hero h1{font-size:clamp(2.9rem,6.2vw,5.3rem);line-height:1.02;letter-spacing:-.025em;margin-bottom:1.2rem;}
+    .hero-lead{font-size:clamp(1.05rem,1.6vw,1.2rem);max-width:44ch;margin-bottom:1.8rem;}
+    .hero-search{display:flex;align-items:center;gap:.5rem;background:var(--pc-white);border:2px solid var(--pc-line);border-radius:16px;padding:.4rem .4rem .4rem 1rem;max-width:560px;box-shadow:var(--pc-shadow);transition:border-color .2s;}
+    .hero-search:focus-within{border-color:var(--pc-pine);}
+    .hero-search svg{width:22px;height:22px;color:var(--pc-pine);flex-shrink:0;}
+    .hero-search input{flex:1;min-width:0;border:0;outline:0;background:none;font:inherit;font-size:1.05rem;min-height:48px;color:var(--pc-espresso);}
+    .hero-search button{min-height:48px;padding:0 1.4rem;border:0;border-radius:12px;background:var(--pc-pine);color:var(--pc-cream);font:inherit;font-weight:700;cursor:pointer;}
+    .hero-search button:hover{background:var(--pc-espresso);}
+    .chips{display:flex;flex-wrap:wrap;align-items:center;gap:.5rem;margin-top:1rem;font-size:.88rem;color:var(--pc-muted);}
+    .chips a{display:inline-flex;align-items:center;min-height:40px;padding:0 1rem;border-radius:999px;background:var(--pc-white);border:1px solid var(--pc-line);color:var(--pc-espresso);text-decoration:none;font-weight:600;transition:border-color .2s,background .2s;}
+    .chips a:hover{border-color:var(--pc-pine);background:var(--pc-sage-tint);}
+    .hero-visual{position:relative;}
+    .hero-visual img{width:100%;aspect-ratio:5/4;object-fit:cover;object-position:65% center;border-radius:28px;}
+    .hero-badge{position:absolute;left:clamp(-1rem,-2vw,-2rem);bottom:1.6rem;display:flex;align-items:center;gap:.9rem;max-width:300px;background:var(--pc-white);border-radius:18px;padding:.9rem 1.1rem;box-shadow:0 16px 40px rgba(48,42,38,.16);text-decoration:none;color:var(--pc-espresso);transition:transform .2s;}
+    .hero-badge:hover{transform:translateY(-3px);}
+    .hero-badge img{width:56px;height:56px;border-radius:12px;object-fit:cover;aspect-ratio:auto;}
+    .hero-badge small{display:block;font-size:.7rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--pc-pine);}
+    .hero-badge strong{font-family:var(--pc-display);font-weight:500;font-size:1.05rem;line-height:1.25;}
 
-    html { scroll-behavior: smooth; }
+    /* Einstiege */
+    .paths{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;}
+    .path{position:relative;display:flex;flex-direction:column;gap:.7rem;padding:1.6rem;border-radius:var(--pc-r-card);min-height:320px;transition:transform .2s,box-shadow .2s;}
+    .path:hover{transform:translateY(-4px);box-shadow:var(--pc-shadow);}
+    .path.p1{background:var(--pc-sage-tint);} .path.p2{background:var(--pc-apricot-tint);} .path.p3{background:var(--pc-pine);color:var(--pc-cream);} .path.p4{background:var(--pc-cream-2);}
+    .path .num{display:grid;place-items:center;width:46px;height:46px;border-radius:50%;background:var(--pc-white);font-family:var(--pc-display);font-size:1.1rem;color:var(--pc-espresso);}
+    .path.p3 .num{background:var(--pc-cream);color:var(--pc-pine);}
+    .path h3{font-size:1.6rem;line-height:1.1;margin-top:.4rem;}
+    .path h3 a{color:inherit;text-decoration:none;}
+    .path h3 a::after{content:'';position:absolute;inset:0;border-radius:inherit;}
+    .path p{font-size:.95rem;opacity:.9;}
+    .path ul{list-style:none;margin-top:auto;display:flex;flex-direction:column;gap:.1rem;position:relative;z-index:1;}
+    .path ul a{display:inline-flex;align-items:center;gap:.4rem;min-height:36px;font-size:.92rem;font-weight:700;color:var(--pc-pine);text-decoration:none;}
+    .path.p3 ul a{color:var(--pc-cream);}
+    .path ul a:hover{text-decoration:underline;text-underline-offset:.2em;}
+    .path ul a::before{content:'→';}
 
-    body {
-      background: var(--creme);
-      color: var(--espresso);
-      font-family: 'Jost', sans-serif;
-      font-weight: 300;
-      line-height: 1.75;
-    }
+    /* Karten */
+    .cards{display:grid;grid-template-columns:repeat(4,1fr);gap:1.2rem;}
+    .card{display:flex;flex-direction:column;background:var(--pc-white);border:1px solid var(--pc-line);border-radius:var(--pc-r-card);overflow:hidden;text-decoration:none;color:var(--pc-espresso);transition:transform .2s,box-shadow .2s,border-color .2s;}
+    .card:hover{transform:translateY(-4px);box-shadow:var(--pc-shadow);border-color:var(--pc-sage);}
+    .card-img{aspect-ratio:4/3;overflow:hidden;background-color:var(--pc-sage-tint);}
+    .card-img img.crop{object-position:85% 85%;transform:scale(1.2);transform-origin:80% 80%;}
+    .card:hover .card-img img.crop{transform:scale(1.25);}
+    .card-img img{width:100%;height:100%;object-fit:cover;transition:transform .4s;}
+    .card:hover .card-img img{transform:scale(1.04);}
+    .card-img.apricot{background-color:var(--pc-apricot-tint);}
+    .card-body{padding:1.2rem 1.3rem 1.4rem;display:flex;flex-direction:column;gap:.5rem;flex:1;}
+    .card-tags{display:flex;flex-wrap:wrap;gap:.35rem;}
+    .tag{font-size:.72rem;font-weight:700;letter-spacing:.04em;padding:.25rem .6rem;border-radius:999px;background:var(--pc-sage-tint);color:var(--pc-pine);}
+    .tag.alt{background:var(--pc-cream-2);color:var(--pc-espresso);}
+    .card h3{font-size:1.3rem;line-height:1.2;}
+    .card p{font-size:.9rem;color:var(--pc-muted);}
 
-    /* ── NAV ── */
-    nav {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      z-index: 200;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 1.1rem 6vw;
-      background: rgba(250,246,241,0.92);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid var(--beige);
-    }
+    /* Lernpfad-Band */
+    .learn{background:var(--pc-pine);color:var(--pc-cream);border-radius:28px;padding:clamp(2rem,5vw,3.5rem);display:grid;grid-template-columns:1.2fr 1fr;gap:2.5rem;align-items:center;}
+    .learn .eyebrow{color:var(--pc-cream);} .learn .eyebrow::before{background:var(--pc-apricot);}
+    .learn h2{font-size:clamp(2rem,3.6vw,2.8rem);line-height:1.08;color:var(--pc-cream);margin-bottom:1rem;}
+    .learn h2 em{color:var(--pc-apricot) !important;}
+    .learn p{opacity:.9;max-width:48ch;margin-bottom:1.6rem;}
+    .learn .btn-primary{background:var(--pc-cream) !important;border-color:var(--pc-cream) !important;color:var(--pc-pine) !important;}
+    .learn .btn-primary:hover{background:var(--pc-sage) !important;border-color:var(--pc-sage) !important;}
+    .steps{list-style:none;display:flex;flex-direction:column;gap:.55rem;}
+    .steps li{display:flex;align-items:center;gap:.9rem;background:rgba(247,243,236,.08);border:1px solid rgba(247,243,236,.16);border-radius:14px;padding:.7rem 1rem;font-weight:600;font-size:.95rem;}
+    .steps li span{display:grid;place-items:center;flex-shrink:0;width:32px;height:32px;border-radius:50%;background:var(--pc-sage);color:var(--pc-espresso);font-family:var(--pc-display);font-size:.95rem;}
 
-    .logo-wrap { display: flex; align-items: center; gap: 0.75rem; text-decoration: none; }
-    .logo-text {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.45rem;
-      font-weight: 600;
-      color: var(--espresso);
-      letter-spacing: 0.02em;
-    }
-    .logo-text span { color: var(--salbei); }
+    /* Blog */
+    .posts{display:grid;grid-template-columns:repeat(2,1fr);gap:1.2rem;}
+    .post{display:grid;grid-template-columns:1fr 1.1fr;background:var(--pc-white);border:1px solid var(--pc-line);border-radius:var(--pc-r-card);overflow:hidden;text-decoration:none;color:var(--pc-espresso);transition:transform .2s,box-shadow .2s;}
+    .post:hover{transform:translateY(-4px);box-shadow:var(--pc-shadow);}
+    .post img{width:100%;height:100%;object-fit:cover;min-height:220px;}
+    .post div{padding:1.4rem;display:flex;flex-direction:column;gap:.5rem;justify-content:center;}
+    .post h3{font-size:1.35rem;line-height:1.2;}
+    .post p{font-size:.9rem;color:var(--pc-muted);}
+    .post small{font-size:.8rem;color:var(--pc-muted);}
 
-    .nav-links { display: flex; gap: 2.2rem; list-style: none; }
-    .nav-links a {
-      font-size: 0.82rem;
-      font-weight: 400;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      text-decoration: none;
-      color: var(--espresso);
-      transition: color 0.2s;
-    }
-    .nav-links a:hover { color: var(--salbei); }
+    /* Über */
+    .about{display:grid;grid-template-columns:auto 1fr;gap:clamp(1.5rem,4vw,3.5rem);align-items:center;background:var(--pc-sage-tint);border-radius:28px;padding:clamp(2rem,5vw,3.5rem);}
+    .about-mark{width:clamp(90px,12vw,150px);}
+    .about h2{font-size:clamp(1.8rem,3vw,2.4rem);line-height:1.1;margin-bottom:.8rem;}
+    .about p{max-width:60ch;margin-bottom:1.2rem;}
 
-    .nav-cta {
-      font-size: 0.8rem;
-      font-weight: 500;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      text-decoration: none;
-      color: var(--white);
-      background: var(--espresso);
-      padding: 0.6rem 1.4rem;
-      border-radius: 2px;
-      transition: background 0.2s;
-    }
-    .nav-cta:hover { background: var(--braun); }
-
-    /* ── HERO ── */
-    .hero {
-      min-height: 70vh;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      padding-top: 72px;
-    }
-
-    .hero-left {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      padding: 6rem 5vw 6rem 10vw;
-      max-width: 900px;
-    }
-
-    .hero-right {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 3rem 8vw 3rem 2rem;
-    }
-
-    .hero-right img {
-      width: 100%;
-      max-width: 600px;
-      height: auto;
-      display: block;
-      object-fit: cover;
-    }
-
-    .hero-eyebrow {
-      font-size: 0.72rem;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      color: var(--salbei);
-      margin-bottom: 1.8rem;
-      display: flex;
-      align-items: center;
-      gap: 0.8rem;
-    }
-    .hero-eyebrow::before {
-      content: '';
-      display: inline-block;
-      width: 32px; height: 1px;
-      background: var(--salbei);
-    }
-
-    .hero-title {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(3rem, 5.5vw, 5rem);
-      font-weight: 300;
-      line-height: 1.08;
-      color: var(--espresso);
-      margin-bottom: 1.8rem;
-    }
-    .hero-title em {
-      font-style: italic;
-      color: var(--braun);
-    }
-
-    .hero-sub {
-      font-size: 1rem;
-      color: var(--muted);
-      max-width: 36ch;
-      margin-bottom: 2.8rem;
-      line-height: 1.8;
-    }
-
-    .hero-actions { display: flex; gap: 1rem; align-items: center; }
-
-    .btn-primary {
-      display: inline-block;
-      background: var(--espresso);
-      color: var(--white);
-      padding: 0.9rem 2rem;
-      font-size: 0.82rem;
-      font-weight: 500;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      text-decoration: none;
-      border-radius: 2px;
-      transition: background 0.2s;
-    }
-    .btn-primary:hover { background: var(--braun); }
-
-    .btn-text {
-      font-size: 0.82rem;
-      font-weight: 400;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      text-decoration: none;
-      color: var(--braun);
-      border-bottom: 1px solid var(--beige);
-      padding-bottom: 2px;
-      transition: border-color 0.2s;
-    }
-    .btn-text:hover { border-color: var(--braun); }
-
-    /* ── MARQUEE ── */
-    .marquee-wrap {
-      background: var(--espresso);
-      overflow: hidden;
-      padding: 0.9rem 0;
-    }
-    .marquee-track {
-      display: flex;
-      gap: 3rem;
-      animation: marquee 22s linear infinite;
-      white-space: nowrap;
-      width: max-content;
-    }
-    .marquee-track span {
-      font-size: 0.72rem;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--beige);
-    }
-    .marquee-track span.dot { color: var(--salbei); font-size: 0.5rem; }
-    @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
-
-    /* ── SECTIONS ── */
-    section { padding: 6rem 10vw; }
-
-    .label {
-      font-size: 0.7rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--salbei);
-      margin-bottom: 0.6rem;
-      display: flex;
-      align-items: center;
-      gap: 0.7rem;
-    }
-    .label::before { content:''; display:inline-block; width:24px; height:1px; background:var(--salbei); }
-
-    h2 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(2rem, 3.5vw, 3rem);
-      font-weight: 300;
-      line-height: 1.15;
-      color: var(--espresso);
-      margin-bottom: 3rem;
-    }
-    h2 em { font-style: italic; color: var(--braun); }
-
-    /* ── CATEGORIES ── */
-    .cat-section { background: var(--white); }
-
-    .cat-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1px;
-      background: var(--beige);
-      border: 1px solid var(--beige);
-    }
-
-    .cat-item {
-      background: var(--white);
-      padding: 2.5rem 2rem;
-      text-decoration: none;
-      color: var(--espresso);
-      display: flex;
-      flex-direction: column;
-      gap: 0.6rem;
-      transition: background 0.25s;
-      position: relative;
-      overflow: hidden;
-    }
-    .cat-item::after {
-      content: '';
-      position: absolute;
-      bottom: 0; left: 0;
-      width: 0; height: 2px;
-      background: var(--salbei);
-      transition: width 0.3s;
-    }
-    .cat-item:hover { background: var(--creme); }
-    .cat-item:hover::after { width: 100%; }
-
-    .cat-icon {
-      font-size: 1.8rem;
-      margin-bottom: 0.4rem;
-    }
-    .cat-item h3 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.25rem;
-      font-weight: 400;
-    }
-    .cat-item p { font-size: 0.83rem; color: var(--muted); }
-    .cat-arrow {
-      font-size: 0.8rem;
-      color: var(--salbei);
-      margin-top: auto;
-      padding-top: 1rem;
-      letter-spacing: 0.08em;
-    }
-
-    /* ── POSTS ── */
-    .posts-section { background: var(--creme); }
-
-    .posts-grid {
-      display: grid;
-      grid-template-columns: 1.6fr 1fr;
-      grid-template-rows: auto auto;
-      gap: 1.5rem;
-    }
-
-    .post-card {
-      background: var(--white);
-      text-decoration: none;
-      color: var(--espresso);
-      display: flex;
-      flex-direction: column;
-      transition: box-shadow 0.25s;
-      border: 1px solid transparent;
-    }
-    .post-card:hover { box-shadow: 0 8px 32px rgba(74,59,50,0.1); border-color: var(--beige); }
-
-    .post-card.featured { grid-row: 1 / 3; }
-
-    .post-thumb {
-      background: var(--beige);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 5rem;
-    }
-    .post-card.featured .post-thumb { height: 280px; }
-    .post-card:not(.featured) .post-thumb { height: 160px; font-size: 3rem; }
-
-    .post-card:nth-child(2) .post-thumb { background: #E8EDE5; }
-    .post-card:nth-child(3) .post-thumb { background: #EDE8E2; }
-
-    .post-body { padding: 1.6rem; flex: 1; display: flex; flex-direction: column; }
-    .post-tag {
-      font-size: 0.68rem;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      color: var(--salbei);
-      margin-bottom: 0.5rem;
-    }
-    .post-body h3 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.3rem;
-      font-weight: 400;
-      line-height: 1.3;
-      margin-bottom: 0.6rem;
-    }
-    .post-card.featured .post-body h3 { font-size: 1.7rem; }
-    .post-body p { font-size: 0.84rem; color: var(--muted); flex: 1; }
-    .post-meta {
-      font-size: 0.72rem;
-      margin-top: 1.2rem;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      border-top: 1px solid var(--creme);
-      padding-top: 0.8rem;
-      color: var(--muted);
-    }
-
-    /* ── AFFILIATE PICKS ── */
-    .picks-section { background: var(--espresso); }
-    .picks-section .label { color: var(--salbei); }
-    .picks-section .label::before { background: var(--salbei); }
-    .picks-section h2 { color: var(--creme); }
-    .picks-section h2 em { color: var(--salbei); }
-
-    .picks-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 1px;
-      background: rgba(255,255,255,0.08);
-      border: 1px solid rgba(255,255,255,0.08);
-      margin-bottom: 2rem;
-    }
-
-    .pick-item {
-      background: var(--espresso);
-      padding: 2rem 1.6rem;
-      transition: background 0.2s;
-    }
-    .pick-item:hover { background: #3a2e26; }
-    .pick-icon { font-size: 2rem; margin-bottom: 1rem; display: block; }
-    .pick-item h3 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.1rem;
-      font-weight: 400;
-      color: var(--creme);
-      margin-bottom: 0.5rem;
-    }
-    .pick-item p { font-size: 0.82rem; color: var(--beige); margin-bottom: 1.2rem; }
-    .pick-link {
-      font-size: 0.75rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--salbei);
-      text-decoration: none;
-      border-bottom: 1px solid rgba(167,179,154,0.3);
-      padding-bottom: 2px;
-      transition: border-color 0.2s;
-    }
-    .pick-link:hover { border-color: var(--salbei); }
-
-    .affiliate-note {
-      font-size: 0.75rem;
-      color: rgba(214,197,181,0.6);
-      border-left: 2px solid var(--salbei);
-      padding-left: 1rem;
-    }
-
-    /* ── NEWSLETTER ── */
-    .newsletter-section {
-      background: var(--beige);
-      text-align: center;
-      padding: 6rem 10vw;
-    }
-    .newsletter-section .label { justify-content: center; }
-    .newsletter-section .label::before { display: none; }
-    .newsletter-section h2 { margin-bottom: 1rem; }
-    .newsletter-section p { color: var(--braun); max-width: 44ch; margin: 0 auto 2.5rem; font-size: 0.95rem; }
-
-    .email-row {
-      display: flex;
-      gap: 0;
-      max-width: 400px;
-      margin: 0 auto;
-      border: 1px solid var(--braun);
-    }
-    .email-row input {
-      flex: 1;
-      padding: 0.9rem 1.2rem;
-      border: none;
-      background: var(--white);
-      font-family: 'Jost', sans-serif;
-      font-size: 0.9rem;
-      color: var(--espresso);
-      outline: none;
-    }
-    .email-row button {
-      background: var(--espresso);
-      color: var(--white);
-      border: none;
-      padding: 0.9rem 1.6rem;
-      font-family: 'Jost', sans-serif;
-      font-size: 0.78rem;
-      font-weight: 500;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      cursor: pointer;
-      transition: background 0.2s;
-    }
-    .email-row button:hover { background: var(--braun); }
-
-    /* ── FOOTER ── */
-    footer {
-      background: var(--espresso);
-      color: var(--beige);
-      padding: 4rem 10vw 2rem;
-    }
-    .footer-top {
-      display: grid;
-      grid-template-columns: 2fr 1fr 1fr;
-      gap: 4rem;
-      padding-bottom: 3rem;
-      border-bottom: 1px solid rgba(214,197,181,0.15);
-      margin-bottom: 2rem;
-    }
-    .footer-logo {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.5rem;
-      font-weight: 400;
-      color: var(--creme);
-      display: block;
-      margin-bottom: 1rem;
-    }
-    .footer-logo span { color: var(--salbei); }
-    footer p { font-size: 0.83rem; color: rgba(214,197,181,0.6); line-height: 1.8; max-width: 32ch; }
-    footer h4 {
-      font-size: 0.7rem;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--salbei);
-      margin-bottom: 1.2rem;
-    }
-    footer ul { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
-    footer ul a { font-size: 0.84rem; color: rgba(214,197,181,0.7); text-decoration: none; transition: color 0.2s; }
-    footer ul a:hover { color: var(--creme); }
-    .footer-bottom {
-      text-align: center;
-      font-size: 0.72rem;
-      color: rgba(214,197,181,0.35);
-      letter-spacing: 0.06em;
-    }
-
-    /* ── RESPONSIVE ── */
-    @media (max-width: 800px) {
-      .hero { grid-template-columns: 1fr; }
-      .hero-left { padding: 4rem 6vw 2rem; }
-      .hero-right { padding: 0 6vw 4rem; }
-      .hero-right img { max-width: 100%; }
-      .cat-grid { grid-template-columns: 1fr 1fr; }
-      .posts-grid { grid-template-columns: 1fr; }
-      .post-card.featured { grid-row: auto; }
-      .picks-grid { grid-template-columns: 1fr 1fr; }
-      .footer-top { grid-template-columns: 1fr; gap: 2rem; }
-      .nav-links { display: none; }
-    }
-  
-  /* ── Sprachumschalter DE | EN ── */
-  .nav-right{display:flex;align-items:center;gap:1.4rem;}
-  .lang-switch{display:flex;align-items:center;gap:.45rem;font-size:.78rem;letter-spacing:.1em;color:#9A8880;}
-  .lang-switch a{color:inherit;text-decoration:none;border-bottom:1px solid transparent;transition:color .2s,border-color .2s;}
-  .lang-switch a:hover{color:#4A3B32;border-color:#A7B39A;}
-  .lang-switch [aria-current]{color:#4A3B32;font-weight:500;}
-  header .lang-switch{justify-content:flex-end;margin-bottom:.4rem;}
-  nav{gap:1rem;}
-  @media(max-width:480px){.nav-right{gap:.8rem;}.nav-right .nav-cta{padding:.5rem .85rem;font-size:.7rem;}}
-  .nav-links a[aria-current="page"]{color:#A7B39A;}
-  .nav-links a,.nav-cta,.lang-switch{white-space:nowrap;}
-  @media(max-width:1180px){nav{padding-left:4vw;padding-right:4vw;}.nav-links{gap:1.3rem;}.nav-links a{font-size:.75rem;letter-spacing:.07em;}}
-  @media(max-width:980px){.nav-links{display:none;}}
-</style>
+    @media(max-width:1100px){.paths{grid-template-columns:repeat(2,1fr);}.cards{grid-template-columns:repeat(2,1fr);}.path{min-height:0;}}
+    @media(max-width:860px){.hero-grid,.learn{grid-template-columns:1fr;}.posts{grid-template-columns:1fr;}.hero-visual img{aspect-ratio:16/9;border-radius:22px;}.hero-badge{left:1rem;bottom:1rem;}.hero{padding-top:calc(var(--pc-header-h) + 1.8rem);}}
+    @media(max-width:560px){.paths,.cards{grid-template-columns:1fr;}.post{grid-template-columns:1fr;}.post img{min-height:0;aspect-ratio:16/9;}.about{grid-template-columns:1fr;}.hero-search button{padding:0 1rem;}.hero-badge{position:static;margin-top:1rem;max-width:none;}}
+  </style>
 <link rel="alternate" hreflang="de" href="https://prettycrochetstudio.com/"/>
 <link rel="alternate" hreflang="en" href="https://prettycrochetstudio.com/en/"/>
 <link rel="alternate" hreflang="x-default" href="https://prettycrochetstudio.com/"/>
-<style id="site-header">
-  /* Einheitliche Kopfzeile auf allen Seiten – hier zentral anpassen */
-  nav{position:fixed;top:0;left:0;right:0;z-index:200;box-sizing:border-box;display:flex;align-items:center;justify-content:space-between;gap:1rem;margin:0;padding:1.1rem 6vw;background:rgba(250,246,241,0.92);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid #D6C5B5;font-family:'Jost',sans-serif;font-size:16px;font-weight:300;line-height:1.75;}
-  nav .logo-wrap{display:flex;align-items:center;gap:.75rem;text-decoration:none;}
-  nav .logo-text{font-family:'Cormorant Garamond',serif;font-size:1.45rem;font-weight:600;font-style:normal;color:#4A3B32;letter-spacing:.02em;line-height:1.75;}
-  nav .logo-text span{color:#A7B39A;}
-  nav .nav-links{display:flex;gap:2.2rem;list-style:none;margin:0;padding:0;}
-  nav .nav-links li{margin:0;padding:0;}
-  nav .nav-links a{font-family:'Jost',sans-serif;font-size:.82rem;font-weight:400;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;color:#4A3B32;line-height:1.75;white-space:nowrap;border:0;transition:color .2s;}
-  nav .nav-links a:hover,nav .nav-links a[aria-current="page"]{color:#A7B39A;}
-  nav .nav-right{display:flex;align-items:center;gap:1.4rem;}
-  nav .lang-switch{display:flex;align-items:center;gap:.45rem;margin:0;font-family:'Jost',sans-serif;font-size:.78rem;font-weight:300;letter-spacing:.1em;line-height:1.75;color:#9A8880;white-space:nowrap;}
-  nav .lang-switch a{color:inherit;text-decoration:none;border-bottom:1px solid transparent;transition:color .2s,border-color .2s;}
-  nav .lang-switch a:hover{color:#4A3B32;border-color:#A7B39A;}
-  nav .lang-switch [aria-current]{color:#4A3B32;font-weight:500;}
-  nav .nav-cta{display:inline-block;font-family:'Jost',sans-serif;font-size:.8rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;line-height:1.75;color:#FFFFFF;background:#4A3B32;padding:.6rem 1.4rem;border:0;border-radius:2px;white-space:nowrap;transition:background .2s;}
-  nav .nav-cta:hover{background:#8B6F5B;color:#FFFFFF;}
-  @media(max-width:1180px){nav{padding-left:4vw;padding-right:4vw;}nav .nav-links{gap:1.3rem;}nav .nav-links a{font-size:.75rem;letter-spacing:.07em;}}
-  @media(max-width:980px){nav .nav-links{display:none;}}
-  @media(max-width:480px){nav .nav-right{gap:.8rem;}nav .nav-cta{padding:.5rem .85rem;font-size:.7rem;}}
-</style>
-<style id="site-footer">
-  /* Einheitliche Fußzeile auf allen Seiten – hier zentral anpassen */
-  footer:not(.author){box-sizing:border-box;margin:0;background:#4A3B32;color:#D6C5B5;padding:4rem 10vw 2rem;font-family:'Jost',sans-serif;font-size:16px;font-weight:300;line-height:1.75;}
-  footer:not(.author) .footer-top{display:grid;grid-template-columns:2fr 1fr 1fr;gap:4rem;padding-bottom:3rem;border-bottom:1px solid rgba(214,197,181,0.15);margin-bottom:2rem;}
-  footer:not(.author) .footer-logo{display:block;margin:0 0 1rem;font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:400;line-height:1.75;color:#FAF6F1;}
-  footer:not(.author) .footer-logo span{color:#A7B39A;}
-  footer:not(.author) p{margin:0;max-width:32ch;font-size:.83rem;font-weight:300;line-height:1.8;color:rgba(214,197,181,0.6);}
-  footer:not(.author) h4{margin:0 0 1.2rem;font-family:'Jost',sans-serif;font-size:.7rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;line-height:1.75;color:#A7B39A;}
-  footer:not(.author) ul{list-style:none;display:flex;flex-direction:column;gap:.6rem;margin:0;padding:0;}
-  footer:not(.author) li{margin:0;padding:0;}
-  footer:not(.author) ul a{font-family:'Jost',sans-serif;font-size:.84rem;font-weight:300;line-height:1.75;color:rgba(214,197,181,0.7);text-decoration:none;transition:color .2s;}
-  footer:not(.author) ul a:hover{color:#FAF6F1;}
-  footer:not(.author) .footer-bottom{text-align:center;font-size:.72rem;font-weight:300;letter-spacing:.06em;line-height:1.75;color:rgba(214,197,181,0.35);}
-  @media(max-width:800px){footer:not(.author) .footer-top{grid-template-columns:1fr;gap:2rem;}}
-</style>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -578,217 +149,234 @@
   ]
 }
 </script>
+<link rel="stylesheet" href="../assets/css/brand.css"/>
 </head>
 <body>
+<a class="skip-link" href="#main">Skip to content</a>
 
-<!-- NAV -->
-<nav aria-label="Main navigation">
-  <a href="index.html" class="logo-wrap" aria-label="PrettyCrochet – home">
-    <span class="logo-text">Pretty<span>Crochet</span></span>
-  </a>
-  <ul class="nav-links">
-    <li><a href="haekeln-basics.html">Crochet Basics</a></li>
-    <li><a href="anleitungen.html">Patterns</a></li>
-    <li><a href="werkzeuge/muster-generator.html">Pattern Generator</a></li>
-    <li><a href="blog.html">Blog</a></li>
-    <li><a href="ueber-mich.html">About me</a></li>
-  </ul>
-  <div class="nav-right"><div class="lang-switch" aria-label="Choose language"><a href="../index.html" hreflang="de" lang="de">DE</a><span aria-hidden="true">|</span><span aria-current="true">EN</span></div><a href="index.html#newsletter" class="nav-cta">Newsletter</a></div>
-</nav>
-
-<!-- HERO -->
-<section class="hero" style="padding:0">
-  <div class="hero-left">
-    <p class="hero-eyebrow">Crochet · Create · Inspire</p>
-    <h1 class="hero-title">Handmade<br>with <em>love</em><br>&amp; yarn</h1>
-    <p class="hero-sub">Patterns, honest product recommendations and everything you need for beautiful crochet projects.</p>
-    <div class="hero-actions">
-      <a href="anleitungen.html" class="btn-primary">Discover patterns</a>
-      <a href="#" class="btn-text">My picks →</a>
+<header class="site-header">
+  <nav class="site-nav" aria-label="Main navigation">
+    <a class="brand" href="index.html" aria-label="PrettyCrochet – home">Pretty<span>Crochet</span></a>
+    <ul class="nav-links">
+      <li><a href="anleitungen.html">Patterns</a></li>
+      <li><a href="haekeln-basics.html">Learn to crochet</a></li>
+      <li><a href="werkzeuge/lernpfad.html">Learning path</a></li>
+      <li><a href="werkzeuge/muster-generator.html">Pattern generator</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="ueber-mich.html">About</a></li>
+    </ul>
+    <div class="nav-tools">
+      <button type="button" class="icon-btn" data-search-open aria-label="Open search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg></button>
+      <div class="lang-switch" aria-label="Choose language"><a href="../index.html" hreflang="de" lang="de">DE</a><span aria-hidden="true">|</span><span aria-current="true">EN</span></div>
+      <button type="button" class="icon-btn menu-toggle" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu" data-label-open="Open menu" data-label-close="Close menu"><svg class="i-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg><svg class="i-close" style="display:none" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
     </div>
+  </nav>
+  <div class="mobile-menu" id="mobile-menu" hidden>
+    <button type="button" class="btn primary mm-search" data-search-open><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>Search patterns & topics</button>
+    <ul>
+      <li><a href="anleitungen.html">Patterns</a></li>
+      <li><a href="haekeln-basics.html">Learn to crochet</a></li>
+      <li><a href="werkzeuge/lernpfad.html">Learning path</a></li>
+      <li><a href="werkzeuge/muster-generator.html">Pattern generator</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="ueber-mich.html">About</a></li>
+    </ul>
+    <p class="mm-label">Jump to</p>
+    <div class="mm-quick"><a href="#" data-search-query="pumpkin">Pumpkin</a><a href="#" data-search-query="magic ring">Magic ring</a><a href="#" data-search-query="beginner">Beginner</a><a href="#" data-search-query="amigurumi">Amigurumi</a></div>
   </div>
-
-  <div class="hero-right">
-    <img src="../assets/allgemein/prettycrochet-hero.jpg" alt="Handmade PrettyCrochet crochet bag">
-  </div>
-</section>
-
-<!-- MARQUEE -->
-<div class="marquee-wrap">
-  <div class="marquee-track">
-    <span>Amigurumi</span><span class="dot">♥</span>
-    <span>Home decor</span><span class="dot">♥</span>
-    <span>Bags</span><span class="dot">♥</span>
-    <span>Baby &amp; kids</span><span class="dot">♥</span>
-    <span>Fashion</span><span class="dot">♥</span>
-    <span>Beginner guides</span><span class="dot">♥</span>
-    <span>Scarves &amp; hats</span><span class="dot">♥</span>
-    <span>Granny squares</span><span class="dot">♥</span>
-    <!-- repeat for seamless loop -->
-    <span>Amigurumi</span><span class="dot">♥</span>
-    <span>Home decor</span><span class="dot">♥</span>
-    <span>Bags</span><span class="dot">♥</span>
-    <span>Baby &amp; kids</span><span class="dot">♥</span>
-    <span>Fashion</span><span class="dot">♥</span>
-    <span>Beginner guides</span><span class="dot">♥</span>
-    <span>Scarves &amp; hats</span><span class="dot">♥</span>
-    <span>Granny squares</span><span class="dot">♥</span>
+</header>
+<div class="search-overlay" id="search" role="dialog" aria-modal="true" aria-label="Open search" hidden>
+  <div class="search-panel">
+    <div class="search-bar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><input type="search" placeholder="Search patterns, techniques or topics …" aria-label="Search patterns, techniques or topics …" autocomplete="off"/><button type="button" class="search-close">Close</button></div>
+    <div class="search-results" aria-live="polite"></div>
   </div>
 </div>
 
-<!-- KATEGORIEN -->
-<section class="cat-section">
-  <div class="label">Topics</div>
-  <h2>What would you like to <em>crochet today?</em></h2>
-  <div class="cat-grid">
-    <a href="amigurumi.html" class="cat-item">
-      <span class="cat-icon">🐻</span>
-      <h3>Amigurumi</h3>
-      <p>Crochet cute figures &amp; animals</p>
-      <span class="cat-arrow">Explore →</span>
-    </a>
-    <a href="wohndeko.html" class="cat-item">
-      <span class="cat-icon">🛋️</span>
-      <h3>Home decor</h3>
-      <p>Cozy things for your home</p>
-      <span class="cat-arrow">Explore →</span>
-    </a>
-    <a href="anleitungen/haekeltasche.html" class="cat-item">
-      <span class="cat-icon">👜</span>
-      <h3>Bags</h3>
-      <p>Beach bags, totes &amp; more</p>
-      <span class="cat-arrow">Explore →</span>
-    </a>
-    <a href="#" class="cat-item">
-      <span class="cat-icon">👶</span>
-      <h3>Baby &amp; kids</h3>
-      <p>Delicate projects for little ones</p>
-      <span class="cat-arrow">Explore →</span>
-    </a>
-    <a href="#" class="cat-item">
-      <span class="cat-icon">🧣</span>
-      <h3>Fashion &amp; accessories</h3>
-      <p>Sweaters, tops &amp; scarves</p>
-      <span class="cat-arrow">Explore →</span>
-    </a>
-    <a href="haekeln-basics.html" class="cat-item">
-      <span class="cat-icon">⭐</span>
-      <h3>For beginners</h3>
-      <p>Get started step by step</p>
-      <span class="cat-arrow">Explore →</span>
-    </a>
-  </div>
-</section>
-
-<!-- BEITRÄGE -->
-<section class="posts-section">
-  <div class="label">Latest</div>
-  <h2>New patterns <em>&amp; tips</em></h2>
-  <div class="posts-grid">
-    <a href="anleitungen/haekel-baer.html" class="post-card featured">
-      <div class="post-thumb" style="height:280px">🧸</div>
-      <div class="post-body">
-        <span class="post-tag">Amigurumi</span>
-        <h3>Little Crochet Bear: The Complete Pattern for Beginners</h3>
-        <p>In this detailed step-by-step pattern, I'll show you how to crochet your first amigurumi bear in one weekend – no experience needed.</p>
-        <span class="post-meta">July 15, 2026 · 12 min read</span>
-      </div>
-    </a>
-    <a href="wohndeko.html" class="post-card">
-      <div class="post-thumb">🌸</div>
-      <div class="post-body">
-        <span class="post-tag">Home decor</span>
-        <h3>Flower Wreath for the Wall</h3>
-        <p>Spring feelings all year round.</p>
-        <span class="post-meta">July 8, 2026</span>
-      </div>
-    </a>
-    <a href="#" class="post-card">
-      <div class="post-thumb">👜</div>
-      <div class="post-body">
-        <span class="post-tag">Bags</span>
-        <h3>Summer Beach Bag in Cotton Yarn</h3>
-        <p>The perfect companion for hot days.</p>
-        <span class="post-meta">July 1, 2026</span>
-      </div>
-    </a>
-  </div>
-</section>
-
-<!-- AFFILIATE PICKS -->
-<section class="picks-section">
-  <div class="label">Recommendations</div>
-  <h2>Products I <em>really</em> use</h2>
-  <div class="picks-grid">
-    <div class="pick-item">
-      <span class="pick-icon">🪡</span>
-      <h3>Organic cotton yarn</h3>
-      <p>OEKO-TEX certified, soft &amp; ideal for amigurumi and baby projects.</p>
-      <a href="#" class="pick-link">View product →</a>
-    </div>
-    <div class="pick-item">
-      <span class="pick-icon">🪝</span>
-      <h3>Ergonomic hooks</h3>
-      <p>Non-slip grips for hours of relaxed crocheting.</p>
-      <a href="#" class="pick-link">View product →</a>
-    </div>
-    <div class="pick-item">
-      <span class="pick-icon">✂️</span>
-      <h3>Notions &amp; accessories</h3>
-      <p>Everything you need: scissors, needles, markers as a handy set.</p>
-      <a href="#" class="pick-link">View product →</a>
-    </div>
-    <div class="pick-item">
-      <span class="pick-icon">📖</span>
-      <h3>My top books</h3>
-      <p>The best crochet pattern books – for every level.</p>
-      <a href="#" class="pick-link">View list →</a>
-    </div>
-  </div>
-  <p class="affiliate-note">* Some links are affiliate links. I earn a small commission – at no extra cost to you. I only recommend products I love myself.</p>
-</section>
-
-<!-- NEWSLETTER -->
-<section class="newsletter-section" id="newsletter">
-  <div class="label">Stay in the loop</div>
-  <h2>New patterns straight<br>to your <em>inbox</em></h2>
-  <p>No ads – just new patterns, honest recommendations and crochet inspiration whenever I have something really lovely to share.</p>
-  <div class="email-row">
-    <input type="email" placeholder="your@email.com"/>
-    <button>Subscribe</button>
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer>
-  <div class="footer-top">
+<main id="main" tabindex="-1" class="home">
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap hero-grid">
     <div>
-      <span class="footer-logo">Pretty<span>Crochet</span></span>
-      <p>A blog about the love of crochet – with honest recommendations, free patterns and a community for everyone who creates things with yarn and hook.</p>
+      <p class="eyebrow">Crochet · Learn · Make</p>
+      <h1>Yarn becomes <em>yours.</em></h1>
+      <p class="hero-lead">Free patterns, an interactive learning path and tools to design your own – find what you're looking for in seconds.</p>
+      <form class="hero-search" data-search-form role="search">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+        <input type="search" placeholder="What would you like to crochet? e.g. pumpkin" aria-label="Search patterns and topics" autocomplete="off"/>
+        <button type="submit">Search</button>
+      </form>
+      <div class="chips"><span>Popular:</span>
+        <a href="anleitungen/kuerbis.html">Pumpkin</a>
+        <a href="anleitungen/haekel-baer.html">Crochet bear</a>
+        <a href="blog/haekel-taschenanhaenger-herbst.html">Bag charms</a>
+        <a href="abkuerzungen.html">Abbreviations</a>
+      </div>
     </div>
-    <div>
-      <h4>Navigation</h4>
-      <ul>
-        <li><a href="haekeln-basics.html">Crochet Basics</a></li>
-        <li><a href="anleitungen.html">Patterns</a></li>
-        <li><a href="werkzeuge/muster-generator.html">Pattern Generator</a></li>
+    <div class="hero-visual">
+      <span class="hero-seal" aria-hidden="true">one stitch<br>at a time</span>
+      <img src="../assets/allgemein/prettycrochet-tasche.jpg" alt="Crocheted bag in cream yarn on a sage green plinth" width="1400" height="933" fetchpriority="high">
+      <a class="hero-badge" href="anleitungen/kuerbis.html">
+        <img src="../assets/blog/2026-09-22_Herbstblog-2026/2026-09-22_Herbstblog-2026_06.jpg" alt="" width="56" height="56" loading="lazy" style="object-position:80% 75%;">
+        <span><small>New pattern</small><strong>Crochet pumpkins – in 3 sizes</strong></span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- EINSTIEGE -->
+<section class="sec" style="padding-top:0;" aria-labelledby="paths-title">
+  <div class="wrap">
+    <div class="sec-head"><h2 id="paths-title">What would you like to <em>do today?</em></h2></div>
+    <div class="paths">
+      <div class="path p1">
+        <span class="num">01</span>
+        <h3><a href="werkzeuge/lernpfad.html">Learn to crochet</a></h3>
+        <p>From your first chain to your first pattern – in 7 short lessons with a mini quiz.</p>
+        <ul><li><a href="werkzeuge/lernpfad.html">Start the learning path</a></li><li><a href="haekeln-basics.html">Crochet basics</a></li><li><a href="abkuerzungen.html">Abbreviations</a></li></ul>
+      </div>
+      <div class="path p2">
+        <span class="num">02</span>
+        <h3><a href="anleitungen.html">Find a pattern</a></h3>
+        <p>Free, step by step and with clear stitch counts – filter by topic and level.</p>
+        <ul><li><a href="anleitungen.html">All patterns</a></li><li><a href="amigurumi.html">Amigurumi</a></li><li><a href="wohndeko.html">Home decor</a></li></ul>
+      </div>
+      <div class="path p3">
+        <span class="num">03</span>
+        <h3><a href="werkzeuge/muster-generator.html">Design a pattern</a></h3>
+        <p>Place stitches with a click and automatically get instructions, a chart and a 3D preview.</p>
+        <ul><li><a href="werkzeuge/muster-generator.html">Open the pattern generator</a></li></ul>
+      </div>
+      <div class="path p4">
+        <span class="num">04</span>
+        <h3><a href="blog.html">Get inspired</a></h3>
+        <p>Trends, ideas and yarn tips for every season.</p>
+        <ul><li><a href="blog/haekeltrends-herbst-2026.html">Crochet trends fall 2026</a></li><li><a href="blog/haekel-taschenanhaenger-herbst.html">Bag charms</a></li></ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BELIEBTE ANLEITUNGEN -->
+<section class="sec" style="padding-top:0;" aria-labelledby="popular-title">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><p class="eyebrow">Free patterns</p><h2 id="popular-title">Popular <em>patterns</em></h2></div>
+      <a class="more" href="anleitungen.html">All patterns →</a>
+    </div>
+    <div class="cards">
+      <a class="card" href="anleitungen/kuerbis.html">
+        <div class="card-img"><img class="crop" src="../assets/blog/2026-09-22_Herbstblog-2026/2026-09-22_Herbstblog-2026_06.jpg" alt="Three crocheted pumpkins in orange, cream and sage green" width="1440" height="1080" loading="lazy"></div>
+        <div class="card-body"><div class="card-tags"><span class="tag">Beginner</span><span class="tag alt">1–2 hrs</span></div><h3>Crochet a pumpkin</h3><p>Made from a rectangle – no rounds, no increases, in three sizes.</p></div>
+      </a>
+      <a class="card" href="blog/haekel-taschenanhaenger-herbst.html">
+        <div class="card-img"><img src="../assets/blog/2026-09-24_Herbstcharms/2026-09-24_Herbstcharms-2026_03.jpg" alt="Crocheted mushroom bag charm with a dotted cap" width="1440" height="1080" loading="lazy"></div>
+        <div class="card-body"><div class="card-tags"><span class="tag">Beginner</span><span class="tag alt">45–60 min</span></div><h3>Mini mushroom bag charm</h3><p>The 2026 trend: little charms from scrap yarn.</p></div>
+      </a>
+      <a class="card" href="anleitungen/haekel-baer.html">
+        <div class="card-img loops" role="img" aria-label="Pattern of yarn loops"></div>
+        <div class="card-body"><div class="card-tags"><span class="tag">Beginner</span><span class="tag alt">4–6 hrs</span></div><h3>Little crochet bear</h3><p>Your first amigurumi – round by round with stitch counts.</p></div>
+      </a>
+      <a class="card" href="anleitungen/blueten-blaetter.html">
+        <div class="card-img apricot loops" role="img" aria-label="Pattern of yarn loops"></div>
+        <div class="card-body"><div class="card-tags"><span class="tag">Beginner+</span><span class="tag alt">10–25 min</span></div><h3>Flowers &amp; leaves</h3><p>Six small designs for wreaths and appliqués.</p></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- LERNPFAD -->
+<section class="sec" style="padding-top:0;" aria-labelledby="learn-title">
+  <div class="wrap">
+    <div class="learn">
+      <div>
+        <p class="eyebrow">Interactive &amp; free</p>
+        <h2 id="learn-title">Learn to crochet in <em>7 lessons</em></h2>
+        <p>Short explanations, a practice task and a mini quiz in every lesson. Each lesson you pass unlocks the next – your progress stays saved in your browser.</p>
+        <a class="btn-primary" href="werkzeuge/lernpfad.html">Start the learning path →</a>
+      </div>
+      <ol class="steps">
+        <li><span>1</span>The right materials</li>
+        <li><span>2</span>Holding hook and yarn</li>
+        <li><span>3</span>Chains and the foundation chain</li>
+        <li><span>4</span>Single crochet</li>
+        <li><span>5</span>Half double and double crochet</li>
+        <li><span>6</span>Crocheting in the round</li>
+        <li><span>7</span>Reading patterns</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- BLOG -->
+<section class="sec" style="padding-top:0;" aria-labelledby="blog-title">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><p class="eyebrow">Blog</p><h2 id="blog-title">New on the <em>blog</em></h2></div>
+      <a class="more" href="blog.html">All posts →</a>
+    </div>
+    <div class="posts">
+      <a class="post" href="blog/haekel-taschenanhaenger-herbst.html">
+        <img src="../assets/blog/2026-09-24_Herbstcharms/2026-09-24_Herbstcharms-2026_01.jpg" alt="Handbag with crocheted fall charms" width="1440" height="1080" loading="lazy">
+        <div><span class="tag" style="align-self:flex-start;">Trends &amp; patterns</span><h3>Crochet bag charms: the 2026 trend</h3><p>Why bag charms are everywhere right now – plus a free mini mushroom pattern.</p><small>September 23, 2026 · 6 min read</small></div>
+      </a>
+      <a class="post" href="blog/haekeltrends-herbst-2026.html">
+        <img src="../assets/blog/2026-09-22_Herbstblog-2026/2026-09-22_Herbstblog-2026_01.jpg" alt="Crochet trends fall 2026 at a glance" width="1440" height="810" loading="lazy">
+        <div><span class="tag" style="align-self:flex-start;">Trends</span><h3>Crochet trends fall 2026</h3><p>Mohair, oversized cardigans, granny squares, pumpkins and gift ideas.</p><small>September 22, 2026 · 5 min read</small></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ÜBER -->
+<section class="sec" style="padding-top:0;" aria-labelledby="about-title">
+  <div class="wrap">
+    <div class="about">
+      <svg class="about-mark" viewBox="0 0 100 108" aria-hidden="true"><path d="M 35 89 L 35 37 C 35 15 76 13 77 36 C 79 59 41 69 23 55 C 7 42 19 23 33 28" fill="none" stroke="#3E5748" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <div>
+        <p class="eyebrow">About PrettyCrochet</p>
+        <h2 id="about-title">One stitch. <em>So many ideas.</em></h2>
+        <p>PrettyCrochet grew out of a love of yarn and calm, steady hands. Here you'll find easy-to-follow patterns without jargon, honest recommendations and tools that make planning your own projects easier.</p>
+        <a class="more" href="ueber-mich.html">More about PrettyCrochet →</a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="sf-grid">
+    <div class="sf-about">
+      <a class="sf-brand" href="index.html">Pretty<span>Crochet</span></a>
+      <p class="sf-claim">Yarn becomes yours.</p>
+      <p>Free crochet patterns, an interactive learning path and tools to design your own – for everyone who makes favorite pieces with yarn and hook.</p>
+    </div>
+    <div><h2>Learn to crochet</h2><ul>
+        <li><a href="werkzeuge/lernpfad.html">Learning path (7 lessons)</a></li>
+        <li><a href="haekeln-basics.html">Crochet basics</a></li>
+        <li><a href="abkuerzungen.html">Abbreviations &amp; charts</a></li>
+      </ul></div>
+    <div><h2>Patterns</h2><ul>
+        <li><a href="anleitungen/kuerbis.html">Crochet a pumpkin</a></li>
+        <li><a href="anleitungen/haekel-baer.html">Little crochet bear</a></li>
+        <li><a href="anleitungen/haekeltasche.html">Summer crochet bag</a></li>
+        <li><a href="anleitungen/blueten-blaetter.html">Flowers &amp; leaves</a></li>
+        <li><a href="anleitungen.html">All patterns →</a></li>
+      </ul></div>
+    <div><h2>Explore</h2><ul>
+        <li><a href="werkzeuge/muster-generator.html">Pattern generator</a></li>
         <li><a href="blog.html">Blog</a></li>
-        <li><a href="ueber-mich.html">About me</a></li>
-        <li><a href="mailto:prettycrochetstudio@gmail.com">Contact</a></li>
-      </ul>
-    </div>
-    <div>
-      <h4>Legal</h4>
-      <ul>
-        <li><a href="#">Legal notice</a></li>
-        <li><a href="datenschutz.html">Privacy policy</a></li>
-        <li><a href="#">Affiliate disclosure</a></li>
-        <li><a href="#">Cookie settings</a></li>
-      </ul>
-    </div>
+        <li><a href="amigurumi.html">Amigurumi</a></li>
+        <li><a href="wohndeko.html">Home decor</a></li>
+        <li><a href="ueber-mich.html">About</a></li>
+      </ul></div>
   </div>
-  <div class="footer-bottom">© 2026 PrettyCrochet · Natural. Timeless. Handmade.</div>
+  <div class="sf-bottom">
+    <span>© 2026 PrettyCrochet</span>
+    <div class="sf-legal"><a href="mailto:prettycrochetstudio@gmail.com">Contact</a><a href="#">Legal notice</a><a href="datenschutz.html">Privacy policy</a></div>
+  </div>
 </footer>
 
+<script src="../assets/js/search-index.js" defer></script>
+<script src="../assets/js/site.js" data-root="../" data-lang="en" defer></script>
 </body>
 </html>

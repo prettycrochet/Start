@@ -8,13 +8,13 @@
   <link rel="stylesheet" href="../../assets/fonts/fonts.css"/>
   <style>
     :root {
-      --creme:   #FAF6F1;
-      --salbei:  #A7B39A;
-      --beige:   #D6C5B5;
-      --braun:   #8B6F5B;
-      --espresso:#4A3B32;
+      --creme:   #F7F3EC;
+      --salbei:  #ABB9A2;
+      --beige:   #E4DED3;
+      --braun:   #3E5748;
+      --espresso:#302A26;
       --white:   #FFFFFF;
-      --muted:   #9A8880;
+      --muted:   #6B625C;
     }
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -23,7 +23,7 @@
     body {
       background: var(--creme);
       color: var(--espresso);
-      font-family: 'Jost', sans-serif;
+      font-family: 'Manrope', sans-serif;
       font-weight: 300;
       line-height: 1.75;
     }
@@ -33,13 +33,13 @@
       position: fixed; top: 0; left: 0; right: 0; z-index: 200;
       display: flex; align-items: center; justify-content: space-between;
       padding: 1.1rem 6vw;
-      background: rgba(250,246,241,0.92);
+      background: rgba(247,243,236,0.92);
       backdrop-filter: blur(10px);
       border-bottom: 1px solid var(--beige);
     }
     .logo-wrap { display: flex; align-items: center; gap: 0.75rem; text-decoration: none; }
     .logo-text {
-      font-family: 'Cormorant Garamond', serif;
+      font-family: 'Fraunces', serif;
       font-size: 1.45rem; font-weight: 600;
       color: var(--espresso); letter-spacing: 0.02em;
     }
@@ -65,12 +65,12 @@
       font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase;
       color: var(--braun); margin-bottom: 1.5rem;
     }
-    .breadcrumb a { color: var(--braun); text-decoration: none; border-bottom: 1px solid rgba(139,111,91,0.35); }
+    .breadcrumb a { color: var(--braun); text-decoration: none; border-bottom: 1px solid rgba(62,87,72,0.35); }
     .breadcrumb a:hover { border-color: var(--braun); }
     .page-hero .label { justify-content: center; }
     .page-hero .label::before { display: none; }
     .page-hero h1 {
-      font-family: 'Cormorant Garamond', serif;
+      font-family: 'Fraunces', serif;
       font-size: clamp(2.2rem, 4.6vw, 3.6rem);
       font-weight: 300; line-height: 1.15;
       color: var(--espresso); margin-bottom: 1.2rem;
@@ -85,7 +85,7 @@
       font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase;
       color: var(--braun); opacity: 0.75;
     }
-    .meta-item .meta-value { font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; color: var(--espresso); }
+    .meta-item .meta-value { font-family: 'Fraunces', serif; font-size: 1.15rem; color: var(--espresso); }
 
     .label {
       font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase;
@@ -95,7 +95,7 @@
     .label::before { content:''; display:inline-block; width:24px; height:1px; background:var(--salbei); }
 
     h2 {
-      font-family: 'Cormorant Garamond', serif;
+      font-family: 'Fraunces', serif;
       font-size: clamp(1.8rem, 3vw, 2.6rem);
       font-weight: 300; line-height: 1.2;
       color: var(--espresso); margin-bottom: 1.5rem;
@@ -114,7 +114,7 @@
     .prep-section { background: var(--creme); }
     .prep-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 3rem; }
     .prep-block h3 {
-      font-family: 'Cormorant Garamond', serif;
+      font-family: 'Fraunces', serif;
       font-size: 1.25rem; font-weight: 400;
       margin-bottom: 1.2rem; color: var(--braun);
     }
@@ -129,7 +129,7 @@
     .abbr-table tr { border-bottom: 1px solid var(--beige); }
     .abbr-table td { padding: 0.65rem 0.4rem; }
     .abbr-table td:first-child {
-      font-family: 'Cormorant Garamond', serif;
+      font-family: 'Fraunces', serif;
       font-weight: 600; color: var(--braun); width: 70px;
     }
 
@@ -143,7 +143,7 @@
     }
     .pattern-part-icon { font-size: 1.6rem; }
     .pattern-part h3 {
-      font-family: 'Cormorant Garamond', serif;
+      font-family: 'Fraunces', serif;
       font-size: 1.5rem; font-weight: 400; color: var(--espresso);
     }
     .pattern-part-count { font-size: 0.78rem; color: var(--muted); letter-spacing: 0.04em; margin-left: auto; }
@@ -154,7 +154,7 @@
       border-bottom: 1px dashed var(--beige);
     }
     .round-list li:last-child { border-bottom: none; }
-    .round-label { font-family: 'Cormorant Garamond', serif; font-weight: 600; color: var(--braun); }
+    .round-label { font-family: 'Fraunces', serif; font-weight: 600; color: var(--braun); }
     .pattern-note {
       margin-top: 1rem; font-size: 0.86rem; color: var(--muted);
       background: var(--creme); padding: 0.9rem 1.1rem;
@@ -173,7 +173,7 @@
       display: flex; flex-direction: column; align-items: center; gap: 0.3rem;
       padding: 0.7rem 1rem; font-size: 0.78rem; color: var(--muted); text-align: center;
     }
-    .marker-block .marker-count { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; color: var(--espresso); }
+    .marker-block .marker-count { font-family: 'Fraunces', serif; font-size: 1.3rem; color: var(--espresso); }
     .marker-block.marked { color: var(--braun); }
     .marker-block.marked .marker-count { color: var(--braun); }
     .marker-pin { font-size: 1.1rem; }
@@ -191,7 +191,7 @@
     .strap-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; max-width: 78ch; }
     .strap-card { background: var(--creme); border: 1px solid var(--beige); padding: 1.8rem; }
     .strap-card h4 {
-      font-family: 'Cormorant Garamond', serif;
+      font-family: 'Fraunces', serif;
       font-size: 1.2rem; font-weight: 400; color: var(--braun); margin-bottom: 0.9rem;
     }
 
@@ -204,8 +204,8 @@
     }
     .step-row:first-child { padding-top: 0; }
     .step-row:last-child { border-bottom: none; }
-    .step-num { font-family: 'Cormorant Garamond', serif; font-size: 1.7rem; font-weight: 300; color: var(--salbei); }
-    .step-content h4 { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; font-weight: 400; margin-bottom: 0.3rem; }
+    .step-num { font-family: 'Fraunces', serif; font-size: 1.7rem; font-weight: 300; color: var(--salbei); }
+    .step-content h4, .step-content h3 { font-family: 'Fraunces', serif; font-size: 1.1rem; font-weight: 400; margin-bottom: 0.3rem; }
     .step-content p { font-size: 0.9rem; color: var(--muted); }
 
     /* ── TIPP BOX ── */
@@ -220,7 +220,7 @@
     }
     .tipp-item { background: var(--espresso); padding: 2rem 1.6rem; }
     .tipp-item h3 {
-      font-family: 'Cormorant Garamond', serif;
+      font-family: 'Fraunces', serif;
       font-size: 1.1rem; font-weight: 400; color: var(--creme); margin-bottom: 0.6rem;
     }
     .tipp-item p { font-size: 0.85rem; color: var(--beige); }
@@ -242,23 +242,23 @@
     footer { background: var(--espresso); color: var(--beige); padding: 4rem 10vw 2rem; }
     .footer-top {
       display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 4rem;
-      padding-bottom: 3rem; border-bottom: 1px solid rgba(214,197,181,0.15); margin-bottom: 2rem;
+      padding-bottom: 3rem; border-bottom: 1px solid rgba(228,222,211,0.15); margin-bottom: 2rem;
     }
     .footer-logo {
-      font-family: 'Cormorant Garamond', serif;
+      font-family: 'Fraunces', serif;
       font-size: 1.5rem; font-weight: 400; color: var(--creme);
       display: block; margin-bottom: 1rem;
     }
     .footer-logo span { color: var(--salbei); }
-    footer p { font-size: 0.83rem; color: rgba(214,197,181,0.6); line-height: 1.8; max-width: 32ch; }
+    footer p { font-size: 0.83rem; color: rgba(228,222,211,0.6); line-height: 1.8; max-width: 32ch; }
     footer h4 {
       font-size: 0.7rem; letter-spacing: 0.18em; text-transform: uppercase;
       color: var(--salbei); margin-bottom: 1.2rem;
     }
     footer ul { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
-    footer ul a { font-size: 0.84rem; color: rgba(214,197,181,0.7); text-decoration: none; transition: color 0.2s; }
+    footer ul a { font-size: 0.84rem; color: rgba(228,222,211,0.7); text-decoration: none; transition: color 0.2s; }
     footer ul a:hover { color: var(--creme); }
-    .footer-bottom { text-align: center; font-size: 0.72rem; color: rgba(214,197,181,0.35); letter-spacing: 0.06em; }
+    .footer-bottom { text-align: center; font-size: 0.72rem; color: rgba(228,222,211,0.35); letter-spacing: 0.06em; }
 
     /* ── RESPONSIVE ── */
     @media (max-width: 850px) {
@@ -275,14 +275,14 @@
   
   /* ── Sprachumschalter DE | EN ── */
   .nav-right{display:flex;align-items:center;gap:1.4rem;}
-  .lang-switch{display:flex;align-items:center;gap:.45rem;font-size:.78rem;letter-spacing:.1em;color:#9A8880;}
+  .lang-switch{display:flex;align-items:center;gap:.45rem;font-size:.78rem;letter-spacing:.1em;color:#6B625C;}
   .lang-switch a{color:inherit;text-decoration:none;border-bottom:1px solid transparent;transition:color .2s,border-color .2s;}
-  .lang-switch a:hover{color:#4A3B32;border-color:#A7B39A;}
-  .lang-switch [aria-current]{color:#4A3B32;font-weight:500;}
+  .lang-switch a:hover{color:#302A26;border-color:#ABB9A2;}
+  .lang-switch [aria-current]{color:#302A26;font-weight:500;}
   header .lang-switch{justify-content:flex-end;margin-bottom:.4rem;}
   nav{gap:1rem;}
   @media(max-width:480px){.nav-right{gap:.8rem;}.nav-right .nav-cta{padding:.5rem .85rem;font-size:.7rem;}}
-  .nav-links a[aria-current="page"]{color:#A7B39A;}
+  .nav-links a[aria-current="page"]{color:#ABB9A2;}
   .nav-links a,.nav-cta,.lang-switch{white-space:nowrap;}
   @media(max-width:1180px){nav{padding-left:4vw;padding-right:4vw;}.nav-links{gap:1.3rem;}.nav-links a{font-size:.75rem;letter-spacing:.07em;}}
   @media(max-width:980px){.nav-links{display:none;}}
@@ -290,60 +290,50 @@
 <link rel="alternate" hreflang="de" href="https://prettycrochetstudio.com/anleitungen/haekeltasche.html"/>
 <link rel="alternate" hreflang="en" href="https://prettycrochetstudio.com/en/anleitungen/haekeltasche.html"/>
 <link rel="alternate" hreflang="x-default" href="https://prettycrochetstudio.com/anleitungen/haekeltasche.html"/>
-<style id="site-header">
-  /* Einheitliche Kopfzeile auf allen Seiten – hier zentral anpassen */
-  nav{position:fixed;top:0;left:0;right:0;z-index:200;box-sizing:border-box;display:flex;align-items:center;justify-content:space-between;gap:1rem;margin:0;padding:1.1rem 6vw;background:rgba(250,246,241,0.92);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid #D6C5B5;font-family:'Jost',sans-serif;font-size:16px;font-weight:300;line-height:1.75;}
-  nav .logo-wrap{display:flex;align-items:center;gap:.75rem;text-decoration:none;}
-  nav .logo-text{font-family:'Cormorant Garamond',serif;font-size:1.45rem;font-weight:600;font-style:normal;color:#4A3B32;letter-spacing:.02em;line-height:1.75;}
-  nav .logo-text span{color:#A7B39A;}
-  nav .nav-links{display:flex;gap:2.2rem;list-style:none;margin:0;padding:0;}
-  nav .nav-links li{margin:0;padding:0;}
-  nav .nav-links a{font-family:'Jost',sans-serif;font-size:.82rem;font-weight:400;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;color:#4A3B32;line-height:1.75;white-space:nowrap;border:0;transition:color .2s;}
-  nav .nav-links a:hover,nav .nav-links a[aria-current="page"]{color:#A7B39A;}
-  nav .nav-right{display:flex;align-items:center;gap:1.4rem;}
-  nav .lang-switch{display:flex;align-items:center;gap:.45rem;margin:0;font-family:'Jost',sans-serif;font-size:.78rem;font-weight:300;letter-spacing:.1em;line-height:1.75;color:#9A8880;white-space:nowrap;}
-  nav .lang-switch a{color:inherit;text-decoration:none;border-bottom:1px solid transparent;transition:color .2s,border-color .2s;}
-  nav .lang-switch a:hover{color:#4A3B32;border-color:#A7B39A;}
-  nav .lang-switch [aria-current]{color:#4A3B32;font-weight:500;}
-  nav .nav-cta{display:inline-block;font-family:'Jost',sans-serif;font-size:.8rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;line-height:1.75;color:#FFFFFF;background:#4A3B32;padding:.6rem 1.4rem;border:0;border-radius:2px;white-space:nowrap;transition:background .2s;}
-  nav .nav-cta:hover{background:#8B6F5B;color:#FFFFFF;}
-  @media(max-width:1180px){nav{padding-left:4vw;padding-right:4vw;}nav .nav-links{gap:1.3rem;}nav .nav-links a{font-size:.75rem;letter-spacing:.07em;}}
-  @media(max-width:980px){nav .nav-links{display:none;}}
-  @media(max-width:480px){nav .nav-right{gap:.8rem;}nav .nav-cta{padding:.5rem .85rem;font-size:.7rem;}}
-</style>
-<style id="site-footer">
-  /* Einheitliche Fußzeile auf allen Seiten – hier zentral anpassen */
-  footer:not(.author){box-sizing:border-box;margin:0;background:#4A3B32;color:#D6C5B5;padding:4rem 10vw 2rem;font-family:'Jost',sans-serif;font-size:16px;font-weight:300;line-height:1.75;}
-  footer:not(.author) .footer-top{display:grid;grid-template-columns:2fr 1fr 1fr;gap:4rem;padding-bottom:3rem;border-bottom:1px solid rgba(214,197,181,0.15);margin-bottom:2rem;}
-  footer:not(.author) .footer-logo{display:block;margin:0 0 1rem;font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:400;line-height:1.75;color:#FAF6F1;}
-  footer:not(.author) .footer-logo span{color:#A7B39A;}
-  footer:not(.author) p{margin:0;max-width:32ch;font-size:.83rem;font-weight:300;line-height:1.8;color:rgba(214,197,181,0.6);}
-  footer:not(.author) h4{margin:0 0 1.2rem;font-family:'Jost',sans-serif;font-size:.7rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;line-height:1.75;color:#A7B39A;}
-  footer:not(.author) ul{list-style:none;display:flex;flex-direction:column;gap:.6rem;margin:0;padding:0;}
-  footer:not(.author) li{margin:0;padding:0;}
-  footer:not(.author) ul a{font-family:'Jost',sans-serif;font-size:.84rem;font-weight:300;line-height:1.75;color:rgba(214,197,181,0.7);text-decoration:none;transition:color .2s;}
-  footer:not(.author) ul a:hover{color:#FAF6F1;}
-  footer:not(.author) .footer-bottom{text-align:center;font-size:.72rem;font-weight:300;letter-spacing:.06em;line-height:1.75;color:rgba(214,197,181,0.35);}
-  @media(max-width:800px){footer:not(.author) .footer-top{grid-template-columns:1fr;gap:2rem;}}
-</style>
+<link rel="stylesheet" href="../../assets/css/brand.css"/>
 </head>
 <body>
+<a class="skip-link" href="#main">Skip to content</a>
 
-<!-- NAV -->
-<nav aria-label="Main navigation">
-  <a href="../index.html" class="logo-wrap" aria-label="PrettyCrochet – home">
-    <span class="logo-text">Pretty<span>Crochet</span></span>
-  </a>
-  <ul class="nav-links">
-    <li><a href="../haekeln-basics.html">Crochet Basics</a></li>
-    <li><a href="../anleitungen.html" aria-current="page" class="active">Patterns</a></li>
-    <li><a href="../werkzeuge/muster-generator.html">Pattern Generator</a></li>
-    <li><a href="../blog.html">Blog</a></li>
-    <li><a href="../ueber-mich.html">About me</a></li>
-  </ul>
-  <div class="nav-right"><div class="lang-switch" aria-label="Choose language"><a href="../../anleitungen/haekeltasche.html" hreflang="de" lang="de">DE</a><span aria-hidden="true">|</span><span aria-current="true">EN</span></div><a href="../index.html#newsletter" class="nav-cta">Newsletter</a></div>
-</nav>
+<header class="site-header">
+  <nav class="site-nav" aria-label="Main navigation">
+    <a class="brand" href="../index.html" aria-label="PrettyCrochet – home">Pretty<span>Crochet</span></a>
+    <ul class="nav-links">
+      <li><a href="../anleitungen.html" aria-current="page">Patterns</a></li>
+      <li><a href="../haekeln-basics.html">Learn to crochet</a></li>
+      <li><a href="../werkzeuge/lernpfad.html">Learning path</a></li>
+      <li><a href="../werkzeuge/muster-generator.html">Pattern generator</a></li>
+      <li><a href="../blog.html">Blog</a></li>
+      <li><a href="../ueber-mich.html">About</a></li>
+    </ul>
+    <div class="nav-tools">
+      <button type="button" class="icon-btn" data-search-open aria-label="Open search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg></button>
+      <div class="lang-switch" aria-label="Choose language"><a href="../../anleitungen/haekeltasche.html" hreflang="de" lang="de">DE</a><span aria-hidden="true">|</span><span aria-current="true">EN</span></div>
+      <button type="button" class="icon-btn menu-toggle" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu" data-label-open="Open menu" data-label-close="Close menu"><svg class="i-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg><svg class="i-close" style="display:none" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+    </div>
+  </nav>
+  <div class="mobile-menu" id="mobile-menu" hidden>
+    <button type="button" class="btn primary mm-search" data-search-open><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>Search patterns & topics</button>
+    <ul>
+      <li><a href="../anleitungen.html" aria-current="page">Patterns</a></li>
+      <li><a href="../haekeln-basics.html">Learn to crochet</a></li>
+      <li><a href="../werkzeuge/lernpfad.html">Learning path</a></li>
+      <li><a href="../werkzeuge/muster-generator.html">Pattern generator</a></li>
+      <li><a href="../blog.html">Blog</a></li>
+      <li><a href="../ueber-mich.html">About</a></li>
+    </ul>
+    <p class="mm-label">Jump to</p>
+    <div class="mm-quick"><a href="#" data-search-query="pumpkin">Pumpkin</a><a href="#" data-search-query="magic ring">Magic ring</a><a href="#" data-search-query="beginner">Beginner</a><a href="#" data-search-query="amigurumi">Amigurumi</a></div>
+  </div>
+</header>
+<div class="search-overlay" id="search" role="dialog" aria-modal="true" aria-label="Open search" hidden>
+  <div class="search-panel">
+    <div class="search-bar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><input type="search" placeholder="Search patterns, techniques or topics …" aria-label="Search patterns, techniques or topics …" autocomplete="off"/><button type="button" class="search-close">Close</button></div>
+    <div class="search-results" aria-live="polite"></div>
+  </div>
+</div>
 
+<main id="main" tabindex="-1">
 <!-- PAGE HERO -->
 <section class="page-hero">
   <p class="breadcrumb"><a href="../index.html">Home</a> · <a href="../anleitungen.html">Patterns</a> · Summer Crochet Bag</p>
@@ -352,22 +342,22 @@
   <p class="sub">An airy mesh bag with an oval base and two crocheted straps – perfect for the beach, the market or as an everyday companion.</p>
   <div class="meta-row">
     <div class="meta-item">
-      <span class="meta-icon">⭐</span>
+      <span class="meta-icon" aria-hidden="true">⭐</span>
       <span class="meta-label">Level</span>
       <span class="meta-value">Advanced</span>
     </div>
     <div class="meta-item">
-      <span class="meta-icon">📐</span>
+      <span class="meta-icon" aria-hidden="true">📐</span>
       <span class="meta-label">Base</span>
       <span class="meta-value">42 stitches</span>
     </div>
     <div class="meta-item">
-      <span class="meta-icon">🔄</span>
+      <span class="meta-icon" aria-hidden="true">🔄</span>
       <span class="meta-label">Body</span>
       <span class="meta-value">14 rounds</span>
     </div>
     <div class="meta-item">
-      <span class="meta-icon">🎒</span>
+      <span class="meta-icon" aria-hidden="true">🎒</span>
       <span class="meta-label">Straps</span>
       <span class="meta-value">13 rows each</span>
     </div>
@@ -421,39 +411,38 @@
   <h2>Step by <em>step</em></h2>
 
   <!-- 1. BASIS -->
-  <div class="pattern-part">
-    <div class="pattern-part-header">
-      <span class="pattern-part-icon">🧵</span>
-      <h3>1. The start (base)</h3>
-      <span class="pattern-part-count">42 sts to begin</span>
-    </div>
+  <details class="pattern-part" open>
+    <summary class="pattern-part-header"><span class="pattern-part-icon" aria-hidden="true">🧵</span>
+      <h3 class="acc-title">1. The start (base)</h3>
+      <span class="pattern-part-count">42 sts to begin</span><span class="acc-plus" aria-hidden="true"></span></summary>
+    <div class="pattern-part-body">
     <ul class="round-list">
       <li><span class="round-label">fch</span><span>Ch 38 for the width.</span></li>
       <li><span class="round-label">Turning ch</span><span>At the end of the chain, ch 4 more – you now have 42 stitches in total.</span></li>
       <li><span class="round-label">1st dc</span><span>Work the first double crochet into the 4th chain from the hook.</span></li>
     </ul>
-  </div>
+    </div>
+  </details>
 
   <!-- 2. TASCHENBODEN -->
-  <div class="pattern-part">
-    <div class="pattern-part-header">
-      <span class="pattern-part-icon">⭕</span>
-      <h3>2. The bag base (the curve)</h3>
-      <span class="pattern-part-count">Turning point at the end of the chain</span>
-    </div>
+  <details class="pattern-part" open>
+    <summary class="pattern-part-header"><span class="pattern-part-icon" aria-hidden="true">⭕</span>
+      <h3 class="acc-title">2. The bag base (the curve)</h3>
+      <span class="pattern-part-count">Turning point at the end of the chain</span><span class="acc-plus" aria-hidden="true"></span></summary>
+    <div class="pattern-part-body">
     <ul class="round-list">
       <li><span class="round-label">Curve</span><span>When you reach the end of the first chain: work 3 double crochets in total into the last chain, with 1 chain after each double crochet – so dc, ch, dc, ch, dc, ch.</span></li>
     </ul>
     <p class="pattern-note">This small fan-shaped curve at the tip of the chain is the key point: from here you work back along the underside of the starting chain, and the base becomes oval instead of square.</p>
-  </div>
+    </div>
+  </details>
 
   <!-- 3. TASCHENKÖRPER -->
-  <div class="pattern-part">
-    <div class="pattern-part-header">
-      <span class="pattern-part-icon">👜</span>
-      <h3>3. The bag body</h3>
-      <span class="pattern-part-count">14 rounds · 42 dc each</span>
-    </div>
+  <details class="pattern-part" open>
+    <summary class="pattern-part-header"><span class="pattern-part-icon" aria-hidden="true">👜</span>
+      <h3 class="acc-title">3. The bag body</h3>
+      <span class="pattern-part-count">14 rounds · 42 dc each</span><span class="acc-plus" aria-hidden="true"></span></summary>
+    <div class="pattern-part-body">
     <ul class="round-list">
       <li><span class="round-label">Number</span><span>Crochet 14 rounds in total for the body of the bag.</span></li>
       <li><span class="round-label">Stitches</span><span>Every round has 42 double crochets throughout.</span></li>
@@ -461,7 +450,8 @@
       <li><span class="round-label">Round end</span><span>Every round ends with a slip stitch into the 3rd chain of the beginning of the round.</span></li>
     </ul>
     <p class="pattern-note">Place a stitch marker at the start of the round and move it up with each new round – with 14 identical rounds it's easy to lose track of the transition otherwise.</p>
-  </div>
+    </div>
+  </details>
 </section>
 
 <!-- 4. MARKIERUNG DER TRÄGER -->
@@ -474,24 +464,24 @@
       <span class="marker-count">7</span>
       <span>dc</span>
     </div>
-    <span class="marker-arrow">→</span>
+    <span class="marker-arrow" aria-hidden="true">→</span>
     <div class="marker-block marked">
       <span class="marker-pin">📍</span>
       <span class="marker-count">8th</span>
       <span>dc (left marker)</span>
     </div>
-    <span class="marker-arrow">→</span>
+    <span class="marker-arrow" aria-hidden="true">→</span>
     <div class="marker-block">
       <span class="marker-count">5</span>
       <span>dc free (center)</span>
     </div>
-    <span class="marker-arrow">→</span>
+    <span class="marker-arrow" aria-hidden="true">→</span>
     <div class="marker-block marked">
       <span class="marker-pin">📍</span>
       <span class="marker-count">8th</span>
       <span>dc (right marker)</span>
     </div>
-    <span class="marker-arrow">→</span>
+    <span class="marker-arrow" aria-hidden="true">→</span>
     <div class="marker-block">
       <span class="marker-count">7</span>
       <span>dc</span>
@@ -513,13 +503,13 @@
   <p class="intro-text" style="margin-bottom:2rem;">From the two markers, you only continue working over the marked stitches – for each strap separately, in two sections.</p>
   <div class="strap-grid">
     <div class="strap-card">
-      <h4>Section A – shaping the slope</h4>
+      <h3>Section A – shaping the slope</h3>
       <ul class="round-list">
         <li><span class="round-label">R 1–5</span><span>Crochet 5 rows with decreases at the edges to shape the slope for the base of the strap.</span></li>
       </ul>
     </div>
     <div class="strap-card">
-      <h4>Section B – strap length</h4>
+      <h3>Section B – strap length</h3>
       <ul class="round-list">
         <li><span class="round-label">R 6–13</span><span>Crochet 8 more rows in the mesh pattern without decreases until the strap is finished.</span></li>
       </ul>
@@ -536,28 +526,28 @@
     <div class="step-row">
       <span class="step-num">01</span>
       <div class="step-content">
-        <h4>Weave in the ends</h4>
+        <h3>Weave in the ends</h3>
         <p>Carefully pull all loose yarn ends from the base, body and both straps inside and weave them in.</p>
       </div>
     </div>
     <div class="step-row">
       <span class="step-num">02</span>
       <div class="step-content">
-        <h4>Position the straps</h4>
+        <h3>Position the straps</h3>
         <p>Lay the ends of the straps on the opposite side and check the length before you sew.</p>
       </div>
     </div>
     <div class="step-row">
       <span class="step-num">03</span>
       <div class="step-content">
-        <h4>Sew together on the inside</h4>
+        <h3>Sew together on the inside</h3>
         <p>Sew both straps onto the inside of the bag with the yarn needle – that way the seam stays invisible from the outside.</p>
       </div>
     </div>
     <div class="step-row">
       <span class="step-num">04</span>
       <div class="step-content">
-        <h4>Optional: sew in a lining</h4>
+        <h3>Optional: sew in a lining</h3>
         <p>A thin cotton fabric sewn in from the inside makes sure nothing slips through the mesh.</p>
       </div>
     </div>
@@ -565,23 +555,16 @@
 </section>
 
 <!-- TIPPS -->
-<section class="tipp-section">
+<section class="tipp-section acc-section">
+  <div class="acc-intro">
   <div class="label">For best results</div>
   <h2>My <em>tips</em> for you</h2>
-  <div class="tipp-grid">
-    <div class="tipp-item">
-      <h3>Always count your stitches</h3>
-      <p>With 14 rounds of 42 double crochets each, it's worth a quick count at the end of every round – that way a misplaced stitch shows up right away.</p>
-    </div>
-    <div class="tipp-item">
-      <h3>Leave the markers in</h3>
-      <p>Place the markers while counting and leave them in until the end of the strap rows, so you can always find your way.</p>
-    </div>
-    <div class="tipp-item">
-      <h3>Crochet the straps in parallel</h3>
-      <p>Work both straps alternately row by row instead of finishing one first – that way they're guaranteed to be the same length.</p>
-    </div>
   </div>
+  <div class="acc">
+<details class="acc-item"><summary><span class="acc-num" aria-hidden="true">01</span><h3 class="acc-title">Always count your stitches</h3><span class="acc-plus" aria-hidden="true"></span></summary><div class="acc-body"><p>With 14 rounds of 42 double crochets each, it's worth a quick count at the end of every round – that way a misplaced stitch shows up right away.</p></div></details>
+<details class="acc-item"><summary><span class="acc-num" aria-hidden="true">02</span><h3 class="acc-title">Leave the markers in</h3><span class="acc-plus" aria-hidden="true"></span></summary><div class="acc-body"><p>Place the markers while counting and leave them in until the end of the strap rows, so you can always find your way.</p></div></details>
+<details class="acc-item"><summary><span class="acc-num" aria-hidden="true">03</span><h3 class="acc-title">Crochet the straps in parallel</h3><span class="acc-plus" aria-hidden="true"></span></summary><div class="acc-body"><p>Work both straps alternately row by row instead of finishing one first – that way they're guaranteed to be the same length.</p></div></details>
+</div>
 </section>
 
 <!-- CTA -->
@@ -591,37 +574,43 @@
   <p>In the overview you'll find more projects to crochet – from amigurumi to home decor.</p>
   <a href="../anleitungen.html" class="btn-primary">Go to all patterns</a>
 </section>
+</main>
 
 <!-- FOOTER -->
-<footer>
-  <div class="footer-top">
-    <div>
-      <span class="footer-logo">Pretty<span>Crochet</span></span>
-      <p>A blog about the love of crochet – with honest recommendations, free patterns and a community for everyone who creates things with yarn and hook.</p>
+<footer class="site-footer">
+  <div class="sf-grid">
+    <div class="sf-about">
+      <a class="sf-brand" href="../index.html">Pretty<span>Crochet</span></a>
+      <p class="sf-claim">Yarn becomes yours.</p>
+      <p>Free crochet patterns, an interactive learning path and tools to design your own – for everyone who makes favorite pieces with yarn and hook.</p>
     </div>
-    <div>
-      <h4>Navigation</h4>
-      <ul>
-        <li><a href="../haekeln-basics.html">Crochet Basics</a></li>
-        <li><a href="../anleitungen.html">Patterns</a></li>
-        <li><a href="../werkzeuge/muster-generator.html">Pattern Generator</a></li>
+    <div><h2>Learn to crochet</h2><ul>
+        <li><a href="../werkzeuge/lernpfad.html">Learning path (7 lessons)</a></li>
+        <li><a href="../haekeln-basics.html">Crochet basics</a></li>
+        <li><a href="../abkuerzungen.html">Abbreviations &amp; charts</a></li>
+      </ul></div>
+    <div><h2>Patterns</h2><ul>
+        <li><a href="kuerbis.html">Crochet a pumpkin</a></li>
+        <li><a href="haekel-baer.html">Little crochet bear</a></li>
+        <li><a href="haekeltasche.html">Summer crochet bag</a></li>
+        <li><a href="blueten-blaetter.html">Flowers &amp; leaves</a></li>
+        <li><a href="../anleitungen.html">All patterns →</a></li>
+      </ul></div>
+    <div><h2>Explore</h2><ul>
+        <li><a href="../werkzeuge/muster-generator.html">Pattern generator</a></li>
         <li><a href="../blog.html">Blog</a></li>
-        <li><a href="../ueber-mich.html">About me</a></li>
-        <li><a href="mailto:prettycrochetstudio@gmail.com">Contact</a></li>
-      </ul>
-    </div>
-    <div>
-      <h4>Legal</h4>
-      <ul>
-        <li><a href="#">Legal notice</a></li>
-        <li><a href="../datenschutz.html">Privacy policy</a></li>
-        <li><a href="#">Affiliate disclosure</a></li>
-        <li><a href="#">Cookie settings</a></li>
-      </ul>
-    </div>
+        <li><a href="../amigurumi.html">Amigurumi</a></li>
+        <li><a href="../wohndeko.html">Home decor</a></li>
+        <li><a href="../ueber-mich.html">About</a></li>
+      </ul></div>
   </div>
-  <div class="footer-bottom">© 2026 PrettyCrochet · Natural. Timeless. Handmade.</div>
+  <div class="sf-bottom">
+    <span>© 2026 PrettyCrochet</span>
+    <div class="sf-legal"><a href="mailto:prettycrochetstudio@gmail.com">Contact</a><a href="#">Legal notice</a><a href="../datenschutz.html">Privacy policy</a></div>
+  </div>
 </footer>
 
+<script src="../../assets/js/search-index.js" defer></script>
+<script src="../../assets/js/site.js" data-root="../../" data-lang="en" defer></script>
 </body>
 </html>
