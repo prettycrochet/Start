@@ -503,10 +503,33 @@ article .pattern li{margin:.35em 0;}
 .tools-grid{grid-template-columns:repeat(auto-fit,minmax(16rem,1fr)) !important;}
 
 /* ── Häkel-Basics: Bilder ── */
-.hb-figure{margin:0 0 2rem;max-width:880px;}
+.hb-figure{margin:0 0 2rem;max-width:560px;}
 .hb-figure img{display:block;width:100%;height:auto;border-radius:var(--pc-r-panel);background:var(--pc-sage-tint);}
 .hb-figure figcaption{font-size:.875rem;color:var(--pc-muted);margin-top:.5rem;}
 .hb-split{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:clamp(1.5rem,4vw,3.5rem);align-items:center;}
 .hb-split .hb-figure{margin:0;}
 @media(max-width:860px){.hb-split{grid-template-columns:1fr;}}
 @media(min-width:700px){.step-row .step-image{width:148px;height:148px;}}
+
+/* ── Bildgrößen: Bilder nicht größer als nötig ── */
+.pattern-figure{max-width:640px !important;}
+article figure:not(:first-of-type){max-width:560px;margin-left:auto !important;margin-right:auto !important;}
+article figure.portrait{max-width:340px;}
+
+/* Schritt-Illustrationen (Häkel-Basics): größer auf Desktop, unter dem Text auf dem Handy */
+@media(min-width:700px){.step-row .step-image{width:168px;height:168px;object-fit:contain;background:var(--pc-cream-2);}}
+@media(max-width:699px){
+  .step-row{flex-wrap:wrap;}
+  .step-row .step-content{flex:1 1 calc(100% - 46px - 1.6rem - 2px);}
+  .step-row .step-image{order:3;width:min(calc(100% - 46px - 1.6rem),260px);height:auto;aspect-ratio:1;margin-left:calc(46px + 1.6rem);object-fit:contain;background:var(--pc-cream-2);}
+}
+
+/* ── Häkel-Basics: Hinweisfelder (heben sich von den Schritten ab) ── */
+.hb-note{display:flex;gap:1rem;align-items:flex-start;max-width:74ch;margin:2.25rem 0 .5rem;padding:1.25rem 1.4rem;border-radius:var(--pc-r-panel);background:var(--pc-apricot-tint);box-shadow:0 8px 24px rgba(48,42,38,.07),0 0 0 1px rgba(230,172,145,.55);}
+.hb-note--rule,.hb-note--info,.hb-note--read{background:var(--pc-sage-tint);box-shadow:0 8px 24px rgba(48,42,38,.07),0 0 0 1px rgba(171,185,162,.8);}
+.hb-note-icon{flex:none;display:grid;place-items:center;width:46px;height:46px;border-radius:50%;background:var(--pc-white);font-size:1.35rem;line-height:1;box-shadow:0 0 0 1px rgba(48,42,38,.08);}
+.hb-note-body{min-width:0;}
+.hb-note-label{margin:0 0 .25rem;font-size:.78rem !important;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--pc-pine) !important;}
+.hb-note-body p:not(.hb-note-label){margin:0;font-size:1rem !important;line-height:1.65;color:var(--pc-espresso) !important;}
+.hb-note a{color:var(--pc-pine) !important;font-weight:600;text-underline-offset:.2em;}
+@media(max-width:560px){.hb-note{flex-direction:column;gap:.7rem;padding:1.1rem 1.1rem 1.2rem;}}
