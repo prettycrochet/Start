@@ -501,3 +501,12 @@ article .pattern{background:var(--pc-white);border:1px solid var(--pc-line);bord
 article .pattern ol{padding-left:1.4em;}
 article .pattern li{margin:.35em 0;}
 .tools-grid{grid-template-columns:repeat(auto-fit,minmax(16rem,1fr)) !important;}
+
+/* ── Häkel-Basics: Bilder ── */
+.hb-figure{margin:0 0 2rem;max-width:880px;}
+.hb-figure img{display:block;width:100%;height:auto;border-radius:var(--pc-r-panel);background:var(--pc-sage-tint);}
+.hb-figure figcaption{font-size:.875rem;color:var(--pc-muted);margin-top:.5rem;}
+.hb-split{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:clamp(1.5rem,4vw,3.5rem);align-items:center;}
+.hb-split .hb-figure{margin:0;}
+@media(max-width:860px){.hb-split{grid-template-columns:1fr;}}
+@media(min-width:700px){.step-row .step-image{width:148px;height:148px;}}
