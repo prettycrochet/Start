@@ -533,3 +533,10 @@ article figure.portrait{max-width:340px;}
 .hb-note-body p:not(.hb-note-label){margin:0;font-size:1rem !important;line-height:1.65;color:var(--pc-espresso) !important;}
 .hb-note a{color:var(--pc-pine) !important;font-weight:600;text-underline-offset:.2em;}
 @media(max-width:560px){.hb-note{flex-direction:column;gap:.7rem;padding:1.1rem 1.1rem 1.2rem;}}
+
+/* ── Beitrags-Karten ohne Foto (Platzhalter mit Symbol) ── */
+.post-thumb--ph,.post .ph{display:grid;place-items:center;background-color:var(--pc-apricot-tint) !important;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='64' viewBox='0 0 100 108'%3E%3Cpath d='M 35 89 L 35 37 C 35 15 76 13 77 36 C 79 59 41 69 23 55 C 7 42 19 23 33 28' fill='none' stroke='%23E6AC91' stroke-width='8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");background-size:52px 56px;}
+.post-thumb--ph span,.post .ph span{display:grid;place-items:center;width:clamp(84px,9vw,120px);aspect-ratio:1;border-radius:50%;background:var(--pc-white);font-size:clamp(2.6rem,5vw,3.8rem);line-height:1;box-shadow:0 8px 24px rgba(48,42,38,.12);}
+.post .ph{padding:0;min-height:220px;}
+@media(max-width:560px){.post .ph{min-height:0;aspect-ratio:16/9;}}
+.post-card.featured .post-thumb--ph{min-height:260px;}
