@@ -540,3 +540,9 @@ article figure.portrait{max-width:340px;}
 .post .ph{padding:0;min-height:220px;}
 @media(max-width:560px){.post .ph{min-height:0;aspect-ratio:16/9;}}
 .post-card.featured .post-thumb--ph{min-height:260px;}
+
+/* Fußzeile: Social-Media-Links (Instagram, TikTok) – einfache Links, keine Einbettung */
+.site-footer .sf-social{flex-direction:row;flex-wrap:wrap;gap:.1rem 1.4rem;margin-top:1.1rem;}
+.site-footer .sf-social a{gap:.55rem;opacity:1;}
+.site-footer .sf-social svg{flex:none;}
+.site-footer .sf-social a:hover svg{color:var(--pc-apricot);}
