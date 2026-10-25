@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Crochet Home Decor: Patterns &amp; Ideas | PrettyCrochet</title>
+  <meta name="description" content="Baskets, pillows, coasters and wall decor – crochet projects that bring warmth to your home. Materials, basic techniques and project ideas for every room."/>
+  <link rel="stylesheet" href="../assets/fonts/fonts.css"/>
+  <link rel="icon" href="/assets/icons/favicon.ico" sizes="48x48"/>
+  <link rel="icon" href="/assets/icons/favicon.svg" type="image/svg+xml"/>
+  <link rel="icon" href="/assets/icons/favicon-192x192.png" type="image/png" sizes="192x192"/>
+  <link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png"/>
+  <style>
+    :root {
+      --creme:   #F7F3EC;
+      --salbei:  #ABB9A2;
+      --beige:   #E4DED3;
+      --braun:   #3E5748;
+      --espresso:#302A26;
+      --white:   #FFFFFF;
+      --muted:   #6B625C;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--creme);
+      color: var(--espresso);
+      font-family: 'Manrope', sans-serif;
+      font-weight: 300;
+      line-height: 1.75;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 1.1rem 6vw;
+      background: rgba(247,243,236,0.92);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--beige);
+    }
+    .logo-wrap { display: flex; align-items: center; gap: 0.75rem; text-decoration: none; }
+    .logo-text {
+      font-family: 'Fraunces', serif;
+      font-size: 1.45rem; font-weight: 600;
+      color: var(--espresso); letter-spacing: 0.02em;
+    }
+    .logo-text span { color: var(--salbei); }
+    .nav-links { display: flex; gap: 2.2rem; list-style: none; }
+    .nav-links a {
+      font-size: 0.82rem; font-weight: 400; letter-spacing: 0.1em;
+      text-transform: uppercase; text-decoration: none;
+      color: var(--espresso); transition: color 0.2s;
+    }
+    .nav-links a:hover, .nav-links a.active { color: var(--salbei); }
+    .nav-cta {
+      font-size: 0.8rem; font-weight: 500; letter-spacing: 0.08em;
+      text-transform: uppercase; text-decoration: none;
+      color: var(--white); background: var(--espresso);
+      padding: 0.6rem 1.4rem; border-radius: 2px; transition: background 0.2s;
+    }
+    .nav-cta:hover { background: var(--braun); }
+
+    /* ── PAGE HERO ── */
+    .page-hero { padding: 11rem 10vw 5rem; background: var(--beige); text-align: center; }
+    .breadcrumb {
+      font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase;
+      color: var(--braun); margin-bottom: 1.5rem;
+    }
+    .breadcrumb a { color: var(--braun); text-decoration: none; border-bottom: 1px solid rgba(62,87,72,0.35); }
+    .breadcrumb a:hover { border-color: var(--braun); }
+    .page-hero .label { justify-content: center; }
+    .page-hero .label::before { display: none; }
+    .page-hero h1 {
+      font-family: 'Fraunces', serif;
+      font-size: clamp(2.4rem, 5vw, 4rem);
+      font-weight: 300; line-height: 1.15;
+      color: var(--espresso); margin-bottom: 1.2rem;
+    }
+    .page-hero h1 em { font-style: italic; color: var(--braun); }
+    .page-hero p.sub { max-width: 52ch; margin: 0 auto; color: var(--braun); font-size: 1rem; }
+
+    .label {
+      font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--salbei); margin-bottom: 0.6rem;
+      display: flex; align-items: center; gap: 0.7rem;
+    }
+    .label::before { content:''; display:inline-block; width:24px; height:1px; background:var(--salbei); }
+
+    h2 {
+      font-family: 'Fraunces', serif;
+      font-size: clamp(1.8rem, 3vw, 2.6rem);
+      font-weight: 300; line-height: 1.2;
+      color: var(--espresso); margin-bottom: 1.5rem;
+    }
+    h2 em { font-style: italic; color: var(--braun); }
+
+    section { padding: 5rem 10vw; }
+
+    /* ── INTRO ── */
+    .intro-section { background: var(--white); }
+    .intro-text { max-width: 70ch; font-size: 1.02rem; }
+    .intro-text p { margin-bottom: 1.2rem; }
+    .intro-text a { color: var(--braun); }
+
+    /* ── RÄUME ── */
+    .rooms-section { background: var(--creme); }
+    .rooms-grid {
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px;
+      background: var(--beige); border: 1px solid var(--beige);
+    }
+    .room-item {
+      background: var(--white); padding: 2rem 1.6rem;
+      display: flex; flex-direction: column; gap: 0.6rem;
+    }
+    .room-icon { font-size: 1.7rem; }
+    .room-item h3 { font-family: 'Fraunces', serif; font-size: 1.12rem; font-weight: 400; }
+    .room-item p { font-size: 0.84rem; color: var(--muted); }
+
+    /* ── MATERIAL ── */
+    .material-section { background: var(--white); }
+    .material-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px;
+      background: var(--beige); border: 1px solid var(--beige);
+    }
+    .material-item {
+      background: var(--creme); padding: 2rem 1.8rem;
+      display: flex; flex-direction: column; gap: 0.6rem;
+    }
+    .material-icon { font-size: 1.7rem; }
+    .material-item h3 { font-family: 'Fraunces', serif; font-size: 1.15rem; font-weight: 400; }
+    .material-item p { font-size: 0.85rem; color: var(--muted); }
+
+    /* ── TECHNIKEN ── */
+    .steps-section { background: var(--creme); }
+    .steps-list { display: flex; flex-direction: column; max-width: 74ch; }
+    .step-row {
+      display: grid; grid-template-columns: 60px 1fr; gap: 1.6rem;
+      padding: 1.8rem 0; border-bottom: 1px solid var(--beige);
+    }
+    .step-row:first-child { padding-top: 0; }
+    .step-row:last-child { border-bottom: none; }
+    .step-num { font-family: 'Fraunces', serif; font-size: 2rem; font-weight: 300; color: var(--salbei); }
+    .step-content h3 { font-family: 'Fraunces', serif; font-size: 1.2rem; font-weight: 400; margin-bottom: 0.4rem; }
+    .step-content p { font-size: 0.92rem; color: var(--muted); }
+
+    /* ── PROJEKTE ── */
+    .projects-section { background: var(--white); }
+    .projects-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+    .project-card {
+      background: var(--creme); border: 1px solid var(--beige);
+      text-decoration: none; color: var(--espresso);
+      display: flex; flex-direction: column;
+      transition: box-shadow 0.25s, transform 0.25s;
+    }
+    .project-card:hover { box-shadow: 0 10px 30px rgba(48,42,38,0.1); transform: translateY(-2px); }
+    .project-card.is-soon { opacity: 0.62; pointer-events: none; }
+    .project-thumb {
+      height: 150px; background: var(--beige);
+      display: flex; align-items: center; justify-content: center; font-size: 3.2rem;
+    }
+    .project-card:nth-child(3n+2) .project-thumb { background: #E8EDE5; }
+    .project-card:nth-child(3n+3) .project-thumb { background: #EDE8E2; }
+    .project-body { padding: 1.5rem; flex: 1; display: flex; flex-direction: column; }
+    .project-tags { display: flex; gap: 0.4rem; flex-wrap: wrap; margin-bottom: 0.7rem; }
+    .project-tag {
+      font-size: 0.62rem; letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--white); background: var(--salbei);
+      padding: 0.2rem 0.55rem; border-radius: 2px;
+    }
+    .project-tag.level { background: var(--braun); }
+    .project-tag.soon { background: var(--muted); }
+    .project-body h3 {
+      font-family: 'Fraunces', serif;
+      font-size: 1.22rem; font-weight: 400; line-height: 1.3; margin-bottom: 0.5rem;
+    }
+    .project-body p { font-size: 0.85rem; color: var(--muted); flex: 1; }
+    .project-meta {
+      font-size: 0.72rem; color: var(--muted); letter-spacing: 0.05em; text-transform: uppercase;
+      border-top: 1px solid var(--beige); padding-top: 0.8rem; margin-top: 1.2rem;
+    }
+
+    /* ── TIPPS ── */
+    .tipp-section { background: var(--espresso); }
+    .tipp-section .label { color: var(--salbei); }
+    .tipp-section .label::before { background: var(--salbei); }
+    .tipp-section h2 { color: var(--creme); }
+    .tipp-section h2 em { color: var(--salbei); }
+    .tipp-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px;
+      background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.08);
+    }
+    .tipp-item { background: var(--espresso); padding: 2rem 1.6rem; }
+    .tipp-item h3 {
+      font-family: 'Fraunces', serif;
+      font-size: 1.1rem; font-weight: 400; color: var(--creme); margin-bottom: 0.6rem;
+    }
+    .tipp-item p { font-size: 0.85rem; color: var(--beige); }
+
+    /* ── CTA ── */
+    .next-section { background: var(--beige); text-align: center; padding: 5rem 10vw; }
+    .next-section .label { justify-content: center; }
+    .next-section .label::before { display: none; }
+    .next-section p { color: var(--braun); max-width: 46ch; margin: 0 auto 2rem; font-size: 0.95rem; }
+    .btn-primary {
+      display: inline-block; background: var(--espresso); color: var(--white);
+      padding: 0.9rem 2rem; font-size: 0.82rem; font-weight: 500;
+      letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none;
+      border-radius: 2px; transition: background 0.2s;
+    }
+    .btn-primary:hover { background: var(--braun); }
+
+    /* ── FOOTER ── */
+    footer { background: var(--espresso); color: var(--beige); padding: 4rem 10vw 2rem; }
+    .footer-top {
+      display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 4rem;
+      padding-bottom: 3rem; border-bottom: 1px solid rgba(228,222,211,0.15); margin-bottom: 2rem;
+    }
+    .footer-logo {
+      font-family: 'Fraunces', serif;
+      font-size: 1.5rem; font-weight: 400; color: var(--creme);
+      display: block; margin-bottom: 1rem;
+    }
+    .footer-logo span { color: var(--salbei); }
+    footer p { font-size: 0.83rem; color: rgba(228,222,211,0.6); line-height: 1.8; max-width: 32ch; }
+    footer h4 {
+      font-size: 0.7rem; letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--salbei); margin-bottom: 1.2rem;
+    }
+    footer ul { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
+    footer ul a { font-size: 0.84rem; color: rgba(228,222,211,0.7); text-decoration: none; transition: color 0.2s; }
+    footer ul a:hover { color: var(--creme); }
+    .footer-bottom { text-align: center; font-size: 0.72rem; color: rgba(228,222,211,0.35); letter-spacing: 0.06em; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      .nav-links { display: none; }
+      .rooms-grid { grid-template-columns: 1fr 1fr; }
+      .material-grid { grid-template-columns: 1fr; }
+      .projects-grid { grid-template-columns: 1fr 1fr; }
+      .tipp-grid { grid-template-columns: 1fr; }
+      .footer-top { grid-template-columns: 1fr; gap: 2rem; }
+      .step-row { grid-template-columns: 40px 1fr; }
+    }
+    @media (max-width: 620px) {
+      .rooms-grid { grid-template-columns: 1fr; }
+      .projects-grid { grid-template-columns: 1fr; }
+    }
+  
+  /* ── Sprachumschalter DE | EN ── */
+  .nav-right{display:flex;align-items:center;gap:1.4rem;}
+  .lang-switch{display:flex;align-items:center;gap:.45rem;font-size:.78rem;letter-spacing:.1em;color:#6B625C;}
+  .lang-switch a{color:inherit;text-decoration:none;border-bottom:1px solid transparent;transition:color .2s,border-color .2s;}
+  .lang-switch a:hover{color:#302A26;border-color:#ABB9A2;}
+  .lang-switch [aria-current]{color:#302A26;font-weight:500;}
+  header .lang-switch{justify-content:flex-end;margin-bottom:.4rem;}
+  nav{gap:1rem;}
+  @media(max-width:480px){.nav-right{gap:.8rem;}.nav-right .nav-cta{padding:.5rem .85rem;font-size:.7rem;}}
+  .nav-links a[aria-current="page"]{color:#ABB9A2;}
+  .nav-links a,.nav-cta,.lang-switch{white-space:nowrap;}
+  @media(max-width:1180px){nav{padding-left:4vw;padding-right:4vw;}.nav-links{gap:1.3rem;}.nav-links a{font-size:.75rem;letter-spacing:.07em;}}
+  @media(max-width:980px){.nav-links{display:none;}}
+</style>
+<link rel="alternate" hreflang="de" href="https://prettycrochetstudio.com/wohndeko.html"/>
+<link rel="alternate" hreflang="en" href="https://prettycrochetstudio.com/en/home-decor.html"/>
+<link rel="alternate" hreflang="x-default" href="https://prettycrochetstudio.com/wohndeko.html"/>
+<link rel="stylesheet" href="../assets/css/brand.css"/>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <nav class="site-nav" aria-label="Main navigation">
+    <a class="brand" href="index.html" aria-label="PrettyCrochet – home"><img src="../assets/logos/prettycrochet-lockup-espresso.svg" alt="" width="617" height="132"></a>
+    <div class="nav-tools">
+      <button type="button" class="icon-btn" data-search-open aria-label="Open search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg></button>
+      <div class="lang-switch" aria-label="Choose language"><a href="../wohndeko.html" hreflang="de" lang="de">DE</a><span aria-hidden="true">|</span><span aria-current="true">EN</span></div>
+      <button type="button" class="menu-toggle" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu" data-label-open="Open menu" data-label-close="Close menu"><span class="mt-label" data-text-open="Menu" data-text-close="Close">Menu</span><svg class="i-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg><svg class="i-close" style="display:none" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+    </div>
+  </nav>
+  <div class="mobile-menu" id="mobile-menu" hidden>
+    <button type="button" class="btn primary mm-search" data-search-open><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>Search patterns & topics</button>
+    <ul>
+      <li><a href="patterns.html">Patterns</a></li>
+      <li><a href="amigurumi.html">Amigurumi</a></li>
+      <li><a href="home-decor.html" aria-current="page">Home decor</a></li>
+      <li><a href="crochet-basics.html">Learn to crochet</a></li>
+      <li><a href="crochet-abbreviations.html">Abbreviations</a></li>
+      <li><a href="tools/learning-path.html">Learning path</a></li>
+      <li><a href="tools/pattern-generator.html">Pattern generator</a></li>
+      <li><a href="tools/stitch-counter.html">Stitch counter</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="about.html">About</a></li>
+    </ul>
+    <p class="mm-label">Jump to</p>
+    <div class="mm-quick"><a href="#" data-search-query="pumpkin">Pumpkin</a><a href="#" data-search-query="magic ring">Magic ring</a><a href="#" data-search-query="beginner">Beginner</a><a href="#" data-search-query="amigurumi">Amigurumi</a></div>
+    <div class="lang-switch mm-lang" aria-label="Choose language"><a href="../wohndeko.html" hreflang="de" lang="de">DE</a><span aria-hidden="true">|</span><span aria-current="true">EN</span></div>
+  </div>
+</header>
+<div class="search-overlay" id="search" role="dialog" aria-modal="true" aria-label="Open search" hidden>
+  <div class="search-panel">
+    <div class="search-bar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><input type="search" placeholder="Search patterns, techniques or topics …" aria-label="Search patterns, techniques or topics …" autocomplete="off"/><button type="button" class="search-close">Close</button></div>
+    <div class="search-results" aria-live="polite"></div>
+  </div>
+</div>
+
+<main id="main" tabindex="-1">
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <p class="breadcrumb"><a href="index.html">Home</a> · <a href="patterns.html">Patterns</a> · Home decor</p>
+  <div class="label">Category</div>
+  <h1>Home decor:<br>Cozy things <em>made by hand</em></h1>
+  <p class="sub">Baskets, pillows, coasters and wall decor – crochet projects that bring warmth to your home and are useful along the way.</p>
+</section>
+
+<!-- INTRO -->
+<section class="intro-section">
+  <div class="label">Why home decor?</div>
+  <h2>Crochet you <em>see every day</em></h2>
+  <div class="intro-text">
+    <p>For me, home decor is the most rewarding crochet category of all. The projects are usually worked flat or in the round, forgive small irregularities, and you see them every day afterwards – unlike a scarf that spends eight months in the closet.</p>
+    <p>On top of that: many home decor projects grow quickly. A coaster is done in half an hour, a small basket in one evening. That makes them perfect for anyone who has just learned the basic stitches and needs a sense of achievement before tackling something bigger.</p>
+    <p>If terms like “single crochet” or “double crochet” don't mean anything to you yet, it's best to start with the <a href="crochet-basics.html">Crochet Basics</a> – after that, every project on this page is very doable.</p>
+  </div>
+</section>
+
+<!-- RÄUME -->
+<section class="rooms-section">
+  <div class="label">Ideas by room</div>
+  <h2>Something for <em>every room</em></h2>
+  <div class="rooms-grid">
+    <div class="room-item">
+      <span class="room-icon" aria-hidden="true">🛋️</span>
+      <h3>Living room</h3>
+      <p>Pillow covers, throws and baskets for magazines or yarn.</p>
+    </div>
+    <div class="room-item">
+      <span class="room-icon" aria-hidden="true">🍽️</span>
+      <h3>Kitchen & dining room</h3>
+      <p>Coasters, potholders and bread baskets made of sturdy cotton.</p>
+    </div>
+    <div class="room-item">
+      <span class="room-icon" aria-hidden="true">🛏️</span>
+      <h3>Bedroom</h3>
+      <p>Soft bedside rugs, storage baskets and lavender sachets.</p>
+    </div>
+    <div class="room-item">
+      <span class="room-icon" aria-hidden="true">🪴</span>
+      <h3>Balcony & hallway</h3>
+      <p>Plant hangers, planter covers and wall wreaths for the entrance.</p>
+    </div>
+  </div>
+</section>
+
+<!-- MATERIAL -->
+<section class="material-section">
+  <div class="label">Supplies</div>
+  <h2>Materials <em>for home decor</em></h2>
+  <div class="material-grid">
+    <div class="material-item">
+      <span class="material-icon" aria-hidden="true">🧶</span>
+      <h3>Sturdy cotton</h3>
+      <p>For coasters, potholders and anything that gets washed. Holds its shape and is more heat-resistant than acrylic.</p>
+    </div>
+    <div class="material-item">
+      <span class="material-icon" aria-hidden="true">🪢</span>
+      <h3>T-shirt yarn / rope</h3>
+      <p>Chunky yarn for baskets and planter covers – stands up on its own and grows incredibly fast.</p>
+    </div>
+    <div class="material-item">
+      <span class="material-icon" aria-hidden="true">🌾</span>
+      <h3>Jute & natural yarn</h3>
+      <p>For a rustic boho look on wall wreaths and plant hangers.</p>
+    </div>
+    <div class="material-item">
+      <span class="material-icon" aria-hidden="true">🪝</span>
+      <h3>Larger hooks</h3>
+      <p>With T-shirt yarn you'll need 6–10 mm. A comfortable grip matters more here than usual.</p>
+    </div>
+    <div class="material-item">
+      <span class="material-icon" aria-hidden="true">⭕</span>
+      <h3>Metal or wooden rings</h3>
+      <p>The base for wall wreaths and plant hangers – available in many diameters.</p>
+    </div>
+    <div class="material-item">
+      <span class="material-icon" aria-hidden="true">🔖</span>
+      <h3>Stitch markers</h3>
+      <p>Essential for round projects, so you don't lose track of the start of the round.</p>
+    </div>
+  </div>
+</section>
+
+<!-- TECHNIKEN -->
+<section class="steps-section">
+  <div class="label">Basic techniques</div>
+  <h2>What you <em>should know</em></h2>
+  <div class="steps-list">
+    <div class="step-row">
+      <span class="step-num">01</span>
+      <div class="step-content">
+        <h3>Crocheting flat in the round</h3>
+        <p>The basis for coasters, baskets and rugs: even increases in every round make sure the circle stays flat and doesn't ruffle or cup.</p>
+      </div>
+    </div>
+    <div class="step-row">
+      <span class="step-num">02</span>
+      <div class="step-content">
+        <h3>Back loop only</h3>
+        <p>The trick behind the ribbed look of baskets: if you only insert your hook into the back loop, a fine horizontal texture appears and the wall turns up neatly.</p>
+      </div>
+    </div>
+    <div class="step-row">
+      <span class="step-num">03</span>
+      <div class="step-content">
+        <h3>From the base upwards</h3>
+        <p>Once the circle is big enough, stop increasing and keep crocheting straight – this automatically becomes the wall of the basket.</p>
+      </div>
+    </div>
+    <div class="step-row">
+      <span class="step-num">04</span>
+      <div class="step-content">
+        <h3>Assembling pieces</h3>
+        <p>Flowers, leaves and appliqués are crocheted separately, then arranged and sewn on – that's how wreaths and embellished pillows are made.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJEKTE -->
+<section class="projects-section">
+  <div class="label">Patterns</div>
+  <h2>Home decor <em>projects</em></h2>
+  <div class="projects-grid">
+
+    <a href="patterns/crochet-flowers-leaves.html" class="project-card">
+      <div class="project-thumb">🌸</div>
+      <div class="project-body">
+        <div class="project-tags">
+          <span class="project-tag">Wall decor</span>
+          <span class="project-tag level">Beginner+</span>
+        </div>
+        <h3>How to Crochet Flowers &amp; Leaves</h3>
+        <p>Three flower shapes, two leaf variations and a vine – the building blocks for wreaths, appliqués and bouquets.</p>
+        <span class="project-meta">6 designs · 10–25 min each</span>
+      </div>
+    </a>
+
+    <a href="patterns/crochet-pumpkin.html" class="project-card">
+      <div class="project-thumb">🎃</div>
+      <div class="project-body">
+        <div class="project-tags">
+          <span class="project-tag">Fall decor</span>
+          <span class="project-tag level">Beginner</span>
+        </div>
+        <h3>How to Crochet a Pumpkin</h3>
+        <p>Ribbed pumpkins made from one rectangle – done in one evening, in three sizes.</p>
+        <span class="project-meta">3 sizes · 1–2 hrs</span>
+      </div>
+    </a>
+
+    <span class="project-card is-soon">
+      <div class="project-thumb">🧺</div>
+      <div class="project-body">
+        <div class="project-tags">
+          <span class="project-tag">Storage</span>
+          <span class="project-tag level">Beginner</span>
+          <span class="project-tag soon">Coming soon</span>
+        </div>
+        <h3>T-Shirt Yarn Basket</h3>
+        <p>Round base, single crochet in the back loop – the classic for yarn, mail or odds and ends.</p>
+        <span class="project-meta">In progress</span>
+      </div>
+    </span>
+
+    <span class="project-card is-soon">
+      <div class="project-thumb">☕</div>
+      <div class="project-body">
+        <div class="project-tags">
+          <span class="project-tag">Kitchen</span>
+          <span class="project-tag level">Beginner</span>
+          <span class="project-tag soon">Coming soon</span>
+        </div>
+        <h3>Set of 4 Coasters</h3>
+        <p>The perfect first project after the basic stitches: done in half an hour and ready to use right away.</p>
+        <span class="project-meta">In progress</span>
+      </div>
+    </span>
+
+    <span class="project-card is-soon">
+      <div class="project-thumb">🛋️</div>
+      <div class="project-body">
+        <div class="project-tags">
+          <span class="project-tag">Living room</span>
+          <span class="project-tag level">Intermediate</span>
+          <span class="project-tag soon">Coming soon</span>
+        </div>
+        <h3>Textured Pillow Cover</h3>
+        <p>Two square panels with post stitches, with a button band on the back so it can be removed and washed.</p>
+        <span class="project-meta">In progress</span>
+      </div>
+    </span>
+
+    <span class="project-card is-soon">
+      <div class="project-thumb">🪴</div>
+      <div class="project-body">
+        <div class="project-tags">
+          <span class="project-tag">Balcony</span>
+          <span class="project-tag level">Intermediate</span>
+          <span class="project-tag soon">Coming soon</span>
+        </div>
+        <h3>Jute Plant Hanger</h3>
+        <p>A net-like hanger for planters – few stitches, big impact.</p>
+        <span class="project-meta">In progress</span>
+      </div>
+    </span>
+
+    <span class="project-card is-soon">
+      <div class="project-thumb">🌿</div>
+      <div class="project-body">
+        <div class="project-tags">
+          <span class="project-tag">Wall decor</span>
+          <span class="project-tag level">Beginner</span>
+          <span class="project-tag soon">Coming soon</span>
+        </div>
+        <h3>Leaf Garland</h3>
+        <p>Small leaves strung on a cord – ideal for using up scraps.</p>
+        <span class="project-meta">In progress</span>
+      </div>
+    </span>
+
+  </div>
+</section>
+
+<!-- TIPPS -->
+<section class="tipp-section acc-section">
+  <div class="acc-intro">
+  <div class="label">For best results</div>
+  <h2>My <em>home decor tips</em></h2>
+  </div>
+  <div class="acc">
+<details class="acc-item"><summary><span class="acc-num" aria-hidden="true">01</span><h3 class="acc-title">Check round pieces regularly</h3><span class="acc-plus" aria-hidden="true"></span></summary><div class="acc-body"><p>If your circle cups upwards, you're missing increases. If the edge ruffles, there are too many. Lay it flat on the table every now and then.</p></div></details>
+<details class="acc-item"><summary><span class="acc-num" aria-hidden="true">02</span><h3 class="acc-title">Match colors to the room</h3><span class="acc-plus" aria-hidden="true"></span></summary><div class="acc-body"><p>Muted natural tones look calm in almost any interior style. Add color with a single accent piece rather than with every piece at once.</p></div></details>
+<details class="acc-item"><summary><span class="acc-num" aria-hidden="true">03</span><h3 class="acc-title">Crochet tightly for baskets</h3><span class="acc-plus" aria-hidden="true"></span></summary><div class="acc-body"><p>The tighter the stitches, the better the basket holds its shape. When in doubt, use a hook one size smaller than the yarn label suggests.</p></div></details>
+</div>
+</section>
+
+<!-- CTA -->
+<section class="next-section">
+  <div class="label">Ready?</div>
+  <h2>Start with the <em>basics</em></h2>
+  <p>Most home decor projects only need single crochet and double crochet – you'll learn both in the Crochet Basics.</p>
+  <a href="crochet-basics.html" class="btn-primary">Go to Crochet Basics</a>
+</section>
+</main>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="sf-grid">
+    <div class="sf-about">
+      <a class="sf-brand" href="index.html"><img src="../assets/logos/prettycrochet-lockup-cream.svg" alt="PrettyCrochet" width="617" height="132" loading="lazy"></a>
+      <p class="sf-claim">Yarn becomes yours.</p>
+      <p>Free crochet patterns, an interactive learning path and tools to design your own – for everyone who makes favorite pieces with yarn and hook.</p>
+      <ul class="sf-social" aria-label="PrettyCrochet on social media">
+        <li><a href="https://www.instagram.com/prettycrochetstudio/" target="_blank" rel="noopener me"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r=".6" fill="currentColor"/></svg><span>Instagram</span><span class="visually-hidden"> (opens in a new tab)</span></a></li>
+        <li><a href="https://www.tiktok.com/@prettycrochetstudio" target="_blank" rel="noopener me"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3v11.5a3.5 3.5 0 1 1-3.5-3.5"/><path d="M14 3c.3 2.4 1.9 4.2 4.5 4.5"/></svg><span>TikTok</span><span class="visually-hidden"> (opens in a new tab)</span></a></li>
+      </ul>
+    </div>
+    <div><h2>Learn to crochet</h2><ul>
+        <li><a href="tools/learning-path.html">Learning path (7 lessons)</a></li>
+        <li><a href="crochet-basics.html">Crochet basics</a></li>
+        <li><a href="crochet-abbreviations.html">Abbreviations &amp; charts</a></li>
+      </ul></div>
+    <div><h2>Patterns</h2><ul>
+        <li><a href="patterns/crochet-pumpkin.html">Crochet a pumpkin</a></li>
+        <li><a href="patterns/crochet-bear.html">Little crochet bear</a></li>
+        <li><a href="patterns/crochet-bag.html">Summer crochet bag</a></li>
+        <li><a href="patterns/crochet-flowers-leaves.html">Flowers &amp; leaves</a></li>
+        <li><a href="patterns.html">All patterns →</a></li>
+      </ul></div>
+    <div><h2>Explore</h2><ul>
+        <li><a href="tools/pattern-generator.html">Pattern generator</a></li>
+        <li><a href="tools/stitch-counter.html">Stitch counter</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="amigurumi.html">Amigurumi</a></li>
+        <li><a href="home-decor.html">Home decor</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul></div>
+  </div>
+  <div class="sf-bottom">
+    <span>© 2026 PrettyCrochet</span>
+    <div class="sf-legal"><a href="mailto:prettycrochetstudio@gmail.com">Contact</a><a href="legal-notice.html">Legal notice</a><a href="privacy-policy.html">Privacy policy</a></div>
+  </div>
+</footer>
+
+<script src="../assets/js/search-index.js" defer></script>
+<script src="../assets/js/site.js" data-root="../" data-lang="en" defer></script>
+</body>
+</html>

@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Free Crochet Patterns for Beginners &amp; Beyond | PrettyCrochet</title>
+  <meta name="description" content="Free crochet patterns with clear stitch counts, step by step – from the first basic stitches to finished amigurumi, bags and home decor."/>
+  <link rel="stylesheet" href="../assets/fonts/fonts.css"/>
+  <link rel="icon" href="/assets/icons/favicon.ico" sizes="48x48"/>
+  <link rel="icon" href="/assets/icons/favicon.svg" type="image/svg+xml"/>
+  <link rel="icon" href="/assets/icons/favicon-192x192.png" type="image/png" sizes="192x192"/>
+  <link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png"/>
+  <style>
+    :root {
+      --creme:   #F7F3EC;
+      --salbei:  #ABB9A2;
+      --beige:   #E4DED3;
+      --braun:   #3E5748;
+      --espresso:#302A26;
+      --white:   #FFFFFF;
+      --muted:   #6B625C;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--creme);
+      color: var(--espresso);
+      font-family: 'Manrope', sans-serif;
+      font-weight: 300;
+      line-height: 1.75;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 200;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.1rem 6vw;
+      background: rgba(247,243,236,0.92);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--beige);
+    }
+    .logo-wrap { display: flex; align-items: center; gap: 0.75rem; text-decoration: none; }
+    .logo-text {
+      font-family: 'Fraunces', serif;
+      font-size: 1.45rem;
+      font-weight: 600;
+      color: var(--espresso);
+      letter-spacing: 0.02em;
+    }
+    .logo-text span { color: var(--salbei); }
+    .nav-links { display: flex; gap: 2.2rem; list-style: none; }
+    .nav-links a {
+      font-size: 0.82rem;
+      font-weight: 400;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: var(--espresso);
+      transition: color 0.2s;
+    }
+    .nav-links a:hover, .nav-links a.active { color: var(--salbei); }
+    .nav-cta {
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: var(--white);
+      background: var(--espresso);
+      padding: 0.6rem 1.4rem;
+      border-radius: 2px;
+      transition: background 0.2s;
+    }
+    .nav-cta:hover { background: var(--braun); }
+
+    /* ── PAGE HERO ── */
+    .page-hero {
+      padding: 11rem 10vw 4rem;
+      background: var(--beige);
+      text-align: center;
+    }
+    .breadcrumb {
+      font-size: 0.75rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--braun);
+      margin-bottom: 1.5rem;
+    }
+    .breadcrumb a { color: var(--braun); text-decoration: none; border-bottom: 1px solid rgba(62,87,72,0.35); }
+    .breadcrumb a:hover { border-color: var(--braun); }
+    .page-hero .label { justify-content: center; }
+    .page-hero .label::before { display: none; }
+    .page-hero h1 {
+      font-family: 'Fraunces', serif;
+      font-size: clamp(2.3rem, 4.8vw, 3.8rem);
+      font-weight: 300;
+      line-height: 1.12;
+      color: var(--espresso);
+      margin-bottom: 1.2rem;
+    }
+    .page-hero h1 em { font-style: italic; color: var(--braun); }
+    .page-hero p.sub {
+      max-width: 54ch;
+      margin: 0 auto;
+      color: var(--braun);
+      font-size: 1rem;
+    }
+
+    .label {
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--salbei);
+      margin-bottom: 0.6rem;
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+    }
+    .label::before { content:''; display:inline-block; width:24px; height:1px; background:var(--salbei); }
+
+    h2 {
+      font-family: 'Fraunces', serif;
+      font-size: clamp(1.8rem, 3vw, 2.6rem);
+      font-weight: 300;
+      line-height: 1.2;
+      color: var(--espresso);
+      margin-bottom: 1.6rem;
+    }
+    h2 em { font-style: italic; color: var(--braun); }
+
+    section { padding: 5rem 10vw; }
+
+    /* ── FILTER ── */
+    .filter-bar {
+      background: var(--creme);
+      padding: 2.2rem 10vw;
+      border-bottom: 1px solid var(--beige);
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      align-items: center;
+    }
+    .filter-group { display: flex; gap: 0.6rem; flex-wrap: wrap; justify-content: center; align-items: center; }
+    .filter-group > span {
+      font-size: 0.68rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-right: 0.4rem;
+    }
+    .filter-btn {
+      font-family: 'Manrope', sans-serif;
+      font-size: 0.76rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--espresso);
+      background: var(--white);
+      border: 1px solid var(--beige);
+      padding: 0.5rem 1.05rem;
+      border-radius: 999px;
+      cursor: pointer;
+      transition: border-color 0.2s, background 0.2s, color 0.2s;
+    }
+    .filter-btn:hover { border-color: var(--salbei); }
+    .filter-btn.active { background: var(--espresso); color: var(--white); border-color: var(--espresso); }
+    .filter-count { font-size: 0.76rem; color: var(--muted); }
+
+    /* ── ANLEITUNGS-GRID ── */
+    .guides-section { background: var(--white); }
+    .guides-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+    .guide-card {
+      background: var(--creme);
+      border: 1px solid var(--beige);
+      text-decoration: none;
+      color: var(--espresso);
+      display: flex;
+      flex-direction: column;
+      transition: box-shadow 0.25s, transform 0.25s;
+    }
+    .guide-card:hover { box-shadow: 0 10px 30px rgba(48,42,38,0.1); transform: translateY(-2px); }
+    .guide-card.is-soon { opacity: 0.62; pointer-events: none; }
+
+    .guide-thumb {
+      height: 150px;
+      background: var(--beige);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3.2rem;
+    }
+    .guide-card:nth-child(3n+2) .guide-thumb { background: #E8EDE5; }
+    .guide-card:nth-child(3n+3) .guide-thumb { background: #EDE8E2; }
+
+    .guide-body { padding: 1.5rem; flex: 1; display: flex; flex-direction: column; }
+    .guide-tags { display: flex; gap: 0.4rem; flex-wrap: wrap; margin-bottom: 0.7rem; }
+    .guide-tag {
+      font-size: 0.62rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--white);
+      background: var(--salbei);
+      padding: 0.2rem 0.55rem;
+      border-radius: 2px;
+    }
+    .guide-tag.level { background: var(--braun); }
+    .guide-tag.soon { background: var(--muted); }
+
+    .guide-body h3 {
+      font-family: 'Fraunces', serif;
+      font-size: 1.25rem;
+      font-weight: 400;
+      line-height: 1.3;
+      margin-bottom: 0.5rem;
+    }
+    .guide-body p { font-size: 0.85rem; color: var(--muted); flex: 1; }
+    .guide-meta {
+      font-size: 0.72rem;
+      color: var(--muted);
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      border-top: 1px solid var(--beige);
+      padding-top: 0.8rem;
+      margin-top: 1.2rem;
+      display: flex;
+      justify-content: space-between;
+      gap: 0.6rem;
+    }
+    .guide-arrow { color: var(--salbei); }
+
+    .no-results {
+      grid-column: 1 / -1;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.92rem;
+      padding: 3rem 1rem;
+    }
+
+    /* ── WERKZEUGE ── */
+    .tools-section { background: var(--espresso); }
+    .tools-section .label { color: var(--salbei); }
+    .tools-section .label::before { background: var(--salbei); }
+    .tools-section h2 { color: var(--creme); }
+    .tools-section h2 em { color: var(--salbei); }
+    .tools-intro { color: var(--beige); font-size: 0.95rem; max-width: 56ch; margin-bottom: 2.4rem; }
+    .tools-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+    .tool-item {
+      background: var(--espresso);
+      padding: 2rem 1.7rem;
+      text-decoration: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+      transition: background 0.2s;
+    }
+    .tool-item:hover { background: #3a2e26; }
+    .tool-icon { font-size: 1.8rem; }
+    .tool-item h3 {
+      font-family: 'Fraunces', serif;
+      font-size: 1.15rem;
+      font-weight: 400;
+      color: var(--creme);
+    }
+    .tool-item p { font-size: 0.84rem; color: var(--beige); flex: 1; }
+    .tool-link {
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--salbei);
+      margin-top: 0.6rem;
+    }
+
+    /* ── CTA ── */
+    .next-section {
+      background: var(--beige);
+      text-align: center;
+      padding: 5rem 10vw;
+    }
+    .next-section .label { justify-content: center; }
+    .next-section .label::before { display: none; }
+    .next-section p { color: var(--braun); max-width: 46ch; margin: 0 auto 2rem; font-size: 0.95rem; }
+    .btn-primary {
+      display: inline-block;
+      background: var(--espresso);
+      color: var(--white);
+      padding: 0.9rem 2rem;
+      font-size: 0.82rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border-radius: 2px;
+      transition: background 0.2s;
+    }
+    .btn-primary:hover { background: var(--braun); }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--espresso);
+      color: var(--beige);
+      padding: 4rem 10vw 2rem;
+    }
+    .footer-top {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 4rem;
+      padding-bottom: 3rem;
+      border-bottom: 1px solid rgba(228,222,211,0.15);
+      margin-bottom: 2rem;
+    }
+    .footer-logo {
+      font-family: 'Fraunces', serif;
+      font-size: 1.5rem;
+      font-weight: 400;
+      color: var(--creme);
+      display: block;
+      margin-bottom: 1rem;
+    }
+    .footer-logo span { color: var(--salbei); }
+    footer p { font-size: 0.83rem; color: rgba(228,222,211,0.6); line-height: 1.8; max-width: 32ch; }
+    footer h4 {
+      font-size: 0.7rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--salbei);
+      margin-bottom: 1.2rem;
+    }
+    footer ul { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
+    footer ul a { font-size: 0.84rem; color: rgba(228,222,211,0.7); text-decoration: none; transition: color 0.2s; }
+    footer ul a:hover { color: var(--creme); }
+    .footer-bottom {
+      text-align: center;
+      font-size: 0.72rem;
+      color: rgba(228,222,211,0.35);
+      letter-spacing: 0.06em;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      .nav-links { display: none; }
+      .guides-grid { grid-template-columns: 1fr 1fr; }
+      .tools-grid { grid-template-columns: 1fr; }
+      .footer-top { grid-template-columns: 1fr; gap: 2rem; }
+    }
+    @media (max-width: 620px) {
+      .guides-grid { grid-template-columns: 1fr; }
+    }
+  
+  /* ── Sprachumschalter DE | EN ── */
+  .nav-right{display:flex;align-items:center;gap:1.4rem;}
+  .lang-switch{display:flex;align-items:center;gap:.45rem;font-size:.78rem;letter-spacing:.1em;color:#6B625C;}
+  .lang-switch a{color:inherit;text-decoration:none;border-bottom:1px solid transparent;transition:color .2s,border-color .2s;}
+  .lang-switch a:hover{color:#302A26;border-color:#ABB9A2;}
+  .lang-switch [aria-current]{color:#302A26;font-weight:500;}
+  header .lang-switch{justify-content:flex-end;margin-bottom:.4rem;}
+  nav{gap:1rem;}
+  @media(max-width:480px){.nav-right{gap:.8rem;}.nav-right .nav-cta{padding:.5rem .85rem;font-size:.7rem;}}
+  .nav-links a[aria-current="page"]{color:#ABB9A2;}
+  .nav-links a,.nav-cta,.lang-switch{white-space:nowrap;}
+  @media(max-width:1180px){nav{padding-left:4vw;padding-right:4vw;}.nav-links{gap:1.3rem;}.nav-links a{font-size:.75rem;letter-spacing:.07em;}}
+  @media(max-width:980px){.nav-links{display:none;}}
+</style>
+<link rel="alternate" hreflang="de" href="https://prettycrochetstudio.com/anleitungen.html"/>
+<link rel="alternate" hreflang="en" href="https://prettycrochetstudio.com/en/patterns.html"/>
+<link rel="alternate" hreflang="x-default" href="https://prettycrochetstudio.com/anleitungen.html"/>
+<link rel="stylesheet" href="../assets/css/brand.css"/>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <nav class="site-nav" aria-label="Main navigation">
+    <a class="brand" href="index.html" aria-label="PrettyCrochet – home"><img src="../assets/logos/prettycrochet-lockup-espresso.svg" alt="" width="617" height="132"></a>
+    <div class="nav-tools">
+      <button type="button" class="icon-btn" data-search-open aria-label="Open search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg></button>
+      <div class="lang-switch" aria-label="Choose language"><a href="../anleitungen.html" hreflang="de" lang="de">DE</a><span aria-hidden="true">|</span><span aria-current="true">EN</span></div>
+      <button type="button" class="menu-toggle" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu" data-label-open="Open menu" data-label-close="Close menu"><span class="mt-label" data-text-open="Menu" data-text-close="Close">Menu</span><svg class="i-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg><svg class="i-close" style="display:none" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+    </div>
+  </nav>
+  <div class="mobile-menu" id="mobile-menu" hidden>
+    <button type="button" class="btn primary mm-search" data-search-open><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>Search patterns & topics</button>
+    <ul>
+      <li><a href="patterns.html" aria-current="page">Patterns</a></li>
+      <li><a href="amigurumi.html">Amigurumi</a></li>
+      <li><a href="home-decor.html">Home decor</a></li>
+      <li><a href="crochet-basics.html">Learn to crochet</a></li>
+      <li><a href="crochet-abbreviations.html">Abbreviations</a></li>
+      <li><a href="tools/learning-path.html">Learning path</a></li>
+      <li><a href="tools/pattern-generator.html">Pattern generator</a></li>
+      <li><a href="tools/stitch-counter.html">Stitch counter</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="about.html">About</a></li>
+    </ul>
+    <p class="mm-label">Jump to</p>
+    <div class="mm-quick"><a href="#" data-search-query="pumpkin">Pumpkin</a><a href="#" data-search-query="magic ring">Magic ring</a><a href="#" data-search-query="beginner">Beginner</a><a href="#" data-search-query="amigurumi">Amigurumi</a></div>
+    <div class="lang-switch mm-lang" aria-label="Choose language"><a href="../anleitungen.html" hreflang="de" lang="de">DE</a><span aria-hidden="true">|</span><span aria-current="true">EN</span></div>
+  </div>
+</header>
+<div class="search-overlay" id="search" role="dialog" aria-modal="true" aria-label="Open search" hidden>
+  <div class="search-panel">
+    <div class="search-bar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><input type="search" placeholder="Search patterns, techniques or topics …" aria-label="Search patterns, techniques or topics …" autocomplete="off"/><button type="button" class="search-close">Close</button></div>
+    <div class="search-results" aria-live="polite"></div>
+  </div>
+</div>
+
+<main id="main" tabindex="-1">
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <p class="breadcrumb"><a href="index.html">Home</a> · Patterns</p>
+  <div class="label">All projects</div>
+  <h1>Patterns to<br><em>crochet along</em></h1>
+  <p class="sub">From the very first basic stitches to the finished project – all patterns with clear stitch counts, step by step and free of charge.</p>
+  <p class="sub" style="margin-top:1rem;"><a href="crochet-abbreviations.html" style="color:var(--braun);">New here? How to read my patterns →</a></p>
+</section>
+
+<!-- FILTER -->
+<div class="filter-bar">
+  <div class="filter-group" id="cat-filter">
+    <span>Topic</span>
+    <button class="filter-btn active" data-cat="all">All</button>
+    <button class="filter-btn" data-cat="basics">Basics</button>
+    <button class="filter-btn" data-cat="amigurumi">Amigurumi</button>
+    <button class="filter-btn" data-cat="taschen">Bags</button>
+    <button class="filter-btn" data-cat="wohndeko">Home decor</button>
+  </div>
+  <div class="filter-group" id="level-filter">
+    <span>Level</span>
+    <button class="filter-btn active" data-level="all">All</button>
+    <button class="filter-btn" data-level="anfaenger">Beginner</button>
+    <button class="filter-btn" data-level="mittel">Intermediate</button>
+    <button class="filter-btn" data-level="fortgeschritten">Advanced</button>
+  </div>
+  <p class="filter-count" id="filter-count"></p>
+</div>
+
+<!-- ANLEITUNGEN -->
+<section class="guides-section">
+  <h2 class="visually-hidden">All patterns</h2>
+  <div class="guides-grid" id="guides-grid">
+
+    <a href="crochet-basics.html" class="guide-card" data-cat="basics" data-level="anfaenger">
+      <div class="guide-thumb">⭐</div>
+      <div class="guide-body">
+        <div class="guide-tags">
+          <span class="guide-tag">Basics</span>
+          <span class="guide-tag level">Beginner</span>
+        </div>
+        <h3>Learn to Crochet: The Basics to Get Started</h3>
+        <p>Materials, how to hold hook and yarn, the foundation chain and the four most important basic stitches – everything you need to know before your first project.</p>
+        <span class="guide-meta">Start here <span class="guide-arrow" aria-hidden="true">→</span></span>
+      </div>
+    </a>
+
+    <a href="patterns/crochet-bear.html" class="guide-card" data-cat="amigurumi" data-level="anfaenger">
+      <div class="guide-thumb">🧸</div>
+      <div class="guide-body">
+        <div class="guide-tags">
+          <span class="guide-tag">Amigurumi</span>
+          <span class="guide-tag level">Beginner</span>
+        </div>
+        <h3>Little Crochet Bear: The Complete Pattern</h3>
+        <p>Head, body, arms, legs and ears – round by round with stitch counts. Your very first amigurumi in one weekend.</p>
+        <span class="guide-meta">4–6 hrs · approx. 18 cm <span class="guide-arrow" aria-hidden="true">→</span></span>
+      </div>
+    </a>
+
+    <a href="tools/learning-path.html" class="guide-card" data-cat="basics" data-level="anfaenger">
+      <div class="guide-thumb">🎓</div>
+      <div class="guide-body">
+        <div class="guide-tags">
+          <span class="guide-tag">Basics</span>
+          <span class="guide-tag level">Beginner</span>
+        </div>
+        <h3>The Interactive Learning Path</h3>
+        <p>Seven short lessons with practice tasks and a mini quiz. Every lesson you pass unlocks the next one – learn by doing instead of reading.</p>
+        <span class="guide-meta">7 lessons <span class="guide-arrow" aria-hidden="true">→</span></span>
+      </div>
+    </a>
+
+    <a href="amigurumi.html" class="guide-card" data-cat="amigurumi" data-level="anfaenger">
+      <div class="guide-thumb">🐻</div>
+      <div class="guide-body">
+        <div class="guide-tags">
+          <span class="guide-tag">Amigurumi</span>
+          <span class="guide-tag level">Beginner</span>
+        </div>
+        <h3>Amigurumi Basics</h3>
+        <p>Magic ring, spiral rounds, increasing and decreasing, and neat sewing together – the technique behind every figure.</p>
+        <span class="guide-meta">Overview <span class="guide-arrow" aria-hidden="true">→</span></span>
+      </div>
+    </a>
+
+    <a href="patterns/crochet-bag.html" class="guide-card" data-cat="taschen" data-level="fortgeschritten">
+      <div class="guide-thumb">👜</div>
+      <div class="guide-body">
+        <div class="guide-tags">
+          <span class="guide-tag">Bags</span>
+          <span class="guide-tag level">Advanced</span>
+        </div>
+        <h3>Summer Crochet Bag with Straps</h3>
+        <p>Oval base, 14 rounds for the body and two crocheted straps in a mesh pattern – the classic for beach and market.</p>
+        <span class="guide-meta">42 stitches · 14 rounds <span class="guide-arrow" aria-hidden="true">→</span></span>
+      </div>
+    </a>
+
+    <span class="guide-card is-soon" data-cat="taschen" data-level="mittel">
+      <div class="guide-thumb">🌿</div>
+      <div class="guide-body">
+        <div class="guide-tags">
+          <span class="guide-tag">Bags</span>
+          <span class="guide-tag level">Intermediate</span>
+          <span class="guide-tag soon">Coming soon</span>
+        </div>
+        <h3>“Sage” Clutch in Ribbon Yarn</h3>
+        <p>A simple evening bag with a fine ribbed texture from single crochet worked in the back loop.</p>
+        <span class="guide-meta">approx. 20 × 13 cm</span>
+      </div>
+    </span>
+
+    <span class="guide-card is-soon" data-cat="amigurumi" data-level="mittel">
+      <div class="guide-thumb">🐰</div>
+      <div class="guide-body">
+        <div class="guide-tags">
+          <span class="guide-tag">Amigurumi</span>
+          <span class="guide-tag level">Intermediate</span>
+          <span class="guide-tag soon">Coming soon</span>
+        </div>
+        <h3>Bunny with Carrot</h3>
+        <p>A sweet gift project with movable little arms and tiny accessories.</p>
+        <span class="guide-meta">In progress</span>
+      </div>
+    </span>
+
+    <span class="guide-card is-soon" data-cat="amigurumi" data-level="anfaenger">
+      <div class="guide-thumb">🐙</div>
+      <div class="guide-body">
+        <div class="guide-tags">
+          <span class="guide-tag">Amigurumi</span>
+          <span class="guide-tag level">Beginner</span>
+          <span class="guide-tag soon">Coming soon</span>
+        </div>
+        <h3>Reversible Octopus</h3>
+        <p>Perfect for practicing increases and decreases in rounds – with two faces to flip.</p>
+        <span class="guide-meta">In progress</span>
+      </div>
+    </span>
+
+    <a href="home-decor.html" class="guide-card" data-cat="wohndeko" data-level="mittel">
+      <div class="guide-thumb">🌸</div>
+      <div class="guide-body">
+        <div class="guide-tags">
+          <span class="guide-tag">Home decor</span>
+          <span class="guide-tag level">Intermediate</span>
+        </div>
+        <h3>Home Decor: Baskets, Pillows & Wreaths</h3>
+        <p>Overview of the home decor category with materials, basic techniques and all planned projects.</p>
+        <span class="guide-meta">Overview <span class="guide-arrow" aria-hidden="true">→</span></span>
+      </div>
+    </a>
+    <a href="patterns/crochet-pumpkin.html" class="guide-card" data-cat="wohndeko" data-level="anfaenger">
+      <div class="guide-thumb">🎃</div>
+      <div class="guide-body">
+        <div class="guide-tags">
+          <span class="guide-tag">Home decor</span>
+          <span class="guide-tag level">Beginner</span>
+        </div>
+        <h3>How to Crochet a Pumpkin</h3>
+        <p>Ribbed pumpkins made from a simple rectangle – no rounds, no increases. Perfect fall decor in three sizes.</p>
+        <span class="guide-meta">3 sizes · 1–2 hrs <span class="guide-arrow" aria-hidden="true">→</span></span>
+      </div>
+    </a>
+    <a href="patterns/crochet-flowers-leaves.html" class="guide-card" data-cat="wohndeko" data-level="anfaenger">
+      <div class="guide-thumb">🌸</div>
+      <div class="guide-body">
+        <div class="guide-tags">
+          <span class="guide-tag">Home decor</span>
+          <span class="guide-tag level">Beginner</span>
+        </div>
+        <h3>How to Crochet Flowers &amp; Leaves</h3>
+        <p>Six small designs: three flower shapes, two leaf variations and a twisted vine – for wreaths, appliqués and bouquets.</p>
+        <span class="guide-meta">6 designs · 10–25 min each <span class="guide-arrow" aria-hidden="true">→</span></span>
+      </div>
+    </a>
+
+  </div>
+</section>
+
+<!-- WERKZEUGE -->
+<section class="tools-section">
+  <div class="label">Interactive</div>
+  <h2>Tools to <em>design your own</em></h2>
+  <p class="tools-intro">If you want to go beyond following patterns: with these tools you can design your own patterns, save your ideas and keep track of your stitch counts.</p>
+  <div class="tools-grid">
+
+    <a href="tools/pattern-generator.html" class="tool-item">
+      <span class="tool-icon" aria-hidden="true">🧮</span>
+      <h3>Pattern Generator</h3>
+      <p>Place stitches with a click and automatically get written instructions, a symbol chart and a 3D preview – with building blocks for base and body.</p>
+      <span class="tool-link">Open →</span>
+    </a>
+
+    <a href="tools/stitch-counter.html" class="tool-item">
+      <span class="tool-icon" aria-hidden="true">🔢</span>
+      <h3>Stitch Counter</h3>
+      <p>Count rows, rounds and stitches with a tap – with undo, a stitch target and automatically saved progress.</p>
+      <span class="tool-link">Open →</span>
+    </a>
+
+    <a href="tools/learning-path.html" class="tool-item">
+      <span class="tool-icon" aria-hidden="true">🎓</span>
+      <h3>Learning Path</h3>
+      <p>A structured course with seven lessons, quiz questions and a progress tracker – ideal if you want to start from scratch systematically.</p>
+      <span class="tool-link">Open →</span>
+    </a>
+
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="next-section">
+  <div class="label">Still unsure?</div>
+  <h2>Start with the <em>basics</em></h2>
+  <p>If you've never crocheted before, the basics are the right place to start – after that, every pattern here will make sense.</p>
+  <a href="crochet-basics.html" class="btn-primary">Go to Crochet Basics</a>
+</section>
+</main>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="sf-grid">
+    <div class="sf-about">
+      <a class="sf-brand" href="index.html"><img src="../assets/logos/prettycrochet-lockup-cream.svg" alt="PrettyCrochet" width="617" height="132" loading="lazy"></a>
+      <p class="sf-claim">Yarn becomes yours.</p>
+      <p>Free crochet patterns, an interactive learning path and tools to design your own – for everyone who makes favorite pieces with yarn and hook.</p>
+      <ul class="sf-social" aria-label="PrettyCrochet on social media">
+        <li><a href="https://www.instagram.com/prettycrochetstudio/" target="_blank" rel="noopener me"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r=".6" fill="currentColor"/></svg><span>Instagram</span><span class="visually-hidden"> (opens in a new tab)</span></a></li>
+        <li><a href="https://www.tiktok.com/@prettycrochetstudio" target="_blank" rel="noopener me"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3v11.5a3.5 3.5 0 1 1-3.5-3.5"/><path d="M14 3c.3 2.4 1.9 4.2 4.5 4.5"/></svg><span>TikTok</span><span class="visually-hidden"> (opens in a new tab)</span></a></li>
+      </ul>
+    </div>
+    <div><h2>Learn to crochet</h2><ul>
+        <li><a href="tools/learning-path.html">Learning path (7 lessons)</a></li>
+        <li><a href="crochet-basics.html">Crochet basics</a></li>
+        <li><a href="crochet-abbreviations.html">Abbreviations &amp; charts</a></li>
+      </ul></div>
+    <div><h2>Patterns</h2><ul>
+        <li><a href="patterns/crochet-pumpkin.html">Crochet a pumpkin</a></li>
+        <li><a href="patterns/crochet-bear.html">Little crochet bear</a></li>
+        <li><a href="patterns/crochet-bag.html">Summer crochet bag</a></li>
+        <li><a href="patterns/crochet-flowers-leaves.html">Flowers &amp; leaves</a></li>
+        <li><a href="patterns.html">All patterns →</a></li>
+      </ul></div>
+    <div><h2>Explore</h2><ul>
+        <li><a href="tools/pattern-generator.html">Pattern generator</a></li>
+        <li><a href="tools/stitch-counter.html">Stitch counter</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="amigurumi.html">Amigurumi</a></li>
+        <li><a href="home-decor.html">Home decor</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul></div>
+  </div>
+  <div class="sf-bottom">
+    <span>© 2026 PrettyCrochet</span>
+    <div class="sf-legal"><a href="mailto:prettycrochetstudio@gmail.com">Contact</a><a href="legal-notice.html">Legal notice</a><a href="privacy-policy.html">Privacy policy</a></div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  "use strict";
+
+  var activeCat = "all";
+  var activeLevel = "all";
+  var cards = Array.prototype.slice.call(document.querySelectorAll(".guide-card"));
+  var grid = document.getElementById("guides-grid");
+  var countEl = document.getElementById("filter-count");
+
+  var noResults = document.createElement("p");
+  noResults.className = "no-results";
+  noResults.textContent = "There's no pattern for this combination yet – try a different filter.";
+  noResults.style.display = "none";
+  grid.appendChild(noResults);
+
+  function applyFilter(){
+    var visible = 0;
+    cards.forEach(function(card){
+      var matchCat = (activeCat === "all") || (card.dataset.cat === activeCat);
+      var matchLevel = (activeLevel === "all") || (card.dataset.level === activeLevel);
+      if (matchCat && matchLevel){
+        card.style.display = "";
+        visible++;
+      } else {
+        card.style.display = "none";
+      }
+    });
+    noResults.style.display = visible ? "none" : "block";
+    countEl.textContent = visible === 1 ? "1 pattern" : visible + " patterns";
+  }
+
+  function wireGroup(containerId, attr, setter){
+    var container = document.getElementById(containerId);
+    container.addEventListener("click", function(ev){
+      var btn = ev.target.closest(".filter-btn");
+      if (!btn) return;
+      container.querySelectorAll(".filter-btn").forEach(function(b){ b.classList.remove("active"); });
+      btn.classList.add("active");
+      setter(btn.dataset[attr]);
+      applyFilter();
+    });
+  }
+
+  wireGroup("cat-filter", "cat", function(v){ activeCat = v; });
+  wireGroup("level-filter", "level", function(v){ activeLevel = v; });
+
+  applyFilter();
+})();
+</script>
+
+<script src="../assets/js/search-index.js" defer></script>
+<script src="../assets/js/site.js" data-root="../" data-lang="en" defer></script>
+</body>
+</html>
